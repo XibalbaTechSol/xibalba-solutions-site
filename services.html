@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Xibalba Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="XibalbaSolutionsLogo.png" alt="Xibalba Solutions Logo">
+            </a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="hardware.html">Hardware</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html" class="btn-outline"
+                    style="padding: 0.5rem 1rem; border-radius: 4px; margin-left: 1rem;">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Engineering <span class="gradient-text">Local Intelligence</span></h1>
+            <p>From hardware procurement to fine-tuning, we handle the entire lifecycle of your private AI
+                infrastructure.</p>
+        </div>
+    </header>
+
+    <section class="container content-section">
+        <div class="split-layout">
+            <div class="service-block" style="background: var(--card-bg); border: 1px solid #333;">
+                <h2 style="margin-bottom: 1rem; color: var(--accent-primary);">1. Hardware Consultation</h2>
+                <p>AI requires raw power. We don't just sell software; we architect the physical machine.</p>
+                <p>Whether it's sourcing high-VRAM NVIDIA workstations, configuring Apple Silicon Mac Studios for
+                    efficient inference, or building a custom rack-mounted server with Tesla architecture, we ensure
+                    your hardware matches your model needs.</p>
+            </div>
+            <div class="service-block"
+                style="background: var(--card-bg); border: 1px solid #333; border-left-color: var(--accent-secondary);">
+                <h2 style="margin-bottom: 1rem; color: var(--accent-secondary);">2. RAG Pipeline Development</h2>
+                <p><strong>Retrieval-Augmented Generation (RAG)</strong> is how we teach the AI about <em>your</em>
+                    business without training a new model.</p>
+                <p>We build secure, local vector databases (using technologies like ChromaDB or Qdrant) that index your
+                    PDFs, emails, and intranets. When you ask a question, the AI reads your documents in milliseconds to
+                    give a factual answer.</p>
+            </div>
+        </div>
+
+        <div class="split-layout" style="margin-top: 4rem;">
+            <div class="service-block"
+                style="background: var(--card-bg); border: 1px solid #333; border-left-color: #fff;">
+                <h2 style="margin-bottom: 1rem; color: #fff;">3. Model Fine-Tuning</h2>
+                <p>For specialized vocabularies—like medical coding or legal precedents—generic models fall short.</p>
+                <p>We perform parameter-efficient fine-tuning (LoRA/QLoRA) on your historical data. This "teaches" the
+                    model your specific tone, format, and domain knowledge, creating a bespoke AI asset owned entirely
+                    by you.</p>
+            </div>
+            <div class="service-block"
+                style="background: var(--card-bg); border: 1px solid #333; border-left-color: var(--text-muted);">
+                <h2 style="margin-bottom: 1rem; color: var(--text-muted);">4. Training & Integration</h2>
+                <p>A tool is only useful if your team uses it.</p>
+                <p>We provide hands-on training for your staff on prompt engineering and safety. We also integrate the
+                    AI into your existing workflows—connecting it to your local Slack, Mattermost, or internal dashboard
+                    via secure APIs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" style="background: #0a0a0a; text-align: center;">
+        <div class="container">
+            <h2>Supported Technologies</h2>
+            <div
+                style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; opacity: 0.7;">
+                <span style="font-size: 1.2rem; font-weight: 600;">Llama 3</span>
+                <span style="font-size: 1.2rem; font-weight: 600;">Mistral</span>
+                <span style="font-size: 1.2rem; font-weight: 600;">Ollama</span>
+                <span style="font-size: 1.2rem; font-weight: 600;">vLLM</span>
+                <span style="font-size: 1.2rem; font-weight: 600;">NVIDIA CUDA</span>
+                <span style="font-size: 1.2rem; font-weight: 600;">LangChain</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Xibalba Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
