@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeriPhysics | Simulation Verification Standard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .investor-badge {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--accent-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            border: 1px solid rgba(0, 210, 255, 0.2);
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+        .stat-card h4 {
+            font-size: 3rem;
+            color: var(--accent-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .stat-card p {
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="XibalbaSolutionsLogo.png" alt="Xibalba Solutions Logo">
+            </a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="veriphysics.html" class="active" style="color: var(--accent-secondary);">VeriPhysics</a>
+                <a href="contact.html" class="btn-outline"
+                    style="padding: 0.5rem 1rem; border-radius: 4px; margin-left: 1rem;">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" style="padding: 6rem 0;">
+        <div class="container">
+            <div class="investor-badge">Investment Opportunity &bull; Series A</div>
+            <h1>The Gold Standard for <br><span class="gradient-text">Simulation Verification</span></h1>
+            <p>VeriPhysics bridges the gap between digital simulations and physical reality. We provide the verification layer for the next generation of autonomous systems and digital twins.</p>
+            <div style="margin-top: 2rem;">
+                <a href="#contact" class="btn">Request Pitch Deck</a>
+                <a href="#market" class="btn-outline" style="margin-left: 1rem;">Market Data</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Value Props -->
+    <section class="container features">
+        <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Deterministic Accuracy</h3>
+            <p>Eliminate floating-point drift and simulation hallucinations. Our engine provides bit-perfect verification for critical physics interactions.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🌐</div>
+            <h3>Universal Compatibility</h3>
+            <p>Plug-and-play validation for PhysX, Havok, Mujoco, and custom proprietary engines. One standard to rule them all.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3>Risk Mitigation</h3>
+            <p>Reduce liability in autonomous deployment. Prove your simulation training data matches real-world physics before hardware deployment.</p>
+        </div>
+    </section>
+
+    <!-- Market Opportunity -->
+    <section id="market" class="content-section" style="background: #0a0a0a;">
+        <div class="container">
+            <div class="section-header">
+                <h2>The $50B Simulation Gap</h2>
+                <p>As the world moves to Digital Twins and Autonomous Systems, the cost of simulation errors is skyrocketing.</p>
+            </div>
+            
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <h4>$12B</h4>
+                    <p>TAM in AutoSim</p>
+                </div>
+                <div class="stat-card">
+                    <h4>40%</h4>
+                    <p>YoY Market Growth</p>
+                </div>
+                <div class="stat-card">
+                    <h4>0</h4>
+                    <p>Current Standards</p>
+                </div>
+            </div>
+
+            <div class="split-layout">
+                <div>
+                    <h3>Why Now?</h3>
+                    <p style="color: var(--text-muted);">The "Sim-to-Real" gap is the primary bottleneck for:</p>
+                    <ul class="plan-features">
+                        <li>L4/L5 Autonomous Driving certification</li>
+                        <li>Robotics manufacturing precision</li>
+                        <li>Aerospace composite stress testing</li>
+                        <li>Smart City digital twin reliability</li>
+                    </ul>
+                    <p>VeriPhysics solves this by offering an independent, third-party audit layer for physics compute.</p>
+                </div>
+                <div style="background: var(--card-bg); padding: 2rem; border-radius: 8px; border: 1px solid #333; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                    <!-- Placeholder for a chart or graphic -->
+                    <div style="font-size: 5rem; margin-bottom: 1rem;">🚀</div>
+                    <h4 style="color: #fff;">First Mover Advantage</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Defining the ISO standard for physics verification.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder/Team snippet -->
+    <section class="founder-section" style="padding: 4rem 0;">
+        <div class="container">
+            <div class="founder-card" style="padding: 3rem;">
+                <div class="section-label">Leadership</div>
+                <div class="founder-info">
+                    <h3>Backed by Xibalba Solutions</h3>
+                    <p>Leveraging decades of high-performance computing and data sovereignty expertise to build the trust layer for the physical web.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section id="contact" class="container" style="padding: 6rem 0;">
+        <div class="contact-form-container">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2>Invest in Certainty</h2>
+                <p style="color: var(--text-muted);">Accredited investors only. Request access to our data room.</p>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label>Investment Firm / Name</label>
+                    <input type="text" class="form-control" placeholder="e.g. Sequoia, Andreessen Horowitz">
+                </div>
+                <div class="form-group">
+                    <label>Work Email</label>
+                    <input type="email" class="form-control" placeholder="partner@firm.com">
+                </div>
+                <div class="form-group">
+                    <label>Interest Level</label>
+                    <select class="form-control">
+                        <option>Seed / Angel</option>
+                        <option>Series A Lead</option>
+                        <option>Strategic Partnership</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Request Access</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Xibalba Solutions & VeriPhysics. All rights reserved. <br>
+                <span style="font-size: 0.8rem; color: #444;">Verifying Reality.</span>
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
