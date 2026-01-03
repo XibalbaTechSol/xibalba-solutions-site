@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xibalba CLI | Terminal Intelligence Control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .terminal-window {
+            background: #000;
+            border-radius: 8px;
+            border: 1px solid #333;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            font-family: 'Fira Code', monospace;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .terminal-header {
+            background: #1a1a1a;
+            padding: 0.75rem 1rem;
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 1px solid #333;
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+        .terminal-body {
+            padding: 1.5rem;
+            color: #d1d1d1;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .command { color: var(--accent-secondary); }
+        .output { color: var(--text-muted); }
+        .cursor { display: inline-block; width: 8px; height: 1.2em; background: var(--accent-primary); vertical-align: middle; animation: blink 1s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="XibalbaSolutionsLogo.png" alt="Xibalba Solutions Logo">
+            </a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="veriphysics.html">VeriPhysics</a>
+                <a href="cli.html" class="active" style="color: var(--accent-secondary);">CLI</a>
+                <a href="crm.html">CRM</a>
+                <a href="contact.html" class="btn-outline"
+                    style="padding: 0.5rem 1rem; border-radius: 4px; margin-left: 1rem;">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" style="padding: 6rem 0;">
+        <div class="container">
+            <h1>Intelligence at the <br><span class="gradient-text">Command Line</span></h1>
+            <p>A powerful terminal interface for managing local AI infrastructure, indexing deep-data archives, and orchestrating private model workflows.</p>
+            
+            <div class="terminal-window" style="margin-top: 3rem;">
+                <div class="terminal-header">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div style="margin-left: auto; color: #555; font-size: 0.8rem;">bash — 80x24</div>
+                </div>
+                <div class="terminal-body">
+                    <div><span class="command">$ xibalba</span> init --local-only</div>
+                    <div class="output">Initializing secure enclave... [OK]</div>
+                    <div class="output">Loading Llama-3-70B-Quantized... [OK]</div>
+                    <div><span class="command">$ xibalba</span> index ./legal-archives/2024</div>
+                    <div class="output">Scanning 4,205 documents...</div>
+                    <div class="output">Vectorizing embeddings via CUDA... [Progress: ██████████ 100%]</div>
+                    <div><span class="command">$ xibalba</span> query "Summary of Riverside liability clauses"</div>
+                    <div class="output">Found 3 relevant sections. Generating response...</div>
+                    <div><span class="cursor"></span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features -->
+    <section class="container features">
+        <div class="feature-card">
+            <div class="feature-icon">⌨️</div>
+            <h3>Dev-First Orchestration</h3>
+            <p>Automate your AI workflows with a robust CLI. Switch models, update indices, and monitor VRAM usage with single commands.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔌</div>
+            <h3>Pipe-Ready Outputs</h3>
+            <p>Seamlessly integrate local AI into your scripts. Pipe JSON outputs into other tools or trigger system actions based on model responses.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Air-Gapped by Default</h3>
+            <p>The CLI never reaches for the web. All telemetry is disabled by design. Truly sovereign developer tools.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-sitemap">
+                <div class="sitemap-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-col">
+                    <h4>Offerings</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="veriphysics.html">VeriPhysics</a></li>
+                        <li><a href="cli.html">Xibalba CLI</a></li>
+                        <li><a href="crm.html">Xibalba CRM</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-col">
+                    <h4>Infrastructure</h4>
+                    <ul>
+                        <li><a href="hardware.html">Hardware</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Xibalba Solutions. All rights reserved. <br>
+                    <span style="font-size: 0.8rem; color: #444;">Commanding the Depths of Data.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
