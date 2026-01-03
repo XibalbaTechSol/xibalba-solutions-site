@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VeriPhysics | Simulation Verification Standard</title>
+    <title>VeriPhysics | Video Provenance & Deepfake Authentication</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -24,6 +24,7 @@
             display: inline-block;
             border: 1px solid rgba(0, 210, 255, 0.2);
         }
+
         .stat-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -31,13 +32,48 @@
             margin: 4rem 0;
             text-align: center;
         }
+
         .stat-card h4 {
             font-size: 3rem;
             color: var(--accent-secondary);
             margin-bottom: 0.5rem;
         }
+
         .stat-card p {
             color: var(--text-muted);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #222;
+        }
+
+        .comparison-table th {
+            background: #151515;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight-row {
+            background: rgba(0, 210, 255, 0.05);
         }
     </style>
 </head>
@@ -65,8 +101,8 @@
     <header class="hero" style="padding: 6rem 0;">
         <div class="container">
             <div class="investor-badge">Investment Opportunity &bull; Series A</div>
-            <h1>The Gold Standard for <br><span class="gradient-text">Simulation Verification</span></h1>
-            <p>VeriPhysics bridges the gap between digital simulations and physical reality. We provide the verification layer for the next generation of autonomous systems and digital twins.</p>
+            <h1>The Laws of Physics as <br><span class="gradient-text">Video Proof</span></h1>
+            <p>VeriPhysics SDK distinguishes real-world capture from deepfake replays by correlating high-frequency sensor data with visual optical flow. A hardware-agnostic solution for the "Analog Hole."</p>
             <div style="margin-top: 2rem;">
                 <a href="#contact" class="btn">Request Pitch Deck</a>
                 <a href="#market" class="btn-outline" style="margin-left: 1rem;">Market Data</a>
@@ -74,22 +110,28 @@
         </div>
     </header>
 
-    <!-- Value Props -->
-    <section class="container features">
-        <div class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h3>Deterministic Accuracy</h3>
-            <p>Eliminate floating-point drift and simulation hallucinations. Our engine provides bit-perfect verification for critical physics interactions.</p>
+    <!-- Technical Strengths -->
+    <section class="container content-section">
+        <div class="section-header">
+            <h2>Technical Superiority</h2>
+            <p>Moving beyond pixel analysis to mathematical proof of authenticity.</p>
         </div>
-        <div class="feature-card">
-            <div class="feature-icon">🌐</div>
-            <h3>Universal Compatibility</h3>
-            <p>Plug-and-play validation for PhysX, Havok, Mujoco, and custom proprietary engines. One standard to rule them all.</p>
-        </div>
-        <div class="feature-card">
-            <div class="feature-icon">📈</div>
-            <h3>Risk Mitigation</h3>
-            <p>Reduce liability in autonomous deployment. Prove your simulation training data matches real-world physics before hardware deployment.</p>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📐</div>
+                <h3>Causality Scoring</h3>
+                <p>We correlate visual optical flow derived from 3D parallax with high-frequency IMU data (accelerometer/gyroscope) from the capturing device.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚫</div>
+                <h3>Analog Hole Detection</h3>
+                <p>Deepfakes replayed on screens exhibit 2D planar motion that mismatches handheld device tremors at 10Hz—providing a physical impossibility proof.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Hardware Agnostic</h3>
+                <p>Unlike competitors requiring specific chips, our SDK works on any standard smartphone, ensuring massive scalability for finance and insurance.</p>
+            </div>
         </div>
     </section>
 
@@ -97,42 +139,74 @@
     <section id="market" class="content-section" style="background: #0a0a0a;">
         <div class="container">
             <div class="section-header">
-                <h2>The $50B Simulation Gap</h2>
-                <p>As the world moves to Digital Twins and Autonomous Systems, the cost of simulation errors is skyrocketing.</p>
+                <h2>The $900M Fraud Crisis</h2>
+                <p>Deepfake fraud is no longer a theoretical threat—it's a multi-billion dollar liability for the financial sector.</p>
             </div>
-            
+
             <div class="stat-grid">
                 <div class="stat-card">
-                    <h4>$12B</h4>
-                    <p>TAM in AutoSim</p>
+                    <h4>$900M</h4>
+                    <p>Fraud Losses Since 2019</p>
                 </div>
                 <div class="stat-card">
-                    <h4>40%</h4>
-                    <p>YoY Market Growth</p>
+                    <h4>$410M</h4>
+                    <p>Losses in H1 2025 Alone</p>
                 </div>
                 <div class="stat-card">
-                    <h4>0</h4>
-                    <p>Current Standards</p>
+                    <h4>1,740%</h4>
+                    <p>Surge in NA Fraud Cases</p>
                 </div>
             </div>
 
             <div class="split-layout">
                 <div>
-                    <h3>Why Now?</h3>
-                    <p style="color: var(--text-muted);">The "Sim-to-Real" gap is the primary bottleneck for:</p>
+                    <h3>High-Stakes Targets</h3>
+                    <p style="color: var(--text-muted);">The escalation of "Deepfake CFO" scams and remote identification fraud has created an urgent need for physics-based liveness checks.</p>
                     <ul class="plan-features">
-                        <li>L4/L5 Autonomous Driving certification</li>
-                        <li>Robotics manufacturing precision</li>
-                        <li>Aerospace composite stress testing</li>
-                        <li>Smart City digital twin reliability</li>
+                        <li>Financial sector remote KYC/onboarding</li>
+                        <li>Insurance claim on-site verification</li>
+                        <li>High-value asset lending audits</li>
+                        <li>Corporate internal communication security</li>
                     </ul>
-                    <p>VeriPhysics solves this by offering an independent, third-party audit layer for physics compute.</p>
                 </div>
-                <div style="background: var(--card-bg); padding: 2rem; border-radius: 8px; border: 1px solid #333; text-align: center; display: flex; flex-direction: column; justify-content: center;">
-                    <!-- Placeholder for a chart or graphic -->
-                    <div style="font-size: 5rem; margin-bottom: 1rem;">🚀</div>
-                    <h4 style="color: #fff;">First Mover Advantage</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Defining the ISO standard for physics verification.</p>
+                <div>
+                    <h3>Competitive Edge</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th style="color: var(--accent-secondary);">VeriPhysics</th>
+                                <th>Truepic</th>
+                                <th>AI Detectors</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row">
+                                <td>Method</td>
+                                <td>Physics Correlation</td>
+                                <td>C2PA Crypto</td>
+                                <td>Pixel Analysis</td>
+                            </tr>
+                            <tr>
+                                <td>Hardware Req.</td>
+                                <td>No (SDK)</td>
+                                <td>Often (TEE)</td>
+                                <td>No</td>
+                            </tr>
+                            <tr>
+                                <td>Analog Hole Protection</td>
+                                <td>Yes</td>
+                                <td>Vulnerable</td>
+                                <td>Inconsistent</td>
+                            </tr>
+                            <tr>
+                                <td>Scalability Cost</td>
+                                <td>Low SaaS</td>
+                                <td>High Enterprise</td>
+                                <td>Low</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -144,8 +218,8 @@
             <div class="founder-card" style="padding: 3rem;">
                 <div class="section-label">Leadership</div>
                 <div class="founder-info">
-                    <h3>Backed by Xibalba Solutions</h3>
-                    <p>Leveraging decades of high-performance computing and data sovereignty expertise to build the trust layer for the physical web.</p>
+                    <h3>Proven Mathematical Expertise</h3>
+                    <p>Leveraging Xibalba Solutions' core competency in applied physics and high-performance computing to solve the most difficult problem in digital provenance.</p>
                 </div>
             </div>
         </div>
@@ -155,21 +229,22 @@
     <section id="contact" class="container" style="padding: 6rem 0;">
         <div class="contact-form-container">
             <div style="text-align: center; margin-bottom: 2rem;">
-                <h2>Invest in Certainty</h2>
-                <p style="color: var(--text-muted);">Accredited investors only. Request access to our data room.</p>
+                <h2>Invest in Authenticity</h2>
+                <p style="color: var(--text-muted);">Accredited investors only. Request access to our prototype data and whitepaper.</p>
             </div>
-            <form>
+            <form action="https://formspree.io/f/meeqbroz" method="POST">
+                <input type="hidden" name="subject" value="VeriPhysics Investor Inquiry">
                 <div class="form-group">
                     <label>Investment Firm / Name</label>
-                    <input type="text" class="form-control" placeholder="e.g. Sequoia, Andreessen Horowitz">
+                    <input type="text" name="firm" class="form-control" placeholder="e.g. Sequoia, Andreessen Horowitz" required>
                 </div>
                 <div class="form-group">
                     <label>Work Email</label>
-                    <input type="email" class="form-control" placeholder="partner@firm.com">
+                    <input type="email" name="email" class="form-control" placeholder="partner@firm.com" required>
                 </div>
                 <div class="form-group">
                     <label>Interest Level</label>
-                    <select class="form-control">
+                    <select name="interest" class="form-control">
                         <option>Seed / Angel</option>
                         <option>Series A Lead</option>
                         <option>Strategic Partnership</option>
