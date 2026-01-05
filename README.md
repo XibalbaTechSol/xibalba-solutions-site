@@ -12,7 +12,7 @@ The website is a static HTML/CSS site designed to be lightweight, fast, and priv
 - `about.html`: Company mission, leadership, and vision.
 - `services.html`: Detailed breakdown of services (Hardware, RAG, Fine-tuning).
 - `solutions.html`: Use cases across various industries.
-- `products.html`: Overview of all software and SDK products.
+- `products.html`: Overview of software products (Xibalba CRM, Xibalba CLI, VeriPhysics SDK).
 - `pricing.html`: Transparent pricing models.
 - `contact.html`: Contact form and information.
 - `css/style.css`: Main stylesheet source.
