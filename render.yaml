@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: xibalba-solutions
+    name: xibalba-solutions-static
     runtime: static
     buildCommand: 'echo "no build"'
     staticPublishPath: ./
