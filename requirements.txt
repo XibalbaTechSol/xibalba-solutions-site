@@ -1,0 +1,2 @@
+# Empty requirements.txt for Render auto-detection compatibility
+# This file allows the project to build successfully even if detected as a Python app.

@@ -4,3 +4,12 @@ services:
     runtime: static
     buildCommand: 'echo "no build"'
     staticPublishPath: ./
+
+  # Legacy service configuration to handle existing "xibalba-solutions" service
+  # that is stuck on Python runtime. This ensures it doesn't fail build/deploy.
+  - type: web
+    name: xibalba-solutions
+    runtime: python
+    buildCommand: 'echo "Skipping build for legacy service"'
+    startCommand: 'python3 -m http.server $PORT'
+    autoDeployTrigger: 'off'
