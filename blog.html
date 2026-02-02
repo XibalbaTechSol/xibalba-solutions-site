@@ -4,19 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Xibalba Solutions</title>
+    <title>Blog | Xibalba Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .blog-post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.2s ease;
+        }
+        .blog-post-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+        .blog-date {
+            color: var(--accent-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .blog-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .blog-excerpt {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+    </style>
 </head>
 
 <body>
 
-        <!-- Navigation -->
-        <!-- Navigation -->
+    <!-- Navigation -->
     <nav>
         <div class="container">
             <a href="index.html" class="logo">
@@ -37,61 +65,33 @@
                 <a href="investors.html" class="nav-item-investor">Investors</a>
                 <a href="services.html" class="nav-item-services">Services</a>
                 <a href="blog.html">Blog</a>
-                <a href="contact.html" class="btn-outline active">Contact</a>
+                <a href="contact.html" class="btn-outline">Contact</a>
             </div>
         </div>
     </nav>
 
     <header class="page-header">
         <div class="container">
-            <h1>Start Your <span class="gradient-text">Private Audit</span></h1>
-            <p>Tell us about your infrastructure and data privacy needs. We will respond within 24 hours.</p>
+            <h1>Latest <span class="gradient-text">Insights</span></h1>
+            <p>News, updates, and deep dives into the technology powering Xibalba Solutions.</p>
         </div>
     </header>
 
     <section class="container content-section">
-        <div class="contact-form-container">
-            <form action="https://formspree.io/f/meeqbroz" method="POST">
-                <input type="hidden" name="_next" value="thank-you.html">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Business Email</label>
-                    <input type="email" id="email" name="email" class="form-control" placeholder="john@company.com"
-                        required>
-                </div>
-                <div class="form-group">
-                    <label for="company">Company / Industry</label>
-                    <input type="text" id="company" name="company" class="form-control"
-                        placeholder="e.g. Legal, Healthcare, Finance">
-                </div>
-                <div class="form-group">
-                    <label for="interest">Interested In</label>
-                    <select id="interest" name="interest" class="form-control" style="appearance: none;">
-                        <option value="Privacy Pilot">Privacy Pilot ($3,500)</option>
-                        <option value="Secure Knowledge Base">Secure Knowledge Base ($10,000+)</option>
-                        <option value="Custom Enterprise Solution">Custom Enterprise Solution</option>
-                        <option value="Hourly Consulting">Hourly Consulting</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Project Details</label>
-                    <textarea id="message" name="message" class="form-control"
-                        placeholder="Describe your current hardware and data security goals..."></textarea>
-                </div>
-                <button type="submit" class="btn" style="width: 100%;">Request Consultation</button>
-            </form>
+
+        <div class="blog-post-card">
+            <span class="blog-date">October 24, 2025</span>
+            <h2 class="blog-title"><a href="blog/intro-to-second-brain.html">Introducing Second Brain: The Frictionless Way to Get Things Done</a></h2>
+            <p class="blog-excerpt">
+                We are excited to announce our newest SaaS offering: a frictionless mobile application that uses Gemini AI to categorize your thoughts and nudge you towards your goals.
+            </p>
+            <a href="blog/intro-to-second-brain.html" class="btn">Read More</a>
         </div>
 
-        <div style="text-align: center; margin-top: 4rem;">
-            <h3 style="margin-bottom: 1rem;">Direct Inquiries</h3>
-            <p style="color: var(--accent-primary); font-size: 1.2rem;">jacob@xibalbasolutions.com</p>
-        </div>
     </section>
 
-            <footer>
+    <!-- Footer -->
+    <footer>
         <div class="container">
             <div class="footer-sitemap">
                 <div class="sitemap-col">
