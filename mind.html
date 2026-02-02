@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Mind | Xibalba Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation (Placeholder, will be updated by script) -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="XibalbaSolutionsLogo.png" alt="Xibalba Solutions Logo">
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="products.html">Products</a>
+                <a href="hardware.html">Hardware</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="mind.html" class="active" style="color: var(--accent-tertiary);">Mind</a>
+                <a href="investors.html" class="nav-item-investor">Investors</a>
+                <a href="services.html" class="nav-item-services">Services</a>
+                <a href="contact.html" class="btn-outline">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mind-app">
+        <header style="text-align: center; margin-bottom: 2rem;">
+            <h1>Sovereign <span class="gradient-text">Mind</span></h1>
+            <p style="color: var(--text-muted);">Reprogram your operating system. Locally.</p>
+        </header>
+
+        <!-- The Loop -->
+        <section class="mind-section">
+            <div class="mind-header">
+                <h2>The Loop</h2>
+                <button id="btn-edit-loop" class="btn-outline" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">Edit</button>
+            </div>
+            <div id="affirmation-container">
+                <div id="affirmation-display">Loading...</div>
+                <div class="progress-bar" style="height: 2px; background: #333; margin-top: 1rem; width: 100%;">
+                    <div id="loop-progress" style="height: 100%; background: var(--accent-primary); width: 0%;"></div>
+                </div>
+            </div>
+            <div id="loop-editor" class="hidden">
+                <textarea id="loop-input" rows="5" placeholder="Enter affirmations, one per line..."></textarea>
+                <button id="btn-save-loop" class="btn" style="margin-top: 0.5rem; width: 100%;">Save Loop</button>
+            </div>
+        </section>
+
+        <!-- The Rewrite -->
+        <section class="mind-section">
+            <div class="mind-header">
+                <h2>The Rewrite</h2>
+            </div>
+            <div class="rewrite-container" id="rewrite-step-1">
+                <p style="color: #aaa; font-size: 0.9rem;">Identify a limiting belief or negative thought.</p>
+                <textarea id="negative-thought" placeholder="I am not capable of..."></textarea>
+                <button id="btn-burn" class="btn btn-burn">Burn It 🔥</button>
+            </div>
+            <div class="rewrite-container hidden" id="rewrite-step-2">
+                <p style="color: var(--accent-secondary); font-size: 0.9rem;">Now, overwrite it with the truth.</p>
+                <textarea id="positive-thought" placeholder="I am capable because..."></textarea>
+                <button id="btn-imprint" class="btn btn-imprint">Imprint</button>
+            </div>
+        </section>
+
+        <!-- The Vault -->
+        <section class="mind-section">
+            <div class="mind-header">
+                <h2>The Vault</h2>
+                <button id="btn-add-vision" class="btn-outline" style="font-size: 0.8rem; padding: 0.4rem 0.8rem;">+</button>
+            </div>
+            <div id="vision-add-panel" class="hidden" style="margin-bottom: 1rem;">
+                <input type="text" id="vision-url" placeholder="Paste Image URL..." style="width: 100%; padding: 0.8rem; background: #111; border: 1px solid #444; color: #fff; border-radius: 4px;">
+                <button id="btn-save-vision" class="btn" style="width: 100%; margin-top: 0.5rem;">Add to Vault</button>
+            </div>
+            <div class="vision-grid" id="vision-board">
+                <!-- Images will be injected here -->
+            </div>
+        </section>
+    </div>
+
+            <footer>
+        <div class="container">
+            <div class="footer-sitemap">
+                <div class="sitemap-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+                            <strong>Inquiries:</strong><br>
+                            <a href="mailto:jacob@xibalbasolutions.com" style="color: var(--accent-secondary);">jacob@xibalbasolutions.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sitemap-col">
+                    <h4>Offerings</h4>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="veriphysics.html">VeriPhysics</a></li>
+                        <li><a href="cli.html">Xibalba CLI</a></li>
+                        <li><a href="crm.html">Xibalba CRM</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-col">
+                    <h4>Infrastructure</h4>
+                    <ul>
+                        <li><a href="hardware.html">Hardware</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="mind.html" style="color: var(--accent-tertiary);">Mind</a></li>
+                        <li><a href="investors.html" class="nav-item-investor">Investor Relations</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Xibalba Solutions. All rights reserved. <br>
+                    <span style="opacity: 0.6;">Securing Intelligence. Empowering Robotics.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/mind.js"></script>
+</body>
+
+</html>
