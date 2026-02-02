@@ -14,6 +14,8 @@ def test_index_page(page: Page):
     expect(page.locator("h1")).to_be_visible()
     # Check for investors link existence
     expect(page.locator("a[href='investors.html']").first).to_be_visible()
+    # Check for new Recurring Revenue text
+    expect(page.locator("body")).to_contain_text("secure local AI services")
 
 def test_about_page(page: Page):
     page.goto(get_file_url("about.html"))
@@ -24,8 +26,10 @@ def test_about_page(page: Page):
 def test_services_page(page: Page):
     page.goto(get_file_url("services.html"))
     # Updated title
-    expect(page).to_have_title("Software Services | Xibalba Solutions")
+    expect(page).to_have_title("Secure AI & Software Services | Xibalba Solutions")
     expect(page.locator("h1")).to_be_visible()
+    # Check for new content
+    expect(page.locator("body")).to_contain_text("Secure Local AI & HIPAA Compliance")
 
 def test_solutions_page(page: Page):
     page.goto(get_file_url("solutions.html"))
