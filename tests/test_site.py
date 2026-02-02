@@ -15,7 +15,7 @@ def test_index_page(page: Page):
     # Check for investors link existence
     expect(page.locator("a[href='investors.html']").first).to_be_visible()
     # Check for new Recurring Revenue text
-    expect(page.locator("body")).to_contain_text("secure local AI services")
+    expect(page.locator("body")).to_contain_text("Secure Local AI")
 
 def test_about_page(page: Page):
     page.goto(get_file_url("about.html"))

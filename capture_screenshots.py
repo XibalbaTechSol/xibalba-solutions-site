@@ -32,8 +32,13 @@ async def main():
         
         base_path = f"file://{os.getcwd()}/"
         
-        tasks = [capture(context, file, base_path) for file in files]
-        await asyncio.gather(*tasks)
+        for file in files:
+            page.goto(base_path + file)
+            # Wait for fonts to be ready instead of hard sleep
+            page.evaluate("document.fonts.ready")
+            screenshot_path = f"screenshots/{file.replace('.html', '.png')}"
+            page.screenshot(path=screenshot_path, full_page=True)
+            print(f"Captured {screenshot_path}")
 
         await browser.close()
 
