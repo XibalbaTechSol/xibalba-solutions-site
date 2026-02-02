@@ -523,6 +523,30 @@ footer {
     text-align: center;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 2rem;
+    height: 0.25rem;
+    background: var(--text-main);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
 /* Responsive */
 @media(max-width: 768px) {
 
@@ -535,24 +559,47 @@ footer {
         font-size: 2.5rem;
     }
 
-    .nav-links {
-        display: none;
-        /* Simple hiding for now, would usually want a hamburger menu */
-    }
-
-    /* Simple mobile nav adjustment */
-    nav .container {
-        flex-direction: column;
+    /* Mobile Navigation */
+    .hamburger {
+        display: flex;
     }
 
     .nav-links {
         display: flex;
-        margin-top: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background-color: rgba(5, 5, 5, 0.98);
+        border-left: 1px solid #222;
+        padding-top: 5rem;
+        transition: right 0.3s ease-in-out;
+        z-index: 1000;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .nav-links.active {
+        right: 0;
     }
 
     .nav-links a {
-        margin: 0.5rem 1rem;
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hamburger animation */
+    .hamburger.active span:first-child {
+        transform: rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg);
     }
 }
