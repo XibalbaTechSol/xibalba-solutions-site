@@ -493,3 +493,45 @@ footer {
         gap: 2rem;
     }
 }
+
+/* Performance Optimization Utilities */
+.text-center { text-align: center; }
+.mb-1-5 { margin-bottom: 1.5rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+/* Industry Focus Section */
+.industry-focus-card {
+    background: #111;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #222;
+}
+
+.industry-focus-title {
+    color: var(--accent-secondary);
+    margin-bottom: 1rem;
+}
+
+.industry-focus-list {
+    list-style: none;
+    color: var(--text-muted);
+}
+
+.industry-focus-item {
+    margin-bottom: 1rem;
+}
+
+/* Footer Components */
+.footer-inquiry-item {
+    margin-top: 1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-email {
+    color: var(--accent-secondary);
+}
+
+.footer-tagline {
+    opacity: 0.6;
+}
