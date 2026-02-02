@@ -6,7 +6,6 @@
     <title>Xibalba Solutions | Surgical Robotics Data</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
@@ -14,6 +13,7 @@
 <body>
 
     <!-- Navigation -->
+        <!-- Navigation -->
     <nav>
         <div class="container">
             <a href="index.html" class="logo">
@@ -21,70 +21,75 @@
             </a>
             <div class="nav-links">
                 <a href="about.html">About</a>
-                <a href="services.html">Services</a>
                 <a href="solutions.html">Solutions</a>
                 <a href="products.html">Products</a>
-                <a href="investors.html">Investors</a>
                 <a href="hardware.html">Hardware</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="contact.html" class="btn-outline"
-                    style="padding: 0.5rem 1rem; border-radius: 4px; margin-left: 1rem;">Contact</a>
+                <!-- Highlighted Links -->
+                <a href="investors.html" class="nav-item-investor">Investors</a>
+                <a href="services.html" class="nav-item-services">Services</a>
+                <a href="contact.html" class="btn-outline">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero animate-in">
         <div class="container">
-            <h1>Next Generation <br><span class="gradient-text">Surgical Robotics Data</span></h1>
-            <p>We provide proprietary high-dimensional, multimodal, time-synchronized datasets to train the next generation of advanced surgical robotics.</p>
-            <div style="margin-top: 2rem;">
-                <a href="investors.html" class="btn">View Investment Opportunity</a>
-                <a href="services.html" class="btn-outline" style="margin-left: 1rem;">Software Services</a>
+            <h1 style="margin-bottom: 2rem;">Powering the Future of <br><span class="gradient-text">Surgical Intelligence</span></h1>
+            <p style="font-size: 1.4rem; max-width: 800px; margin-bottom: 4rem;">
+                Xibalba Solutions bridges the gap between biological reality and digital autonomy. We provide the <strong>ground-truth data</strong> for robotics and the <strong>secure AI infrastructure</strong> for enterprise.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
+                <!-- Investor Focus -->
+                <div style="text-align: center;">
+                    <a href="investors.html" class="btn" style="min-width: 250px;">For Investors</a>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--text-muted);">Proprietary Data Assets</p>
+                </div>
+
+                <!-- Client Focus -->
+                <div style="text-align: center;">
+                    <a href="services.html" class="btn-outline" style="min-width: 250px; background: rgba(124, 58, 237, 0.1); border-color: var(--accent-primary);">For Clients</a>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--text-muted);">Secure AI & Dev Services</p>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Value Props -->
+    <!-- Core Pillars -->
     <section class="container features">
-        <div class="feature-card">
-            <div class="feature-icon">🏆</div>
-            <h3>The Gold Standard</h3>
-            <p>Competitors will look to Xibalba Solutions for the definitive ground-truth data needed to achieve Level 4 and Level 5 surgical autonomy.</p>
-        </div>
-        <div class="feature-card">
+        <div class="feature-card animate-in" style="animation-delay: 0.1s;">
             <div class="feature-icon">🐖</div>
-            <h3>Porcine Models</h3>
-            <p>We utilize porcine models to bypass initial regulatory hurdles, allowing us to iterate faster and bring our product to market in 18-24 months.</p>
+            <h3>Surgical Data</h3>
+            <p>High-dimensional, time-synchronized porcine datasets. The definitive training ground for Level 4/5 autonomous surgery.</p>
         </div>
-        <div class="feature-card">
-            <div class="feature-icon">⏱️</div>
-            <h3>Time Synchronized</h3>
-            <p>Multimodal streams (video, kinematics, haptics) aligned with microsecond precision for superior model training efficacy.</p>
+        <div class="feature-card animate-in" style="animation-delay: 0.2s;">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure Local AI</h3>
+            <p>HIPAA-compliant, on-premise AI deployment. We bring the intelligence to your data, ensuring total sovereignty and security.</p>
+        </div>
+        <div class="feature-card animate-in" style="animation-delay: 0.3s;">
+            <div class="feature-icon">💻</div>
+            <h3>Software Engineering</h3>
+            <p>Full-cycle software development. From embedded systems to modern web interfaces, we build robust infrastructure.</p>
         </div>
     </section>
 
-    <!-- Software Development Section -->
-    <section class="content-section" style="background: #0a0a0a; text-align: center;">
+    <!-- Recurring Revenue / Trust Section -->
+    <section class="content-section" style="background: linear-gradient(to top, rgba(2, 4, 10, 1), rgba(26, 16, 60, 0.2)); text-align: center;">
         <div class="container">
-            <h2 style="margin-bottom: 1rem;">Recurring Revenue Engine</h2>
-            <p style="margin-bottom: 2rem; color: var(--text-muted); max-width: 800px; margin-left: auto; margin-right: auto;">
-                While building the future of robotics, we generate consistent recurring revenue by providing high-end software development and <strong>secure local AI services</strong>. We specialize in HIPAA-compliant solutions for medical organizations and private infrastructure for businesses protecting proprietary data.
+            <h2 class="animate-in">Engineering Trust</h2>
+            <p class="animate-in" style="max-width: 700px; margin: 0 auto 3rem; color: var(--text-muted);">
+                Whether it's the microsecond precision of a surgical robot's kinematics or the privacy of patient records, <strong>accuracy</strong> and <strong>security</strong> are our non-negotiables.
             </p>
-            <div style="display: flex; justify-content: center; gap: 1rem;">
-                <a href="services.html" class="btn-outline">Explore Our Services</a>
+            <div class="animate-in" style="display: flex; justify-content: center; gap: 1rem;">
+                <a href="solutions.html" class="btn-outline">View Our Solutions</a>
             </div>
         </div>
     </section>
 
-    <!-- Legacy/Security CTA (Optional - keeping it subtle) -->
-    <section class="container content-section" style="padding-top: 2rem;">
-        <div style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">
-            <p>Continuing our legacy of Sovereign Intelligence and Privacy-First AI Infrastructure.</p>
-        </div>
-    </section>
-
-    <footer>
+        <footer>
         <div class="container">
             <div class="footer-sitemap">
                 <div class="sitemap-col">
@@ -94,7 +99,7 @@
                         <li><a href="contact.html">Contact</a></li>
                         <li style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
                             <strong>Inquiries:</strong><br>
-                            <a href="mailto:jacob@xibalbasolutions.com" style="color: var(--accent-primary);">jacob@xibalbasolutions.com</a>
+                            <a href="mailto:jacob@xibalbasolutions.com" style="color: var(--accent-secondary);">jacob@xibalbasolutions.com</a>
                         </li>
                     </ul>
                 </div>
@@ -114,12 +119,13 @@
                     <ul>
                         <li><a href="hardware.html">Hardware</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="investors.html" class="nav-item-investor">Investor Relations</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Xibalba Solutions. All rights reserved. <br>
-                    <span style="font-size: 0.8rem; color: #444;">Securing Intelligence. Empowering Robotics.</span>
+                    <span style="opacity: 0.6;">Securing Intelligence. Empowering Robotics.</span>
                 </p>
             </div>
         </div>
