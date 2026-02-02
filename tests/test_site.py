@@ -9,8 +9,13 @@ def get_file_url(filename):
 
 def test_index_page(page: Page):
     page.goto(get_file_url("index.html"))
-    expect(page).to_have_title("Xibalba Solutions | Sovereign AI Intelligence")
+    # Updated title
+    expect(page).to_have_title("Xibalba Solutions | Surgical Robotics Data")
     expect(page.locator("h1")).to_be_visible()
+    # Check for investors link existence
+    expect(page.locator("a[href='investors.html']").first).to_be_visible()
+    # Check for new Recurring Revenue text
+    expect(page.locator("body")).to_contain_text("secure local AI services")
 
 def test_about_page(page: Page):
     page.goto(get_file_url("about.html"))
@@ -20,8 +25,11 @@ def test_about_page(page: Page):
 
 def test_services_page(page: Page):
     page.goto(get_file_url("services.html"))
-    expect(page).to_have_title("Services | Xibalba Solutions")
+    # Updated title
+    expect(page).to_have_title("Secure AI & Software Services | Xibalba Solutions")
     expect(page.locator("h1")).to_be_visible()
+    # Check for new content
+    expect(page.locator("body")).to_contain_text("Secure Local AI & HIPAA Compliance")
 
 def test_solutions_page(page: Page):
     page.goto(get_file_url("solutions.html"))
@@ -43,6 +51,12 @@ def test_contact_page(page: Page):
     expect(page.locator("textarea[name='message']")).to_be_visible()
     expect(page.locator("button[type='submit']")).to_be_visible()
 
+def test_investors_page(page: Page):
+    page.goto(get_file_url("investors.html"))
+    expect(page).to_have_title("Investors | Xibalba Solutions")
+    expect(page.locator("h1")).to_be_visible()
+    expect(page.locator("h1")).to_contain_text("Surgical Robotics")
+
 def test_navigation(page: Page):
     page.goto(get_file_url("index.html"))
     
@@ -56,11 +70,15 @@ def test_navigation(page: Page):
     page.click("nav .logo")
     expect(page).to_have_url(get_file_url("index.html"))
 
+    # Test navigation to Investors
+    page.click("nav .nav-links a[href='investors.html']")
+    expect(page).to_have_url(get_file_url("investors.html"))
+
 def test_no_console_errors(page: Page):
     error_logs = []
     page.on("console", lambda msg: error_logs.append(msg.text) if msg.type == "error" else None)
     
-    for filename in ["index.html", "about.html", "services.html", "solutions.html", "pricing.html", "contact.html"]:
+    for filename in ["index.html", "about.html", "services.html", "solutions.html", "pricing.html", "contact.html", "investors.html"]:
         page.goto(get_file_url(filename))
     
     assert len(error_logs) == 0, f"Console errors found: {error_logs}"
