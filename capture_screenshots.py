@@ -22,8 +22,8 @@ def capture_screenshots():
         
         for file in files:
             page.goto(base_path + file)
-            # wait a bit for any animations
-            page.wait_for_timeout(500)
+            # Disable animations for faster and deterministic screenshots
+            page.add_style_tag(content="*, *::before, *::after { animation-duration: 0s !important; transition: none !important; }")
             screenshot_path = f"screenshots/{file.replace('.html', '.png')}"
             page.screenshot(path=screenshot_path, full_page=True)
             print(f"Captured {screenshot_path}")
