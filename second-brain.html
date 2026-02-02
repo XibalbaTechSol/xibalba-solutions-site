@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Brain | AI Goal Completion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .app-preview {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .category-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .category-card:hover {
+            border-color: var(--accent-secondary);
+            background: rgba(0, 210, 255, 0.1);
+        }
+        .input-bar {
+            background: #111;
+            border-radius: 50px;
+            padding: 0.8rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #333;
+        }
+        .mic-icon {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="XibalbaSolutionsLogo.png" alt="Xibalba Solutions Logo">
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="products.html">Products</a>
+                <a href="hardware.html">Hardware</a>
+                <a href="pricing.html">Pricing</a>
+                <!-- Highlighted Links -->
+                <a href="investors.html" class="nav-item-investor">Investors</a>
+                <a href="services.html" class="nav-item-services">Services</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html" class="btn-outline">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" style="padding: 6rem 0;">
+        <div class="container">
+            <h1>Turn Thoughts into <br><span class="gradient-text">Actionable Goals</span></h1>
+            <p>A frictionless AI companion that captures your voice, categorizes your intent, and nudges you towards completion.</p>
+
+            <div class="app-preview">
+                <div class="input-bar">
+                    <span style="color: #666;">"Schedule review with team..."</span>
+                    <span class="mic-icon">🎙️</span>
+                </div>
+
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Processed by Gemini AI</span>
+                </div>
+
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📂</div>
+                        <div style="font-size: 0.9rem; font-weight: bold;">Admin</div>
+                    </div>
+                    <div class="category-card">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📚</div>
+                        <div style="font-size: 0.9rem; font-weight: bold;">Resources</div>
+                    </div>
+                    <div class="category-card">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🚀</div>
+                        <div style="font-size: 0.9rem; font-weight: bold;">Projects</div>
+                    </div>
+                    <div class="category-card">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">👥</div>
+                        <div style="font-size: 0.9rem; font-weight: bold;">People</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features -->
+    <section class="container features">
+        <div class="feature-card">
+            <div class="feature-icon">🎙️</div>
+            <h3>Frictionless Input</h3>
+            <p>Simply speak or type. Whether you're walking or working, capture ideas instantly without navigating complex menus.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3>Gemini AI Powered</h3>
+            <p>Leveraging Google's Gemini models to intelligently parse your input and assign it to the correct context automatically.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3>Incremental Nudges</h3>
+            <p>The system tracks your goals and gently nudges you to complete the next step, preventing overwhelm and ensuring progress.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-sitemap">
+                <div class="sitemap-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+                            <strong>Inquiries:</strong><br>
+                            <a href="mailto:jacob@xibalbasolutions.com" style="color: var(--accent-secondary);">jacob@xibalbasolutions.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sitemap-col">
+                    <h4>Offerings</h4>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="veriphysics.html">VeriPhysics</a></li>
+                        <li><a href="cli.html">Xibalba CLI</a></li>
+                        <li><a href="crm.html">Xibalba CRM</a></li>
+                    </ul>
+                </div>
+                <div class="sitemap-col">
+                    <h4>Infrastructure</h4>
+                    <ul>
+                        <li><a href="hardware.html">Hardware</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="investors.html" class="nav-item-investor">Investor Relations</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Xibalba Solutions. All rights reserved. <br>
+                    <span style="opacity: 0.6;">Securing Intelligence. Empowering Robotics.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
