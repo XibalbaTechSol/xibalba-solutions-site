@@ -4,15 +4,15 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Thank You | Xibalba Solutions</title>
+<title>Blog | Xibalba Solutions</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="favicon.ico" rel="icon" sizes="any"/>
 <link href="favicon.png" rel="icon" type="image/png"/>
 <link href="css/style.css" rel="stylesheet"/>
-<meta content="Xibalba Solutions provides high-dimensional surgical robotics data, secure HIPAA-compliant local AI, and specialized software engineering for the future of autonomous surgery." name="description"/><meta content="Thank You | Xibalba Solutions" property="og:title"/><meta content="Xibalba Solutions provides high-dimensional surgical robotics data, secure HIPAA-compliant local AI, and specialized software engineering for the future of autonomous surgery." property="og:description"/></head>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<meta content="Xibalba Solutions provides high-dimensional surgical robotics data, secure HIPAA-compliant local AI, and specialized software engineering for the future of autonomous surgery." name="description"/><meta content="Blog | Xibalba Solutions" property="og:title"/><meta content="Xibalba Solutions provides high-dimensional surgical robotics data, secure HIPAA-compliant local AI, and specialized software engineering for the future of autonomous surgery." property="og:description"/></head>
 <body>
-<!-- Navigation -->
 <!-- Navigation -->
 <nav>
 <div class="container">
@@ -22,50 +22,25 @@
 <div class="nav-links"><a href="about.html">About</a><a href="solutions.html">Solutions</a><a href="products.html">Products</a><a href="hardware.html">Hardware</a><a href="pricing.html">Pricing</a><a href="blog.html">Blog</a><a href="community.html">Community</a><a class="nav-item-investor" href="investors.html">Investors</a><a class="nav-item-services" href="services.html">Services</a><a class="btn-outline" href="schedule.html" style="margin-right: 0.5rem;">Schedule</a><a class="btn-outline" href="contact.html">Contact</a></div>
 </div>
 </nav>
-<header class="page-header" style="padding: 6rem 0;">
+<!-- Header -->
+<header class="page-header">
 <div class="container">
-<h1 style="font-size: 4rem; margin-bottom: 2rem;">Message <span class="gradient-text">Received.</span></h1>
-<p style="font-size: 1.25rem; margin-bottom: 3rem;">Thank you for reaching out. A security consultant will
-                review your request and contact you within 24 hours.</p>
-<a class="btn" href="index.html">Return Home</a>
+<h1>Blog</h1>
+<p>Insights, updates, and thoughts on surgical robotics and AI.</p>
 </div>
 </header>
-<section class="container content-section" style="text-align: center; color: var(--text-muted);">
-<p>Your data privacy is our priority. All initial consultations are handled with strict confidentiality.</p>
+<!-- Blog Content -->
+<section class="container content-section">
+<div class="features" id="blog-posts" style="grid-template-columns: 1fr;">
+<!-- Posts will be loaded here -->
+<p style="text-align: center; color: var(--text-muted);">Loading posts...</p>
+</div>
 </section>
+<!-- Footer -->
 <footer>
 <div class="container">
 <div class="footer-sitemap">
-<div class="sitemap-col">
-<h4>Company</h4>
-<ul>
-<li><a href="about.html">About Us</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
-<strong>Inquiries:</strong><br/>
-<a href="mailto:jacob@xibalbasolutions.com" style="color: var(--accent-secondary);">jacob@xibalbasolutions.com</a>
-</li>
-</ul>
-</div>
-<div class="sitemap-col">
-<h4>Offerings</h4>
-<ul>
-<li><a href="products.html">Products</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="solutions.html">Solutions</a></li>
-<li><a href="veriphysics.html">VeriPhysics</a></li>
-<li><a href="cli.html">Xibalba CLI</a></li>
-<li><a href="crm.html">Xibalba CRM</a></li>
-</ul>
-</div>
-<div class="sitemap-col">
-<h4>Infrastructure</h4>
-<ul>
-<li><a href="hardware.html">Hardware</a></li>
-<li><a href="pricing.html">Pricing</a></li>
-<li><a class="nav-item-investor" href="investors.html">Investor Relations</a></li>
-</ul>
-</div>
+<!-- Sitemap will be injected by script -->
 <div class="sitemap-col">
 <h4>Community</h4>
 <ul>
@@ -89,11 +64,48 @@
 <svg viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
 </a>
 </div><div class="footer-bottom">
-<p>© 2025 Xibalba Solutions. All rights reserved. <br/>
-<span style="opacity: 0.6;">Securing Intelligence. Empowering Robotics.</span>
-</p>
+<p>© 2025 Xibalba Solutions. All rights reserved.</p>
 </div>
 </div>
 </footer>
+<script>
+        const supabaseUrl = 'https://jidogpcnjnilotkdptzd.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppZG9ncGNuam5pbG90a2RwdHpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwODcyNTIsImV4cCI6MjA3ODY2MzI1Mn0.jHX9ns4ofJCzM5rDoRoqVRJ65gmEN4YhzGZSkSbmRRo';
+        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+        async function fetchPosts() {
+            const { data: posts, error } = await supabase
+                .from('posts')
+                .select('*')
+                .eq('published', true)
+                .order('created_at', { ascending: false });
+
+            const container = document.getElementById('blog-posts');
+
+            if (error) {
+                console.error('Error fetching posts:', error);
+                container.innerHTML = '<p style="text-align: center; color: var(--accent-tertiary);">Error loading posts. Please try again later.</p>';
+                return;
+            }
+
+            if (!posts || posts.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--text-muted);">No posts yet.</p>';
+                return;
+            }
+
+            container.innerHTML = posts.map(post => `
+                <div class="feature-card" style="text-align: left;">
+                    <h3 style="color: var(--accent-secondary); margin-bottom: 0.5rem;">${post.title}</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                        ${new Date(post.created_at).toLocaleDateString()}
+                    </p>
+                    <p>${post.excerpt || (post.content ? post.content.substring(0, 150) + '...' : '')}</p>
+                    <a href="post.html?slug=${post.slug}" class="btn-outline" style="margin-top: 1rem; padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read More</a>
+                </div>
+            `).join('');
+        }
+
+        fetchPosts();
+    </script>
 </body>
 </html>

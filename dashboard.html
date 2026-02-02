@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard | Xibalba Solutions</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="favicon.ico" rel="icon" sizes="any"/>
+<link href="favicon.png" rel="icon" type="image/png"/>
+<link href="css/style.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+        .dashboard-container { max-width: 900px; margin: 0 auto; padding: 4rem 1rem; }
+        .auth-form { max-width: 400px; margin: 0 auto; padding: 2rem; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--card-border); }
+        .post-list-item { background: var(--card-bg); border: 1px solid var(--card-border); padding: 1rem; margin-bottom: 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .editor-form input, .editor-form textarea { width: 100%; margin-bottom: 1rem; padding: 0.8rem; background: rgba(0,0,0,0.3); border: 1px solid var(--card-border); color: #fff; border-radius: 6px; }
+        .editor-form textarea { height: 300px; font-family: monospace; }
+        .status-badge { padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin-right: 1rem; }
+        .status-published { background: rgba(0, 255, 157, 0.2); color: #00ff9d; }
+        .status-draft { background: rgba(255, 255, 255, 0.1); color: #ccc; }
+    </style>
+<meta content="Xibalba Solutions provides high-dimensional surgical robotics data, secure HIPAA-compliant local AI, and specialized software engineering for the future of autonomous surgery." name="description"/><meta content="Dashboard | Xibalba Solutions" property="og:title"/><meta content="Xibalba Solutions provides high-dimensional surgical robotics data, secure HIPAA-compliant local AI, and specialized software engineering for the future of autonomous surgery." property="og:description"/></head>
+<body>
+<nav>
+<div class="container">
+<a class="logo" href="index.html">
+<img alt="Xibalba Solutions Logo" src="XibalbaSolutionsLogo.png"/>
+</a>
+<div class="nav-links"><a href="about.html">About</a><a href="solutions.html">Solutions</a><a href="products.html">Products</a><a href="hardware.html">Hardware</a><a href="pricing.html">Pricing</a><a href="blog.html">Blog</a><a href="community.html">Community</a><a class="nav-item-investor" href="investors.html">Investors</a><a class="nav-item-services" href="services.html">Services</a><a class="btn-outline" href="schedule.html" style="margin-right: 0.5rem;">Schedule</a><a class="btn-outline" href="contact.html">Contact</a></div>
+</div>
+</nav>
+<div class="dashboard-container" id="app">
+<p style="text-align: center;">Loading...</p>
+</div>
+<script>
+        const supabaseUrl = 'https://jidogpcnjnilotkdptzd.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppZG9ncGNuam5pbG90a2RwdHpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwODcyNTIsImV4cCI6MjA3ODY2MzI1Mn0.jHX9ns4ofJCzM5rDoRoqVRJ65gmEN4YhzGZSkSbmRRo';
+        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+        const app = document.getElementById('app');
+        let currentUser = null;
+
+        // Init
+        async function init() {
+            const { data: { session } } = await supabase.auth.getSession();
+            currentUser = session?.user;
+
+            supabase.auth.onAuthStateChange((_event, session) => {
+                currentUser = session?.user;
+                render();
+            });
+
+            render();
+        }
+
+        // Render based on state
+        function render() {
+            if (!currentUser) {
+                renderLogin();
+            } else {
+                renderDashboard();
+            }
+        }
+
+        function renderLogin() {
+            app.innerHTML = `
+                <div class="auth-form">
+                    <h2 style="text-align: center; margin-bottom: 1.5rem;">Admin Login</h2>
+                    <form onsubmit="handleLogin(event)">
+                        <input type="email" id="email" placeholder="Email" class="form-control" required style="margin-bottom: 1rem;">
+                        <input type="password" id="password" placeholder="Password" class="form-control" required style="margin-bottom: 1.5rem;">
+                        <button type="submit" class="btn" style="width: 100%;">Sign In</button>
+                    </form>
+                    <p id="msg" style="margin-top: 1rem; text-align: center; font-size: 0.9rem; color: var(--accent-tertiary);"></p>
+                     <p style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+                        Don't have an account? <a href="#" onclick="toggleSignup()" style="color: var(--accent-secondary);">Sign Up</a>
+                    </p>
+                </div>
+            `;
+        }
+
+        function renderSignup() {
+            app.innerHTML = `
+                <div class="auth-form">
+                    <h2 style="text-align: center; margin-bottom: 1.5rem;">Admin Sign Up</h2>
+                    <form onsubmit="handleSignup(event)">
+                        <input type="email" id="email" placeholder="Email" class="form-control" required style="margin-bottom: 1rem;">
+                        <input type="password" id="password" placeholder="Password" class="form-control" required style="margin-bottom: 1.5rem;">
+                        <button type="submit" class="btn" style="width: 100%;">Sign Up</button>
+                    </form>
+                    <p id="msg" style="margin-top: 1rem; text-align: center; font-size: 0.9rem; color: var(--accent-tertiary);"></p>
+                     <p style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+                        Already have an account? <a href="#" onclick="renderLogin()" style="color: var(--accent-secondary);">Sign In</a>
+                    </p>
+                </div>
+            `;
+        }
+
+        function toggleSignup() {
+            renderSignup();
+        }
+
+        async function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const msg = document.getElementById('msg');
+            msg.textContent = 'Signing in...';
+
+            const { error } = await supabase.auth.signInWithPassword({ email, password });
+            if (error) {
+                 msg.textContent = error.message;
+            }
+        }
+
+        async function handleSignup(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+             const msg = document.getElementById('msg');
+             msg.textContent = 'Signing up...';
+
+             const { error } = await supabase.auth.signUp({ email, password });
+             if (error) {
+                 msg.textContent = error.message;
+             } else {
+                 msg.style.color = 'var(--accent-secondary)';
+                 msg.textContent = 'Check your email for the confirmation link!';
+             }
+        }
+
+        async function renderDashboard() {
+            app.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h1>Dashboard</h1>
+                    <div>
+                         <button onclick="renderEditor()" class="btn">New Post</button>
+                         <button onclick="handleLogout()" class="btn-outline" style="margin-left: 1rem;">Logout</button>
+                    </div>
+                </div>
+                <div id="posts-container">Loading posts...</div>
+            `;
+
+            const { data: posts, error } = await supabase
+                .from('posts')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (error) {
+                document.getElementById('posts-container').textContent = 'Error loading posts: ' + error.message;
+                return;
+            }
+
+            const container = document.getElementById('posts-container');
+            if (posts.length === 0) {
+                container.innerHTML = '<p>No posts found.</p>';
+                return;
+            }
+
+            container.innerHTML = posts.map(post => `
+                <div class="post-list-item">
+                    <div>
+                        <span class="status-badge ${post.published ? 'status-published' : 'status-draft'}">
+                            ${post.published ? 'PUBLISHED' : 'DRAFT'}
+                        </span>
+                        <strong style="font-size: 1.1rem;">${post.title}</strong>
+                        <br>
+                        <small style="color: var(--text-muted);">${new Date(post.created_at).toLocaleDateString()}</small>
+                    </div>
+                    <div>
+                        <button onclick="renderEditor('${post.id}')" class="btn-outline" style="padding: 0.4rem 1rem; font-size: 0.8rem;">Edit</button>
+                        <button onclick="deletePost('${post.id}')" class="btn-outline" style="padding: 0.4rem 1rem; font-size: 0.8rem; border-color: var(--accent-tertiary); color: var(--accent-tertiary); margin-left: 0.5rem;">Delete</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function renderEditor(postId = null) {
+            let post = { title: '', slug: '', content: '', published: false };
+            if (postId) {
+                const { data } = await supabase.from('posts').select('*').eq('id', postId).single();
+                if (data) post = data;
+            }
+
+            app.innerHTML = `
+                 <div style="margin-bottom: 2rem;">
+                    <button onclick="renderDashboard()" class="btn-outline">&larr; Back</button>
+                </div>
+                <h2>${postId ? 'Edit Post' : 'New Post'}</h2>
+                <form class="editor-form" onsubmit="savePost(event, '${postId || ''}')">
+                    <label>Title</label>
+                    <input type="text" id="post-title" value="${post.title}" required oninput="generateSlug(this.value)">
+
+                    <label>Slug (URL)</label>
+                    <input type="text" id="post-slug" value="${post.slug}" required>
+
+                    <label>Content (Markdown)</label>
+                    <textarea id="post-content" required>${post.content || ''}</textarea>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: inline-flex; align-items: center; cursor: pointer;">
+                            <input type="checkbox" id="post-published" ${post.published ? 'checked' : ''} style="width: auto; margin: 0 0.5rem 0 0;">
+                            Publish immediately
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn">Save Post</button>
+                </form>
+            `;
+        }
+
+        function generateSlug(title) {
+             const slugInput = document.getElementById('post-slug');
+             // Only if slug is pristine or user hasn't manually edited it significantly (simple heuristic)
+             // For now, just generate if slug field is empty or user is typing in title
+             // But careful not to overwrite if editing an existing post's slug
+             // Let's just do it if it's a new post or slug is empty
+             if (!slugInput.value && title) {
+                 slugInput.value = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+             }
+        }
+
+        async function savePost(e, postId) {
+            e.preventDefault();
+            const title = document.getElementById('post-title').value;
+            const slug = document.getElementById('post-slug').value;
+            const content = document.getElementById('post-content').value;
+            const published = document.getElementById('post-published').checked;
+
+            const excerpt = content.substring(0, 150) + '...';
+
+            const postData = { title, slug, content, published, excerpt, updated_at: new Date() };
+            if (!postId) postData.author_id = currentUser.id;
+
+            let error;
+            if (postId) {
+                ({ error } = await supabase.from('posts').update(postData).eq('id', postId));
+            } else {
+                ({ error } = await supabase.from('posts').insert([postData]));
+            }
+
+            if (error) {
+                alert('Error saving post: ' + error.message);
+            } else {
+                renderDashboard();
+            }
+        }
+
+        async function deletePost(postId) {
+            if (!confirm('Are you sure you want to delete this post?')) return;
+            const { error } = await supabase.from('posts').delete().eq('id', postId);
+            if (error) alert('Error deleting: ' + error.message);
+            else renderDashboard();
+        }
+
+        async function handleLogout() {
+            await supabase.auth.signOut();
+        }
+
+        init();
+    </script>
+</body>
+</html>
