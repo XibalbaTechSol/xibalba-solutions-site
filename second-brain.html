@@ -11,6 +11,7 @@
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         .app-preview {
             background: var(--card-bg);
@@ -22,12 +23,17 @@
             max-width: 400px;
             margin-left: auto;
             margin-right: auto;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .category-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
             margin-top: 1.5rem;
+            width: 100%;
         }
         .category-card {
             background: rgba(255,255,255,0.05);
@@ -36,24 +42,76 @@
             text-align: center;
             border: 1px solid transparent;
             transition: all 0.2s ease;
+            position: relative;
         }
         .category-card:hover {
             border-color: var(--accent-secondary);
             background: rgba(0, 210, 255, 0.1);
         }
+        .category-count {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: var(--accent-secondary);
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 10px;
+        }
         .input-bar {
             background: #111;
             border-radius: 50px;
-            padding: 0.8rem 1.5rem;
+            padding: 0.5rem 1rem;
             margin-bottom: 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             border: 1px solid #333;
+            width: 100%;
+        }
+        .input-bar input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            width: 100%;
+            outline: none;
+            font-size: 1rem;
         }
         .mic-icon {
             color: var(--accent-primary);
             font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* Auth Styles */
+        .auth-form {
+            width: 100%;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: #fff;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+        .error-msg {
+            color: var(--accent-tertiary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+        .success-msg {
+            color: var(--accent-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -92,34 +150,8 @@
             <h1>Turn Thoughts into <br><span class="gradient-text">Actionable Goals</span></h1>
             <p>A frictionless AI companion that captures your voice, categorizes your intent, and nudges you towards completion.</p>
 
-            <div class="app-preview">
-                <div class="input-bar">
-                    <span style="color: #666;">"Schedule review with team..."</span>
-                    <span class="mic-icon">🎙️</span>
-                </div>
-
-                <div style="text-align: center; margin-bottom: 1rem;">
-                    <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Processed by Gemini AI</span>
-                </div>
-
-                <div class="category-grid">
-                    <div class="category-card">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📂</div>
-                        <div style="font-size: 0.9rem; font-weight: bold;">Admin</div>
-                    </div>
-                    <div class="category-card">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📚</div>
-                        <div style="font-size: 0.9rem; font-weight: bold;">Resources</div>
-                    </div>
-                    <div class="category-card">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🚀</div>
-                        <div style="font-size: 0.9rem; font-weight: bold;">Projects</div>
-                    </div>
-                    <div class="category-card">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">👥</div>
-                        <div style="font-size: 0.9rem; font-weight: bold;">People</div>
-                    </div>
-                </div>
+            <div class="app-preview" id="app">
+                <p style="text-align: center;">Loading Second Brain...</p>
             </div>
         </div>
     </header>
@@ -187,6 +219,201 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        const supabaseUrl = 'https://jidogpcnjnilotkdptzd.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImppZG9ncGNuam5pbG90a2RwdHpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwODcyNTIsImV4cCI6MjA3ODY2MzI1Mn0.jHX9ns4ofJCzM5rDoRoqVRJ65gmEN4YhzGZSkSbmRRo';
+        const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+        const app = document.getElementById('app');
+        let currentUser = null;
+
+        async function init() {
+            const { data: { session } } = await supabase.auth.getSession();
+            currentUser = session?.user;
+
+            supabase.auth.onAuthStateChange((_event, session) => {
+                currentUser = session?.user;
+                render();
+            });
+
+            render();
+        }
+
+        function render() {
+            if (!currentUser) {
+                renderLogin();
+            } else {
+                renderApp();
+            }
+        }
+
+        function renderLogin() {
+            app.style.justifyContent = 'center';
+            app.innerHTML = `
+                <div class="auth-form">
+                    <h2 style="text-align: center; margin-bottom: 1.5rem;">Login to Second Brain</h2>
+                    <form onsubmit="handleLogin(event)">
+                        <input type="email" id="email" placeholder="Email" class="form-control" required>
+                        <input type="password" id="password" placeholder="Password" class="form-control" required>
+                        <button type="submit" class="btn" style="width: 100%;">Sign In</button>
+                    </form>
+                    <p id="msg" class="error-msg"></p>
+                     <p style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+                        Don't have an account? <a href="#" onclick="renderSignup()" style="color: var(--accent-secondary);">Sign Up</a>
+                    </p>
+                </div>
+            `;
+        }
+
+        function renderSignup() {
+            app.innerHTML = `
+                <div class="auth-form">
+                    <h2 style="text-align: center; margin-bottom: 1.5rem;">Sign Up</h2>
+                    <form onsubmit="handleSignup(event)">
+                        <input type="email" id="email" placeholder="Email" class="form-control" required>
+                        <input type="password" id="password" placeholder="Password" class="form-control" required>
+                        <button type="submit" class="btn" style="width: 100%;">Sign Up</button>
+                    </form>
+                    <p id="msg" class="error-msg"></p>
+                     <p style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+                        Already have an account? <a href="#" onclick="renderLogin()" style="color: var(--accent-secondary);">Sign In</a>
+                    </p>
+                </div>
+            `;
+        }
+
+        async function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const msg = document.getElementById('msg');
+            msg.textContent = 'Signing in...';
+            msg.className = 'success-msg';
+
+            const { error } = await supabase.auth.signInWithPassword({ email, password });
+            if (error) {
+                 msg.className = 'error-msg';
+                 msg.textContent = error.message;
+            }
+        }
+
+        async function handleSignup(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const msg = document.getElementById('msg');
+            msg.textContent = 'Signing up...';
+            msg.className = 'success-msg';
+
+             const { error } = await supabase.auth.signUp({ email, password });
+             if (error) {
+                 msg.className = 'error-msg';
+                 msg.textContent = error.message;
+             } else {
+                 msg.textContent = 'Check your email for the confirmation link!';
+             }
+        }
+
+        async function renderApp() {
+            app.style.justifyContent = 'flex-start';
+            app.innerHTML = `
+                <div class="input-bar">
+                    <input type="text" id="thought-input" placeholder="Type a thought..." onkeypress="handleInputKey(event)">
+                    <span class="mic-icon" onclick="saveThought()">➡️</span>
+                </div>
+
+                <div style="text-align: center; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                    <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Processed by Gemini AI</span>
+                     <button onclick="handleLogout()" class="btn-outline" style="padding: 0.2rem 0.8rem; font-size: 0.8rem;">Logout</button>
+                </div>
+
+                <div class="category-grid" id="category-grid">
+                    <p style="text-align: center; width: 100%; color: var(--text-muted);">Loading items...</p>
+                </div>
+            `;
+
+            await fetchItems();
+        }
+
+        async function handleInputKey(e) {
+            if (e.key === 'Enter') {
+                saveThought();
+            }
+        }
+
+        async function saveThought() {
+            const input = document.getElementById('thought-input');
+            const content = input.value.trim();
+            if (!content) return;
+
+            input.value = '';
+            input.placeholder = 'Saving...';
+            input.disabled = true;
+
+            // Mock Gemini categorization for now
+            const categories = ['Admin', 'Resources', 'Projects', 'People'];
+            const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+
+            const { error } = await supabase
+                .from('second_brain_items')
+                .insert([{ content, category: randomCategory, status: 'Inbox' }]);
+
+            if (error) {
+                alert('Error saving thought: ' + error.message);
+            } else {
+                fetchItems();
+            }
+
+            input.value = '';
+            input.placeholder = 'Type a thought...';
+            input.disabled = false;
+            input.focus();
+        }
+
+        async function fetchItems() {
+            const { data, error } = await supabase
+                .from('second_brain_items')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (error) {
+                console.error('Error fetching items:', error);
+                return;
+            }
+
+            const grid = document.getElementById('category-grid');
+            const categories = {
+                'Admin': { icon: '📂', items: [] },
+                'Resources': { icon: '📚', items: [] },
+                'Projects': { icon: '🚀', items: [] },
+                'People': { icon: '👥', items: [] }
+            };
+
+            data.forEach(item => {
+                if (categories[item.category]) {
+                    categories[item.category].items.push(item);
+                } else {
+                    // Fallback for unclassified or other categories
+                    if (!categories['Inbox']) categories['Inbox'] = { icon: '📥', items: [] };
+                    categories['Inbox'].items.push(item);
+                }
+            });
+
+            grid.innerHTML = Object.keys(categories).map(cat => `
+                <div class="category-card">
+                    <div class="category-count">${categories[cat].items.length}</div>
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">${categories[cat].icon}</div>
+                    <div style="font-size: 0.9rem; font-weight: bold;">${cat}</div>
+                </div>
+            `).join('');
+        }
+
+        async function handleLogout() {
+            await supabase.auth.signOut();
+        }
+
+        init();
+    </script>
 </body>
 
 </html>
