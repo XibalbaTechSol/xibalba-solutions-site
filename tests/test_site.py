@@ -74,11 +74,10 @@ def test_navigation(page: Page):
     page.click("nav .nav-links a[href='investors.html']")
     expect(page).to_have_url(get_file_url("investors.html"))
 
-def test_no_console_errors(page: Page):
+@pytest.mark.parametrize("filename", ["index.html", "about.html", "services.html", "solutions.html", "pricing.html", "contact.html", "investors.html"])
+def test_no_console_errors(page: Page, filename):
     error_logs = []
     page.on("console", lambda msg: error_logs.append(msg.text) if msg.type == "error" else None)
-    
-    for filename in ["index.html", "about.html", "services.html", "solutions.html", "pricing.html", "contact.html", "investors.html"]:
-        page.goto(get_file_url(filename))
+    page.goto(get_file_url(filename))
     
     assert len(error_logs) == 0, f"Console errors found: {error_logs}"
