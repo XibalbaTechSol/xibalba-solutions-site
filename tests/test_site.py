@@ -7,6 +7,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def get_file_url(filename):
     return f"file://{os.path.join(BASE_DIR, filename)}"
 
+@pytest.fixture(autouse=True)
+def check_console_errors(page: Page):
+    error_logs = []
+    page.on("console", lambda msg: error_logs.append(msg.text) if msg.type == "error" else None)
+    yield
+    assert len(error_logs) == 0, f"Console errors found: {error_logs}"
+
 def test_index_page(page: Page):
     page.goto(get_file_url("index.html"))
     # Updated title
@@ -15,7 +22,7 @@ def test_index_page(page: Page):
     # Check for investors link existence
     expect(page.locator("a[href='investors.html']").first).to_be_visible()
     # Check for new Recurring Revenue text
-    expect(page.locator("body")).to_contain_text("secure local AI services")
+    expect(page.locator("body")).to_contain_text("Secure Local AI")
 
 def test_about_page(page: Page):
     page.goto(get_file_url("about.html"))
@@ -74,11 +81,3 @@ def test_navigation(page: Page):
     page.click("nav .nav-links a[href='investors.html']")
     expect(page).to_have_url(get_file_url("investors.html"))
 
-def test_no_console_errors(page: Page):
-    error_logs = []
-    page.on("console", lambda msg: error_logs.append(msg.text) if msg.type == "error" else None)
-    
-    for filename in ["index.html", "about.html", "services.html", "solutions.html", "pricing.html", "contact.html", "investors.html"]:
-        page.goto(get_file_url(filename))
-    
-    assert len(error_logs) == 0, f"Console errors found: {error_logs}"
