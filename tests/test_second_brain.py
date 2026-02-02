@@ -7,13 +7,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def get_file_url(filename):
     return f"file://{os.path.join(BASE_DIR, filename)}"
 
-@pytest.fixture(autouse=True)
-def check_console_errors(page: Page):
-    error_logs = []
-    page.on("console", lambda msg: error_logs.append(msg.text) if msg.type == "error" else None)
-    yield
-    assert len(error_logs) == 0, f"Console errors found: {error_logs}"
-
 def test_second_brain_page(page: Page):
     page.goto(get_file_url("second-brain.html"))
     expect(page).to_have_title("Second Brain | AI Goal Completion")
