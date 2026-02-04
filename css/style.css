@@ -68,6 +68,12 @@ a {
     padding: 0 2rem;
 }
 
+/* Accessibility */
+:focus-visible {
+    outline: 2px solid var(--accent-secondary);
+    outline-offset: 2px;
+}
+
 .gradient-text {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
