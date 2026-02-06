@@ -69,9 +69,15 @@
                 <div class="auth-form">
                     <h2 style="text-align: center; margin-bottom: 1.5rem;">Admin Login</h2>
                     <form onsubmit="handleLogin(event)">
-                        <input type="email" id="email" placeholder="Email" class="form-control" required style="margin-bottom: 1rem;">
-                        <input type="password" id="password" placeholder="Password" class="form-control" required style="margin-bottom: 1.5rem;">
-                        <button type="submit" class="btn" style="width: 100%;">Sign In</button>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Email" class="form-control" required style="margin-bottom: 1rem;">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Password" class="form-control" required style="margin-bottom: 1.5rem;">
+                        </div>
+                        <button type="submit" id="login-submit-btn" class="btn" style="width: 100%;">Sign In</button>
                     </form>
                     <p id="msg" style="margin-top: 1rem; text-align: center; font-size: 0.9rem; color: var(--accent-tertiary);"></p>
                      <p style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
@@ -86,9 +92,15 @@
                 <div class="auth-form">
                     <h2 style="text-align: center; margin-bottom: 1.5rem;">Admin Sign Up</h2>
                     <form onsubmit="handleSignup(event)">
-                        <input type="email" id="email" placeholder="Email" class="form-control" required style="margin-bottom: 1rem;">
-                        <input type="password" id="password" placeholder="Password" class="form-control" required style="margin-bottom: 1.5rem;">
-                        <button type="submit" class="btn" style="width: 100%;">Sign Up</button>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Email" class="form-control" required style="margin-bottom: 1rem;">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Password" class="form-control" required style="margin-bottom: 1.5rem;">
+                        </div>
+                        <button type="submit" id="signup-submit-btn" class="btn" style="width: 100%;">Sign Up</button>
                     </form>
                     <p id="msg" style="margin-top: 1rem; text-align: center; font-size: 0.9rem; color: var(--accent-tertiary);"></p>
                      <p style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: var(--text-muted);">
@@ -107,11 +119,17 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const msg = document.getElementById('msg');
+            const btn = document.getElementById('login-submit-btn');
+
             msg.textContent = 'Signing in...';
+            btn.disabled = true;
+            btn.textContent = 'Signing in...';
 
             const { error } = await supabase.auth.signInWithPassword({ email, password });
             if (error) {
                  msg.textContent = error.message;
+                 btn.disabled = false;
+                 btn.textContent = 'Sign In';
             }
         }
 
@@ -120,11 +138,17 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
              const msg = document.getElementById('msg');
+             const btn = document.getElementById('signup-submit-btn');
+
              msg.textContent = 'Signing up...';
+             btn.disabled = true;
+             btn.textContent = 'Signing up...';
 
              const { error } = await supabase.auth.signUp({ email, password });
              if (error) {
                  msg.textContent = error.message;
+                 btn.disabled = false;
+                 btn.textContent = 'Sign Up';
              } else {
                  msg.style.color = 'var(--accent-secondary)';
                  msg.textContent = 'Check your email for the confirmation link!';
