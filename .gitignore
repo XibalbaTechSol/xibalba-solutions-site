@@ -4,3 +4,4 @@ __pycache__/
 screenshots/
 *.log
 *.log
+.pytest_cache/
