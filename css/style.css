@@ -207,6 +207,25 @@ nav .container {
     color: var(--accent-primary) !important;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
 /* Hero Section */
 .hero {
     padding: 8rem 0 6rem;
@@ -473,25 +492,46 @@ footer {
     }
 
     nav .container {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: block;
     }
 
     .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(2, 4, 10, 0.95);
+        flex-direction: column;
+        padding: 2rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        gap: 1.5rem;
+    }
+
+    .nav-links.active {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
+        animation: fadeInUp 0.3s ease-out forwards;
     }
 
     .nav-links a {
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
 
     .split-layout {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
+    /* Hamburger Animation */
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 }
 
 /* Performance Optimization Utilities */

@@ -3,9 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     if (hamburger && navLinks) {
+        // Initialize aria-expanded
+        hamburger.setAttribute('aria-expanded', 'false');
+
         hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            const isActive = navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isActive);
         });
     }
 });
