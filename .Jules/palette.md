@@ -1,0 +1,3 @@
+## 2025-05-26 - Accessible Forms in Dynamic SPAs
+**Learning:** Even in Single Page Applications where HTML is generated via JavaScript strings, accessibility primitives like `<label>` with `for` attributes are critical. Screen readers rely on these associations regardless of how the DOM is constructed.
+**Action:** When working with template literals for UI, always ensure `id`s are unique and `<label>`s are explicitly associated, rather than relying on implicit context or placeholders alone. Also, managing loading states (disabling buttons, feedback text) directly in the event handler improves perceived performance and prevents errors.
