@@ -49,16 +49,16 @@
 
     <section class="container content-section">
         <div class="contact-form-container">
-            <form action="https://formspree.io/f/meeqbroz" method="POST">
+            <form id="contact-form" action="https://formspree.io/f/meeqbroz" method="POST">
                 <input type="hidden" name="_next" value="thank-you.html">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+                    <label for="name">Name <span aria-hidden="true" style="color:var(--accent-tertiary)">*</span></label>
+                    <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required aria-required="true">
                 </div>
                 <div class="form-group">
-                    <label for="email">Business Email</label>
+                    <label for="email">Business Email <span aria-hidden="true" style="color:var(--accent-tertiary)">*</span></label>
                     <input type="email" id="email" name="email" class="form-control" placeholder="john@company.com"
-                        required>
+                        required aria-required="true">
                 </div>
                 <div class="form-group">
                     <label for="company">Company / Industry</label>
