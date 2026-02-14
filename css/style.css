@@ -415,6 +415,11 @@ nav .container {
     box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
 }
 
+.required-label::after {
+    content: " *";
+    color: var(--accent-tertiary);
+}
+
 /* Footer */
 footer {
     padding: 5rem 0 2rem;
