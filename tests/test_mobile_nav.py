@@ -43,12 +43,14 @@ def test_mobile_navigation_menu_all_pages(page: Page, page_file):
 
     # Now nav links should have class active
     expect(nav_links).to_have_class("nav-links active")
+    expect(hamburger).to_have_attribute("aria-expanded", "true")
 
     # Click hamburger again to close
     hamburger.click()
 
     # Should not be active
     expect(nav_links).not_to_have_class("nav-links active")
+    expect(hamburger).to_have_attribute("aria-expanded", "false")
 
 def test_mobile_navigation_link_click(page: Page):
     # Set viewport to mobile size
