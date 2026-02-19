@@ -81,3 +81,42 @@ def test_navigation(page: Page):
     page.click("nav .nav-links a[href='investors.html']")
     expect(page).to_have_url(get_file_url("investors.html"))
 
+def test_contact_form_submission_state(page: Page):
+    page.goto(get_file_url("contact.html"))
+
+    # Fill out the form
+    page.fill("input[name='name']", "Test User")
+    page.fill("input[name='email']", "test@example.com")
+    page.fill("textarea[name='message']", "This is a test message.")
+
+    # Inject a listener to capture the state AFTER the main.js handler has run
+    # and prevent the actual submission so the page doesn't unload.
+    page.evaluate("""
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            // Capture the state of the button
+            const btn = form.querySelector('button[type="submit"]');
+            window._btnText = btn.innerText;
+            window._btnDisabled = btn.disabled;
+            window._btnOpacity = btn.style.opacity;
+            window._btnCursor = btn.style.cursor;
+
+            // Prevent actual submission to keep the page state
+            e.preventDefault();
+        });
+    """)
+
+    submit_btn = page.locator("button[type='submit']")
+    submit_btn.click()
+
+    # Retrieve captured values
+    btn_text = page.evaluate("window._btnText")
+    btn_disabled = page.evaluate("window._btnDisabled")
+    btn_opacity = page.evaluate("window._btnOpacity")
+    btn_cursor = page.evaluate("window._btnCursor")
+
+    # Assertions
+    assert btn_text == "Sending...", f"Expected 'Sending...', got '{btn_text}'"
+    assert btn_disabled is True, "Button should be disabled"
+    assert btn_opacity == "0.7", f"Expected opacity '0.7', got '{btn_opacity}'"
+    assert btn_cursor == "wait", f"Expected cursor 'wait', got '{btn_cursor}'"
