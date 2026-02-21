@@ -1,0 +1,3 @@
+## 2025-05-23 - Mobile Navigation Regression
+**Learning:** `position: fixed` elements inside a container with `backdrop-filter` are positioned relative to that container, not the viewport. This breaks full-screen drawers.
+**Action:** When creating full-screen overlays, ensure they are direct children of `body` or their parents do not use properties that create new containing blocks (`transform`, `filter`, `backdrop-filter`). For mobile menus, `left: 0; width: 100%` is more robust than `right: -100%`. Also, always check for overflow on vertical flex containers using `justify-content: center` - use `flex-start` + `overflow-y: auto` instead.
