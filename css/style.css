@@ -535,3 +535,11 @@ footer {
 .footer-tagline {
     opacity: 0.6;
 }
+
+/* Disabled Button State */
+.btn:disabled, .btn.disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: grayscale(0.5);
+}
