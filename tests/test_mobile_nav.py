@@ -35,6 +35,9 @@ def test_mobile_navigation_menu_all_pages(page: Page, page_file):
     # Initially, hamburger should be visible and nav links hidden/off-screen
     expect(hamburger).to_be_visible()
 
+    # Check initial aria-expanded state
+    expect(hamburger).to_have_attribute("aria-expanded", "false")
+
     # Check that nav_links is not in view
     expect(nav_links).not_to_have_class("nav-links active")
 
@@ -44,11 +47,17 @@ def test_mobile_navigation_menu_all_pages(page: Page, page_file):
     # Now nav links should have class active
     expect(nav_links).to_have_class("nav-links active")
 
+    # Check toggled aria-expanded state
+    expect(hamburger).to_have_attribute("aria-expanded", "true")
+
     # Click hamburger again to close
     hamburger.click()
 
     # Should not be active
     expect(nav_links).not_to_have_class("nav-links active")
+
+    # Check closed aria-expanded state
+    expect(hamburger).to_have_attribute("aria-expanded", "false")
 
 def test_mobile_navigation_link_click(page: Page):
     # Set viewport to mobile size
