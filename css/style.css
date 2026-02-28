@@ -535,3 +535,16 @@ footer {
 .footer-tagline {
     opacity: 0.6;
 }
+
+/* Accessibility: Focus visible states for keyboard navigation */
+:focus-visible {
+    outline: 2px solid var(--accent-secondary);
+    outline-offset: 4px;
+    border-radius: 4px; /* Default subtle rounding for generic links */
+}
+
+/* Ensure buttons keep their pill shape outline */
+.btn:focus-visible,
+.btn-outline:focus-visible {
+    border-radius: 50px;
+}
