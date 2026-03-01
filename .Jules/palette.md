@@ -1,0 +1,3 @@
+## 2025-02-14 - Add aria-expanded to Mobile Nav Hamburger Menu
+**Learning:** For mobile navigation menus that toggle visibility (e.g., hamburger buttons), it is critical for accessibility to not only use `aria-label` but also explicitly toggle the `aria-expanded` attribute. This communicates the current state of the menu (open/closed) to screen reader users. Simply toggling a CSS class like `active` is insufficient for assistive technologies.
+**Action:** When implementing or updating toggleable UI elements (menus, accordions, modals), ensure that an `aria-expanded` attribute is present and its boolean value is updated synchronously with the visual state changes in JavaScript.
