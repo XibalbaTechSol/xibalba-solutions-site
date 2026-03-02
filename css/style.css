@@ -391,6 +391,11 @@ nav .container {
     backdrop-filter: blur(10px);
 }
 
+.required-label::after {
+    content: " *";
+    color: var(--accent-tertiary);
+}
+
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
