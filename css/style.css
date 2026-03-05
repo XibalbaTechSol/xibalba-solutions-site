@@ -535,3 +535,19 @@ footer {
 .footer-tagline {
     opacity: 0.6;
 }
+
+/* Focus Visible for Keyboard Navigation */
+a:focus-visible,
+.btn:focus-visible,
+.btn-outline:focus-visible,
+.hamburger:focus-visible,
+.nav-links a:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.btn:focus-visible,
+.btn-outline:focus-visible {
+    border-radius: 50px;
+}
