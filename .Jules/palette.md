@@ -1,0 +1,3 @@
+## 2026-03-06 - Form Label Accessibility Inconsistency
+**Learning:** Found an app-specific pattern where custom authentication and data-entry forms (e.g., `dashboard.html`, `veriphysics.html`) missed `<label for="x">` and `<input id="x">` associations, unlike `contact.html` which had them. The issue seems prominent when dynamic template literals are used for form generation or when minimal forms are created without frameworks.
+**Action:** When working on generic inputs across any application forms, whether static or dynamic templates, strictly enforce explicit `for`/`id` pairings or appropriate `aria-label` attributes to ensure screen reader compatibility, even if visual placeholders are present.
