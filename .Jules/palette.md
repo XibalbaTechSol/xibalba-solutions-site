@@ -1,0 +1,3 @@
+## 2025-02-27 - Missing aria-expanded on Mobile Hamburger Nav
+**Learning:** The application's mobile hamburger menu (`.hamburger`) lacked an `aria-expanded` attribute, leaving screen reader users unaware of the navigation menu's open/closed state. The dynamic toggling logic in `js/main.js` was updating visual classes but omitting the corresponding accessible state update.
+**Action:** Ensure all interactive toggle elements like the `.hamburger` menu are initialized with `aria-expanded="false"` in the HTML markup and that the `aria-expanded` attribute is synchronously toggled alongside visual state classes in the javascript interaction logic.
