@@ -61,6 +61,29 @@ a {
     transition: all 0.2s ease;
 }
 
+/* Accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible,
+.btn-outline:focus-visible,
+.hamburger:focus-visible {
+    outline: 2px solid var(--accent-secondary);
+    outline-offset: 2px;
+    border-radius: 4px; /* Default for elements without border-radius */
+}
+
+.btn:focus-visible,
+.btn-outline:focus-visible {
+    border-radius: 50px; /* Preserve button rounded corners */
+}
+
+.form-control:focus-visible {
+    border-radius: 8px; /* Preserve form control rounded corners */
+}
+
 /* Utility */
 .container {
     max-width: 1200px;
