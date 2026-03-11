@@ -535,3 +535,14 @@ footer {
 .footer-tagline {
     opacity: 0.6;
 }
+
+/* Accessibility: Keyboard Navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent-secondary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
