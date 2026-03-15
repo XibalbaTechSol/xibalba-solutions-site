@@ -535,3 +535,10 @@ footer {
 .footer-tagline {
     opacity: 0.6;
 }
+
+/* Hamburger Focus Styles */
+.hamburger:focus-visible {
+    outline: 2px solid var(--accent-secondary);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
