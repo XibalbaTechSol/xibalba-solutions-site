@@ -28,6 +28,18 @@
     box-sizing: border-box;
 }
 
+/* Global focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 2px solid var(--accent-secondary);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
