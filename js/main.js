@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
+            const isActive = hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
         });
     }
 });

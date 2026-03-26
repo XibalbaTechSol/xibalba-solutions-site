@@ -1,0 +1,3 @@
+## 2025-02-28 - [Mobile Nav ARIA Expanded Toggle Logic]
+**Learning:** For mobile navigation specifically, `aria-expanded` attributes on the hamburger menu must be synchronously updated in the event handler in `js/main.js` alongside visual `.active` class toggles to ensure screen readers correctly interpret when the menu is visible.
+**Action:** When updating visual state of interactive elements in JavaScript (e.g. `element.classList.toggle('active')`), immediately capture the state and apply it to associated ARIA attributes like `aria-expanded` (e.g., `element.setAttribute('aria-expanded', isActive ? 'true' : 'false')`).
