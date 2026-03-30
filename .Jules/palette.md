@@ -1,0 +1,3 @@
+## 2025-02-23 - Form Accessibility & Transient States
+**Learning:** When inputs lack visual labels in authentication forms, explicit `<label>` elements (even if visually hidden or using `aria-label`) are essential. Transient visual states (loading spinners/text) on buttons during async operations prevent duplicate submissions and provide critical UX feedback. Also, using `for`/`id` pairings on `<label>` elements ensures proper screen reader focus order.
+**Action:** Always map inputs to explicit `aria-label`s or `<label for>` attributes, and consistently implement visual disabled states for all async buttons.
