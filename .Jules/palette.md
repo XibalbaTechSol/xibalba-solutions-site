@@ -1,0 +1,3 @@
+## 2025-03-08 - Synchronous ARIA State Updates
+**Learning:** When visual states of interactive elements are toggled via JavaScript (e.g., toggling an `.active` class for a mobile menu), their associated ARIA attributes (like `aria-expanded`) must be synchronously updated in the same event handler to ensure screen readers provide accurate context to users.
+**Action:** Always pair visual class toggles with corresponding ARIA attribute updates in JavaScript event listeners.
