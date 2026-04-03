@@ -1,0 +1,3 @@
+## 2024-05-18 - Synchronous ARIA State Toggling
+**Learning:** When mobile navigation visual states are toggled via JavaScript (e.g., `.active` class), their associated ARIA attributes (like `aria-expanded`) must be synchronously updated in the same event handler. Screen readers rely on this to announce whether the menu is open or closed, which is often missed when simply toggling visual CSS classes.
+**Action:** Always pair `classList.toggle('active')` with `setAttribute('aria-expanded', isExpanded)` for interactive expanding components.
