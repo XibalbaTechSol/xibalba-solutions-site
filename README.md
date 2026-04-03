@@ -1,43 +1,33 @@
-# Xibalba Solutions Website
+# Xibalba Solutions | Sovereign AI Intelligence
 
-This is the official website for **Xibalba Solutions**, a consultancy firm specializing in local AI infrastructure, data sovereignty, and secure on-premise intelligence systems.
+Official website for **Xibalba Solutions**, a specialized engineering firm dedicated to building custom Hermes-based AI agents and deploying HIPAA-compliant local AI infrastructure.
 
 ## Overview
 
-The website is a static HTML/CSS site designed to be lightweight, fast, and privacy-focused, mirroring the company's ethos. It features a modern, clean aesthetic using the "Nord" color palette and responsive design principles.
+Xibalba Solutions focuses on **Sovereign Intelligence**—AI that lives on your hardware, not in the cloud. We specialize in:
+- **Custom Hermes Agents**: Autonomous intelligence layers powered by Hermes 3 with high-fidelity, predictive interfaces.
+- **Enterprise Local AI**: Secure, HIPAA-compliant, and audit-ready on-premise AI deployments for healthcare, legal, and sensitive sectors.
+- **OpenClaw Integration**: Leveraging the OpenClaw framework for local task execution and omnichannel interaction.
+
+The site is built with a high-fidelity, privacy-first aesthetic, featuring immersive UI elements like 3D orbs and real-time observability simulations.
 
 ## Structure
 
-- `index.html`: Home page with value propositions and overview.
-- `about.html`: Company mission, leadership, and vision.
-- `services.html`: Detailed breakdown of services (Hardware, RAG, Fine-tuning).
-- `solutions.html`: Use cases across various industries.
-- `products.html`: Overview of software products (Xibalba CRM, Xibalba CLI, VeriPhysics SDK).
-- `pricing.html`: Transparent pricing models.
-- `contact.html`: Contact form and information.
-- `css/style.css`: Main stylesheet source.
-- `tests/`: End-to-end tests using Playwright.
-
-## Visual Reference
-
-| Home | About |
-|:---:|:---:|
-| <img src="screenshots/index.png" width="400"> | <img src="screenshots/about.png" width="400"> |
-
-| Services | Solutions |
-|:---:|:---:|
-| <img src="screenshots/services.png" width="400"> | <img src="screenshots/solutions.png" width="400"> |
-
-| Pricing | Contact |
-|:---:|:---:|
-| <img src="screenshots/pricing.png" width="400"> | <img src="screenshots/contact.png" width="400"> |
+- `index.html`: Main landing page with OpenClaw and Hermes integration highlights.
+- `about.html`: Our mission for data sovereignty and sovereign intelligence.
+- `ai-agents.html`: Details on Hermes 3 foundation, Specialist model, and Learning Loops.
+- `local-ai.html`: Focus on HIPAA/GDPR compliance and Sanctum Guard architecture.
+- `pricing.html`: Transparent service-based pricing for builds and ongoing support.
+- `contact.html`: Self-hosted contact inquiry system.
+- `server.py`: Custom Python server for static file serving and secure form handling.
+- `css/style.css`: Advanced UI styling with pulsing glows and immersive animations.
 
 ## Development
 
 ### Prerequisites
 
-- Python 3.12+ (for testing and local server)
-- Playwright (for running tests)
+- Python 3.12+
+- SMTP server access (for contact form functionality)
 
 ### Local Setup
 
@@ -47,16 +37,22 @@ The website is a static HTML/CSS site designed to be lightweight, fast, and priv
     cd xibalba-solutions-site
     ```
 
-2.  **Run locally:**
-    You can serve the site using Python's built-in HTTP server:
+2.  **Configure Environment:**
+    Rename `.env.example` to `.env` and fill in your SMTP credentials to enable the contact form.
     ```bash
-    python3 -m http.server 8000
+    cp .env.example .env
     ```
-    Then visit `http://localhost:8000` in your browser.
+
+3.  **Run locally:**
+    Launch the integrated server to serve the site and handle form submissions:
+    ```bash
+    python3 server.py
+    ```
+    Visit `http://localhost:8000` in your browser.
 
 ### Running Tests
 
-To ensure the site functions correctly, you can run the included Playwright tests:
+End-to-end validation is handled via Playwright:
 
 1.  **Install dependencies:**
     ```bash
@@ -71,11 +67,7 @@ To ensure the site functions correctly, you can run the included Playwright test
 
 ## Deployment
 
-This site is static and can be deployed to any static hosting provider such as:
-
-- **GitHub Pages**: Push to a `gh-pages` branch or configure via Settings.
-- **Netlify**: Drag and drop the folder or connect your repo.
-- **Vercel**: Connect your Git repo and deploy.
+While the site can be hosted on static platforms (GitHub Pages, Netlify), the **contact form requires a Python backend**. For full functionality, deploy to a sovereign VPS or a containerized environment (Docker) capable of running `server.py`.
 
 ## License
 
