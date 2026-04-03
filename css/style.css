@@ -107,8 +107,22 @@ nav .container {
 
 .nav-links {
     display: flex;
-    gap: 2.5rem;
+    gap: 1.5rem; /* Reduced from 2.5rem for better fit */
     align-items: center;
+}
+
+/* Mobile Menu Active State */
+.nav-links.active {
+    display: flex !important;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--nav-h));
+    background: rgba(2, 2, 4, 0.98);
+    flex-direction: column;
+    padding: 4rem 2rem;
+    gap: 3rem;
 }
 
 .nav-links a {
