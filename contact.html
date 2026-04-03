@@ -45,14 +45,20 @@
 
     <section class="container content-section">
         <div class="contact-form-container animate-in">
-            <form action="/contact" method="POST">
+            <!-- 
+              EASY SETUP:
+              1. Sign up at Formspree.io
+              2. Create a form and get your Form ID
+              3. Replace 'PASTE_YOUR_ID_HERE' below with your ID
+            -->
+            <form action="https://formspree.io/f/PASTE_YOUR_ID_HERE" method="POST">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" class="form-control" required placeholder="Jane Doe">
                 </div>
                 <div class="form-group">
                     <label for="email">Work Email</label>
-                    <input type="email" id="email" name="email" class="form-control" required placeholder="jane@company.com">
+                    <input type="email" id="email" name="_replyto" class="form-control" required placeholder="jane@company.com">
                 </div>
                 <div class="form-group">
                     <label for="interest">Interested In</label>
