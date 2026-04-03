@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursive Reasoning | Xibalba Intel</title>
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .intel-body p { margin-bottom: 1.5rem; color: var(--text-secondary); }
+        .intel-body h2 { margin: 2.5rem 0 1rem; color: #fff; }
+        .intel-body pre { background: rgba(0,0,0,0.5); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-glass); margin: 2rem 0; overflow-x: auto; }
+        .intel-body code { font-family: monospace; color: var(--cyan-core); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <img src="../XibalbaSolutionsLogo.png" alt="Xibalba Solutions">
+            </a>
+            <div class="nav-links">
+                <a href="../index.html">Foundry</a>
+                <a href="../ai-agents.html">Agents</a>
+                <a href="../blog.html" class="active">Intel</a>
+                <a href="../local-ai.html">Privacy</a>
+                <a href="../pricing.html">Support</a>
+                <a href="../contact.html" class="btn-outline">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header" style="text-align: left; padding: 10rem 0 4rem;">
+        <div class="container">
+            <div style="color: var(--cyan-core); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">// ARCHITECTURE DISPATCH</div>
+            <h1 style="font-size: 3.5rem; max-width: 900px;">Recursive Reasoning: Fine-Tuning <span class="gradient-text">Hermes 3</span> for Long-Horizon Autonomy</h1>
+        </div>
+    </header>
+
+    <main class="container content-section intel-body" style="max-width: 800px; margin: 0 auto;">
+        <p>Standard LLM deployments often hit a "complexity wall" when tasked with objectives that require more than 10 sequential steps. Whether it's complex data synthesis or autonomous code refactoring, the model's tendency to drift from the original intent increases exponentially with every turn.</p>
+        
+        <h2>The Sincerity Problem</h2>
+        <p>Most commercial models are fine-tuned for sycophancy—they want to please the user and will often "hallucinate progress" to avoid admitting confusion. In a high-fidelity foundry, this is unacceptable. I utilize **Hermes 3** specifically because its open-reasoning weights allow for more honest internal monologues.</p>
+
+        <pre><code>// Example Internal Trace Loop
+[Objective] Analyze patient data for SOC2 compliance anomalies.
+[Monologue] I need to verify the encryption headers. 
+[Action] READ_DATABASE_SCHEMA
+[Observation] Error: Unauthorized.
+[Reasoning] My previous assumption about the API key scope was incorrect. 
+[Correction] Re-authenticating via the secure edge bridge...</code></pre>
+
+        <h2>Engineering the Loop</h2>
+        <p>Xibalba Solutions doesn't just "prompt" agents. I engineer **Autonomous Feedback Pipelines**. This involves three core layers:</p>
+        <ol style="color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 2rem; line-height: 2;">
+            <li><strong>The Monitor:</strong> A low-latency SLM that watches the primary agent's output for logical drift.</li>
+            <li><strong>The Memory:</strong> A persistent PARA-structured vector store that provides long-term context.</li>
+            <li><strong>The Reified Reasoning:</strong> A specific fine-tuning pass that encourages the model to "show its work" before executing any tool call.</li>
+        </ol>
+
+        <p>By keeping these loops **local**, I ensure that even the agent's internal failures—which are necessary for learning—never touch the public cloud.</p>
+
+        <div style="margin-top: 4rem; padding: 2rem; border: 1px solid var(--violet-glow); border-radius: 8px; background: rgba(139, 92, 246, 0.05);">
+            <h4 style="margin-bottom: 1rem;">Want to see this in action?</h4>
+            <p style="margin-bottom: 1.5rem;">I am currently building custom Hermes runtimes for niche clinical research firms. If your project requires high-assurance autonomy, let's talk.</p>
+            <a href="../contact.html" class="btn">Initiate Project</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                &copy; 2026 Xibalba Solutions. Dispatches from the Shadow.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -134,33 +134,50 @@ nav .container {
 
 /* Hero Section */
 .hero {
-    padding: 12rem 0 8rem;
+    padding: 10rem 0 6rem;
+    text-align: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-logo-container {
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-logo {
+    height: 180px; /* Centerpiece size */
+    filter: drop-shadow(0 0 30px var(--cyan-glow));
+    animation: float 6s infinite ease-in-out;
 }
 
 .hero-orbit {
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 50%;
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 700px;
     background: radial-gradient(circle, var(--cyan-glow) 0%, transparent 70%);
     z-index: -1;
     border-radius: 50%;
-    animation: orbit-pulse 8s infinite ease-in-out;
+    animation: orbit-pulse 10s infinite ease-in-out;
 }
 
 .hero h1 {
-    font-size: 4.5rem;
-    line-height: 1;
+    font-size: 3.5rem; /* Slightly smaller since it's no longer the sole focus */
+    line-height: 1.1;
     margin-bottom: 1.5rem;
+    max-width: 900px;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     color: var(--text-secondary);
-    max-width: 600px;
-    margin-bottom: 3rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
     font-weight: 300;
 }
 

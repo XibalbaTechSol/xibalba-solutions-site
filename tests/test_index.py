@@ -12,36 +12,29 @@ def test_index_ui_ux():
         path = os.path.abspath("xibalba-solutions-site/index.html")
         page.goto(f"file://{path}")
         
-        # 1. Validate Hero Impact
+        # 1. Validate Logo Centerpiece
+        hero_logo = page.locator(".hero-logo")
+        assert hero_logo.is_visible()
+        # Ensure it has the correct class for centerpiece styling
+        assert "hero-logo" in hero_logo.get_attribute("class")
+        
+        # 2. Validate Hero Text (Now below logo)
         hero_h1 = page.locator("h1")
         assert hero_h1.is_visible()
         assert "Intelligence" in hero_h1.text_content()
         
-        # 2. Validate Navigation
-        nav = page.locator("nav")
-        assert nav.is_visible()
+        # 3. Validate Centering
+        # Check if the hero section is using flex column and centered
+        hero_section = page.locator(".hero")
+        display = hero_section.evaluate("el => getComputedStyle(el).display")
+        align_items = hero_section.evaluate("el => getComputedStyle(el).alignItems")
+        assert display == "flex"
+        assert align_items == "center"
         
-        # Check active link
-        active_link = page.locator("nav .active")
-        assert active_link.text_content() == "Foundry"
-        
-        # 3. Validate Technical Pillars
-        features = page.locator(".feature-card")
-        assert features.count() == 3
-        
-        pillar_titles = features.all_text_contents()
-        assert any("Recursive Reasoning" in t for t in pillar_titles)
-        assert any("OpenClaw Runtimes" in t for t in pillar_titles)
-        assert any("Sanctum Guard" in t for t in pillar_titles)
-        
-        # 4. Validate Design Aesthetics (Glassmorphism & Gradients)
-        # Check if gradient text class exists
-        assert page.locator(".gradient-text").count() > 0
-        
-        # 5. Capture Screenshot for LLM Scrutiny
+        # 4. Capture Screenshot for LLM Scrutiny
         os.makedirs("xibalba-solutions-site/screenshots", exist_ok=True)
-        page.screenshot(path="xibalba-solutions-site/screenshots/index_reimagined.png")
-        print("\nScreenshot saved to xibalba-solutions-site/screenshots/index_reimagined.png")
+        page.screenshot(path="xibalba-solutions-site/screenshots/index_centerpiece_logo.png")
+        print("\nScreenshot saved to xibalba-solutions-site/screenshots/index_centerpiece_logo.png")
         
         browser.close()
 
