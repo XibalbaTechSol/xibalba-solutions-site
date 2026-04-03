@@ -1,36 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Xibalba Solutions</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Initiate | Xibalba Solutions</title>
     <link rel="icon" href="./favicon.ico" sizes="any">
-    <link rel="icon" href="./favicon.png" type="image/png">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
 
     <nav>
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions Logo">
+                <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions">
             </a>
-            <button class="hamburger" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="ai-agents.html">AI Agents</a>
-                <a href="local-ai.html">Local AI</a>
-                <a href="pricing.html">Pricing & Support</a>
+                <a href="index.html">Foundry</a>
+                <a href="ai-agents.html">Agents</a>
+                <a href="local-ai.html">Privacy</a>
+                <a href="pricing.html">Support</a>
                 <a href="contact.html" class="active btn-outline">Contact</a>
             </div>
         </div>
@@ -38,73 +26,54 @@
 
     <header class="page-header">
         <div class="container">
-            <h1>Build Your <span class="gradient-text">Custom Solution</span></h1>
-            <p>Tell us about your AI goals. Whether it's an autonomous agent or a secure local environment, we're ready to build.</p>
+            <h1>Project <span class="gradient-text">Initiation</span></h1>
+            <p>Tell me about the intelligence you need to build. I review all inquiries personally and will respond within 24 hours.</p>
         </div>
     </header>
 
-    <section class="container content-section">
+    <main class="container content-section">
         <div class="contact-form-container animate-in">
-            <!-- 
-              EASY SETUP:
-              1. Sign up at Formspree.io
-              2. Create a form and get your Form ID
-              3. Replace 'PASTE_YOUR_ID_HERE' below with your ID
-            -->
             <form action="https://formspree.io/f/mqegdoyy" method="POST">
                 <input type="hidden" name="_next" value="https://xibalbatechsol.github.io/xibalba-solutions-site/thank-you.html">
+                
                 <div class="form-group">
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" class="form-control" required placeholder="Jane Doe">
+                    <input type="text" id="name" name="name" class="form-control" required placeholder="Jacob Vickers">
                 </div>
+                
                 <div class="form-group">
-                    <label for="email">Work Email</label>
-                    <input type="email" id="email" name="_replyto" class="form-control" required placeholder="jane@company.com">
+                    <label for="email">Technical/Work Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required placeholder="founder@company.ai">
                 </div>
+                
                 <div class="form-group">
-                    <label for="interest">Interested In</label>
+                    <label for="interest">Primary Interest</label>
                     <select id="interest" name="interest" class="form-control">
-                        <option value="agents">Custom AI Agent Development</option>
-                        <option value="hipaa">Local HIPAA AI Deployment</option>
-                        <option value="support">Ongoing Support & Refinement</option>
-                        <option value="audit">Privacy & Security Audit</option>
+                        <option value="custom-agent">Custom Hermes/OpenClaw Agent</option>
+                        <option value="local-infra">HIPAA/Sanctum Guard Deployment</option>
+                        <li>Ongoing Support & Engineering</li>
+                        <option value="audit">Architecture Audit</option>
                     </select>
                 </div>
+                
                 <div class="form-group">
-                    <label for="message">Project Description</label>
-                    <textarea id="message" name="message" class="form-control" placeholder="Tell us about the intelligence you want to build..."></textarea>
+                    <label for="message">Project Requirements (Technical details encouraged)</label>
+                    <textarea id="message" name="message" class="form-control" rows="5" placeholder="Define your niche use case, model requirements, and privacy constraints..."></textarea>
                 </div>
-                <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
+                
+                <button type="submit" class="btn" style="width: 100%;">Initiate Connection</button>
             </form>
         </div>
-    </section>
+    </main>
 
     <footer>
         <div class="container">
-            <div class="footer-sitemap">
-                <div class="sitemap-col">
-                    <h4>Core Pillars</h4>
-                    <ul>
-                        <li><a href="ai-agents.html">Custom AI Agents</a></li>
-                        <li><a href="local-ai.html">HIPAA Local AI</a></li>
-                        <li><a href="pricing.html">Pricing & Support</a></li>
-                    </ul>
-                </div>
-                <div class="sitemap-col">
-                    <h4>About & Reach</h4>
-                    <ul>
-                        <li><a href="about.html">The Mission</a></li>
-                        <li><a href="contact.html">Work With Us</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Xibalba Solutions. All rights reserved.</p>
+                &copy; 2026 Xibalba Solutions. Sovereign Intelligence Only.
             </div>
         </div>
     </footer>
 
     <script src="./js/main.js"></script>
 </body>
-
 </html>
