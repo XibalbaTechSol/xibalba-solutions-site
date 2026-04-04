@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sovereign Reputation: The AIS v7.0 Tri-Metric Protocol | Xibalba Solutions Blog</title>
     <link rel="icon" href="./favicon.ico" sizes="any">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
     <base href="/xibalba-solutions-site/">
+
     <style>
         .blog-content img { width: 100%; border-radius: 12px; margin: 2rem 0; border: 1px solid var(--border-main); }
         .chart-container { background: #000; padding: 2rem; border-radius: 12px; border: 1px solid #333; margin: 2.5rem 0; }
@@ -53,6 +57,10 @@
             <div class="math-concept">
                 <h3 style="color: var(--accent-core); margin-top: 0;">The Second Law of Reputation</h3>
                 <p style="margin-bottom: 0;">Reputation is subject to <strong>Temporal Entropy</strong>. Without the constant "work" of verified transactions or professional audits, an agent's trust score naturally decays toward zero. Trust is not a status; it is an active state of energy maintenance.</p>
+            </div>
+
+            <div class="math-concept" style="text-align: center; font-size: 1.2rem;">
+                $$AIS = [ (W_T \cdot T_i) + (W_X \cdot X_i) + (W_C \cdot C_i) + (W_S \cdot S_i) + (W_V \cdot V_i) ] \cdot E_s \cdot (1 - P_s)$$
             </div>
 
             <h2 style="color: #fff; margin-top: 4rem;">2. The Tri-Metric Profile</h2>

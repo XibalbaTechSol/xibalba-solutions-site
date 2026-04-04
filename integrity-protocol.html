@@ -7,6 +7,9 @@
     <meta name="description" content="The AIS v7.0 Tri-Metric Reputation Protocol. Measuring Entropy, Grounding, and Integrity for the Agentic Web.">
     <link rel="icon" href="./favicon.ico" sizes="any">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
     <base href="/xibalba-solutions-site/">
     <style>
         .metric-hero {
@@ -109,18 +112,8 @@
                     <li style="margin-bottom: 1rem;"><strong>🤝 Dual-Witness:</strong> Every transaction is verified by both the provider and the customer, eliminating self-reporting bias.</li>
                 </ul>
             </div>
-            <div class="code-block">
-# AIS v7.0 Tri-Metric Calculation
-def calculate_trust(metrics):
-    stability = exp(-1.5 * metrics.variance)
-    grounding = metrics.hgi * 1000
-    integrity = base_rep * stability * (1.0 + metrics.hgi * 0.2)
-    
-    return {
-        "Se": stability * 1000,
-        "Sg": grounding,
-        "Si": integrity
-    }
+            <div class="code-block" style="font-size: 1.5rem; text-align: center; color: #fff; background: rgba(0, 242, 255, 0.05); border-color: var(--accent-core);">
+                $$AIS = [ (W_T \cdot T_i) + (W_X \cdot X_i) + (W_C \cdot C_i) + (W_S \cdot S_i) + (W_V \cdot V_i) ] \cdot E_s \cdot (1 - P_s)$$
             </div>
         </section>
 

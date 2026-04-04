@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whitepaper: The Integrity Protocol | Xibalba Solutions</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
     <base href="/xibalba-solutions-site/">
     <style>
         .doc-container { max-width: 800px; margin: 0 auto; padding: 10rem 2rem; color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem; }
@@ -47,6 +50,9 @@
 
         <div class="highlight-box">
             <h3>3. The Mathematics of Trust: AIS v7.0</h3>
+            <p style="font-size: 1.2rem; text-align: center; margin: 2rem 0;">
+                $$AIS = [ (W_T \cdot T_i) + (W_X \cdot X_i) + (W_C \cdot C_i) + (W_S \cdot S_i) + (W_V \cdot V_i) ] \cdot E_s \cdot (1 - P_s)$$
+            </p>
             <p>The AIS is a composite metric derived from six weighted components and a correlated Entropy Drag coefficient. It measures technical stability, human accountability, and economic sacrifice.</p>
         </div>
 
