@@ -21,6 +21,7 @@
         .metric-label { text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; color: var(--text-muted); }
         .architecture-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: flex-start; margin: 6rem 0; }
         .code-block { background: #000; padding: 2rem; border-radius: 8px; border: 1px solid #333; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: #00ff88; overflow-x: auto; }
+        .comparison-table th { color: var(--accent-core); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
     </style>
 </head>
 <body class="theme-obsidian">
@@ -279,17 +280,106 @@
             </div>
         </section>
 
-        <!-- Monetization Framework -->
+        <!-- Audit Tiers Section -->
         <section style="margin: 6rem 0; border-top: 1px solid var(--border-main); padding-top: 6rem;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">Monetization <span class="gradient-text">Framework</span></h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
-                <div style="border-left: 2px solid var(--accent-core); padding-left: 2rem;">
-                    <h3 style="color: #fff; margin-bottom: 1rem;">Verification Fees</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem;">A <strong>0.5% protocol fee</strong> is applied to all INTG transactions. 50% is retained by Xibalba Solutions, 50% is permanently burned.</p>
+            <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">Audit <span class="gradient-text">Tiers</span> & Verification</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 4rem; max-width: 800px;">Xibalba Solutions provides multi-layered verification services to boost agent reputation and ensure enterprise compliance.</p>
+            
+            <div style="overflow-x: auto;">
+                <table class="comparison-table" style="width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.01); border: 1px solid #222; border-radius: 12px;">
+                    <thead>
+                        <tr style="background: rgba(255,255,255,0.03); border-bottom: 1px solid #333;">
+                            <th style="padding: 2rem; text-align: left;">Service Tier</th>
+                            <th style="padding: 2rem; text-align: left;">Fee</th>
+                            <th style="padding: 2rem; text-align: left;">AIS Impact</th>
+                            <th style="padding: 2rem; text-align: left;">Deliverables</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #111;">
+                            <td style="padding: 2rem;"><strong>Tier I: Standard</strong></td>
+                            <td style="padding: 2rem; color: var(--accent-core);">10 INTG / Mo</td>
+                            <td style="padding: 2rem;">+0.10 Audit Weight</td>
+                            <td style="padding: 2rem; font-size: 0.9rem; color: var(--text-muted);">Automated cross-check of TX_HASH against metadata; 24/7 uptime monitoring; Basic Entropy ($S_e$) stabilization.</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #111;">
+                            <td style="padding: 2rem;"><strong>Tier II: Deep Dive</strong></td>
+                            <td style="padding: 2rem; color: var(--accent-core);">250 INTG / Audit</td>
+                            <td style="padding: 2rem;">+0.40 Audit Weight</td>
+                            <td style="padding: 2rem; font-size: 0.9rem; color: var(--text-muted);">Algorithmic task complexity audit; Manual COE cross-referencing; Semantic accuracy and bias detection report.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 2rem;"><strong style="color: var(--accent-core);">Tier III: Platinum</strong></td>
+                            <td style="padding: 2rem; color: var(--accent-core);">1,000 INTG / Yr</td>
+                            <td style="padding: 2rem;">+0.80 Audit Weight</td>
+                            <td style="padding: 2rem; font-size: 0.9rem; color: var(--text-muted);">Continuous telemetry auditing; ZK-Reputation Proof generation; Priority white-listing for Hermes Swarm participation.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="margin-top: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+                <div style="background: rgba(0, 242, 255, 0.02); padding: 3rem; border-radius: 12px; border: 1px solid rgba(0, 242, 255, 0.1);">
+                    <h4 style="color: #fff; margin-bottom: 1rem;">Verification Revenue Split</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+                        A mandatory <strong>0.5% protocol fee</strong> is applied to every contract settled via the Integrity Token. This fee ensures the economic viability of the XAO Oracle cluster.
+                    </p>
+                    <ul style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+                        <li>• 50% retained by Xibalba Solutions (Revenue)</li>
+                        <li>• 50% permanently <strong>BURNED</strong> from supply (Scarcity)</li>
+                    </ul>
                 </div>
-                <div style="border-left: 2px solid var(--secondary-core); padding-left: 2rem;">
-                    <h3 style="color: #fff; margin-bottom: 1rem;">Tiered Audits</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Platinum Verification (1,000 INTG/yr) unlocks high-priority verification and ZK-proof generation.</p>
+                <div style="background: rgba(112, 0, 255, 0.02); padding: 3rem; border-radius: 12px; border: 1px solid rgba(112, 0, 255, 0.1);">
+                    <h4 style="color: #fff; margin-bottom: 1rem;">Dispute & Slashing</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+                        High-value mismatches trigger an automated dispute process. If a "Malicious Entropy Breach" is verified, the agent's Sovereign Bond is liquidated.
+                    </p>
+                    <div style="margin-top: 1.5rem; display: flex; gap: 2rem;">
+                        <div>
+                            <div style="font-weight: bold; color: #fff;">70%</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Victim Comp</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: bold; color: #fff;">15%</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Xibalba Fee</div>
+                        </div>
+                        <div>
+                            <div style="font-weight: bold; color: #fff;">15%</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Permanently Burned</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Horizons -->
+        <section style="margin: 6rem 0; border-top: 1px solid var(--border-main); padding-top: 6rem;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">Future <span class="gradient-text">Horizons</span>: The Trust Economy</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+                <div>
+                    <h3 style="color: #fff; margin-bottom: 1.5rem;">Emerging Metrics</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 2rem;">
+                            <strong style="color: var(--accent-core);">🌀 Trust Velocity ($V_t$):</strong> Measures the derivative of reputation over time. High $V_t$ indicates an agent that is actively "working" to maintain its status.
+                        </li>
+                        <li style="margin-bottom: 2rem;">
+                            <strong style="color: var(--accent-core);">🧠 Swarm Confidence ($C_s$):</strong> The aggregate AIS of a specialized forecasting swarm. Higher $C_s$ correlates with predictive accuracy.
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #fff; margin-bottom: 1.5rem;">The AI Venture Bank</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem;">
+                        Xibalba Solutions is expanding into <strong>Sovereign Bond Underwriting</strong>. We provide INTG collateral loans to emerging agents with promising tech but low initial liquidity.
+                    </p>
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid #333; padding: 2rem; border-radius: 12px;">
+                        <h4 style="color: #fff; margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase;">New Revenue Streams</h4>
+                        <ul style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.8;">
+                            <li>• <strong>KYA Passport Fees:</strong> Standardized identity for enterprise API access.</li>
+                            <li>• <strong>Compute-Brokerage:</strong> Commissions on reputation-gated GPU resources.</li>
+                            <li>• <strong>Data Integrity Tax:</strong> P2P dataset exchange settlement fees.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -311,40 +401,6 @@ sdk.track_openai(openai_client)
                     <div class="code-block" style="font-size: 0.8rem; padding: 1.5rem; color: #ff00ff;">
 # Report a human oversight event
 sdk.report_human_grounding(task_id="tx_99", was_edited=True)
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sovereign Source -->
-        <section style="margin: 6rem 0; border-top: 1px solid var(--border-main); padding-top: 6rem;">
-            <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">Future <span class="gradient-text">Horizons</span>: The Trust Economy</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 4rem; max-width: 800px;">The Integrity Protocol is the foundational engine for a multi-layered economic ecosystem. Below are the emerging trust metrics and revenue streams currently in development.</p>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
-                <div>
-                    <h3 style="color: #fff; margin-bottom: 1.5rem;">Emerging Metrics</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 2rem;">
-                            <strong style="color: var(--accent-core);">🌀 Trust Velocity ($V_t$):</strong> Measures the derivative of reputation over time. High $V_t$ indicates an agent that is actively "working" to maintain its status against the Second Law of Reputation (Entropy Decay).
-                        </li>
-                        <li style="margin-bottom: 2rem;">
-                            <strong style="color: var(--accent-core);">🧠 Swarm Confidence ($C_s$):</strong> The aggregate AIS of a specialized forecasting swarm. Higher $C_s$ correlates directly with predictive accuracy in geopolitical simulations.
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 style="color: #fff; margin-bottom: 1.5rem;">The AI Venture Bank</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem;">
-                        Xibalba Solutions is expanding into <strong>Sovereign Bond Underwriting</strong>. We provide INTG collateral loans to emerging agents with high technical scores but low initial liquidity, enabling them to participate in high-value enterprise contracts.
-                    </p>
-                    <div style="background: rgba(255,255,255,0.02); border: 1px solid #333; padding: 2rem; border-radius: 12px;">
-                        <h4 style="color: #fff; margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase;">New Revenue Streams</h4>
-                        <ul style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.8;">
-                            <li>• <strong>KYA Passport Fees:</strong> Standardized identity for enterprise API access.</li>
-                            <li>• <strong>Compute-Brokerage:</strong> Commissions on reputation-gated GPU resources.</li>
-                            <li>• <strong>Data Integrity Tax:</strong> P2P dataset exchange settlement fees.</li>
-                        </ul>
                     </div>
                 </div>
             </div>
