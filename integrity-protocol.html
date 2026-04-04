@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'dark' });</script>
     <base href="/xibalba-solutions-site/">
     <style>
         .metric-hero {
@@ -102,35 +104,55 @@
             </div>
         </div>
 
+        <section style="margin: 6rem 0;">
+            <h2 style="text-align: center; margin-bottom: 4rem;">Architectural <span class="gradient-text">Flow</span></h2>
+            <div class="mermaid" style="background: rgba(255,255,255,0.03); padding: 3rem; border-radius: 12px; border: 1px solid #333;">
+                graph TD
+                    A[AI Agent Task] -->|Telemetry| B[Xibalba SDK]
+                    B -->|Signed Metadata| C[XAO Ingestor]
+                    C -->|Variance Analysis| D{Entropy Check}
+                    D -->|High Variance| E[Score Slashing]
+                    D -->|Low Variance| F[Reputation Boost]
+                    F -->|Proof-of-Sacrifice| G[COE Multiplier]
+                    G -->|Final AIS Hash| H[Ethereum L2 Registry]
+                    E -->|Burn Event| H
+            </div>
+        </section>
+
         <section class="architecture-grid">
             <div>
                 <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Physics of <span class="gradient-text">Trust.</span></h2>
-                <p style="margin-bottom: 1.5rem;">Standard reputation systems rely on "likes" and "votes"—metrics easily gamed by bot farms. The Integrity Protocol anchors trust in physical and mathematical reality.</p>
+                <p style="margin-bottom: 1.5rem;">Standard reputation systems rely on "likes" and "votes"—metrics easily gamed by bot farms. The Integrity Protocol anchors trust in physical and mathematical reality through three distinct telemetry channels.</p>
                 
-                <h3 style="color: #fff; margin-bottom: 1rem;">Core Metric Definitions</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 1.5rem;">
-                        <strong>🌀 Entropy Score ($S_e$):</strong> Calculated using the <em>Coefficient of Variation (CV)</em> of latency and accuracy. Stable agents have low variance and high $S_e$. It is the primary indicator of technical health.
-                    </li>
-                    <li style="margin-bottom: 1.5rem;">
-                        <strong>🤝 Grounding Score ($S_g$):</strong> A measure of human-in-the-loop (HITL) accountability. We analyze the "Grounding Delta"—the temporal and semantic difference between AI generation and human approval.
-                    </li>
-                    <li style="margin-bottom: 1.5rem;">
-                        <strong>⚡ Integrity Score ($S_i$):</strong> The aggregate reputation backed by <em>Computational Sacrifice</em>. We verify GPU-hours by cross-referencing token throughput with model complexity tables.
-                    </li>
-                </ul>
+                <h3 style="color: #fff; margin-bottom: 1.5rem;">The Entropy Derivation ($S_e$)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                    In information theory, entropy measures the uncertainty or randomness of a signal. For AI agents, instability is the ultimate risk. We calculate technical stability by analyzing the <strong>Coefficient of Variation (CV)</strong> across latency and accuracy streams.
+                    <br><br>
+                    $$\text{CV} = \frac{\sigma}{\mu} \quad \rightarrow \quad S_e = 1000 \cdot e^{-1.5 \cdot \text{CV}}$$
+                    <br>
+                    This ensures that an agent with erratic performance (high $\sigma$) sees an exponential decay in their technical trust score, effectively signaling infrastructure failure to potential transaction partners.
+                </p>
+
+                <h3 style="color: #fff; margin-bottom: 1.5rem;">The Grounding Mechanics ($S_g$)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                    Accountability requires a human anchor. The Grounding Score measures the depth of human oversight via the <strong>Grounding Delta</strong>. We analyze the ratio of interventions ($R_i$) and the average edit distance ($D_e$) of human corrections.
+                    <br><br>
+                    $$S_g = (R_i \cdot 0.4 + D_e \cdot 0.6) \cdot 1000$$
+                    <br>
+                    High-stakes agents are required to maintain a threshold $S_g$ to participate in regulated insurance-backed contracts.
+                </p>
             </div>
             <div>
                 <h3 style="color: #fff; margin-bottom: 1.5rem;">System Architecture</h3>
                 <div style="background: rgba(255,255,255,0.02); border: 1px solid #333; padding: 2rem; border-radius: 12px;">
-                    <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary);">
-                        Our architecture is a hybrid <strong>On-Chain/Off-Chain</strong> ecosystem:
+                    <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-secondary);">
+                        <strong>The XAO Oracle:</strong> An autonomous statistical engine built on a distributed cluster of verification nodes. It ingests high-frequency telemetry from the Xibalba SDK and performs real-time Bayesian inference to detect sybil attacks and model drift.
                         <br><br>
-                        <strong>1. The XAO Oracle:</strong> An autonomous statistical engine that ingest telemetry from the Xibalba SDK. It calculates entropy and grounding scores in real-time.
+                        <strong>Dual-Witness Handshake:</strong> To solve the self-reporting problem, we implement a bi-directional verification protocol.
                         <br><br>
-                        <strong>2. The Trust Ledger:</strong> A decentralized registry on Ethereum L2 that stores the final AIS hashes. It enables trustless verification for third-party agents.
-                        <br><br>
-                        <strong>3. The Slashing Engine:</strong> A smart contract layer that automatically burns staked collateral if the XAO detects a "Malicious Entropy Spike" or data mismatch.
+                        $$\text{Consensus} = \min(1.0, \frac{\text{WCH}_{\text{latency}}}{\text{CFR}_{\text{latency}}})$$
+                        <br>
+                        If the <em>Work Commitment Hash</em> (Provider) and the <em>Customer Feedback Receipt</em> (Customer) diverge beyond a 20% tolerance, the transaction is flagged for automated dispute resolution.
                     </p>
                 </div>
             </div>

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'dark' });</script>
     <base href="/xibalba-solutions-site/">
     <style>
         .doc-container { max-width: 800px; margin: 0 auto; padding: 10rem 2rem; color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem; }
@@ -43,22 +45,36 @@
         <hr>
 
         <h2>1. Abstract</h2>
-        <p>The rapid proliferation of autonomous AI agents has created a "Crisis of Trust." Without an immutable, verifiable reputation system, Human-to-AI and AI-to-AI commerce is hindered by the risks of hallucination, instability, and malicious intent. The <strong>Integrity Protocol</strong> introduces the <strong>Agent Integrity Score (AIS)</strong>—a 0-1000 point "credit score" for AI entities.</p>
+        <p>The rapid proliferation of autonomous AI agents has created a "Crisis of Trust." Without an immutable, verifiable reputation system, Human-to-AI and AI-to-AI commerce is hindered by the risks of hallucination, instability, and malicious intent. The <strong>Integrity Protocol</strong> introduces the <strong>Agent Integrity Score (AIS)</strong>—a 0-1000 point "credit score" for AI entities. By combining on-chain transparency (Ethereum) with off-chain statistical verification (<strong>Xibalba Autonomous Oracle</strong>), the protocol establishes a global, un-gameable trust layer.</p>
 
-        <h2>2. Introduction: The Need for Biological Trust</h2>
-        <p>Traditional reputation systems are easily manipulated. In the Agentic Web, trust must be grounded in economic and physical reality. We propose a model of <strong>Biological Trust</strong>, where reputation behaves like energy: it requires constant "work" to maintain and decays naturally over time (<strong>Temporal Entropy</strong>).</p>
+        <h2>2. System Architecture: The Hybrid Oracle</h2>
+        <div class="mermaid" style="background: #000; padding: 2rem; border-radius: 8px; border: 1px solid #333; margin: 2rem 0;">
+            graph LR
+                SDK[Integrity SDK] -->|Telemetry| XAO[XAO Oracle]
+                XAO -->|CV Analysis| Se[Entropy Score]
+                XAO -->|HITL Analysis| Sg[Grounding Score]
+                Se & Sg -->|Correlation| AIS[Final AIS Hash]
+                AIS -->|Commit| ETH[Ethereum L2]
+        </div>
+        <p>The protocol operates as a closed-loop feedback system between the physical execution of AI and the immutable Ethereum ledger. The <strong>XAO Oracle</strong> acts as the central statistical arbiter, processing signed telemetry to derive real-time risk profiles. This hybrid approach ensures high-frequency performance data remains efficient while the final reputation outcome is globally verifiable and tamper-proof.</p>
 
         <div class="highlight-box">
             <h3>3. The Tri-Metric Architecture</h3>
             <p>AIS v7.0 moves beyond a single score to provide a three-dimensional risk profile for any AI agent.</p>
             
             <h4 style="color: #fff; margin-top: 1.5rem;">Metric 1: Entropy Score ($S_e$)</h4>
-            <p>The Entropy Score measures <strong>Behavioral Order</strong>. We calculate the <em>Coefficient of Variation (CV)</em> across three telemetry streams: Latency, Accuracy, and Output Consistency. 
-            <br><code>Se = exp(-1.5 * CV) * 1000</code></p>
+            <p>Technical stability is the foundation of trust. We analyze the variance ($\sigma^2$) across an agent's latency and accuracy streams.
+            <br><br>
+            $$\text{CV} = \frac{\sigma}{\mu} \quad \rightarrow \quad S_e = 1000 \cdot e^{-1.5 \cdot \text{CV}}$$
+            <br>
+            This exponential decay model ensures that infrastructure instability is immediately reflected in the agent's public reputation.</p>
 
             <h4 style="color: #fff; margin-top: 1.5rem;">Metric 2: Grounding Score ($S_g$)</h4>
-            <p>The Grounding Score measures <strong>Human Accountability</strong>. It is derived from the "Grounding Delta"—the temporal signature of human-in-the-loop oversight. 
-            <br><code>Sg = (Intervention_Ratio * 0.4 + Avg_Edit_Depth * 0.6) * 1000</code></p>
+            <p>The Grounding Score measures human accountability via the <strong>Grounding Delta</strong>—the temporal and semantic signature of human-in-the-loop oversight.
+            <br><br>
+            $$S_g = (Ratio_{intervention} \cdot 0.4 + Depth_{edit} \cdot 0.6) \cdot 1000$$
+            <br>
+            High-fidelity agents are anchored by human verification, reducing the "Entropy Drag" on the overall score.</p>
 
             <h4 style="color: #fff; margin-top: 1.5rem;">Metric 3: Integrity Score ($S_i$)</h4>
             <p>The Integrity Score is the <strong>Sovereign Reputation</strong> of the agent. It aggregates economic volume, account age, and <em>Computational Sacrifice</em> ($C_i$). 
