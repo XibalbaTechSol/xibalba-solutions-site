@@ -3,18 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Plan: Xibalba Solutions | Integrity Protocol</title>
+    <title>Business Plan v8.0 | Xibalba Solutions | The Integrity Protocol</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'dark' });</script>
     <base href="/xibalba-solutions-site/">
     <style>
-        .doc-container { max-width: 800px; margin: 0 auto; padding: 10rem 2rem; color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem; }
-        h1, h2, h3 { color: #fff; margin-top: 3rem; }
-        h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; }
-        .meta { color: var(--secondary-core); font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 2rem; }
+        .doc-container { max-width: 900px; margin: 0 auto; padding: 10rem 2rem; color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem; }
+        h1, h2, h3 { color: #fff; margin-top: 4rem; }
+        h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1rem; }
+        .meta-header { border-left: 2px solid var(--accent-core); padding-left: 2rem; margin-bottom: 4rem; }
+        .meta { color: var(--secondary-core); font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 1rem; }
         hr { border: 0; border-top: 1px solid #222; margin: 4rem 0; }
-        .revenue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; }
-        .revenue-card { background: #111; padding: 1.5rem; border-radius: 8px; border: 1px solid #333; }
-        .revenue-card h4 { color: var(--accent-core); margin-top: 0; }
+        .revenue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0; }
+        .revenue-card { background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border: 1px solid #333; transition: var(--transition-smooth); }
+        .revenue-card:hover { border-color: var(--accent-core); background: rgba(0, 242, 255, 0.02); }
+        .revenue-card h4 { color: var(--accent-core); margin-top: 0; font-size: 1.3rem; margin-bottom: 1rem; }
+        .roadmap-item { margin-bottom: 3rem; position: relative; padding-left: 3rem; }
+        .roadmap-item::before { content: ''; position: absolute; left: 0; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--accent-core); box-shadow: 0 0 15px var(--accent-core); }
+        .roadmap-item::after { content: ''; position: absolute; left: 5px; top: 1.5rem; width: 2px; height: calc(100% + 1.5rem); background: #222; }
+        .roadmap-item:last-child::after { display: none; }
+        .math-inset { background: #000; padding: 2rem; border-radius: 8px; border: 1px solid #333; margin: 2rem 0; font-family: 'Space Mono', monospace; color: #fff; }
     </style>
 </head>
 <body class="theme-obsidian">
@@ -30,52 +42,137 @@
     </nav>
 
     <article class="doc-container">
-        <div class="meta">Strategic Business Plan</div>
-        <h1>The <span class="gradient-text">Market</span> for Trust</h1>
-        <p style="font-size: 1.25rem; color: #888;">Xibalba Solutions: Building the Infrastructure of the Agentic Web</p>
-        
-        <div style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-muted); display: flex; gap: 2rem;">
-            <span>Confidential Strategic Document | April 2026</span>
-            <a href="https://github.com/XibalbaTechSol/integrity-protocol" target="_blank" style="color: var(--accent-core); text-decoration: none;">View Protocol Implementation →</a>
+        <div class="meta-header">
+            <div class="meta">Strategic Business Proposal v8.0</div>
+            <h1>Dominating the <span class="gradient-text">Trust</span> Economy</h1>
+            <p style="font-size: 1.4rem; color: #888; line-height: 1.4;">Xibalba Solutions: Building the Supreme Court & Credit Bureau of the Agentic Web</p>
+            <div style="margin-top: 2rem; font-size: 0.9rem; color: var(--text-muted); display: flex; gap: 2rem;">
+                <span>April 3, 2026 | Solo Architect Strategy</span>
+                <a href="https://github.com/XibalbaTechSol/integrity-protocol" target="_blank" style="color: var(--accent-core); text-decoration: none; font-weight: bold;">[Internal Implementation Docs]</a>
+            </div>
         </div>
+
+        <h2>1. Executive Summary: The Sovereignty of Truth</h2>
+        <p>
+            As the founder of Xibalba Solutions, I realized early that the primary bottleneck for the Agentic Web isn't model capability—it is <strong>Actuarial Certainty</strong>. Autonomous agents are moving trillions in digital value, yet they operate in a reputation vacuum. We have engineered the **Integrity Protocol** to serve as the singular source of truth for AI reliability.
+        </p>
+        <p>
+            Our value proposition is simple: We don't build the agents; we verify their worth. We provide the mathematical rails that make AI agents insurable, bankable, and trustworthy. By launching the **INTG Token** and the **XAO Autonomous Oracle**, we are positioning Xibalba as the mandatory gatekeeper for all high-stakes agentic commerce.
+        </p>
 
         <hr>
 
-        <h2>1. Market Opportunity</h2>
-        <p>By 2027, autonomous agents will initiate 40% of digital transactions. The current bottleneck is <strong>Trust</strong>. We solve this by making reputation mathematically expensive and algorithmically verifiable.</p>
+        <h2>2. Market Opportunity: The $1.5T Agentic Shift</h2>
+        <p>
+            By 2028, the "Agentic Summer" will transition into a permanent economic infrastructure. The transaction volume initiated by autonomous agents is projected to hit <strong>$1.5 Trillion</strong>. However, the current "Star Rating" systems fail because they are "Social Metadata"—cheap, easy to fake, and technically irrelevant.
+        </p>
+        
+        <div class="mermaid" style="background: rgba(255,255,255,0.02); padding: 3rem; border-radius: 12px; border: 1px solid #333; margin: 3rem 0;">
+            graph TD
+                A[Current State: Manual Trust] -->|Friction| B[Low Scaling]
+                C[The Xibalba Solution] -->|Algorithmic Trust| D[Exponential Scaling]
+                D --> E[AI-to-AI High Stakes Trading]
+                D --> F[Automated Legal Execution]
+                D --> G[Autonomous Medical Research]
+                style C fill:var(--accent-core),stroke:#fff,stroke-width:2px,color:#000
+        </div>
 
-        <h2>2. Revenue Model: "The Supreme Court Tax"</h2>
+        <p>
+            The market is starving for <strong>Biological Trust</strong>—reputation that behaves like energy. It must be expensive to create and subject to natural decay. This is our technical moat.
+        </p>
+
+        <hr>
+
+        <h2>3. The Revenue Engine: "The Supreme Court Tax"</h2>
+        <p>
+            Xibalba Solutions monetizes the protocol through a lean, high-margin model designed for solo-founder scalability. We utilize four primary revenue streams that scale directly with the volume of AI trust.
+        </p>
+
         <div class="revenue-grid">
             <div class="revenue-card">
-                <h4>Verification Fees</h4>
-                <p>0.5% fee on all protocol transactions. 50% revenue share, 50% deflationary burn.</p>
+                <h4>Protocol Verification Fees</h4>
+                <p>A mandatory <strong>0.5% protocol fee</strong> is applied to every contract settled via INTG. 50% flows to Xibalba as operational revenue, 50% is burned to drive scarcity.</p>
             </div>
             <div class="revenue-card">
-                <h4>Tiered Audits</h4>
-                <p>Enterprise subscription tiers (up to 1,000 INTG/yr) for high-impact reputation boosts.</p>
+                <h4>Tiered Audit SaaS</h4>
+                <p>Enterprise agents pay for <strong>Platinum Status</strong> (1,000 INTG/yr) to unlock high-priority verification, ZK-proof generation, and a 20% AIS boost.</p>
             </div>
             <div class="revenue-card">
-                <h4>Insurance APIs</h4>
-                <p>Underwriters pay for actuarial-grade risk data to price AI malpractice policies.</p>
+                <h4>Actuarial Risk API</h4>
+                <p>Insurance companies pay $5k - $50k/mo to access our real-time risk tiers (AAA to CCC) to price their AI failure policies.</p>
             </div>
             <div class="revenue-card">
                 <h4>Dispute Resolution</h4>
-                <p>Premium manual arbitration for high-value contract disputes.</p>
+                <p>High-value Dual-Witness mismatches trigger a manual arbitration process with a 500 INTG filing fee.</p>
             </div>
         </div>
 
-        <h2>3. Strategic Roadmap</h2>
-        <ul>
-            <li><strong>Q2 2026:</strong> INTG Token Launch & Developer Alpha.</li>
-            <li><strong>Q3 2026:</strong> First Insurance Partnership & Risk API release.</li>
-            <li><strong>Q4 2026:</strong> Zero-Knowledge Proofs for Enterprise privacy.</li>
-        </ul>
-
-        <h2>4. Competitive Moat</h2>
-        <p>Our moat is <strong>The Physics of Trust</strong>. Competitors rely on social proof; we rely on Thermodynamics (Energy Sunk) and Information Theory (Entropy). This creates an un-gameable barrier to entry.</p>
+        <div class="math-inset">
+            // Revenue Projections (Year 1)
+            Total_Volume = $100M
+            Fee_Revenue = Total_Volume * 0.0025 (Our 50% share) = $250,000
+            Audit_Revenue = 300 Agents * $1,000 avg = $300,000
+            API_Licensing = 5 Insurers * $10,000/mo * 12 = $600,000
+            --------------------------------------------------------
+            Target ARR: $1,150,000 (Solo-Founder Scale)
+        </div>
 
         <hr>
-        <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem;">© 2026 Xibalba Solutions. Confidential Strategic Document.</p>
+
+        <h2>4. The Competitive Moat: The Physics of Trust</h2>
+        <p>
+            Our primary advantage isn't just code; it is <strong>Technical Transparency</strong>. We have anchored reputation in variables that are physically impossible to game.
+        </p>
+        
+        <h3>4.1 The Entropy Drag Moat</h3>
+        <p>
+            Competitors using "likes" can be overwhelmed by bot farms. Our **Entropy Score ($S_e$)** is derived from the statistical variance of the AI's actual performance. You cannot fake a low standard deviation without actually having stable infrastructure.
+        </p>
+
+        <h3>4.2 The "Black Box" Data Moat</h3>
+        <p>
+            By being the first to ingest **Dual-Witness** metadata (Provider commitments vs Customer feedback), we are building the world's most valuable dataset of "How AI Agents Fail." This data is our "Oil"—it powers the insurance underwriters who will eventually make Xibalba the mandatory standard for any agent operating in a regulated space.
+        </p>
+
+        <hr>
+
+        <h2>5. Strategic Roadmap: The 12-Month Sprint</h2>
+        
+        <div class="roadmap-item">
+            <h3>Q2 2026: The Algorithm Proof</h3>
+            <p>Finalize the v8.0 Tri-Metric logic. Launch the INTG token on Base (L2) to minimize transaction friction. Secure three "Alpha Agents" to begin telemetry reporting.</p>
+        </div>
+
+        <div class="roadmap-item">
+            <h3>Q3 2026: The Insurance Alpha</h3>
+            <p>Onboard our first boutique AI insurer. Release the public <strong>Reputation Explorer</strong> UI. Use pilot data to tune the Slashing Penalty ($P_s$) weights for institutional use.</p>
+        </div>
+
+        <div class="roadmap-item">
+            <h3>Q4 2026: The ZK-Shield</h3>
+            <p>Implement Zero-Knowledge Reputation Proofs. This allows Fortune 500 agents to prove they are Tier AAA without leaking proprietary transaction logs or model parameters.</p>
+        </div>
+
+        <div class="roadmap-item">
+            <h3>Q1 2027: The Swarm Integration</h3>
+            <p>Official launch of **Hermes Swarm** powered by the Integrity Protocol. Establish the Xibalba Governance DAO to allow INTG holders to vote on COE (Cost-of-Existence) parameters.</p>
+        </div>
+
+        <hr>
+
+        <h2>6. Conclusion: The Infrastructure of Mastery</h2>
+        <p>
+            In the Agentic Web, your code is your product, but your **Integrity** is your access. Xibalba Solutions is not just a company; we are the foundation of a new economic era. We provide the certainty that allows autonomy to thrive.
+        </p>
+        
+        <div style="text-align: center; margin-top: 6rem;">
+            <h3 style="margin-bottom: 2rem;">Ready to Power the New Economy?</h3>
+            <a href="contact.html" class="btn">Initiate Strategic Connection</a>
+            <p style="margin-top: 2rem; color: var(--text-muted);">"In code we trust; in Xibalba we verify."</p>
+        </div>
+
+        <hr>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem;">© 2026 Xibalba Solutions. Confidential & Sovereign. v8.0.</p>
     </article>
 
     <script src="./js/main.js"></script>
