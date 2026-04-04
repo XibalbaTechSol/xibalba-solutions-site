@@ -1,0 +1,46 @@
+/* Footer - Ultra Minimalist */
+footer {
+    background: #000 !important;
+    border-top: 1px solid rgba(255,255,255,0.08) !important;
+    padding: 4rem 0 !important;
+    margin-top: 10rem !important;
+    width: 100% !important;
+}
+
+.footer-content-minimal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.footer-info {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.footer-contact {
+    color: #64748B;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-contact a {
+    color: #64748B;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-contact a:hover {
+    color: #00F2FF;
+}
