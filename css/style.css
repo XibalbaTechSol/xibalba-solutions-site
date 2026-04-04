@@ -34,15 +34,15 @@
     --font-mono: 'Space Mono', monospace;
 
     /* Font Scale */
-    --text-xs: 12px;
-    --text-sm: 14px;
-    --text-base: 16px;
-    --text-lg: 18px;
-    --text-xl: 24px;
-    --text-2xl: 30px;
-    --text-3xl: 36px;
-    --text-4xl: 48px;
-    --text-hero: 72px;
+    --text-xs: 0.75rem;
+    --text-sm: 0.85rem;
+    --text-base: 1rem;
+    --text-lg: 1.15rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+    --text-3xl: 2.75rem;
+    --text-4xl: 3.5rem;
+    --text-hero: 4.5rem;
 
     /* Line Heights */
     --lh-tight: 1.1;
@@ -95,13 +95,14 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 body {
     background-color: var(--absolute-black);
     color: var(--gray-50);
     font-family: var(--font-secondary);
+    font-weight: 300;
     line-height: var(--lh-normal);
     overflow-x: hidden;
     min-height: 100vh;
@@ -109,6 +110,18 @@ body {
         linear-gradient(to bottom, var(--absolute-black) 0%, var(--gray-950) 100%),
         radial-gradient(circle at 0% 0%, var(--color-brand-secondary-glow) 0%, transparent 40%),
         radial-gradient(circle at 100% 100%, var(--color-brand-primary-glow) 0%, transparent 40%);
+}
+
+p, li, .granular-p {
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: var(--lh-relaxed);
+}
+
+.text-muted {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--gray-500);
 }
 
 /* Headlines */
