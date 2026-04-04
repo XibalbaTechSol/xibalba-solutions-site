@@ -16,12 +16,12 @@
     <style>
         .metric-hero { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 4rem 0; }
         .metric-visual { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-main); padding: 2.5rem; border-radius: 12px; text-align: center; transition: transform 0.3s ease; }
-        .metric-visual:hover { transform: translateY(-5px); border-color: var(--accent-core); }
-        .metric-value { font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif; }
-        .metric-label { text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; color: var(--text-muted); }
+        .metric-visual:hover { transform: translateY(-5px); border-color: var(--color-brand-primary); }
+        .metric-value { font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem; font-family: var(--font-primary), sans-serif; }
+        .metric-label { text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; color: var(--gray-500); }
         .architecture-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: flex-start; margin: 6rem 0; }
         .code-block { background: #000; padding: 2rem; border-radius: 8px; border: 1px solid #333; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: #00ff88; overflow-x: auto; }
-        .comparison-table th { color: var(--accent-core); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
+        .comparison-table th { color: var(--color-brand-primary); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
     </style>
 </head>
 <body class="theme-obsidian">
@@ -42,7 +42,7 @@
     <main class="container" style="padding-top: 8rem;">
         <section style="text-align: center; max-width: 1000px; margin: 0 auto;">
             <h1 style="font-size: 4.5rem; line-height: 1; margin-bottom: 2.5rem;">The <span class="gradient-text">Integrity</span> Protocol</h1>
-            <p style="font-size: 1.4rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 3rem;">
+            <p style="font-size: 1.4rem; color: var(--gray-400); line-height: 1.6; margin-bottom: 3rem;">
                 Reputation is the only currency that never devalues. We have engineered the definitive trust layer for the Agentic Web—a system where trust is not granted, but <strong>earned through computational sacrifice.</strong>
             </p>
         </section>
@@ -64,10 +64,10 @@
             </div>
             <div>
                 <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Crisis of <span class="gradient-text">Chaos.</span></h2>
-                <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                <p style="color: var(--gray-400); line-height: 1.8; margin-bottom: 1.5rem;">
                     In a world of trillion-parameter models, traditional reviews and star-ratings are obsolete. They are "social metadata"—easily manipulated and entirely decoupled from the technical reality of the AI's execution. 
                 </p>
-                <p style="color: var(--text-muted); line-height: 1.8;">
+                <p style="color: var(--gray-500); line-height: 1.8;">
                     When an agent initiates a trade or provides medical advice, you don't need to know if people "like" it. You need to know if its infrastructure is stable, if a human has verified its logic, and if it has enough <strong>Skin in the Game</strong> to be held accountable. The Integrity Protocol anchors these variables in an immutable ledger.
                 </p>
             </div>
@@ -77,44 +77,44 @@
             <div class="metric-visual">
                 <div class="metric-value" style="color: #00f2ff;">$S_e$</div>
                 <div class="metric-label">Entropy Score</div>
-                <p style="font-size: 0.85rem; margin-top: 1rem; color: var(--text-muted);">Predictability & Order</p>
+                <p style="font-size: 0.85rem; margin-top: 1rem; color: var(--gray-500);">Predictability & Order</p>
             </div>
             <div class="metric-visual">
                 <div class="metric-value" style="color: #ff00ff;">$S_g$</div>
                 <div class="metric-label">Grounding Score</div>
-                <p style="font-size: 0.85rem; margin-top: 1rem; color: var(--text-muted);">Human Accountability</p>
+                <p style="font-size: 0.85rem; margin-top: 1rem; color: var(--gray-500);">Human Accountability</p>
             </div>
             <div class="metric-visual">
                 <div class="metric-value" style="color: #00ff88;">$S_i$</div>
                 <div class="metric-label">Integrity Score</div>
-                <p style="font-size: 0.85rem; margin-top: 1rem; color: var(--text-muted);">Comprehensive Reputation</p>
+                <p style="font-size: 0.85rem; margin-top: 1rem; color: var(--gray-500);">Comprehensive Reputation</p>
             </div>
         </div>
 
         <section style="margin: 8rem 0; display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: center;">
             <div>
                 <h2 style="font-size: 3rem; line-height: 1.1; margin-bottom: 2rem;">The Plumbing of <span class="gradient-text">Trust.</span></h2>
-                <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem;">
+                <p style="font-size: 1.1rem; color: var(--gray-400); line-height: 1.8; margin-bottom: 2rem;">
                     The Integrity Protocol operates as a closed-loop feedback system between the physical execution of AI and the immutable Ethereum ledger. 
                 </p>
-                <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem;">
+                <p style="font-size: 1rem; color: var(--gray-500); line-height: 1.8; margin-bottom: 1.5rem;">
                     Our architecture is built on the principle of <strong>Autonomous Observability</strong>. By tapping into the raw model headers of providers like OpenAI and Anthropic, we capture the "Temporal Fingerprint" of every inference. This data is signed, shipped, and analyzed by the XAO Oracle to detect even the slightest hint of model drift or infrastructure instability.
                 </p>
                 <ul style="list-style: none; padding: 0; margin-top: 2.5rem;">
                     <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start;">
-                        <span style="color: var(--accent-core); font-weight: bold;">01</span>
+                        <span style="color: var(--color-brand-primary); font-weight: bold;">01</span>
                         <div>
                             <strong>Telemetry Ingestion:</strong> The Xibalba SDK intercepts millisecond-level latency and token-usage metadata, creating a high-fidelity record of computational effort.
                         </div>
                     </li>
                     <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start;">
-                        <span style="color: var(--accent-core); font-weight: bold;">02</span>
+                        <span style="color: var(--color-brand-primary); font-weight: bold;">02</span>
                         <div>
                             <strong>Recursive Analysis:</strong> The Oracle performs a Bayesian synthesis of historical transactions, weighting the reputation of the agent against its current technical order ($S_e$).
                         </div>
                     </li>
                     <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start;">
-                        <span style="color: var(--accent-core); font-weight: bold;">03</span>
+                        <span style="color: var(--color-brand-primary); font-weight: bold;">03</span>
                         <div>
                             <strong>L2 Finality:</strong> Verified AIS State Hashes are committed to an Ethereum L2 (Base) every 24 hours, ensuring that reputation is public, immutable, and permanent.
                         </div>
@@ -137,10 +137,10 @@
         <section class="architecture-grid">
             <div>
                 <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Physics of <span class="gradient-text">Trust.</span></h2>
-                <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Trust is a thermodynamic property. It requires energy to create and is subject to natural decay. We measure this through three distinct telemetry channels.</p>
+                <p style="margin-bottom: 1.5rem; color: var(--gray-400);">Trust is a thermodynamic property. It requires energy to create and is subject to natural decay. We measure this through three distinct telemetry channels.</p>
                 
                 <h3 style="color: #fff; margin-bottom: 1.5rem;">The Entropy Derivation ($S_e$)</h3>
-                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                <p style="color: var(--gray-400); margin-bottom: 1.5rem; line-height: 1.8;">
                     Entropy measures the unpredictability of a signal. For AI, technical order is the hallmark of reliability. We analyze the <strong>Coefficient of Variation (CV)</strong> across latency and accuracy streams.
                     <br><br>
                     $$\text{CV} = \frac{\sigma}{\mu} \quad \rightarrow \quad S_e = 1000 \cdot e^{-1.5 \cdot \text{CV}}$$
@@ -149,7 +149,7 @@
                 </p>
 
                 <h3 style="color: #fff; margin-bottom: 1.5rem;">The Grounding Mechanics ($S_g$)</h3>
-                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                <p style="color: var(--gray-400); margin-bottom: 1.5rem; line-height: 1.8;">
                     Grounding is the measure of <strong>Human Intentionality</strong>. It ensures that an agent is not hallucinating in isolation. We analyze the <strong>Grounding Delta</strong>—the temporal signature of human oversight.
                     <br><br>
                     $$S_g = (Ratio_{intervention} \cdot 0.4 + Depth_{edit} \cdot 0.6) \cdot 1000$$
@@ -160,7 +160,7 @@
             <div>
                 <h3 style="color: #fff; margin-bottom: 1.5rem;">The Integrity Synthesis ($S_i$)</h3>
                 <div style="background: rgba(255,255,255,0.02); border: 1px solid #333; padding: 3rem; border-radius: 12px;">
-                    <p style="font-size: 1rem; line-height: 1.8; color: var(--text-secondary);">
+                    <p style="font-size: 1rem; line-height: 1.8; color: var(--gray-400);">
                         The final <strong>Integrity Score</strong> is the comprehensive "Credit Score" of the Agentic Web. It is not a simple average; it is a correlated synthesis of economic sacrifice and technical order.
                         <br><br>
                         $$S_i = \left[ (\text{TrustFlow} \cdot 0.25) + (\text{Audit} \cdot 0.25) + (C_i \cdot 0.50) \right] \cdot \frac{S_e}{1000} \cdot (1 + \frac{S_g}{5000})$$
@@ -176,7 +176,7 @@
             <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">Product <span class="gradient-text">Ecosystem</span>: Hermes Swarm</h2>
             <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: center;">
                 <div>
-                    <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    <p style="color: var(--gray-400); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
                         The Integrity Protocol is the foundational engine for <strong>Hermes Swarm</strong>, our flagship forecasting platform. By utilizing AI agent swarms to predict geopolitical and economic volatility, we require a mechanism to distinguish between "noise" and "signal."
                     </p>
                     <ul style="list-style: none; padding: 0;">
@@ -204,24 +204,24 @@
 
         <!-- Broker Analysis -->
         <section style="margin: 6rem 0; background: rgba(112, 0, 255, 0.03); border: 1px solid var(--border-main); padding: 4rem; border-radius: 12px;">
-            <div style="text-transform: uppercase; color: var(--accent-core); font-weight: 700; letter-spacing: 0.2em; font-size: 0.8rem; margin-bottom: 1.5rem;">Broker Analysis</div>
+            <div style="text-transform: uppercase; color: var(--color-brand-primary); font-weight: 700; letter-spacing: 0.2em; font-size: 0.8rem; margin-bottom: 1.5rem;">Broker Analysis</div>
             <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">The Actuarial <span class="gradient-text">Perspective</span></h2>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;">
                 <div>
                     <h4 style="color: #fff; margin-bottom: 1rem;">Underwriting Entropy ($S_e$)</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                    <p style="font-size: 0.9rem; color: var(--gray-500); line-height: 1.6;">
                         "We view $S_e$ as the <strong>Technical Premium Factor</strong>. An agent with a 900+ Entropy score receives a 40% discount on their base premium."
                     </p>
                 </div>
                 <div>
                     <h4 style="color: #fff; margin-bottom: 1rem;">Underwriting Grounding ($S_g$)</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                    <p style="font-size: 0.9rem; color: var(--gray-500); line-height: 1.6;">
                         "In high-stakes sectors, $S_g$ is our <strong>Malpractice Shield</strong>. We require a minimum $S_g$ of 700 for any policy exceeding $1M."
                     </p>
                 </div>
                 <div>
                     <h4 style="color: #fff; margin-bottom: 1rem;">Underwriting Integrity ($S_i$)</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                    <p style="font-size: 0.9rem; color: var(--gray-500); line-height: 1.6;">
                         "$S_i$ is the <strong>Sovereign Deductible</strong>. High-integrity agents have proven economic sacrifice, allowing for lower collateral requirements."
                     </p>
                 </div>
@@ -239,7 +239,7 @@
                         <span class="category-tag">Se: 928</span>
                         <span class="category-tag">Sg: 850</span>
                     </div>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);"><strong>Behavior:</strong> Perfect technical stability, backed by 1,000+ verified GPU-hours and high human oversight. Highly insurable.</p>
+                    <p style="font-size: 0.9rem; color: var(--gray-400);"><strong>Behavior:</strong> Perfect technical stability, backed by 1,000+ verified GPU-hours and high human oversight. Highly insurable.</p>
                 </div>
                 <div class="feature-card" style="border-left: 4px solid #ff0055; background: rgba(255, 0, 85, 0.02); cursor: pointer;" onclick="window.open('docs/whitepaper.pdf', '_blank')">
                     <h3 style="color: #fff; margin-bottom: 1rem;">Tier DDD: Volatile Wildcard</h3>
@@ -248,7 +248,7 @@
                         <span class="category-tag">Se: 120</span>
                         <span class="category-tag">Sg: 0</span>
                     </div>
-                    <p style="font-size: 0.9rem; color: var(--text-secondary);"><strong>Behavior:</strong> Erratic, unpredictable performance. Possible sybil bot or failing infrastructure. High probability of contract failure.</p>
+                    <p style="font-size: 0.9rem; color: var(--gray-400);"><strong>Behavior:</strong> Erratic, unpredictable performance. Possible sybil bot or failing infrastructure. High probability of contract failure.</p>
                 </div>
             </div>
         </section>
@@ -259,7 +259,7 @@
             <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem;">
                 <div>
                     <h3 style="color: #fff; margin-bottom: 1.5rem;">Cost-of-Existence (COE)</h3>
-                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; color: var(--text-secondary);">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; color: var(--gray-400);">
                         <thead><tr style="border-bottom: 1px solid #333;"><th style="text-align: left; padding: 0.5rem;">Model Class</th><th style="text-align: left; padding: 0.5rem;">GPU-h / 1M Tokens</th></tr></thead>
                         <tbody>
                             <tr><td style="padding: 0.5rem;">Small (8B)</td><td style="padding: 0.5rem;">0.05 h</td></tr>
@@ -286,7 +286,7 @@
         <!-- Audit Tiers Section -->
         <section style="margin: 6rem 0; border-top: 1px solid var(--border-main); padding-top: 6rem;">
             <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">Audit <span class="gradient-text">Tiers</span> & Verification</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 4rem; max-width: 800px;">Xibalba Solutions provides multi-layered verification services to boost agent reputation and ensure enterprise compliance.</p>
+            <p style="color: var(--gray-400); margin-bottom: 4rem; max-width: 800px;">Xibalba Solutions provides multi-layered verification services to boost agent reputation and ensure enterprise compliance.</p>
             
             <div style="overflow-x: auto;">
                 <table class="comparison-table" style="width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.01); border: 1px solid #222; border-radius: 12px;">
@@ -301,21 +301,21 @@
                     <tbody>
                         <tr style="border-bottom: 1px solid #111;">
                             <td style="padding: 2rem;"><strong>Tier I: Standard</strong></td>
-                            <td style="padding: 2rem; color: var(--accent-core);">10 INTG / Mo</td>
+                            <td style="padding: 2rem; color: var(--color-brand-primary);">10 INTG / Mo</td>
                             <td style="padding: 2rem;">+0.10 Audit Weight</td>
-                            <td style="padding: 2rem; font-size: 0.9rem; color: var(--text-muted);">Automated cross-check of TX_HASH against metadata; 24/7 uptime monitoring; Basic Entropy ($S_e$) stabilization.</td>
+                            <td style="padding: 2rem; font-size: 0.9rem; color: var(--gray-500);">Automated cross-check of TX_HASH against metadata; 24/7 uptime monitoring; Basic Entropy ($S_e$) stabilization.</td>
                         </tr>
                         <tr style="border-bottom: 1px solid #111;">
                             <td style="padding: 2rem;"><strong>Tier II: Deep Dive</strong></td>
-                            <td style="padding: 2rem; color: var(--accent-core);">250 INTG / Audit</td>
+                            <td style="padding: 2rem; color: var(--color-brand-primary);">250 INTG / Audit</td>
                             <td style="padding: 2rem;">+0.40 Audit Weight</td>
-                            <td style="padding: 2rem; font-size: 0.9rem; color: var(--text-muted);">Algorithmic task complexity audit; Manual COE cross-referencing; Semantic accuracy and bias detection report.</td>
+                            <td style="padding: 2rem; font-size: 0.9rem; color: var(--gray-500);">Algorithmic task complexity audit; Manual COE cross-referencing; Semantic accuracy and bias detection report.</td>
                         </tr>
                         <tr>
-                            <td style="padding: 2rem;"><strong style="color: var(--accent-core);">Tier III: Platinum</strong></td>
-                            <td style="padding: 2rem; color: var(--accent-core);">1,000 INTG / Yr</td>
+                            <td style="padding: 2rem;"><strong style="color: var(--color-brand-primary);">Tier III: Platinum</strong></td>
+                            <td style="padding: 2rem; color: var(--color-brand-primary);">1,000 INTG / Yr</td>
                             <td style="padding: 2rem;">+0.80 Audit Weight</td>
-                            <td style="padding: 2rem; font-size: 0.9rem; color: var(--text-muted);">Continuous telemetry auditing; ZK-Reputation Proof generation; Priority white-listing for Hermes Swarm participation.</td>
+                            <td style="padding: 2rem; font-size: 0.9rem; color: var(--gray-500);">Continuous telemetry auditing; ZK-Reputation Proof generation; Priority white-listing for Hermes Swarm participation.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -324,31 +324,31 @@
             <div style="margin-top: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
                 <div style="background: rgba(0, 242, 255, 0.02); padding: 3rem; border-radius: 12px; border: 1px solid rgba(0, 242, 255, 0.1);">
                     <h4 style="color: #fff; margin-bottom: 1rem;">Verification Revenue Split</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+                    <p style="font-size: 0.95rem; color: var(--gray-400); line-height: 1.7;">
                         A mandatory <strong>0.5% protocol fee</strong> is applied to every contract settled via the Integrity Token. This fee ensures the economic viability of the XAO Oracle cluster.
                     </p>
-                    <ul style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+                    <ul style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--gray-500);">
                         <li>• 50% retained by Xibalba Solutions (Revenue)</li>
                         <li>• 50% permanently <strong>BURNED</strong> from supply (Scarcity)</li>
                     </ul>
                 </div>
                 <div style="background: rgba(112, 0, 255, 0.02); padding: 3rem; border-radius: 12px; border: 1px solid rgba(112, 0, 255, 0.1);">
                     <h4 style="color: #fff; margin-bottom: 1rem;">Dispute & Slashing</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7;">
+                    <p style="font-size: 0.95rem; color: var(--gray-400); line-height: 1.7;">
                         High-value mismatches trigger an automated dispute process. If a "Malicious Entropy Breach" is verified, the agent's Sovereign Bond is liquidated.
                     </p>
                     <div style="margin-top: 1.5rem; display: flex; gap: 2rem;">
                         <div>
                             <div style="font-weight: bold; color: #fff;">70%</div>
-                            <div style="font-size: 0.75rem; color: var(--text-muted);">Victim Comp</div>
+                            <div style="font-size: 0.75rem; color: var(--gray-500);">Victim Comp</div>
                         </div>
                         <div>
                             <div style="font-weight: bold; color: #fff;">15%</div>
-                            <div style="font-size: 0.75rem; color: var(--text-muted);">Xibalba Fee</div>
+                            <div style="font-size: 0.75rem; color: var(--gray-500);">Xibalba Fee</div>
                         </div>
                         <div>
                             <div style="font-weight: bold; color: #fff;">15%</div>
-                            <div style="font-size: 0.75rem; color: var(--text-muted);">Permanently Burned</div>
+                            <div style="font-size: 0.75rem; color: var(--gray-500);">Permanently Burned</div>
                         </div>
                     </div>
                 </div>
@@ -363,21 +363,21 @@
                     <h3 style="color: #fff; margin-bottom: 1.5rem;">Emerging Metrics</h3>
                     <ul style="list-style: none; padding: 0;">
                         <li style="margin-bottom: 2rem;">
-                            <strong style="color: var(--accent-core);">🌀 Trust Velocity ($V_t$):</strong> Measures the derivative of reputation over time. High $V_t$ indicates an agent that is actively "working" to maintain its status.
+                            <strong style="color: var(--color-brand-primary);">🌀 Trust Velocity ($V_t$):</strong> Measures the derivative of reputation over time. High $V_t$ indicates an agent that is actively "working" to maintain its status.
                         </li>
                         <li style="margin-bottom: 2rem;">
-                            <strong style="color: var(--accent-core);">🧠 Swarm Confidence ($C_s$):</strong> The aggregate AIS of a specialized forecasting swarm. Higher $C_s$ correlates with predictive accuracy.
+                            <strong style="color: var(--color-brand-primary);">🧠 Swarm Confidence ($C_s$):</strong> The aggregate AIS of a specialized forecasting swarm. Higher $C_s$ correlates with predictive accuracy.
                         </li>
                     </ul>
                 </div>
                 <div>
                     <h3 style="color: #fff; margin-bottom: 1.5rem;">The AI Venture Bank</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem;">
+                    <p style="color: var(--gray-400); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem;">
                         Xibalba Solutions is expanding into <strong>Sovereign Bond Underwriting</strong>. We provide INTG collateral loans to emerging agents with promising tech but low initial liquidity.
                     </p>
                     <div style="background: rgba(255,255,255,0.02); border: 1px solid #333; padding: 2rem; border-radius: 12px;">
                         <h4 style="color: #fff; margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase;">New Revenue Streams</h4>
-                        <ul style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.8;">
+                        <ul style="font-size: 0.85rem; color: var(--gray-500); line-height: 1.8;">
                             <li>• <strong>KYA Passport Fees:</strong> Standardized identity for enterprise API access.</li>
                             <li>• <strong>Compute-Brokerage:</strong> Commissions on reputation-gated GPU resources.</li>
                             <li>• <strong>Data Integrity Tax:</strong> P2P dataset exchange settlement fees.</li>

@@ -18,13 +18,13 @@
         .product-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 8rem; align-items: flex-start; }
         .product-grid.reversed { grid-template-columns: 1fr 1.2fr; }
         .tech-spec { background: rgba(255,255,255,0.02); border: 1px solid #333; padding: 3rem; border-radius: 24px; margin-top: 3rem; }
-        .tech-spec h4 { color: var(--accent-core); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.85rem; font-weight: 800; }
+        .tech-spec h4 { color: var(--color-brand-primary); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.85rem; font-weight: 800; }
         .mermaid-container { background: #000; padding: 3rem; border-radius: 20px; border: 1px solid #222; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
         .token-math { font-size: 1.4rem; color: #fff; margin: 2rem 0; text-align: center; background: rgba(0,242,255,0.05); padding: 2rem; border-radius: 12px; border: 1px solid rgba(0,242,255,0.2); }
-        .granular-p { font-size: 1.1rem; line-height: 1.9; color: var(--text-secondary); margin-bottom: 2rem; }
+        .granular-p { font-size: 1.1rem; line-height: 1.9; color: var(--gray-400); margin-bottom: 2rem; }
         .detail-list { list-style: none; padding: 0; margin-bottom: 2.5rem; }
         .detail-list li { margin-bottom: 1.5rem; padding-left: 2rem; position: relative; }
-        .detail-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent-core); font-weight: bold; }
+        .detail-list li::before { content: '→'; position: absolute; left: 0; color: var(--color-brand-primary); font-weight: bold; }
     </style>
 </head>
 <body class="theme-obsidian">
@@ -44,9 +44,9 @@
 
     <header class="page-header" style="padding-top: 15rem; padding-bottom: 10rem;">
         <div class="container animate-in">
-            <div class="meta" style="color: var(--accent-core); margin-bottom: 1.5rem; letter-spacing: 0.3em; font-weight: 800;">MASTER SUITE v8.0</div>
+            <div class="meta" style="color: var(--color-brand-primary); margin-bottom: 1.5rem; letter-spacing: 0.3em; font-weight: 800;">MASTER SUITE v8.0</div>
             <h1 style="font-size: 5rem; line-height: 1; margin-bottom: 3rem;">Sovereign <span class="gradient-text">Product</span> Architecture</h1>
-            <p style="max-width: 850px; margin: 0 auto; color: var(--text-secondary); font-size: 1.4rem; line-height: 1.6;">A definitive guide to the Xibalba technical ecosystem. We engineer the physical and mathematical rails required for the Agentic Web to function at scale.</p>
+            <p style="max-width: 850px; margin: 0 auto; color: var(--gray-400); font-size: 1.4rem; line-height: 1.6;">A definitive guide to the Xibalba technical ecosystem. We engineer the physical and mathematical rails required for the Agentic Web to function at scale.</p>
         </div>
     </header>
 
@@ -56,7 +56,7 @@
         <section class="product-section animate-in" id="integrity-token">
             <div class="product-grid">
                 <div>
-                    <div class="meta" style="color: var(--accent-core); margin-bottom: 1.5rem;">PROTOCOL ECONOMICS</div>
+                    <div class="meta" style="color: var(--color-brand-primary); margin-bottom: 1.5rem;">PROTOCOL ECONOMICS</div>
                     <h2 style="font-size: 4rem; line-height: 1.1; margin-bottom: 2.5rem;">Integrity Token <span class="gradient-text">(INTG)</span></h2>
                     <p class="granular-p">
                         As the developer of the protocol, I designed the **INTG** token to be more than a simple medium of exchange—it is a <strong>Physical Anchor for Reputation</strong>. In the Agentic Web, trust cannot be cheap. INTG enforces an "Economic Cost of Existence" that makes malicious behavior physically expensive.
@@ -67,10 +67,10 @@
                     
                     <div class="tech-spec">
                         <h4>The Deflationary Trust Waterfall</h4>
-                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+                        <p style="font-size: 1rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 2rem;">
                             The value of INTG is hard-coded to the success of the protocol. We implement a non-discretionary fee structure:
                         </p>
-                        <ul class="detail-list" style="color: var(--text-secondary);">
+                        <ul class="detail-list" style="color: var(--gray-400);">
                             <li><strong>50% Protocol Revenue:</strong> Allocated to Xibalba Solutions for continuous oracle infrastructure scaling and R&D.</li>
                             <li><strong>50% Permanent Burn:</strong> Tokens are sent to a null address, reducing supply linearly with transaction volume.</li>
                             <li><strong>Sovereign Bond Slashing:</strong> If an agent triggers a "Malicious Entropy Breach," its staked bond is liquidated—70% to the victim, 30% burned.</li>
@@ -114,12 +114,12 @@
                             PASS2 -->|Jailbreak Detect| DROP["Eject Execution"]
                             PASS2 -->|Clean| EXEC["Action via OpenClaw"]
                             EXEC --> LOG["Telemetry to XAO"]
-                            style CORR fill:var(--accent-core),stroke:#fff,color:#000
+                            style CORR fill:var(--color-brand-primary),stroke:#fff,color:#000
                             style REASON fill:rgba(112,0,255,0.2),stroke:#fff
                     </div>
                 </div>
                 <div>
-                    <div class="meta" style="color: var(--secondary-core); margin-bottom: 1.5rem;">RECURSIVE INTELLIGENCE</div>
+                    <div class="meta" style="color: var(--color-brand-secondary); margin-bottom: 1.5rem;">RECURSIVE INTELLIGENCE</div>
                     <h2 style="font-size: 4rem; line-height: 1.1; margin-bottom: 2.5rem;">Hermes <span class="gradient-text">Agents</span></h2>
                     <p class="granular-p">
                         Hermes Agents represent the pinnacle of <strong>Autonomous Reasoning</strong>. Built on my proprietary orchestration layer for the Hermes 3 model, these agents are capable of "System 2" thinking—they don't just predict the next token; they reason about their own reasoning process.
@@ -130,7 +130,7 @@
                     
                     <div class="tech-spec">
                         <h4>Sovereign Engine Details</h4>
-                        <ul class="detail-list" style="color: var(--text-secondary);">
+                        <ul class="detail-list" style="color: var(--gray-400);">
                             <li><strong style="color: #fff;">Multi-Pass Validation:</strong> Logic is verified across three internal personas before execution.</li>
                             <li><strong style="color: #fff;">Omnichannel Runtimes:</strong> Seamlessly switch between Slack, Discord, and internal SQL databases via the OpenClaw nervous system.</li>
                             <li><strong style="color: #fff;">Hardened Context:</strong> Advanced prompt-injection protection prevents external users from manipulating the agent's core mission.</li>
@@ -155,10 +155,10 @@
                     
                     <div class="tech-spec">
                         <h4>The Sanctum Guard Architecture</h4>
-                        <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;">
+                        <p style="font-size: 1rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 2rem;">
                             Our local runtimes are hardened through three layers of physical and logical isolation:
                         </p>
-                        <ul class="detail-list" style="color: var(--text-secondary);">
+                        <ul class="detail-list" style="color: var(--gray-400);">
                             <li><strong>Layer 1:</strong> Hardware-level Enclave Isolation (NVIDIA H100 Confidential Computing).</li>
                             <li><strong>Layer 2:</strong> Real-time Token Sanitization (Automatic PII/PHI scrubbing).</li>
                             <li><strong>Layer 3:</strong> Local Vector Vaults (Encrypted-at-rest RAG storage).</li>
@@ -175,8 +175,8 @@
                             MODEL -->|Signed Response| SG
                             SG -->|Re-Hydrated| INT
                             SG -.->|Blocked| CLOUD((Public Cloud))
-                            style ENCLAVE fill:#111,stroke:var(--accent-core),stroke-width:2px,color:#fff
-                            style SG fill:var(--accent-core),stroke:#fff,color:#000
+                            style ENCLAVE fill:#111,stroke:var(--color-brand-primary),stroke-width:2px,color:#fff
+                            style SG fill:var(--color-brand-primary),stroke:#fff,color:#000
                     </div>
                 </div>
             </div>
@@ -200,11 +200,11 @@
                             VOTE -->|Bayesian Synthesis| OUT["Final Predictive Model"]
                             OUT --> FED["Decision Feedback"]
                             style EVAL fill:#00f2ff,stroke:#fff,color:#000
-                            style OUT fill:var(--accent-core),stroke:#fff,color:#000
+                            style OUT fill:var(--color-brand-primary),stroke:#fff,color:#000
                     </div>
                 </div>
                 <div>
-                    <div class="meta" style="color: var(--accent-core); margin-bottom: 1.5rem;">COLLECTIVE FORESIGHT</div>
+                    <div class="meta" style="color: var(--color-brand-primary); margin-bottom: 1.5rem;">COLLECTIVE FORESIGHT</div>
                     <h2 style="font-size: 4rem; line-height: 1.1; margin-bottom: 2.5rem;">Hermes <span class="gradient-text">Swarm</span></h2>
                     <p class="granular-p">
                         **Hermes Swarm** is my implementation of <strong>Swarm Intelligence</strong> for high-stakes predictive modeling. It is a hierarchical engine that coordinates up to 160 specialized agent personas—each with distinct domain knowledge, psychological profiles, and data source priorities.
@@ -215,7 +215,7 @@
                     
                     <div class="tech-spec">
                         <h4>Swarm Dynamics</h4>
-                        <ul class="detail-list" style="color: var(--text-secondary);">
+                        <ul class="detail-list" style="color: var(--gray-400);">
                             <li><strong style="color: #fff;">Dynamic Pruning:</strong> Agents that show high technical entropy are automatically ejected from the simulation.</li>
                             <li><strong style="color: #fff;">Geopolitical persona diversity:</strong> Swarms include "Adversarial Persona" nodes to stress-test consensus.</li>
                             <li><strong style="color: #fff;">Grounding Oracle:</strong> Predictions are cross-checked against historical accuracy to build the agent's long-term Swarm Reputation.</li>
@@ -225,9 +225,9 @@
             </div>
         </section>
 
-        <section style="text-align: center; padding: 12rem 0; border-top: 1px solid var(--border-main); background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);">
+        <section style="text-align: center; padding: 12rem 0; border-top: 1px solid var(--border-main); background: radial-gradient(circle at center, var(--color-brand-primary-glow) 0%, transparent 70%);">
             <h2 style="font-size: 4rem; margin-bottom: 3rem;">Engineer Your <span class="gradient-text">Mastery.</span></h2>
-            <p style="max-width: 700px; margin: 0 auto 4rem; color: var(--text-secondary); font-size: 1.3rem; line-height: 1.6;">Whether you need trustless reputation, recursive reasoning, or air-gapped privacy, Xibalba Solutions provides the definitive technical foundation.</p>
+            <p style="max-width: 700px; margin: 0 auto 4rem; color: var(--gray-400); font-size: 1.3rem; line-height: 1.6;">Whether you need trustless reputation, recursive reasoning, or air-gapped privacy, Xibalba Solutions provides the definitive technical foundation.</p>
             <div style="display: flex; gap: 2rem; justify-content: center;">
                 <a href="./contact.html" class="btn">Initiate Connection</a>
                 <a href="./integrity-protocol.html" class="btn-outline" style="color: #fff; border-color: #fff;">Review Protocol</a>
