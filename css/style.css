@@ -422,69 +422,60 @@ nav {
     padding-bottom: 10rem;
 }
 
-/* Footer & Sitemap - Global Full Width */
+/* Footer - Minimalist Sovereign Edition */
 footer {
     background: #050505;
     border-top: 1px solid var(--border-main);
-    padding: 8rem 0 4rem;
+    padding: 6rem 0;
     margin-top: 10rem;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    width: 100%;
 }
 
 .footer-container {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr repeat(3, 1fr);
-    gap: 4rem;
-    margin-bottom: 6rem;
-}
-
-.footer-column h4 {
-    color: #fff;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    margin-bottom: 2rem;
-    font-weight: 800;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 1.2rem;
-}
-
-.footer-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.9rem;
+.footer-logo {
+    height: 35px;
+    margin-bottom: 2.5rem;
+    filter: grayscale(1) opacity(0.6);
     transition: var(--transition-smooth);
 }
 
-.footer-links a:hover {
-    color: var(--accent-core);
-    padding-left: 5px;
+.footer-logo:hover {
+    filter: grayscale(0) opacity(1);
 }
 
-.footer-meta {
-    border-top: 1px solid #111;
-    padding-top: 4rem;
+.footer-nav-minimal {
     display: flex;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
+}
+
+.footer-nav-minimal a {
     color: var(--text-muted);
+    text-decoration: none;
     font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: var(--transition-smooth);
+}
+
+.footer-nav-minimal a:hover {
+    color: var(--accent-core);
+}
+
+.footer-legal {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
 }
