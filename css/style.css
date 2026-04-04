@@ -359,12 +359,24 @@ nav {
     padding-bottom: 10rem;
 }
 
-/* Footer & Sitemap */
+/* Footer & Sitemap - Global Full Width */
 footer {
     background: #050505;
     border-top: 1px solid var(--border-main);
     padding: 8rem 0 4rem;
     margin-top: 10rem;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.footer-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .footer-grid {
