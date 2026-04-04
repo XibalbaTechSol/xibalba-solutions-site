@@ -408,20 +408,8 @@ footer {
     border-top: 1px solid #111;
     padding-top: 4rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    text-align: center;
     color: var(--text-muted);
-    font-size: 0.8rem;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.eth-address {
-    font-family: 'Space Mono', monospace;
-    background: #0a0a0a;
-    padding: 0.6rem 1.2rem;
-    border-radius: 100px;
-    border: 1px solid #222;
-    color: var(--text-secondary);
-    font-size: 0.75rem;
+    font-size: 0.85rem;
 }
