@@ -422,16 +422,16 @@ nav {
     padding-bottom: 10rem;
 }
 
-/* Footer - Minimalist Sovereign Edition */
+/* Footer - Ultra Minimalist */
 footer {
-    background: #050505;
+    background: #000;
     border-top: 1px solid var(--border-main);
-    padding: 6rem 0;
+    padding: 4rem 0;
     margin-top: 10rem;
     width: 100%;
 }
 
-.footer-container {
+.footer-content-minimal {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 2rem;
@@ -439,43 +439,31 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 1rem;
 }
 
-.footer-logo {
-    height: 35px;
-    margin-bottom: 2.5rem;
-    filter: grayscale(1) opacity(0.6);
-    transition: var(--transition-smooth);
+.footer-info {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
 }
 
-.footer-logo:hover {
-    filter: grayscale(0) opacity(1);
-}
-
-.footer-nav-minimal {
+.footer-contact {
+    color: var(--text-muted);
+    font-size: 0.9rem;
     display: flex;
-    gap: 2.5rem;
-    margin-bottom: 3rem;
+    gap: 2rem;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.footer-nav-minimal a {
+.footer-contact a {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
     transition: var(--transition-smooth);
 }
 
-.footer-nav-minimal a:hover {
+.footer-contact a:hover {
     color: var(--accent-core);
-}
-
-.footer-legal {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
 }
