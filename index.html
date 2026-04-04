@@ -7,46 +7,77 @@
     <meta name="description" content="High-fidelity autonomous agents and sovereign intelligence infrastructure. From Hermes UI to Hierarchical Swarm simulations. Built for absolute privacy.">
     <link rel="icon" href="./favicon.ico" sizes="any">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'dark' });</script>
     <base href="/xibalba-solutions-site/">
 </head>
 <body class="theme-obsidian">
 
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions">
-            </a>
-            <button class="hamburger" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <a href="index.html" class="logo"><img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions"></a>
             <div class="nav-links">
                 <a href="index.html" class="active">Home</a>
-                <a href="ai-agents.html">Agents</a>
+                <a href="ai-agents.html">Products</a>
+                <a href="integrity-protocol.html">Integrity</a>
                 <a href="blog.html">Blog</a>
-                <a href="local-ai.html">Privacy</a>
-                <a href="pricing.html">Support</a>
                 <a href="contact.html" class="btn-outline">Contact</a>
-                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme" style="background: none; border: 1px solid var(--border-main); color: var(--accent-core); padding: 0.5rem; cursor: pointer; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-left: 1rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></button>
             </div>
         </div>
     </nav>
 
+    <header class="hero">
+        <div class="container animate-in">
+            <div class="hero-logo-container">
+                <div class="hero-orbit"></div>
+                <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions" class="hero-logo-main">
+            </div>
+            <h1>Sovereign <span class="gradient-text">Intelligence</span> Foundries</h1>
+            <p>We build the autonomous nervous systems for the next economic era. Private, verifiable, and mathematically grounded.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; align-items: center;">
+                <a href="contact.html" class="btn">Initiate Connection</a>
+                <a href="ai-agents.html" class="btn-outline" style="color: #fff;">Explore Suite</a>
+            </div>
+            
+            <div style="margin-top: 4rem; display: flex; justify-content: center; gap: 3rem; color: var(--text-muted);">
+                <span style="font-family: 'Outfit', sans-serif; font-weight: bold; font-size: 0.9rem; letter-spacing: 0.2em;">HIPAA COMPLIANT</span>
+                <span style="font-family: 'Outfit', sans-serif; font-weight: bold; font-size: 0.9rem; letter-spacing: 0.2em;">AIR-GAPPED READY</span>
+            </div>
+        </div>
+    </header>
+
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-orbit"></div>
-            <div class="container">
-                <div class="hero-logo-container animate-in">
-                    <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions" class="hero-logo-main">
-                </div>
-                <h1 class="animate-in" style="font-size: 3.5rem; margin-top: 2rem;">Sovereign <span class="gradient-text">Intelligence</span> <br>Engineered for Mastery.</h1>
-                <p class="animate-in" style="animation-delay: 0.1s; max-width: 700px;">High-fidelity autonomous agents, hierarchical swarm simulations, and trustless reputation protocols. No-code orchestration for organizations that demand absolute control.</p>
-                <div class="animate-in" style="animation-delay: 0.2s;">
-                    <a href="contact.html" class="btn">Initiate Connection</a>
-                    <a href="ai-agents.html" class="btn-outline" style="margin-left: 1rem; color: #fff;">Explore Agents</a>
-                </div>
+        <!-- The Problem Visualization -->
+        <section class="container" style="padding: 10rem 0; display: grid; grid-template-columns: 1.2fr 1fr; gap: 8rem; align-items: center;">
+            <div>
+                <h2 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 2rem;">The Crisis of <span class="gradient-text">Chaos.</span></h2>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem;">
+                    In an agentic economy, reputation is currently built on "social proof"—low-cost signals that are easy to fake. We solve this by making trust <strong>mathematically expensive.</strong>
+                </p>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start;">
+                        <span style="color: var(--accent-core); font-weight: bold;">⚡</span>
+                        <div><strong>Sunk Energy:</strong> We verify GPU-hours to ensure real computational sacrifice.</div>
+                    </li>
+                    <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start;">
+                        <span style="color: var(--accent-core); font-weight: bold;">🌀</span>
+                        <div><strong>Technical Order:</strong> Entropy analysis detects infrastructure instability instantly.</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="mermaid" style="background: rgba(255,255,255,0.02); padding: 3rem; border-radius: 24px; border: 1px solid #333;">
+                graph TD
+                    A["The Trust Vacuum"] --> B{Legacy Systems}
+                    B -->|Gaming| C["Bot Farms"]
+                    B -->|Spoofing| D["Sybil Attacks"]
+                    C --> F["Economic Risk"]
+                    D --> F
+                    F --> G((XAO ORACLE))
+                    G --> H["Verified Mastery"]
+                    style G fill:var(--accent-core),stroke:#fff,color:#000
             </div>
         </section>
 
@@ -65,12 +96,12 @@
                 </article>
 
                 <!-- Hermes Swarm -->
-                <article class="feature-card animate-in" style="animation-delay: 0.4s; cursor: pointer;" onclick="window.location.href='hermes-swarm.html'">
+                <article class="feature-card animate-in" style="animation-delay: 0.4s; cursor: pointer;" onclick="window.location.href='ai-agents.html#hermes-swarm'">
                     <div style="font-size: 2rem; margin-bottom: 1.5rem;">🌀</div>
                     <h3 style="margin-bottom: 1rem;">Hermes Swarm</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem;">160+ agent hierarchical forecasting simulations powered by the Gemini CLI MCP Bridge.</p>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem;">160+ agent hierarchical forecasting simulations powered by Bayesian Consensus.</p>
                     <div style="display: flex; gap: 1.5rem; align-items: center;">
-                        <a href="hermes-swarm.html" style="color: var(--accent-core); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.1em;">Explore Platform →</a>
+                        <a href="ai-agents.html#hermes-swarm" style="color: var(--accent-core); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.1em;">Explore Swarm →</a>
                         <a href="https://github.com/XibalbaTechSol/hermes-swarm" style="color: var(--text-muted); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; font-weight: 500; letter-spacing: 0.1em;" onclick="event.stopPropagation()">GitHub</a>
                     </div>
                 </article>
@@ -79,7 +110,7 @@
                 <article class="feature-card animate-in" style="animation-delay: 0.5s; cursor: pointer;" onclick="window.location.href='integrity-protocol.html'">
                     <div style="font-size: 2rem; margin-bottom: 1.5rem;">⚖️</div>
                     <h3 style="margin-bottom: 1rem;">Integrity Protocol</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem;">AIS v7.0 Tri-Metric reputation layer measuring Entropy, Grounding, and Computational Sacrifice.</p>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem;">AIS v8.0 Tri-Metric reputation layer measuring Entropy, Grounding, and Sacrifice.</p>
                     <div style="display: flex; gap: 1.5rem; align-items: center;">
                         <a href="integrity-protocol.html" style="color: var(--accent-core); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; letter-spacing: 0.1em;">Explore Protocol →</a>
                         <a href="https://github.com/XibalbaTechSol/integrity-protocol" style="color: var(--text-muted); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; font-weight: 500; letter-spacing: 0.1em;" onclick="event.stopPropagation()">GitHub</a>
@@ -88,34 +119,14 @@
             </div>
         </section>
 
-        <!-- Premium Hook Section -->
-        <section style="padding: 12rem 0; background: rgba(112, 0, 255, 0.02); border-top: 1px solid var(--border-main);">
-            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;">
-                <div>
-                    <h2 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 2rem;">The End of AI <span class="gradient-text">Genericism.</span></h2>
-                    <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2.5rem;">At Xibalba, we don't build wrappers. We engineer core intelligence layers and private agent runtimes. Whether you require a specialized researcher or a global forecasting swarm, we deliver high-fidelity, sovereign results.</p>
-                    <div style="display: flex; gap: 4rem; opacity: 0.5; align-items: center;">
-                        <span style="font-family: 'Outfit', sans-serif; font-weight: bold; font-size: 0.9rem; letter-spacing: 0.2em;">HIPAA COMPLIANT</span>
-                        <span style="font-family: 'Outfit', sans-serif; font-weight: bold; font-size: 0.9rem; letter-spacing: 0.2em;">AIR-GAPPED READY</span>
-                    </div>
-                </div>
-                <div class="feature-card" style="padding: 4rem; text-align: center; background: rgba(0, 242, 255, 0.02); border-color: rgba(0, 242, 255, 0.2);">
-                    <div style="font-size: 5rem; margin-bottom: 2rem;">🛡️</div>
-                    <h3 style="margin-bottom: 1.5rem;">Sanctum Guard</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">Our edge PII redaction and hardware-level isolation protocol ensures that mission-critical data never leaves your perimeter.</p>
-                    <a href="local-ai.html" class="btn" style="padding: 1rem 2rem;">Learn More</a>
-                </div>
-            </div>
-        </section>
-
         <!-- Fresh Social Proof / Blog highlights -->
-        <section class="container" style="padding: 8rem 0;">
+        <section class="container" style="padding: 8rem 0; border-top: 1px solid var(--border-main);">
             <h2 style="text-align: center; margin-bottom: 4rem;">Latest <span class="gradient-text">Dispatches</span></h2>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
                 <div style="padding: 2rem; border-left: 2px solid var(--accent-core);">
                     <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 1rem;">Architecture</div>
-                    <h4 style="margin-bottom: 1rem;"><a href="./blog/ais-v7-tri-metric-protocol.html" style="color: #fff; text-decoration: none;">The Tri-Metric Protocol</a></h4>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Decoding the AIS v7.0 reputation layer for autonomous agents.</p>
+                    <h4 style="margin-bottom: 1rem;"><a href="blog/ais-v7-tri-metric-protocol.html" style="color: #fff; text-decoration: none;">The Tri-Metric Protocol</a></h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Decoding the AIS v8.0 reputation layer for autonomous agents.</p>
                 </div>
                 <div style="padding: 2rem; border-left: 2px solid var(--secondary-core);">
                     <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 1rem;">Sovereignty</div>

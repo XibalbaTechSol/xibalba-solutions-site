@@ -51,11 +51,13 @@
         <section style="margin: 8rem 0; display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: center;">
             <div class="mermaid" style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border: 1px solid #333;">
                 graph TD
-                    A[The Trust Vacuum] --> B{Standard Rep Systems}
+                    A["The Trust Vacuum"] --> B{Standard Rep Systems}
                     B -->|Gaming| C[Bot Farms]
                     B -->|Spoofing| D[Sybil Attacks]
                     B -->|Drift| E[Model Decay]
-                    C & D & E --> F[Economic Collapse]
+                    C --> F[Economic Collapse]
+                    D --> F
+                    E --> F
                     F --> G((INTEGRITY PROTOCOL))
                     G --> H[Physical Grounding]
                     G --> I[Mathematical Order]
@@ -124,7 +126,8 @@
                     A[SDK Ingest] --> B{XAO Engine}
                     B -->|Entropy| Se[Score]
                     B -->|Grounding| Sg[Score]
-                    Se & Sg --> C[AIS Commit]
+                    Se --> C[AIS Commit]
+                    Sg --> C
                     C --> D[Ethereum L2]
                     D -->|Slash| E[Bond Burn]
                     E -->|Feedback| A
@@ -191,8 +194,8 @@
                 <div class="mermaid" style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border: 1px solid #333;">
                     graph TD
                         A[Query] --> B{AIS Filter}
-                        B -->|AIS < 600| C[Discard]
-                        B -->|AIS > 600| D[Join Swarm]
+                        B -->|"AIS < 600"| C[Discard]
+                        B -->|"AIS > 600"| D[Join Swarm]
                         D --> E[Weighted Voting]
                         E -->|Bayesian Synthesis| F[Final Prediction]
                 </div>
@@ -273,7 +276,7 @@
                             B --> C[COE Cross-Check]
                             C --> D[CV Statistical Engine]
                             D --> E{Reputation Update}
-                            E -->|AIS Delta| F[Off-Chain DB]
+                            E -->|"AIS Delta"| F[Off-Chain DB]
                             E -->|Slash| G[L2 Registry]
                     </div>
                 </div>

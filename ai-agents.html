@@ -83,16 +83,16 @@
                 <div class="mermaid-container">
                     <div class="mermaid">
                         graph TD
-                            START[Contract Initialization] -->|Lock INTG| BOND[Sovereign Bond Registry]
-                            BOND --> EXEC[Agent Execution]
-                            EXEC --> TELE[Telemetry Stream]
+                            START["Contract Initialization"] -->|"Lock INTG"| BOND["Sovereign Bond Registry"]
+                            BOND --> EXEC["Agent Execution"]
+                            EXEC --> TELE["Telemetry Stream"]
                             TELE -->|Verification| XAO{XAO Autonomous Oracle}
-                            XAO -->|Success| FEE[0.5% Protocol Fee]
-                            XAO -->|Breach| SLASH[Slashing Event]
-                            FEE -->|50%| REV[Xibalba Rev]
-                            FEE -->|50%| BURN((BURN))
-                            SLASH -->|70%| COMP[Victim Comp]
-                            SLASH -->|30%| BURN
+                            XAO -->|Success| FEE["0.5% Protocol Fee"]
+                            XAO -->|Breach| SLASH["Slashing Event"]
+                            FEE -->|"50%"| REV["Xibalba Rev"]
+                            FEE -->|"50%"| BURN((BURN))
+                            SLASH -->|"70%"| COMP["Victim Comp"]
+                            SLASH -->|"30%"| BURN
                             style BURN fill:#ff0055,stroke:#fff,stroke-width:2px,color:#fff
                             style XAO fill:#00f2ff,stroke:#fff,stroke-width:2px,color:#000
                     </div>
@@ -106,14 +106,14 @@
                 <div class="mermaid-container">
                     <div class="mermaid">
                         graph LR
-                            INPUT[Objective] --> REASON[Hermes 3 Engine]
+                            INPUT[Objective] --> REASON["Hermes 3 Engine"]
                             REASON --> PASS1{Logic Pass 1}
-                            PASS1 -->|Anomaly| CORR[Recursive Self-Correction]
+                            PASS1 -->|Anomaly| CORR["Recursive Self-Correction"]
                             CORR --> REASON
                             PASS1 -->|Verified| PASS2{Security Pass 2}
-                            PASS2 -->|Jailbreak Detect| DROP[Eject Execution]
-                            PASS2 -->|Clean| EXEC[Action via OpenClaw]
-                            EXEC --> LOG[Telemetry to XAO]
+                            PASS2 -->|Jailbreak Detect| DROP["Eject Execution"]
+                            PASS2 -->|Clean| EXEC["Action via OpenClaw"]
+                            EXEC --> LOG["Telemetry to XAO"]
                             style CORR fill:var(--accent-core),stroke:#fff,color:#000
                             style REASON fill:rgba(112,0,255,0.2),stroke:#fff
                     </div>
@@ -168,10 +168,10 @@
                 <div class="mermaid-container">
                     <div class="mermaid">
                         graph TD
-                            INT[Internal Network] -->|Query| SG{Sanctum Guard}
-                            SG -->|Redacted| ENCLAVE[Confidential Computing Enclave]
-                            ENCLAVE -->|Local RAG| VAULT[(Vector Vault)]
-                            ENCLAVE -->|Local Inference| MODEL[Hermes 3 Local]
+                            INT["Internal Network"] -->|Query| SG{Sanctum Guard}
+                            SG -->|Redacted| ENCLAVE["Confidential Computing Enclave"]
+                            ENCLAVE -->|Local RAG| VAULT[("Vector Vault")]
+                            ENCLAVE -->|Local Inference| MODEL["Hermes 3 Local"]
                             MODEL -->|Signed Response| SG
                             SG -->|Re-Hydrated| INT
                             SG -.->|Blocked| CLOUD((Public Cloud))
@@ -188,15 +188,17 @@
                 <div class="mermaid-container">
                     <div class="mermaid">
                         graph TD
-                            GOAL[Forecasting Objective] --> DIST[Swarm Distribution]
-                            DIST --> AG1[Agent Persona 1]
-                            DIST --> AG2[Agent Persona 2]
-                            DIST --> AGn[Agent Persona N]
-                            AG1 & AG2 & AGn -->|Prediction| EVAL{AIS Filtering Layer}
-                            EVAL -->|Low Rep| DROP[Pruned]
-                            EVAL -->|High Rep| VOTE[Weighted Consensus]
-                            VOTE -->|Bayesian Synthesis| OUT[Final Predictive Model]
-                            OUT --> FED[Decision Feedback]
+                            GOAL["Forecasting Objective"] --> DIST["Swarm Distribution"]
+                            DIST --> AG1["Agent Persona 1"]
+                            DIST --> AG2["Agent Persona 2"]
+                            DIST --> AGn["Agent Persona N"]
+                            AG1 --> EVAL{AIS Filtering Layer}
+                            AG2 --> EVAL
+                            AGn --> EVAL
+                            EVAL -->|Low Rep| DROP["Pruned"]
+                            EVAL -->|High Rep| VOTE["Weighted Consensus"]
+                            VOTE -->|Bayesian Synthesis| OUT["Final Predictive Model"]
+                            OUT --> FED["Decision Feedback"]
                             style EVAL fill:#00f2ff,stroke:#fff,color:#000
                             style OUT fill:var(--accent-core),stroke:#fff,color:#000
                     </div>
