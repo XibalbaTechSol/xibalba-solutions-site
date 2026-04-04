@@ -49,20 +49,35 @@
         <p>Traditional reputation systems are easily manipulated. In the Agentic Web, trust must be grounded in economic and physical reality. We propose a model of <strong>Biological Trust</strong>, where reputation behaves like energy: it requires constant "work" to maintain and decays naturally over time (<strong>Temporal Entropy</strong>).</p>
 
         <div class="highlight-box">
-            <h3>3. The Mathematics of Trust: AIS v7.0</h3>
-            <p style="font-size: 1.2rem; text-align: center; margin: 2rem 0;">
-                $$AIS = [ (W_T \cdot T_i) + (W_X \cdot X_i) + (W_C \cdot C_i) + (W_S \cdot S_i) + (W_V \cdot V_i) ] \cdot E_s \cdot (1 - P_s)$$
-            </p>
-            <p>The AIS is a composite metric derived from six weighted components and a correlated Entropy Drag coefficient. It measures technical stability, human accountability, and economic sacrifice.</p>
+            <h3>3. The Tri-Metric Architecture</h3>
+            <p>AIS v7.0 moves beyond a single score to provide a three-dimensional risk profile for any AI agent.</p>
+            
+            <h4 style="color: #fff; margin-top: 1.5rem;">Metric 1: Entropy Score ($S_e$)</h4>
+            <p>The Entropy Score measures <strong>Behavioral Order</strong>. We calculate the <em>Coefficient of Variation (CV)</em> across three telemetry streams: Latency, Accuracy, and Output Consistency. 
+            <br><code>Low Variance = High Order = High Se.</code></p>
+
+            <h4 style="color: #fff; margin-top: 1.5rem;">Metric 2: Grounding Score ($S_g$)</h4>
+            <p>The Grounding Score measures <strong>Human Accountability</strong>. It is derived from the "Grounding Delta"—the temporal signature of human-in-the-loop oversight. We verify the depth of intervention (edits vs. approvals) to anchor the AI's decisions in human judgment.</p>
+
+            <h4 style="color: #fff; margin-top: 1.5rem;">Metric 3: Integrity Score ($S_i$)</h4>
+            <p>The Integrity Score is the <strong>Sovereign Reputation</strong> of the agent. It aggregates economic volume, account age, and <em>Computational Sacrifice</em>. We verify that an agent has "Skin in the Game" by cross-referencing their token throughput with verified GPU-hours.</p>
         </div>
 
-        <h2>4. The XAO: Autonomous Oracle</h2>
+        <h2>4. System Plumbing: The Hybrid Oracle</h2>
+        <p>The protocol operates as a closed-loop feedback system between the physical execution of AI and the immutable Ethereum ledger:</p>
+        <ul>
+            <li><strong>Ingestion:</strong> The Xibalba SDK intercepts model response headers and ships signed metadata to our Data Ingestor.</li>
+            <li><strong>Verification:</strong> The XAO Oracle calculates statistical variance and checks for Dual-Witness mismatches.</li>
+            <li><strong>Finality:</strong> Verified AIS hashes are committed to the on-chain Reputation Registry via an Ethereum L2 (Base).</li>
+        </ul>
+
+        <h2>5. The XAO: Autonomous Oracle</h2>
         <p>The Supreme Court of Xibalba is the <strong>Autonomous Oracle (XAO)</strong>. It operates through a <strong>Dual-Witness Handshake</strong>, requiring both provider and customer to ship signed metadata to our data ingestor. Discrepancies trigger immediate Reputation Slashing via our Ethereum L2 smart contracts.</p>
 
-        <h2>5. Tokenomics: INTG</h2>
+        <h2>6. Tokenomics: INTG</h2>
         <p><strong>INTG</strong> is the ERC-20 utility token powering the ecosystem. It is used for staking, slashing, and settlement. 50% of all verification fees are permanently burned, creating a deflationary pressure as the protocol scales.</p>
 
-        <h2>6. Conclusion</h2>
+        <h2>7. Conclusion</h2>
         <p>The Integrity Protocol establishes the first comprehensive, un-gameable trust infrastructure for the AI-driven economy. By anchoring reputation in Computational Sacrifice and Behavioral Stability, we enable a future where AI agents can transact with absolute confidence.</p>
 
         <hr>
