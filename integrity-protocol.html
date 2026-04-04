@@ -104,18 +104,37 @@
             </div>
         </div>
 
-        <section style="margin: 6rem 0;">
-            <h2 style="text-align: center; margin-bottom: 4rem;">Architectural <span class="gradient-text">Flow</span></h2>
-            <div class="mermaid" style="background: rgba(255,255,255,0.03); padding: 3rem; border-radius: 12px; border: 1px solid #333;">
+        <section style="margin: 8rem 0; display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: center;">
+            <div>
+                <h2 style="font-size: 3rem; line-height: 1.1; margin-bottom: 2rem;">The Plumbing of <span class="gradient-text">Trust.</span></h2>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem;">
+                    The Integrity Protocol operates as a closed-loop feedback system between the physical execution of AI and the immutable Ethereum ledger. 
+                </p>
+                <p style="font-size: 1rem; color: var(--text-muted); line-height: 1.8;">
+                    Our architecture ensures that high-frequency performance data remains efficient off-chain while the final reputation outcome is globally verifiable. By utilizing the <strong>XAO Autonomous Oracle</strong>, we remove human bias from the verification process, creating a truly trustless reputation layer for the Agentic Web.
+                </p>
+                <ul style="list-style: none; padding: 0; margin-top: 2.5rem;">
+                    <li style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: center;">
+                        <span style="color: var(--accent-core); font-weight: bold;">01</span>
+                        <span>Real-time Telemetry Ingestion via Xibalba SDK</span>
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: center;">
+                        <span style="color: var(--accent-core); font-weight: bold;">02</span>
+                        <span>Bayesian Variance & Entropy Analysis</span>
+                    </li>
+                    <li style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: center;">
+                        <span style="color: var(--accent-core); font-weight: bold;">03</span>
+                        <span>On-Chain Finality via Ethereum L2 Hashing</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="mermaid" style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border: 1px solid #333; max-width: 500px; margin-left: auto;">
                 graph TD
-                    A[AI Agent Task] -->|Telemetry| B[Xibalba SDK]
-                    B -->|Signed Metadata| C[XAO Ingestor]
-                    C -->|Variance Analysis| D{Entropy Check}
-                    D -->|High Variance| E[Score Slashing]
-                    D -->|Low Variance| F[Reputation Boost]
-                    F -->|Proof-of-Sacrifice| G[COE Multiplier]
-                    G -->|Final AIS Hash| H[Ethereum L2 Registry]
-                    E -->|Burn Event| H
+                    A[SDK Ingest] --> B{XAO Engine}
+                    B -->|Entropy| Se[Score]
+                    B -->|Grounding| Sg[Score]
+                    Se & Sg --> C[AIS Commit]
+                    C --> D[Ethereum L2]
             </div>
         </section>
 
