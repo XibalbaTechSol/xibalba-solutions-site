@@ -1,0 +1,6 @@
+graph TD
+                        A[Query] --> B{AIS Filter}
+                        B -->|"AIS < 600"| C[Discard]
+                        B -->|"AIS > 600"| D[Join Swarm]
+                        D --> E[Weighted Voting]
+                        E -->|Bayesian Synthesis| F[Final Prediction]

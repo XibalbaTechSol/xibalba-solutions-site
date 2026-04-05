@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant U as User
+    participant H as Hermes 3 (Brain)
+    participant O as OpenClaw (Body)
+    participant E as External SystemU->>H: Request complex task
+    H->>H: Recursive Reasoning
+    H->>O: Send Action Plan
+    O->>E: Execute Tool
+    E-->>O: Return Error/Data
+    O->>H: Return Trace/Result
+    H->>H: Adjust Reasoning
+    H->>O: New Instruction
+    O->>U: Final Result

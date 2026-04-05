@@ -1,0 +1,7 @@
+graph LR
+                            A[SDK Webhook] --> B[JWT Verification]
+                            B --> C[COE Cross-Check]
+                            C --> D[CV Statistical Engine]
+                            D --> E{Reputation Update}
+                            E -->|"AIS Delta"| F[Off-Chain DB]
+                            E -->|Slash| G[L2 Registry]

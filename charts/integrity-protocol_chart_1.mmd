@@ -1,0 +1,9 @@
+graph TD
+                    A[SDK Ingest] --> B{XAO Engine}
+                    B -->|Entropy| Se[Score]
+                    B -->|Grounding| Sg[Score]
+                    Se --> C[AIS Commit]
+                    Sg --> C
+                    C --> D[Ethereum L2]
+                    D -->|Slash| E[Bond Burn]
+                    E -->|Feedback| A

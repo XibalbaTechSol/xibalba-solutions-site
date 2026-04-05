@@ -1,0 +1,9 @@
+graph TD
+            S[Start Simulation] --> A1[Agent 01: Macro-Economics]
+            S --> A2[Agent 02: Regional Logistics]
+            S --> A3[Agent 03: Geopolitical Sentiment]
+            A1 --> B{Bayesian Consensus Processor}
+            A2 --> B
+            A3 --> B
+            B --> R[Global Forecast Output]
+            R -- "Backpropagate Result" --> B

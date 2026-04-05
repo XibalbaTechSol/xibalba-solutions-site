@@ -1,0 +1,8 @@
+graph TD
+                            INT["Internal Network"] -->|Query| SG{Sanctum Guard}
+                            SG -->|Redacted| ENCLAVE["Confidential Computing Enclave"]
+                            ENCLAVE -->|Local RAG| VAULT[("Vector Vault")]
+                            ENCLAVE -->|Local Inference| MODEL["Hermes 3 Local"]
+                            MODEL -->|Signed Response| SG
+                            SG -->|Re-Hydrated| INT
+                            SG -.->|Blocked| CLOUD((Public Cloud))

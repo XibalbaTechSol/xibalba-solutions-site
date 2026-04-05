@@ -1,0 +1,6 @@
+graph TD
+                A[Agent Performance] --> B{XAO Oracle}
+                B -->|Stability| Se[Entropy Score]
+                B -->|Accountability| Sg[Grounding Score]
+                B -->|History| Si[Integrity Score]
+                Se & Sg & Si --> D[Actuarial Risk Tier]

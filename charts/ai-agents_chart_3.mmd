@@ -1,0 +1,12 @@
+graph TD
+                            GOAL["Forecasting Objective"] --> DIST["Swarm Distribution"]
+                            DIST --> AG1["Agent Persona 1"]
+                            DIST --> AG2["Agent Persona 2"]
+                            DIST --> AGn["Agent Persona N"]
+                            AG1 --> EVAL{AIS Filtering Layer}
+                            AG2 --> EVAL
+                            AGn --> EVAL
+                            EVAL -->|Low Rep| DROP["Pruned"]
+                            EVAL -->|High Rep| VOTE["Weighted Consensus"]
+                            VOTE -->|Bayesian Synthesis| OUT["Final Predictive Model"]
+                            OUT --> FED["Decision Feedback"]

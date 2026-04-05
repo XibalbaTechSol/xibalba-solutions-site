@@ -1,0 +1,5 @@
+graph LR
+            Trigger[Cron Job / HTTP Trigger] --> Node[Hermes Core Agent]
+            Node --> MCP[Global MCP Pool]
+            MCP --> Success[Action Completed]
+            Node -- "Self-Correction" --> Node

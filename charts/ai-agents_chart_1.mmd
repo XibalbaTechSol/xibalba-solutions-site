@@ -1,0 +1,9 @@
+graph LR
+                            INPUT[Objective] --> REASON["Hermes 3 Engine"]
+                            REASON --> PASS1{Logic Pass 1}
+                            PASS1 -->|Anomaly| CORR["Recursive Self-Correction"]
+                            CORR --> REASON
+                            PASS1 -->|Verified| PASS2{Security Pass 2}
+                            PASS2 -->|Jailbreak Detect| DROP["Eject Execution"]
+                            PASS2 -->|Clean| EXEC["Action via OpenClaw"]
+                            EXEC --> LOG["Telemetry to XAO"]
