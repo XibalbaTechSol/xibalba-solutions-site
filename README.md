@@ -8,6 +8,8 @@ Xibalba Solutions focuses on **Sovereign Intelligence**—AI that lives on your 
 - **Custom Hermes Agents**: Autonomous intelligence layers powered by Hermes 3 with high-fidelity, predictive interfaces.
 - **Enterprise Local AI**: Secure, HIPAA-compliant, and audit-ready on-premise AI deployments for healthcare, legal, and sensitive sectors.
 - **OpenClaw Integration**: Leveraging the OpenClaw framework for local task execution and omnichannel interaction.
+- **Hermes Swarm**: Decentralized agent orchestration for complex multi-step automation.
+- **Integrity Protocol**: Secure, verifiable communication and state management for autonomous systems.
 
 The site is built with a high-fidelity, privacy-first aesthetic, featuring immersive UI elements like 3D orbs and real-time observability simulations.
 
@@ -16,11 +18,16 @@ The site is built with a high-fidelity, privacy-first aesthetic, featuring immer
 - `index.html`: Main landing page with OpenClaw and Hermes integration highlights.
 - `about.html`: Our mission for data sovereignty and sovereign intelligence.
 - `ai-agents.html`: Details on Hermes 3 foundation, Specialist model, and Learning Loops.
+- `hermes-swarm.html`: Information on decentralized agent orchestration and swarm intelligence.
+- `integrity-protocol.html`: Technical overview of the Integrity Protocol for secure agent communication.
 - `local-ai.html`: Focus on HIPAA/GDPR compliance and Sanctum Guard architecture.
 - `pricing.html`: Transparent service-based pricing for builds and ongoing support.
 - `contact.html`: Self-hosted contact inquiry system.
 - `server.py`: Custom Python server for static file serving and secure form handling.
 - `css/style.css`: Advanced UI styling with pulsing glows and immersive animations.
+- `charts/` & `reports/`: Visualization and data analysis for system performance.
+- `docs/`: Technical documentation and implementation guides.
+- `scripts/`: Utility scripts for site management and automation.
 
 ## Development
 
@@ -33,7 +40,7 @@ The site is built with a high-fidelity, privacy-first aesthetic, featuring immer
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/xibalba-solutions-site.git
+    git clone https://github.com/XibalbaTechSol/xibalba-solutions-site.git
     cd xibalba-solutions-site
     ```
 
@@ -72,9 +79,6 @@ The "Blog" section is managed via a custom technical studio script.
     python3 manage_blog.py
     ```
 
-3.  **Deploy:**
-    Commit and push the generated `.html` files in `blog/` and the updated `blog.html` to GitHub.
-
 ### Running Tests
 
 End-to-end validation is handled via Playwright:
@@ -89,10 +93,20 @@ End-to-end validation is handled via Playwright:
     ```bash
     pytest
     ```
+    Or use the provided utility script:
+    ```bash
+    ./run_all_ui_tests.sh
+    ```
 
 ## Deployment
 
-While the site can be hosted on static platforms (GitHub Pages, Netlify), the **contact form requires a Python backend**. For full functionality, deploy to a sovereign VPS or a containerized environment (Docker) capable of running `server.py`.
+While the site can be hosted on static platforms (GitHub Pages, Netlify), the **contact form requires a Python backend**. 
+
+### Render.com
+A `render.yaml` file is provided for quick deployment to the Render platform as a Web Service.
+
+### Sovereign VPS
+For full data sovereignty, deploy to a sovereign VPS or a containerized environment (Docker) capable of running `server.py`.
 
 ## License
 
