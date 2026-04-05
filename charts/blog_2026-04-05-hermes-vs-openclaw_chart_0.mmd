@@ -1,8 +1,0 @@
-graph TD
-    User([User Prompt]) --> Hermes[Hermes 3 Reasoning Engine]
-    subgraph "The Recursive Brain"
-    Hermes --> Loop{Internal Check}
-    Loop -- "Logic Error" --> Hermes
-    Loop -- "Ready" --> Intent[Final Intent]
-    end
-    Intent --> Output(Structured Plan)

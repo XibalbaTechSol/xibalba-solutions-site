@@ -1,8 +1,0 @@
-graph LR
-    Plan(Structured Plan) --> OpenClaw[OpenClaw Runtime]
-    subgraph "The Nervous System"
-    OpenClaw --> Slack[Slack Bridge]
-    OpenClaw --> DB[(SQL/NoSQL DB)]
-    OpenClaw --> Code[Python Sandbox]
-    end
-    Slack --> Success([Action Completed])

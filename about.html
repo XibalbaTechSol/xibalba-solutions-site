@@ -3,122 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Xibalba Solutions</title>
-    <meta name="description" content="Professional-grade local intelligence. Zero compromise on security.">
+    <title>Mission | Xibalba Solutions</title>
+    <meta name="description" content="High-fidelity technical studio specializing in autonomous intelligence orchestration, data sovereignty, and trustless integrity metrics.">
     <link rel="icon" href="./favicon.ico" sizes="any">
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body class="theme-obsidian">
 
     <nav>
-        <div class="container">
-            <a class='logo' href='./index.html'>
-                <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions Logo">
+        <div class="nav-container">
+            <a href="./index.html" class="logo">
+                <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions">
             </a>
+            <button class="hamburger" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="nav-links">
-                <a href='./solutions.html'>Solutions</a>
-                <a href='./pricing.html'>Pricing</a>
-                <a href='./about.html' class="active">About</a>
-                <a class='btn-outline' href='./contact.html' style='padding: 0.5rem 1rem; border-radius: 4px; margin-left: 1rem;'>Contact</a>
+                <a href="./index.html">Home</a>
+                <a href="./ai-agents.html">Agents</a>
+                <a href="./blog.html">Blog</a>
+                <a href="./local-ai.html" class="active">Privacy</a>
+                <a href="./pricing.html">Support</a>
+                <a href="./contact.html" class="btn-outline">Contact</a>
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme" style="background: none; border: 1px solid var(--border-main); color: var(--color-brand-primary); padding: 0.5rem; cursor: pointer; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-left: 1rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></button>
             </div>
         </div>
     </nav>
 
     <header class="page-header">
-        <div class="container">
-            <h1>The New Standard for <span class="gradient-text">Private AI</span></h1>
-            <p>Professional-grade local intelligence. Zero compromise on security.</p>
+        <div class="container animate-in">
+            <h1>Engineering <span class="gradient-text">Sovereignty</span></h1>
+            <p style="max-width: 600px; margin: 0 auto;">Xibalba Solutions is a high-fidelity technical studio specializing in the orchestration of autonomous intelligence and sovereign infrastructure.</p>
         </div>
     </header>
 
-    <section class="container content-section">
-        <div class="split-layout">
-            <div>
-                <h2 style="margin-bottom: 1.5rem;">Why Xibalba?</h2>
-                <p>In the Maya underworld of Xibalba, secrets were buried deep. We bring that same level of
-                    impenetrability to your digital infrastructure.</p>
-                <p>The modern AI landscape is dominated by cloud giants who explicitly state they may use your inputs to
-                    train future models. For a creative agency, that might be fine. For a <strong>healthcare
-                        provider</strong> handling patient records, or a <strong>law firm</strong> drafting patent
-                    applications, it is unacceptable.</p>
-                <p>We exist to bridge the gap between cutting-edge Artificial Intelligence and absolute data privacy.
-                </p>
+    <main class="container content-section">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;">
+            <div class="animate-in">
+                <h2 style="font-size: 3rem; line-height: 1.1; margin-bottom: 2rem;">The Founder's Intent</h2>
+                <p style="margin-bottom: 2rem;">The current AI boom is built on borrowed brains and leaky pipes. Most "solutions" are just thin wrappers over centralized APIs. I founded Xibalba Solutions to build something different: <strong>Sovereign Intelligence</strong>.</p>
+                <p >With a background in mathematics, distributed systems, and local LLM orchestration, I specialize in the low-level infrastructure of agentic ecosystems. I don't just connect APIs; I engineer local runtimes, secure hardware bridges, and high-fidelity feedback loops that allowed models to learn from your specific data—with 100% data residency.</p>
             </div>
-            <div style="background: #111; padding: 2rem; border-radius: 8px; border: 1px solid #222;">
-                <h3 style="color: var(--accent-secondary); margin-bottom: 1rem;">Industry Focus</h3>
-                <ul style="list-style: none; color: var(--text-muted);">
-                    <li style="margin-bottom: 1rem;"><strong>🛡️ Defense & Intelligence:</strong> Air-gapped solutions
-                        for classified workflows and mission-critical operations.</li>
-                    <li style="margin-bottom: 1rem;"><strong>🏥 Healthcare & Biotech:</strong> HIPAA-compliant local
-                        inference. Analyze patient notes without data ever touching the public web.</li>
-                    <li style="margin-bottom: 1rem;"><strong>⚖️ Legal & IP:</strong> Summarize case files and discovery
-                        documents within the safety of your network.</li>
-                    <li style="margin-bottom: 1rem;"><strong>🔬 R&D & Pharma:</strong> Secure model training and
-                        analysis for proprietary research and drug discovery.</li>
-                    <li style="margin-bottom: 1rem;"><strong>💰 Finance:</strong> Process sensitive financial models and
-                        client portfolios locally.</li>
+            <div class="feature-card animate-in" style="background: linear-gradient(135deg, var(--color-brand-secondary-glow) 0%, transparent 100%); padding: 4rem; border-radius: 32px;">
+                <h3 style="margin-bottom: 2rem; font-size: 1.8rem;">Core Pillars</h3>
+                <ul style="list-style: none; font-size: 1.1rem; line-height: 2.8; color: var(--gray-50);">
+                    <li><span class="gradient-text" style="font-weight: 700; margin-right: 1.5rem;">01</span> Absolute Data Sovereignty</li>
+                    <li><span class="gradient-text" style="font-weight: 700; margin-right: 1.5rem;">02</span> Technical Depth over Marketing</li>
+                    <li><span class="gradient-text" style="font-weight: 700; margin-right: 1.5rem;">03</span> High-Fidelity Design Language</li>
+                    <li><span class="gradient-text" style="font-weight: 700; margin-right: 1.5rem;">04</span> Trustless Integrity Metrics</li>
                 </ul>
             </div>
         </div>
-    </section>
+    </main>
 
-    <section class="founder-section">
-        <div class="container">
-            <div class="founder-card">
-                <div class="founder-avatar">
-                    <img src="./element-xibalba.jpg" alt="Xibalba Emblem">
-                </div>
-                <div class="founder-info">
-                    <h2 class="section-label">Leadership & Vision</h2>
-                    <h3>Jacob Vickers</h3>
-                    <p class="founder-title">Founder & Lead Design Engineer</p>
-                    <p>Jacob Vickers, Founder and Lead Design Engineer of Xibalba Solutions, brings a rigorous
-                        analytical
-                        approach to high-assurance technology. With a background in applied mathematics and physics, he
-                        leads the development of localized AI infrastructure designed for sectors requiring absolute
-                        data
-                        sovereignty.</p>
-                    <p>His work focuses on establishing new benchmarks for privacy, security, and performance in
-                        decentralized intelligence, ensuring that mission-critical data remains under client control.
-                    </p>
+        <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="./index.html" class="footer-logo">
+                    <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions">
+                </a>
+                <p class="footer-tagline">Building sovereign autonomous systems and private intelligence foundries for a resilient digital future.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <div class="footer-contact-info">
+                    <a href="mailto:xibalba@xibalbasolutions.com" class="footer-contact-item">
+                        <span>📧</span> xibalba@xibalbasolutions.com
+                    </a>
+                    <a href="tel:+1234567890" class="footer-contact-item">
+                        <span>📱</span> +1 (234) 567-890
+                    </a>
+                    <div class="footer-contact-item">
+                        <span>📍</span> San Francisco, CA
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="pricing-section">
-        <div class="container" style="text-align: center;">
-            <h2 style="margin-bottom: 2rem;">Our Privacy Guarantee</h2>
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">🚫</div>
-                    <h3>No "Call Home"</h3>
-                    <p>Our installations are designed to work fully offline. We configure firewalls to block outbound
-                        traffic from the AI engine.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🗝️</div>
-                    <h3>You Own the Keys</h3>
-                    <p>We don't host your model. You do. Once we hand over the system, we have zero access unless you
-                        invite us back for maintenance.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📜</div>
-                    <h3>Open Source Audit</h3>
-                    <p>We only deploy audited, open-source models (Llama, Mistral, Mixtral) so you know exactly what
-                        code is running on your machines.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Xibalba Solutions. All rights reserved. <br>
-                <span style="font-size: 0.8rem; color: #444;">Securing Intelligence in the Shadows.</span>
-            </p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Xibalba Solutions LLC. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="./js/main.js"></script>
 </body>
 </html>
