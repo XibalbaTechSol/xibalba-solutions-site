@@ -1,0 +1,3 @@
+## 2025-04-05 - Missing ARIA Expanded and Mobile Nav Toggle
+**Learning:** The mobile navigation menu lacked the hamburger button entirely on several pages (like index.html), and those that had it were missing the `aria-expanded` attribute, breaking accessibility and breaking screen reader context when toggled via JS.
+**Action:** Ensure all HTML files include the hamburger menu with `aria-expanded="false"` by default, and synchronously toggle this attribute within the JS event listener.
