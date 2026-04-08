@@ -133,6 +133,12 @@ strong {
     font-weight: 600;
 }
 
+/* Accessibility */
+:focus-visible {
+    outline: 2px solid var(--accent-secondary);
+    outline-offset: 2px;
+}
+
 .gradient-text {
     background: linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-secondary) 100%);
     -webkit-background-clip: text;
