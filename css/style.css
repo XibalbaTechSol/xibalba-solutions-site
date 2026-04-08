@@ -1129,3 +1129,14 @@ footer {
     max-width: 100% !important;
     height: auto !important;
 }
+
+/* Accessibility: Keyboard Navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent-secondary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
