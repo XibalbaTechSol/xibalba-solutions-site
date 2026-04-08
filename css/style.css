@@ -74,6 +74,18 @@ html {
     font-size: 16px;
 }
 
+/* Global focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 2px solid var(--accent-secondary);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
 body {
     background-color: var(--bg-body);
     color: var(--text-primary);
