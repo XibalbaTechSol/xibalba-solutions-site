@@ -1129,3 +1129,19 @@ footer {
     max-width: 100% !important;
     height: auto !important;
 }
+
+/* Focus Visible for Keyboard Navigation */
+a:focus-visible,
+.btn:focus-visible,
+.btn-outline:focus-visible,
+.hamburger:focus-visible,
+.nav-links a:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.btn:focus-visible,
+.btn-outline:focus-visible {
+    border-radius: 50px;
+}
