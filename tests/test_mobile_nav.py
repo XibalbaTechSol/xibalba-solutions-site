@@ -10,16 +10,12 @@ def get_file_url(filename):
 PAGES = [
     "index.html",
     "about.html",
-    "services.html",
-    "solutions.html",
-    "products.html",
-    "investors.html",
-    "hardware.html",
     "pricing.html",
     "contact.html",
-    "cli.html",
-    "crm.html",
-    "veriphysics.html"
+    "blog.html",
+    "integrity-coin.html",
+    "hermes-swarm.html",
+    "sanctum-brain.html"
 ]
 
 @pytest.mark.parametrize("page_file", PAGES)
@@ -59,7 +55,7 @@ def test_mobile_navigation_link_click(page: Page):
     page.click(".hamburger")
 
     # Click a link
-    page.click(".nav-links a[href='about.html']")
+    page.click(".nav-links a[href='./blog.html']")
 
     # Should navigate
-    expect(page).to_have_url(get_file_url("about.html"))
+    expect(page).to_have_url(get_file_url("blog.html"))
