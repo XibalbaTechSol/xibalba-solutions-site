@@ -1,0 +1,3 @@
+## 2024-10-24 - Synchronizing ARIA Attributes with Visual States
+**Learning:** In this app, mobile navigation menus use a globally shared static `.hamburger` element. Toggling the `.active` CSS class alone leaves screen readers unaware of the expanded/collapsed state.
+**Action:** When visual states of interactive elements are toggled via JavaScript, synchronously update their associated ARIA attributes (like `aria-expanded`) in the same event handler and ensure the default state is hardcoded in all HTML files.
