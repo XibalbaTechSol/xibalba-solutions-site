@@ -1,0 +1,3 @@
+## 2024-05-18 - Global Keyboard Focus Indicators
+**Learning:** This application's custom dark obsidian theme lacked global `:focus-visible` states, resulting in invisible focus rings for keyboard users navigating interactively.
+**Action:** Implemented a global `:focus-visible` rule applying a distinct outline (using `--color-brand-secondary`) with an offset to all interactive elements. Future component additions should rely on this global fallback rather than omitting focus styles.
