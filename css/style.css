@@ -1129,3 +1129,9 @@ footer {
     max-width: 100% !important;
     height: auto !important;
 }
+
+/* Keyboard Navigation Accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 2px solid var(--color-brand-secondary);
+    outline-offset: 4px;
+}
