@@ -50,16 +50,16 @@
         <div class="contact-form-container animate-in">
             <form action="thank-you.html" method="GET">
                 <div class="form-group">
-                    <label class="form-label">Identity / Organization</label>
-                    <input type="text" name="name" class="form-control" placeholder="e.g. Sovereign Labs" required>
+                    <label class="form-label" for="contact-identity">Identity / Organization</label>
+                    <input type="text" id="contact-identity" name="name" class="form-control" placeholder="e.g. Sovereign Labs" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Secure Transmission Channel (Email)</label>
-                    <input type="email" name="email" class="form-control" placeholder="technical@domain.ai" required>
+                    <label class="form-label" for="contact-secure-email">Secure Transmission Channel (Email)</label>
+                    <input type="email" id="contact-secure-email" name="email" class="form-control" placeholder="technical@domain.ai" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Project Scope</label>
-                    <select name="interest" class="form-control">
+                    <label class="form-label" for="contact-project-scope">Project Scope</label>
+                    <select id="contact-project-scope" name="interest" class="form-control">
                         <option>Strategic Architecture Build</option>
                         <option>Global Command Center Swarm</option>
                         <option>Sovereign Stack Maintenance</option>
@@ -67,8 +67,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Mission Briefing</label>
-                    <textarea class="form-control" rows="4" placeholder="Describe your technical requirements and sovereignty needs..."></textarea>
+                    <label class="form-label" for="contact-mission-briefing">Mission Briefing</label>
+                    <textarea id="contact-mission-briefing" class="form-control" rows="4" placeholder="Describe your technical requirements and sovereignty needs..."></textarea>
                 </div>
                 <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Sync Project</button>
             </form>
