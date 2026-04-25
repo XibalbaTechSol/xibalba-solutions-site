@@ -100,7 +100,7 @@ graph TD
                     The Integrity Protocol operates as a closed-loop feedback system between the physical execution of AI and the immutable Ethereum ledger. 
                 </p>
                 <p style="line-height: 1.8; margin-bottom: 1.5rem;">
-                    Our architecture is built on the principle of <strong>Autonomous Observability</strong>. By tapping into the raw model headers of providers like OpenAI and Anthropic, we capture the "Temporal Fingerprint" of every inference. This data is signed, shipped, and analyzed by the XAO Oracle to detect even the slightest hint of model drift or infrastructure instability.
+                    Our architecture is built on the principle of <strong>Autonomous Observability</strong>. By tapping into the raw model headers of providers like OpenAI and Anthropic, we capture the "Temporal Fingerprint" of every inference. This data is persistent in our <strong>PostgreSQL Trust Vault</strong> via SQLAlchemy, ensuring a structured, queryable history of agent reliability.
                 </p>
                 <ul style="list-style: none; padding: 0; margin-top: 2.5rem;">
                     <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start;">
@@ -112,13 +112,13 @@ graph TD
                     <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start;">
                         <span style="color: var(--color-brand-primary); font-weight: bold;">02</span>
                         <div>
-                            <strong>Recursive Analysis:</strong> The Oracle performs a Bayesian synthesis of historical transactions, weighting the reputation of the agent against its current technical order ($S_e$).
+                            <strong>ZK-Reputation Proofs:</strong> Utilizing <strong>Noir Circuits</strong>, we generate Zero-Knowledge proofs of reputation. This allows agents to prove their AIS tier without revealing the sensitive telemetry data behind it.
                         </div>
                     </li>
                     <li style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: flex-start;">
                         <span style="color: var(--color-brand-primary); font-weight: bold;">03</span>
                         <div>
-                            <strong>L2 Finality:</strong> Verified AIS State Hashes are committed to an Ethereum L2 (Base) every 24 hours, ensuring that reputation is public, immutable, and permanent.
+                            <strong>Multi-Chain Sovereignty:</strong> Integrated with <strong>Chainlink CCIP</strong>, our reputation state is bridged across multiple L2s, ensuring that an agent"s trust is portable and global.
                         </div>
                     </li>
                 </ul>
@@ -127,13 +127,13 @@ graph TD
 
 graph TD
                     A[SDK Ingest] --> B{XAO Engine}
-                    B -->|Entropy| Se[Score]
-                    B -->|Grounding| Sg[Score]
-                    Se --> C[AIS Commit]
-                    Sg --> C
-                    C --> D[Ethereum L2]
-                    D -->|Slash| E[Bond Burn]
-                    E -->|Feedback| A
+                    B -->|Trust Vault| DB[(PostgreSQL)]
+                    B -->|ZK Proof| ZK[Noir Circuit]
+                    DB --> ZK
+                    ZK --> C[AIS Commit]
+                    C --> D[Base L2]
+                    D -->|CCIP| Bridge[Multi-Chain]
+                    Bridge -->|Feedback| A
 
 </div>
         </section>
@@ -143,6 +143,17 @@ graph TD
                 <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">The Physics of <span class="gradient-text">Trust.</span></h2>
                 <p style="margin-bottom: 1.5rem;">Trust is a thermodynamic property. It requires energy to create and is subject to natural decay. We measure this through three distinct telemetry channels.</p>
                 
+                <h3 style="color: #fff; margin-bottom: 1.5rem;">Identity Binding & Trust Ceilings</h3>
+                <p style="margin-bottom: 1.5rem; line-height: 1.8;">
+                    To prevent malicious Sybil attacks, we enforce a mathematical <strong>Trust Ceiling</strong> based on verification depth. Anonymous agents are capped, while Institutional agents can reach the full 1000 AIS.
+                    <br><br>
+                    <strong>Tier 1: Sovereign (Capped at 600)</strong> - Anonymous Wallet.
+                    <br>
+                    <strong>Tier 2: Linked (Capped at 850)</strong> - Domain/DNS Verified.
+                    <br>
+                    <strong>Tier 3: Institutional (Capped at 1000)</strong> - Business/KYC Verified.
+                </p>
+
                 <h3 style="color: #fff; margin-bottom: 1.5rem;">The Entropy Derivation ($S_e$)</h3>
                 <p style="margin-bottom: 1.5rem; line-height: 1.8;">
                     Entropy measures the unpredictability of a signal. For AI, technical order is the hallmark of reliability. We analyze the <strong>Coefficient of Variation (CV)</strong> across latency and accuracy streams.
