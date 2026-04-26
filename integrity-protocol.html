@@ -20,7 +20,7 @@
         .metric-value { font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem; font-family: var(--font-primary), sans-serif; }
         .metric-label { text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; color: var(--gray-500); }
         .architecture-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: flex-start; margin: 6rem 0; }
-        .code-block { background: #000; padding: 2rem; border-radius: 8px; border: 1px solid #333; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: #00ff88; overflow-x: auto; }
+        .code-block { background: #000; padding: 2rem; border-radius: 8px; border: 1px solid #333; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: #00F2FF; overflow-x: auto; }
         .comparison-table th { color: var(--color-brand-primary); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
     </style>
 </head>
@@ -78,17 +78,17 @@ graph TD
 
         <div class="metric-hero">
             <div class="metric-visual">
-                <div class="metric-value" style="color: #00f2ff;">$S_e$</div>
+                <div class="metric-value" style="color: #00F2FF;">$S_e$</div>
                 <div class="metric-label">Entropy Score</div>
                 <p style="margin-top: 1rem;">Predictability & Order</p>
             </div>
             <div class="metric-visual">
-                <div class="metric-value" style="color: #ff00ff;">$S_g$</div>
+                <div class="metric-value" style="color: #00F2FF;">$S_g$</div>
                 <div class="metric-label">Grounding Score</div>
                 <p style="margin-top: 1rem;">Human Accountability</p>
             </div>
             <div class="metric-visual">
-                <div class="metric-value" style="color: #00ff88;">$S_i$</div>
+                <div class="metric-value" style="color: #00F2FF;">$S_i$</div>
                 <div class="metric-label">Integrity Score</div>
                 <p style="margin-top: 1rem;">Comprehensive Reputation</p>
             </div>
@@ -342,7 +342,7 @@ graph LR
             </div>
             
             <div style="margin-top: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
-                <div style="background: rgba(0, 242, 255, 0.02); padding: 3rem; border-radius: 12px; border: 1px solid rgba(0, 242, 255, 0.1);">
+                <div style="background: transparent; padding: 3rem; border-radius: 12px; border: 1px solid #333;">
                     <h4 style="color: #fff; margin-bottom: 1rem;">Verification Revenue Split</h4>
                     <p style="line-height: 1.7;">
                         A mandatory <strong>0.5% protocol fee</strong> is applied to every contract settled via the Integrity Token. This fee ensures the economic viability of the XAO Oracle cluster.
@@ -352,7 +352,7 @@ graph LR
                         <li>• 50% permanently <strong>BURNED</strong> from supply (Scarcity)</li>
                     </ul>
                 </div>
-                <div style="background: rgba(112, 0, 255, 0.02); padding: 3rem; border-radius: 12px; border: 1px solid rgba(112, 0, 255, 0.1);">
+                <div style="background: transparent; padding: 3rem; border-radius: 12px; border: 1px solid #333;">
                     <h4 style="color: #fff; margin-bottom: 1rem;">Dispute & Slashing</h4>
                     <p style="line-height: 1.7;">
                         High-value mismatches trigger an automated dispute process. If a "Malicious Entropy Breach" is verified, the agent's Sovereign Bond is liquidated.
@@ -441,7 +441,7 @@ sdk.track_openai(openai_client)
                 </div>
                 <div>
                     <h4 style="color: #fff; margin-bottom: 1rem;">2. HITL Grounding Bridge</h4>
-                    <div class="code-block" style="font-size: 0.8rem; padding: 1.5rem; color: #ff00ff;">
+                    <div class="code-block" style="font-size: 0.8rem; padding: 1.5rem; color: #00F2FF;">
 # Report a human oversight event
 sdk.report_human_grounding(task_id="tx_99", was_edited=True)
                     </div>
@@ -500,12 +500,12 @@ sdk.report_human_grounding(task_id="tx_99", was_edited=True)
             startOnLoad: true,
             theme: 'base',
             themeVariables: {
-                primaryColor: '#00F2FF',
-                primaryTextColor: '#00F2FF',
-                primaryBorderColor: '#00F2FF',
-                lineColor: '#FFD600',
-                secondaryColor: '#FFD600',
-                tertiaryColor: '#1e293b',
+                primaryColor: "#00F2FF",
+                primaryTextColor: "#FFFFFF",
+                primaryBorderColor: "#00F2FF",
+                lineColor: "#00F2FF",
+                secondaryColor: "#FFFFFF",
+                tertiaryColor: "#0a0a0f",
                 fontFamily: 'Raleway'
             }
         });

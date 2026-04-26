@@ -77,13 +77,13 @@
                         <div class="math-block" style="margin-top:1rem;font-size:0.9rem;">$$S_e = 1000 \cdot e^{-1.5 \cdot CV}$$</div>
                     </div>
                     <div class="metric-card">
-                        <div class="metric-value" style="color:#FF00FF;">$S_g$</div>
+                        <div class="metric-value" style="color:#00F2FF;">$S_g$</div>
                         <div class="metric-label">Grounding Score</div>
                         <p style="margin-top:1rem;">Measures human intentionality via the Grounding Delta.</p>
                         <div class="math-block" style="margin-top:1rem;font-size:0.9rem;">$$S_g = (R_{int} \cdot 0.4 + D_{edit} \cdot 0.6) \cdot 1000$$</div>
                     </div>
                     <div class="metric-card">
-                        <div class="metric-value" style="color:#00FF88;">$S_i$</div>
+                        <div class="metric-value" style="color:#00F2FF;">$S_i$</div>
                         <div class="metric-label">Integrity Score</div>
                         <p style="margin-top:1rem;">Comprehensive "Credit Score" — synthesis of sacrifice and order.</p>
                         <div class="math-block" style="margin-top:1rem;font-size:0.9rem;">$$S_i = [(T \cdot .25)+(A \cdot .25)+(C_i \cdot .50)] \cdot \frac{S_e}{1000}$$</div>
@@ -172,7 +172,7 @@
                 <div class="card-grid animate-in" style="max-width:800px;margin:0 auto;">
                     <div class="card"><h4>1. Autonomous Interceptor</h4><div class="code-block"><pre>sdk = XibalbaIntegritySDK("0xAgent")
 sdk.track_openai(openai_client)</pre></div></div>
-                    <div class="card"><h4>2. HITL Grounding Bridge</h4><div class="code-block" style="color:#FF00FF;"><pre>sdk.report_human_grounding(
+                    <div class="card"><h4>2. HITL Grounding Bridge</h4><div class="code-block" style="color:#00F2FF;"><pre>sdk.report_human_grounding(
     task_id="tx_99", was_edited=True
 )</pre></div></div>
                 </div>
