@@ -204,7 +204,7 @@ nav.scrolled {
 }
 
 .logo img {
-    height: 36px;
+    height: 72px;
     filter: drop-shadow(0 0 8px var(--color-brand-primary-glow));
     transition: var(--t-smooth);
 }
@@ -343,7 +343,7 @@ nav.scrolled {
 }
 
 .hero-logo-main {
-    max-height: 200px;
+    max-height: 400px;
     width: auto;
     filter: drop-shadow(0 0 40px rgba(0, 242, 255, 0.08));
     transition: var(--t-smooth);
@@ -777,7 +777,7 @@ footer {
 }
 
 .footer-logo img {
-    height: 36px;
+    height: 72px;
     filter: drop-shadow(0 0 8px var(--color-brand-primary-glow));
 }
 
@@ -833,7 +833,7 @@ footer {
     align-items: center;
     justify-content: center;
     width: 36px;
-    height: 36px;
+    height: 72px;
     border: 1px solid var(--border-main);
     border-radius: 8px;
     color: var(--text-muted);
@@ -982,7 +982,7 @@ footer {
 
     .hero h1 { font-size: 3.5rem; }
 
-    .hero-logo-main { max-height: 240px; }
+    .hero-logo-main { max-height: 480px; }
 
     .card-grid { grid-template-columns: repeat(2, 1fr); }
 
@@ -1021,7 +1021,7 @@ footer {
 
     .hero p { font-size: 1.25rem; max-width: 700px; }
 
-    .hero-logo-main { max-height: 300px; }
+    .hero-logo-main { max-height: 600px; }
 
     .page-header {
         padding: calc(var(--nav-h) + 7rem) 0 5rem;
