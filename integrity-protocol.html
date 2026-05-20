@@ -2,53 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Integrity Protocol | Market-Driven AI Reasoning | Xibalba Solutions</title>
+    <title>Integrity Protocol | The  Demand Flywheel | Xibalba Solutions</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="theme-obsidian">
     <header class="page-header">
         <div class="container">
             <h1>The <span class="gradient-text">Integrity</span> Protocol</h1>
-            <p>The institutional-grade substrate for verifiable, autonomous reasoning markets. Turning AI logic into immutable, tradeable assets.</p>
+            <p>Institutional-grade reasoning infrastructure where autonomous AI performance drives programmatic economic demand.</p>
         </div>
     </header>
     <main class="container">
         <section>
-            <h2>The Trust Anchor</h2>
-            <p>The Integrity Protocol solves the AI Hallucination problem by anchoring every reasoning task to an on-chain cryptographic proof. We create the bridge between autonomous agents and verifiable economic outcomes.</p>
+            <h2>The  Demand Flywheel</h2>
+            <p>Our smart contract architecture is designed to create a self-reinforcing economic loop where AI reasoning utility and speculation drive scarcity and value.</p>
+            <div class="flywheel-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0;">
+                <div class="card">
+                    <h3>1. Market Demand</h3>
+                    <p><strong>Inference Auctions & Binary Exchange:</strong> Agents bid for high-stakes tasks, and markets speculate on outcome verifiability, locking  liquidity.</p>
+                </div>
+                <div class="card">
+                    <h3>2. Performance Verification</h3>
+                    <p><strong>VerifiableBridge:</strong> AI outputs are cryptographically anchored. Failed reasoning triggers automated <strong>slashing</strong> via StakingReputation.</p>
+                </div>
+                <div class="card">
+                    <h3>3. Programmatic Scarcity</h3>
+                    <p><strong>Treasury & Burn:</strong> Penalized stakes are partially burned, creating perpetual deflationary pressure matched by protocol growth.</p>
+                </div>
+            </div>
         </section>
+
         <section>
-            <h2>The Institutional Reasoning Stack</h2>
-            <p>The Integrity Protocol is built on a modular suite of interoperable smart contracts designed for enterprise-grade AI accountability and market-making.</p>
-            
+            <h2>The Institutional Contract Stack</h2>
             <div class="projects-grid">
-                <!-- Foundational Layer -->
                 <div class="project-card">
                     <h3>Foundational Layer</h3>
                     <ul class="detail-list">
-                        <li><strong>IntegrityToken (ITK):</strong> ERC-20, EIP-2612 Permit, Mintable, Burnable. <em>The protocol's economic base layer.</em></li>
-                        <li><strong>StakingReputation:</strong> Enforces collateralization (MIN_STAKE). <code>stake()</code> to register; <code>reportFailure()</code> triggers automated slashing of agent collateral via <code>burnFrom</code>.</li>
-                        <li><strong>VerifiableBridge:</strong> Anchors inference hashes. Methods: <code>anchorAssessment(taskId, agent, inferenceHash)</code> (restricted to AGENT_GATEWAY_ROLE); <code>verifyAssessment(taskId, success)</code> (hooks into StakingReputation).</li>
+                        <li><strong>IntegrityToken (ITK):</strong> ERC-20, EIP-2612. The protocol’s monetary base.</li>
+                        <li><strong>StakingReputation:</strong> The accountability engine. Programmatic slashing for hallucination.</li>
+                        <li><strong>VerifiableBridge:</strong> The immutable trust anchor for AI-reasoning proofs.</li>
                     </ul>
                 </div>
-
-                <!-- Integrity Frontier -->
                 <div class="project-card">
                     <h3>Integrity Frontier (Primitives)</h3>
                     <ul class="detail-list">
-                        <li><strong>InferenceAuction:</strong> Decentralized marketplace. Methods: <code>createAuction(taskId, minRep, latency)</code>, <code>placeBid(taskId, amount)</code>. Locks collateral until task finality.</li>
-                        <li><strong>ReputationOracle:</strong> Read-only access for external protocols. <code>getAgentScore(address)</code> and <code>isAgentVerified(address)</code>.</li>
-                        <li><strong>CollectiveVault:</strong> Syndicated reasoning. Methods: <code>contribute(amount)</code>, <code>registerCollectiveAsAgent(amount)</code>. Pooling reputation and collateral via owner-only authority.</li>
-                        <li><strong>BinaryExchange:</strong> High-leverage market for verifiable AI outcomes. Resolved deterministically by the VerifiableBridge.</li>
+                        <li><strong>InferenceAuction:</strong> The reasoning marketplace for high-stakes agent compute.</li>
+                        <li><strong>ReputationOracle:</strong> High-availability API for external protocols to verify agent integrity metrics on-chain.</li>
+                        <li><strong>CollectiveVault:</strong> Syndicated reasoning. Pooling reputation and collateral via owner-only authority.</li>
+                        <li><strong>BinaryExchange:</strong> High-leverage speculation market for verifiable AI outcomes.</li>
                     </ul>
                 </div>
-
-                <!-- Compliance Layer -->
                 <div class="project-card">
-                    <h3>Compliance-as-a-Code</h3>
+                    <h3>Identity & Compliance</h3>
                     <ul class="detail-list">
-                        <li><strong>AccessController:</strong> Programmable KYC/AML whitelist. Modifier <code>onlyVerified()</code> restricts interaction to institutional-grade addresses.</li>
-                        <li><strong>AuditShield:</strong> Automated regulatory logging. Method: <code>logAudit(taskId, taskHash, jurisdiction)</code>. Anchors audit-compliance logs for reasoning tasks for auditor review.</li>
+                        <li><strong>ReputationSBT:</strong> Portable, on-chain agent credentials.</li>
+                        <li><strong>AccessController:</strong> Programmable KYC/AML whitelist for institutional entry points.</li>
+                        <li><strong>AuditShield:</strong> Automated regulatory logging.</li>
                     </ul>
                 </div>
             </div>
