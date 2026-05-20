@@ -1,105 +1,90 @@
-# Whitepaper v8.0: The Integrity Protocol
-## The Actuarial Standard for the Autonomous Agent Economy
+# INTEGRITY PROTOCOL
+## The Cryptographic Substrate for Autonomous Agent Economies
+### A Comprehensive Technical and Economic Whitepaper
+#### For Developers, Integrators, and Strategic Investors
 
-**Author:** Solo Architect, Xibalba Solutions  
-**Date:** April 2026  
-**Status:** Final Release (v8.0)
-
----
-
-## 1. Abstract
-As autonomous AI agents begin to handle trillions of dollars in global commerce, a systemic "Trust Gap" has emerged. Without a mathematical standard for verifying agent reliability, the industry remains uninsurable and fragmented. The **Integrity Protocol** provides the first decentralized solution: the **Agent Integrity Score (AIS)**. By bridging off-chain telemetry with on-chain cryptographic proofs, Xibalba Solutions creates a portable, tamper-proof reputation layer that makes AI agents insurable, trustworthy, and sovereign.
+**Author:** Xibalba Solutions LLC  
+**Author:** Jacob S. Vickers  
+**Version:** v2.0 - Expanded Use Cases & Architecture
 
 ---
 
-## 2. The Problem: The $1.5T Trust Vacuum
-By 2028, over 40% of all online transactions are projected to be initiated by AI agents. Current reputation systems (stars/reviews) are easily manipulated by Sybil attacks and lack the technical depth required for institutional risk assessment. 
+## 1. Executive Summary
+The computational landscape is undergoing a systemic shift from static, user-directed applications to dynamic, autonomous agentic systems. As Artificial Intelligence matures, it relies on Generative User Interfaces (GenUI), the Agent-User Interaction (AG-UI) protocol, and the Agent-to-User Interface (A2UI) specification to conduct real-world, high-stakes operations. However, this shift introduces an insurmountable crisis for traditional cybersecurity: stochastic systems cannot be secured by deterministic perimeters.
 
-**Key Failures:**
-- **Black-Box Risk:** No way to verify if an agent's internal logic is drifting.
-- **Economic Non-Persistence:** If an agent fails a contract, there is no consequence beyond a deleted account.
-- **Information Asymmetry:** Providers know their failure rates; customers do not.
+The Integrity Protocol is the missing institutional-grade trust layer. We bridge stochastic AI reasoning with deterministic on-chain execution. By leveraging Account Abstraction, advanced smart contracts, and structural verification frameworks like the Model Contextual Integrity Protocol (MCIP), we transform volatile AI outputs into financially accountable, mathematically verifiable truths.
 
----
-
-## 3. The Solution: Tri-Metric AIS v8.0
-Xibalba Solutions introduces the **Tri-Metric Model**, an actuarial-grade scoring system that evaluates agents across three correlated dimensions:
-
-### 3.1 Pillar 1: Entropy Score (Stability)
-Measures the statistical variance of performance. High entropy indicates erratic behavior—the primary precursor to failure.
-$$S_{entropy} = e^{-1.5 \cdot \sigma^2} \times 1000$$
-
-### 3.2 Pillar 2: Grounding Score (Accountability)
-Quantifies Human-in-the-Loop (HITL) oversight. Agents with deep human "tethering" are assigned lower risk weights.
-$$S_{grounding} = HGI_{raw} \times 1000$$
-
-### 3.3 Pillar 3: Sacrifice (Compute Proof)
-Uses verified GPU/TPU hours as "Proof of Work" to ensure agents have "skin in the game" and prevent low-cost Sybil bot attacks.
+### The Value Proposition
+- **For Investors:** the protocol captures value through a native deflationary utility token, seamlessly integrated via Account Abstraction to avoid UX friction. As the AI agent market races toward a projected $52.6 Billion TAM by 2030, the Integrity Protocol acts as the necessary "toll bridge" for secure multi-agent commerce.
+- **For Developers:** it provides an open, highly composable smart-contract suite (e.g., `SovereignAgent.sol`, `ReputationSBT.sol`) allowing seamless deployment of secure, compliant, and reputation-backed AI agents across any EVM-compatible chain.
 
 ---
 
-## 4. The Identity Pillar: Hierarchy of Accountability
-For a reputation score to be actionable, it must be bound to a legal or financial entity. Xibalba Solutions enforces an **Identity Ceiling** logic:
+## 2. The Core Architecture (Developer Overview)
+The Integrity Protocol completely reimagines AI security by shifting from perimeter defenses to immutable, verifiable agent behavior. We treat an AI identity and reputation not as an ephemeral service credential, but as a hard, on-chain asset.
 
-- **Sovereign Agents (Tier 1):** Cryptographically unique but unlinked. Capped at a "CCC" risk rating (AIS 600).
-- **Linked Agents (Tier 2):** Bound to a verified domain or organization. Capped at "AA" rating (AIS 850).
-- **Institutional Agents (Tier 3):** Fully KYC'd or business-verified. Eligible for the maximum "AAA" rating (AIS 1000).
+### 2.1 Cryptographic Identity & The Sovereign Agent
+Each agent deployed onto the network is backed by a `SovereignAgent` contract instance. This ensures that the agent possesses its own verifiable lifecycle and operational parameters.
 
-This hierarchy creates an economic "Verification Ladder," incentivizing agents to move from anonymity to institutional accountability as they grow in value.
+#### Smart Contract Primitives
+- `SovereignAgent.sol`: The operational wrapper for the agent, governing access controls, allowed smart contract interactions, and treasury management.
+- `ReputationSBT.sol`: An ERC-721 Soulbound Token that acts as an immutable, portable reasoning resume. An enterprise can migrate an agent to a new provider without losing the cryptographically verified Agent Integrity Score (AIS).
+- `VerifiableBridge.sol`: The data availability and anchoring contract that logs telemetry, grounding deltas, and inference latency directly from the Hermes Gateway.
 
----
-
-## 5. The Economy: $ITK Token & Sovereign Tax
-The **Integrity Token (ITK)** is the utility asset that fuels the trust engine.
-
-- **The Sovereign Tax:** A 0.5% fee is applied to every reputation-anchored handshake.
-- **Deflationary Burn:** 50% of the tax is permanently burned, creating scarcity as the agentic web expands.
-- **Treasury Revenue:** 50% of the tax funds the Xibalba Treasury for protocol R&D and insurance grants.
-- **Staking & Slashing:** Agents must stake ITK to access high-value deals. Misbehavior results in automated **Dual-Witness Slashing**.
+### 2.2 Model Contextual Integrity Protocol (MCIP) & BCC
+To secure GenUI environments and high-risk workflows, the protocol employs two novel frameworks:
+- **MCIP (Model Contextual Integrity Protocol):** Enforces contextual constraints dynamically. It evaluates interaction flows as tuples—*(sender, recipient, data subject, info type, principle)*—blocking contextually inappropriate function calls (e.g., Tool Poisoning) in real-time.
+- **Behavioral Commitment Chains (BCC):** For decentralized finance and enterprise environments, agents write periodic state snapshots into a commitment chain. Any deviation from the behavioral envelope is immediately detected, isolating the compromised instance.
 
 ---
 
-## 6. Open Standards & Interoperability
-To ensure the global adoption of the Agent Integrity Score, Xibalba Solutions aligns with the leading standards of the decentralized identity ecosystem:
+## 3. Economic Design & Tokenomics (Investor Overview)
+A persistent flaw in Web3 protocols is the "Multi-Token Friction Trap"—forcing users to acquire a volatile utility token to access services. The Integrity Protocol completely circumvents this through Account Abstraction and a programmatic Paymaster architecture, ensuring frictionless enterprise adoption while driving relentless buy-pressure to the native token.
 
-### 6.1 W3C Decentralized Identifiers (DID)
-Every agent in the protocol is assigned a **did:intg** identifier. This allows for a persistent, globally unique identity that is resolved via the Xibalba Trust Oracle, enabling cross-protocol recognition of agent provenance.
+### 3.1 The Value-Capture Flywheel
+1. **Frictionless On-Ramp:** Network participants, prediction market traders, and healthcare providers pay transaction fees in stablecoins (e.g., USDC, USDT) or native gas tokens (ETH).
+2. **Programmatic Buy-Pressure:** The Integrity Paymaster contract intercepts these fees, taking a percentage to automatically market-buy the Integrity Token via a Decentralized Exchange (DEX).
+3. **Deflationary Sink & Staking:** The purchased tokens are either permanently burned (reducing circulating supply) or routed to active Staking and Validator pools.
 
-### 6.2 Verifiable Credentials (VC)
-The AIS score is exported as a **W3C Verifiable Credential**. These credentials are cryptographically signed by the Xibalba Identity Oracle and can be verified by any third-party system without requiring a direct connection to the Xibalba backend.
-
-### 6.3 ERC-8004 Compatibility
-The Integrity Protocol implements the **ERC-8004** standard hooks for on-chain identity and reputation registries. This ensures that AIS scores and validation proofs (ZK-Reputation) are natively readable by the broader Ethereum "Agent Commerce" ecosystem.
-
----
-
-## 7. Privacy & Sovereignty: ZK-Reputation
-Utilizing **Noir ZK-Circuits**, the protocol allows agents to prove their trustworthiness without revealing sensitive data.
-- **Zero-Knowledge AIS Proofs:** An agent can prove `AIS > 800` to a counterparty while keeping their granular performance logs private.
-- **Cross-Chain Attestation:** Standardized on **Chainlink CCIP**, AIS attestations are bridged from Base (L2) to the global Ethereum ecosystem.
+### 3.2 Token Velocity & Bonding Mechanics
+Because traditional bots and unverified agents carry no behavioral history, the protocol forces active agents to post financial collateral (Bonding). As transaction volume scales across high-value markets, the required bonded stake increases, effectively locking up supply. Decreased token velocity combined with the Paymaster's continuous buy-and-burn mechanics results in robust deflationary value capture.
 
 ---
 
-## 8. Governance: Xibalba DAO & AI-Proxy Delegation
-To eliminate "Governance Fatigue," the protocol transitions to a **Sovereign DAO** using an innovative **AI-Proxy Delegation** architecture. Token holders configure and deploy specialized "Guardian Agents" equipped with constitutional mandates. 
+## 4. High-Volume Vertical Applications
+The Integrity Protocol is not a theoretical construct; it is engineered for immediate deployment in high-stakes, multi-agent economic environments where trust and compliance are non-negotiable.
 
-Instead of manual human voting on complex technical parameters, these Guardians autonomously analyze proposals (e.g., adjustments to the **Stability Drag** or **Slash Thresholds**) using RAG against the protocol's documentation. To ensure long-term stability and prevent runaway loops, the DAO enforces a **10% Minority Challenge** safety valve, allowing humans to pause and audit the AI's optimistic execution. 
+### 4.1 Decentralized Prediction Markets & Polymarkets
+Modern prediction networks suffer from market manipulation, orchestrated Sybil attacks, and oracle vulnerabilities driven by algorithmic bots. Because traditional bots lack verifiable history, they can collude to skew odds.
 
-The protocol is currently in its **Shadow Governance (Pilot Phase)**, where Guardian votes are non-binding and used to train the protocol's stability model.
+**The Integrity Solution:** Agents participating in prediction markets must bond Integrity Tokens and maintain a high Agent Integrity Score (AIS). The `BinaryExchange.sol` and `IntegrityMarket.sol` contracts allow trustless speculation. If an agent is found to be manipulating data or hallucinating oracle feeds, the `StakingReputation` mechanism is triggered, programmatically slashing their economic collateral.
+
+### 4.2 Automated Binary Options Trading
+Binary options require sub-second deterministic resolution. AI trading agents executing these options are vulnerable to Data Flow manipulation (e.g., spoofed price feeds overriding LLM logic). The Integrity Protocol routes all agent telemetry through the Verifiable Bridge, creating an immutable Proof of Integrity (PoI) for every trade execution, ensuring the agent's logic was not hijacked via prompt injection.
+
+### 4.3 HIPAA-Compliant Healthcare Workflows
+Healthcare providers face strict data silos. AI agents capable of cross-referencing patient data must maintain absolute privacy. Using `AccessController.sol` and `AuditShield.sol`, the protocol implements Compliance-as-Code. The MCIP framework strictly governs which data subjects can be queried, anchoring automated audit logs to the blockchain to satisfy HIPAA requirements without exposing Protected Health Information (PHI).
+
+### 4.4 Supply Chain & Procurement
+Autonomous agents negotiating supply chain contracts are targeted by UI Redressing and DoubleClickjacking to force unauthorized vendor approvals. The Integrity Protocol utilizes Behavioral Commitment Chains (BCC) to mathematically verify that the agent's negotiation logic matches the final executed purchase order, eliminating vendor fraud.
+
+---
+
+## 5. Market Opportunity & Growth Trajectory
+The transition from "Copilots" (human-in-the-loop) to "Sovereign Agents" (autonomous execution) requires a standardized trust infrastructure. The Integrity Protocol is positioned at the base layer of this transition.
+
+| Market Segment | 2024 Valuation | 2030 Projected | CAGR (2025-2030) |
+| :--- | :--- | :--- | :--- |
+| Global AI Agent Market | $5.4B | $52.6B | 46.3% |
+| Vertical AI Agents (Healthcare/DeFi) | Emerging | High Growth | 62.7% |
+| Decentralized Prediction Markets | $850M | $8.5B | 45.0% |
 
 ---
 
-## 9. Revenue Model
-1. **Verification Fees:** 0.25% protocol revenue on all handshakes.
-2. **Actuarial SaaS:** Subscription-based API access for insurance underwriters.
-3. **Audit Tiering:** Platinum-tier manual audits for enterprise AI clusters.
+## 6. Conclusion
+The Integrity Protocol solves the defining bottleneck of the autonomous intelligence era: Trust. By replacing brittle, centralized security perimeters with decentralized, cryptographically backed financial accountability, we enable AI agents to safely manage capital, private data, and critical enterprise workflows.
+
+For developers, it provides the ultimate composable toolkit for secure AI deployment. For investors, the synthesis of Account Abstraction, structural token sinks, and programmatic buy-pressure captures the immense value generated by the booming $50B+ AI Agent economy.
 
 ---
-
-## 10. Conclusion
-Xibalba Solutions does not build the agents; we verify their worth. The Integrity Protocol is the foundational "Actuarial Feed" for the next era of autonomous commerce.
-
-**"Verification is the only path to finality."**
-
----
-© 2026 Xibalba Solutions. All rights reserved.
+*Disclaimer: This whitepaper is for informational purposes only and does not constitute financial, legal, or investment advice. Tokenomics and technical architectures are subject to refinement. The Integrity Protocol and Xibalba Solutions LLC make no guarantees regarding future market performance.*
