@@ -5,9 +5,13 @@ import smtplib
 from email.mime.text import MIMEText
 import os
 import sys
+from dotenv import load_dotenv
+
+# Load environment variables from .env if present
+load_dotenv()
 
 # --- Configuration ---
-PORT = 8000
+PORT = int(os.environ.get("PORT", 8000))
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
 # SMTP Configuration (Recommended to use environment variables)
@@ -17,8 +21,8 @@ SMTP_SERVER = os.environ.get("SMTP_SERVER", "localhost")
 SMTP_PORT = int(os.environ.get("SMTP_PORT", "587"))
 SMTP_USER = os.environ.get("SMTP_USER", "")
 SMTP_PASS = os.environ.get("SMTP_PASS", "")
-FROM_EMAIL = os.environ.get("FROM_EMAIL", "contact@xibalbasolutions.com")
-RECIPIENTS = ["jacob@xibalbasolutions.com", "jacob.v.universe@gmail.com"]
+FROM_EMAIL = os.environ.get("FROM_EMAIL", "relay@xibalbasolutions.com")
+RECIPIENTS = ["jacob.v.universe@gmail.com"]
 
 class XibalbaHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
@@ -36,29 +40,34 @@ class XibalbaHandler(http.server.SimpleHTTPRequestHandler):
                 name = fields.get('name', [''])[0]
                 email = fields.get('email', [''])[0]
                 interest = fields.get('interest', [''])[0]
+                subject = fields.get('subject', ['Inquiry'])[0]
                 message = fields.get('message', [''])[0]
+                source_page = fields.get('source_page', ['Unknown'])[0]
 
-                print(f"Received contact request from: {name} <{email}>")
+                print(f"Received contact request from: {name} <{email}> via {source_page}")
 
                 # Construct the email body
                 email_body = f"""
-New Contact Form Submission from Xibalba Solutions Website
+--- SYSTEM CONTEXT ---
+Source Page: {source_page}
+Timestamp:   {self.log_date_time_string()}
+Relay:       Xibalba Sovereign Handler v2.0
 
-----------------------------------------------------------
-Name:     {name}
-Email:    {email}
-Interest: {interest}
-----------------------------------------------------------
+--- USER DATA ---
+Name:        {name}
+Email:       {email}
+Subject:     {subject}
+Interest:    {interest}
 
-Message:
+--- MESSAGE ---
 {message}
 
 ----------------------------------------------------------
-Submitted via local self-hosted handler.
+This message was relayed via the Xibalba local server.
 """
                 
                 msg = MIMEText(email_body)
-                msg['Subject'] = f"AI Inquiry: {name} - {interest}"
+                msg['Subject'] = f"Contact: {name} - {subject}"
                 msg['From'] = FROM_EMAIL
                 msg['To'] = ", ".join(RECIPIENTS)
 

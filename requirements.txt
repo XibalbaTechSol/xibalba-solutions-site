@@ -1,0 +1,8 @@
+# Python requirements for Xibalba Solutions Backend
+# server.py uses standard library exclusively for logic, 
+# but we include common packages for scalability and environment management.
+
+# Standard HTTP/SMTP is built-in.
+# If you add external integrations, list them here.
+gunicorn==21.2.0
+python-dotenv==1.0.1

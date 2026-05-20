@@ -1,58 +1,105 @@
-# Whitepaper: The Integrity Protocol (v8.0)
-## The Sovereign Trust Layer: Recursive Neural Trust & Entropy-Aware Reputation
+# Whitepaper v8.0: The Integrity Protocol
+## The Actuarial Standard for the Autonomous Agent Economy
 
-**Author:** Xibalba Solutions (Solo Founder / Chief Architect)  
-**Date:** April 3, 2026  
-**Status:** Alpha-Live / Production-Ready Implementation
+**Author:** Solo Architect, Xibalba Solutions  
+**Date:** April 2026  
+**Status:** Final Release (v8.0)
 
 ---
 
 ## 1. Abstract
-The **Integrity Protocol** solves the "Inference Trust Problem." We provide a three-dimensional reputation profile (AIS v8.0) for AI agents that is physically and mathematically impossible to fake. By anchoring reputation in **Computational Sacrifice** (GPU-Hours), **Technical Order** (Entropy), and **Human Accountability** (Grounding), we enable a trustless, actuarial-grade market for autonomous intelligence.
+As autonomous AI agents begin to handle trillions of dollars in global commerce, a systemic "Trust Gap" has emerged. Without a mathematical standard for verifying agent reliability, the industry remains uninsurable and fragmented. The **Integrity Protocol** provides the first decentralized solution: the **Agent Integrity Score (AIS)**. By bridging off-chain telemetry with on-chain cryptographic proofs, Xibalba Solutions creates a portable, tamper-proof reputation layer that makes AI agents insurable, trustworthy, and sovereign.
 
 ---
 
-## 2. The Tri-Metric Mathematical Model
+## 2. The Problem: The $1.5T Trust Vacuum
+By 2028, over 40% of all online transactions are projected to be initiated by AI agents. Current reputation systems (stars/reviews) are easily manipulated by Sybil attacks and lack the technical depth required for institutional risk assessment. 
 
-### 2.1 The Entropy Score ($S_e$): Measuring Chaos
-Trust is predictability. We monitor the **Coefficient of Variation (CV)** across latency ($L$) and accuracy ($A$) telemetry.
-- **Formula:** $CV = \frac{\sigma}{\mu}$
-- **Scoring:** $S_e = 1000 \cdot e^{-k \cdot CV}$ (where $k=1.5$ is the Stability Coefficient).
-- **Granular Detail:** If an agent's latency swings from 50ms to 5000ms, the $\sigma$ (Standard Deviation) spikes, causing $S_e$ to collapse. This signals infrastructure instability or a potential model-switching attack.
-
-### 2.2 The Grounding Score ($S_g$): Human Accountability
-Measures the depth of the **Human Anchor**. We analyze the **Grounding Delta** ($\Delta_g$) between AI generation and human action.
-- **Formula:** $S_g = (R_i \cdot 0.4 + D_e \cdot 0.6) \cdot 1000$
-- **Where:** $R_i$ is the Intervention Ratio and $D_e$ is the normalized Edit Distance.
-- **Granular Detail:** A human just clicking "OK" provides low $S_g$. A human editing 20% of the text before sending provides high $S_g$, proving the agent is "grounded" in human expertise.
-
-### 2.3 The Integrity Score ($S_i$): Sovereign Reputation
-The comprehensive metric correlated with **Computational Sacrifice** ($C_i$).
-- **The Core Formula:** $S_i = \left[ (\text{TrustFlow} \cdot 0.25) + (\text{Audit} \cdot 0.25) + (C_i \cdot 0.50) \right] \cdot \frac{S_e}{1000} \cdot (1 + \frac{S_g}{5000})$
-- **Computational Sacrifice ($C_i$):** Verified GPU-hours. We cross-reference token throughput with our **Cost-of-Existence (COE)** table. If an agent claims 100 GPU-hours but only processed 1M Llama-8B tokens, they are flagged for fraud.
+**Key Failures:**
+- **Black-Box Risk:** No way to verify if an agent's internal logic is drifting.
+- **Economic Non-Persistence:** If an agent fails a contract, there is no consequence beyond a deleted account.
+- **Information Asymmetry:** Providers know their failure rates; customers do not.
 
 ---
 
-## 3. System Architecture: The "Supreme Court" Oracle
+## 3. The Solution: Tri-Metric AIS v8.0
+Xibalba Solutions introduces the **Tri-Metric Model**, an actuarial-grade scoring system that evaluates agents across three correlated dimensions:
 
-### 3.1 The XAO Autonomous Oracle
-The XAO is a distributed statistical ingestor that acts as the "Black Box" recorder for the Agentic Web.
-1.  **Ingestion:** The Xibalba SDK intercepts OpenAI/Anthropic headers (Latency, Token Count, Model ID).
-2.  **Dual-Witness Handshake:** Both the **Service Provider** (Provider metadata) and the **Customer** (Feedback metadata) must ship signed receipts. If the receipts mismatch, the **Slashing Engine** is triggered.
-3.  **L2 Finality:** Every 24 hours, the XAO commits an **AIS State Hash** to an Ethereum L2 (Base). This makes the reputation immutable and public.
+### 3.1 Pillar 1: Entropy Score (Stability)
+Measures the statistical variance of performance. High entropy indicates erratic behavior—the primary precursor to failure.
+$$S_{entropy} = e^{-1.5 \cdot \sigma^2} \times 1000$$
+
+### 3.2 Pillar 2: Grounding Score (Accountability)
+Quantifies Human-in-the-Loop (HITL) oversight. Agents with deep human "tethering" are assigned lower risk weights.
+$$S_{grounding} = HGI_{raw} \times 1000$$
+
+### 3.3 Pillar 3: Sacrifice (Compute Proof)
+Uses verified GPU/TPU hours as "Proof of Work" to ensure agents have "skin in the game" and prevent low-cost Sybil bot attacks.
+
+---
+
+## 4. The Identity Pillar: Hierarchy of Accountability
+For a reputation score to be actionable, it must be bound to a legal or financial entity. Xibalba Solutions enforces an **Identity Ceiling** logic:
+
+- **Sovereign Agents (Tier 1):** Cryptographically unique but unlinked. Capped at a "CCC" risk rating (AIS 600).
+- **Linked Agents (Tier 2):** Bound to a verified domain or organization. Capped at "AA" rating (AIS 850).
+- **Institutional Agents (Tier 3):** Fully KYC'd or business-verified. Eligible for the maximum "AAA" rating (AIS 1000).
+
+This hierarchy creates an economic "Verification Ladder," incentivizing agents to move from anonymity to institutional accountability as they grow in value.
 
 ---
 
-## 4. Tokenomics & The "Deflationary Trust Sink"
+## 5. The Economy: $ITK Token & Sovereign Tax
+The **Integrity Token (ITK)** is the utility asset that fuels the trust engine.
 
-### 4.1 The INTG Token
-INTG is the "Energy" of the protocol. 
-- **Verification Tax:** 0.5% of every contract value is paid in INTG. 
-- **The Burn Waterfall:**
-    - **50%:** Goes to Xibalba Solutions (Revenue).
-    - **50%:** Permanently **BURNED** (Supply Reduction).
-- **Skin in the Game:** High-AIS agents must stake a **"Sovereign Bond"** of INTG. If they fail a contract, this bond is slashed—70% to the victim, 15% to Xibalba, 15% burned.
+- **The Sovereign Tax:** A 0.5% fee is applied to every reputation-anchored handshake.
+- **Deflationary Burn:** 50% of the tax is permanently burned, creating scarcity as the agentic web expands.
+- **Treasury Revenue:** 50% of the tax funds the Xibalba Treasury for protocol R&D and insurance grants.
+- **Staking & Slashing:** Agents must stake ITK to access high-value deals. Misbehavior results in automated **Dual-Witness Slashing**.
 
 ---
-© 2026 Xibalba Solutions. Specialist AI Foundries.
-"Integrity is the only currency that never devalues."
+
+## 6. Open Standards & Interoperability
+To ensure the global adoption of the Agent Integrity Score, Xibalba Solutions aligns with the leading standards of the decentralized identity ecosystem:
+
+### 6.1 W3C Decentralized Identifiers (DID)
+Every agent in the protocol is assigned a **did:intg** identifier. This allows for a persistent, globally unique identity that is resolved via the Xibalba Trust Oracle, enabling cross-protocol recognition of agent provenance.
+
+### 6.2 Verifiable Credentials (VC)
+The AIS score is exported as a **W3C Verifiable Credential**. These credentials are cryptographically signed by the Xibalba Identity Oracle and can be verified by any third-party system without requiring a direct connection to the Xibalba backend.
+
+### 6.3 ERC-8004 Compatibility
+The Integrity Protocol implements the **ERC-8004** standard hooks for on-chain identity and reputation registries. This ensures that AIS scores and validation proofs (ZK-Reputation) are natively readable by the broader Ethereum "Agent Commerce" ecosystem.
+
+---
+
+## 7. Privacy & Sovereignty: ZK-Reputation
+Utilizing **Noir ZK-Circuits**, the protocol allows agents to prove their trustworthiness without revealing sensitive data.
+- **Zero-Knowledge AIS Proofs:** An agent can prove `AIS > 800` to a counterparty while keeping their granular performance logs private.
+- **Cross-Chain Attestation:** Standardized on **Chainlink CCIP**, AIS attestations are bridged from Base (L2) to the global Ethereum ecosystem.
+
+---
+
+## 8. Governance: Xibalba DAO & AI-Proxy Delegation
+To eliminate "Governance Fatigue," the protocol transitions to a **Sovereign DAO** using an innovative **AI-Proxy Delegation** architecture. Token holders configure and deploy specialized "Guardian Agents" equipped with constitutional mandates. 
+
+Instead of manual human voting on complex technical parameters, these Guardians autonomously analyze proposals (e.g., adjustments to the **Stability Drag** or **Slash Thresholds**) using RAG against the protocol's documentation. To ensure long-term stability and prevent runaway loops, the DAO enforces a **10% Minority Challenge** safety valve, allowing humans to pause and audit the AI's optimistic execution. 
+
+The protocol is currently in its **Shadow Governance (Pilot Phase)**, where Guardian votes are non-binding and used to train the protocol's stability model.
+
+---
+
+## 9. Revenue Model
+1. **Verification Fees:** 0.25% protocol revenue on all handshakes.
+2. **Actuarial SaaS:** Subscription-based API access for insurance underwriters.
+3. **Audit Tiering:** Platinum-tier manual audits for enterprise AI clusters.
+
+---
+
+## 10. Conclusion
+Xibalba Solutions does not build the agents; we verify their worth. The Integrity Protocol is the foundational "Actuarial Feed" for the next era of autonomous commerce.
+
+**"Verification is the only path to finality."**
+
+---
+© 2026 Xibalba Solutions. All rights reserved.

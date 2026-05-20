@@ -48,7 +48,8 @@
 
     <main class="container content-section" style="text-align: center;">
         <div class="contact-form-container animate-in">
-            <form action="thank-you.html" method="GET">
+            <form id="contact-form" action="/contact" method="POST">
+                <input type="hidden" name="source_page" value="Initiation Page">
                 <div class="form-group">
                     <label class="form-label">Identity / Organization</label>
                     <input type="text" name="name" class="form-control" placeholder="e.g. Sovereign Labs" required>
@@ -59,7 +60,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">Project Scope</label>
-                    <select name="interest" class="form-control">
+                    <select name="subject" class="form-control">
                         <option>Strategic Architecture Build</option>
                         <option>Global Command Center Swarm</option>
                         <option>Sovereign Stack Maintenance</option>
@@ -68,7 +69,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">Mission Briefing</label>
-                    <textarea class="form-control" rows="4" placeholder="Describe your technical requirements and sovereignty needs..."></textarea>
+                    <textarea name="message" class="form-control" rows="4" placeholder="Describe your technical requirements and sovereignty needs..."></textarea>
                 </div>
                 <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Sync Project</button>
             </form>
@@ -86,8 +87,8 @@
             <div class="footer-column">
                 <h4>Contact</h4>
                 <div class="footer-contact-info">
-                    <a href="mailto:xibalba@xibalbasolutions.com" class="footer-contact-item">
-                        <span>📧</span> xibalba@xibalbasolutions.com
+                    <a href="mailto:jacob.v.universe@gmail.com" class="footer-contact-item">
+                        <span>📧</span> jacob.v.universe@gmail.com
                     </a>
                     <a href="tel:+1234567890" class="footer-contact-item">
                         <span>📱</span> +1 (234) 567-890
