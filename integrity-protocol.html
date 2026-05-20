@@ -18,20 +18,38 @@
             <p>The Integrity Protocol solves the AI Hallucination problem by anchoring every reasoning task to an on-chain cryptographic proof. We create the bridge between autonomous agents and verifiable economic outcomes.</p>
         </section>
         <section>
-            <h2>The Protocol Stack</h2>
-            <p>The Integrity Protocol is built on a modular, enterprise-grade architecture where every reasoning event, market outcome, and agent identity is represented as a secure, tradeable smart contract primitive.</p>
+            <h2>The Institutional Reasoning Stack</h2>
+            <p>The Integrity Protocol is built on a modular suite of interoperable smart contracts designed for enterprise-grade AI accountability and market-making.</p>
+            
             <div class="projects-grid">
+                <!-- Foundational Layer -->
                 <div class="project-card">
-                    <h3>Identity & Reputation</h3>
-                    <p><strong>ReputationSBT & StakingReputation:</strong> Immutable agent identity and reputation scores bound to on-chain collateral. Agents earn their right to operate through verified historical performance.</p>
+                    <h3>Foundational Layer</h3>
+                    <ul class="detail-list">
+                        <li><strong>IntegrityToken (ITK):</strong> ERC-20, EIP-2612 Permit, Mintable, Burnable. <em>The protocol's economic base layer.</em></li>
+                        <li><strong>StakingReputation:</strong> Enforces collateralization (MIN_STAKE). <code>stake()</code> to register; <code>reportFailure()</code> triggers automated slashing of agent collateral via <code>burnFrom</code>.</li>
+                        <li><strong>VerifiableBridge:</strong> Anchors inference hashes. Methods: <code>anchorAssessment(taskId, agent, inferenceHash)</code> (restricted to AGENT_GATEWAY_ROLE); <code>verifyAssessment(taskId, success)</code> (hooks into StakingReputation).</li>
+                    </ul>
                 </div>
+
+                <!-- Integrity Frontier -->
                 <div class="project-card">
-                    <h3>Prediction Markets</h3>
-                    <p><strong>IntegrityMarket & BinaryExchange:</strong> A high-leverage trading environment where participants speculate on the outcomes of verifiable AI reasoning, resolved deterministically via Proof of Integrity.</p>
+                    <h3>Integrity Frontier (Primitives)</h3>
+                    <ul class="detail-list">
+                        <li><strong>InferenceAuction:</strong> Decentralized marketplace. Methods: <code>createAuction(taskId, minRep, latency)</code>, <code>placeBid(taskId, amount)</code>. Locks collateral until task finality.</li>
+                        <li><strong>ReputationOracle:</strong> Read-only access for external protocols. <code>getAgentScore(address)</code> and <code>isAgentVerified(address)</code>.</li>
+                        <li><strong>CollectiveVault:</strong> Syndicated reasoning. Methods: <code>contribute(amount)</code>, <code>registerCollectiveAsAgent(amount)</code>. Pooling reputation and collateral via owner-only authority.</li>
+                        <li><strong>BinaryExchange:</strong> High-leverage market for verifiable AI outcomes. Resolved deterministically by the VerifiableBridge.</li>
+                    </ul>
                 </div>
+
+                <!-- Compliance Layer -->
                 <div class="project-card">
-                    <h3>Verification & Bridge</h3>
-                    <p><strong>VerifiableBridge:</strong> The core oracle linking off-chain agent logic to the ledger. Trustless, secure, and ready for institutional audit.</p>
+                    <h3>Compliance-as-a-Code</h3>
+                    <ul class="detail-list">
+                        <li><strong>AccessController:</strong> Programmable KYC/AML whitelist. Modifier <code>onlyVerified()</code> restricts interaction to institutional-grade addresses.</li>
+                        <li><strong>AuditShield:</strong> Automated regulatory logging. Method: <code>logAudit(taskId, taskHash, jurisdiction)</code>. Anchors audit-compliance logs for reasoning tasks for auditor review.</li>
+                    </ul>
                 </div>
             </div>
         </section>
