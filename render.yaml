@@ -1,17 +1,16 @@
-services:
-  - type: web
-    name: xibalba-solutions-backend
-    runtime: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python server.py"
-    envVars:
-      - key: SMTP_SERVER
-        value: smtp.gmail.com
-      - key: SMTP_PORT
-        value: "587"
-      - key: FROM_EMAIL
-        sync: false
-      - key: SMTP_USER
-        sync: false
-      - key: SMTP_PASS
-        sync: false
+# Exported from Render on 2026-05-22T15:55:44Z
+version: "1"
+projects:
+- name: My project
+  environments:
+  - name: Production
+    services:
+    - type: web
+      name: xibalbasolutions-site
+      runtime: python
+      repo: https://github.com/XibalbaTechSol/xibalba-solutions-site
+      plan: free
+      region: virginia
+      buildCommand: pip install -r requirements.txt
+      startCommand: python server.py
+      autoDeployTrigger: commit
