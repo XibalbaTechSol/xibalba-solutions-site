@@ -10,16 +10,15 @@ def get_file_url(filename):
 PAGES = [
     "index.html",
     "about.html",
-    "services.html",
-    "solutions.html",
-    "products.html",
-    "investors.html",
-    "hardware.html",
+    "ai-agents.html",
+    "blog.html",
+    "local-ai.html",
     "pricing.html",
     "contact.html",
-    "cli.html",
-    "crm.html",
-    "veriphysics.html"
+    "thank-you.html",
+    "hermes-swarm.html",
+    "sanctum-brain.html",
+    "integrity-coin.html"
 ]
 
 @pytest.mark.parametrize("page_file", PAGES)

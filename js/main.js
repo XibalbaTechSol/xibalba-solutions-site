@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeMenu() {
         navLinks?.classList.remove('active');
         hamburger?.classList.remove('active');
+        hamburger?.setAttribute('aria-expanded', 'false');
         navOverlay?.classList.remove('active');
         document.body.style.overflow = '';
     }
@@ -16,11 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function openMenu() {
         navLinks?.classList.add('active');
         hamburger?.classList.add('active');
+        hamburger?.setAttribute('aria-expanded', 'true');
         navOverlay?.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
 
     if (hamburger && navLinks) {
+        hamburger.setAttribute('aria-expanded', 'false');
         hamburger.addEventListener('click', () => {
             if (navLinks.classList.contains('active')) {
                 closeMenu();
