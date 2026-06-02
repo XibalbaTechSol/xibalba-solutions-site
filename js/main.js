@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks?.classList.remove('active');
         hamburger?.classList.remove('active');
         navOverlay?.classList.remove('active');
+        hamburger?.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
 
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks?.classList.add('active');
         hamburger?.classList.add('active');
         navOverlay?.classList.add('active');
+        hamburger?.setAttribute('aria-expanded', 'true');
         document.body.style.overflow = 'hidden';
     }
 
