@@ -1,0 +1,3 @@
+## 2026-07-06 - Synchronize ARIA States with Visual Toggles
+**Learning:** In this application, interactive elements (like the `.hamburger` menu) were having their visual states toggled via JavaScript (`.active` class) without synchronously updating their corresponding ARIA attributes (`aria-expanded`). This causes screen readers to lose context about the element's current state.
+**Action:** When toggling visual classes on interactive elements, always synchronously update their associated ARIA attributes (e.g., `aria-expanded="true"`/`false`) in the same event handler to maintain accessible state tracking.
