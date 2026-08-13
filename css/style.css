@@ -978,6 +978,14 @@ nav.scrolled {
     color: var(--text-muted);
 }
 
+/* ── Accessibility ── */
+a:focus-visible,
+button:focus-visible,
+[tabindex="0"]:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+}
+
 /* ── Tier Cards ── */
 .tier-card {
     display: flex;
