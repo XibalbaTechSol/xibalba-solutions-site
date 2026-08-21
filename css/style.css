@@ -512,6 +512,22 @@ nav.scrolled {
     box-shadow: 0 12px 40px rgba(0, 242, 255, 0.3);
 }
 
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.btn:disabled::before {
+    display: none;
+}
+
 .btn-outline {
     display: inline-block;
     padding: 0.95rem 2.3rem;
