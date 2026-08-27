@@ -503,13 +503,18 @@ nav.scrolled {
     transition: 0.5s;
 }
 
-.btn:hover::before {
+.btn:hover:not(:disabled)::before {
     left: 100%;
 }
 
-.btn:hover {
+.btn:hover:not(:disabled) {
     transform: translateY(-3px);
     box-shadow: 0 12px 40px rgba(0, 242, 255, 0.3);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .btn-outline {
@@ -527,11 +532,16 @@ nav.scrolled {
     cursor: pointer;
 }
 
-.btn-outline:hover {
+.btn-outline:hover:not(:disabled) {
     border-color: var(--color-brand-primary);
     background: rgba(0, 242, 255, 0.05);
     color: var(--color-brand-primary);
     box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+}
+
+.btn-outline:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .btn-group {
