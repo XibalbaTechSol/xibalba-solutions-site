@@ -507,9 +507,14 @@ nav.scrolled {
     left: 100%;
 }
 
-.btn:hover {
+.btn:hover:not(:disabled) {
     transform: translateY(-3px);
     box-shadow: 0 12px 40px rgba(0, 242, 255, 0.3);
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .btn-outline {
