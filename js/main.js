@@ -1,3 +1,8 @@
+// The static pages deploy to GitHub Pages; this backend (server.py's /contact) deploys
+// separately to Render, since Pages can't run a Python process. Keep this in sync with
+// contact.html's <form action> and server.py's ALLOWED_ORIGIN.
+const CONTACT_ENDPOINT = 'https://xibalba-solutions-site.onrender.com/contact';
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Xibalba Solutions v2.0 — Sovereign Obsidian loaded.');
 
@@ -130,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData(contactForm);
             
-            fetch('/contact', {
+            fetch(CONTACT_ENDPOINT, {
                 method: 'POST',
                 body: new URLSearchParams(formData)
             })
