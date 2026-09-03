@@ -85,16 +85,21 @@ This message was relayed via the Xibalba local server.
                 msg['From'] = FROM_EMAIL
                 msg['To'] = ", ".join(RECIPIENTS)
 
-                # Send via SMTP
+                # Send via SMTP. An explicit timeout matters here: some hosts (observed on
+                # Render) silently drop outbound connections on SMTP ports instead of
+                # refusing them, so smtplib's default of no timeout means this would otherwise
+                # hang forever -- tying up a thread indefinitely and leaving the browser's
+                # fetch() pending with no response, rather than failing fast into the except
+                # block below with a clean error.
                 if SMTP_USER and SMTP_PASS:
                     # authenticated SMTP (e.g. Gmail, SendGrid, etc.)
-                    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+                    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=10) as server:
                         server.starttls()
                         server.login(SMTP_USER, SMTP_PASS)
                         server.send_message(msg)
                 else:
                     # local unauthenticated SMTP (e.g. local postfix)
-                    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+                    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=10) as server:
                         server.send_message(msg)
 
                 # On success, redirect to the thank-you page. This targets the backend's own
