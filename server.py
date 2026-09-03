@@ -119,9 +119,17 @@ if __name__ == "__main__":
     os.chdir(DIRECTORY)
     
     # Allow port reuse to avoid "Address already in use" errors during development
-    socketserver.TCPServer.allow_reuse_address = True
-    
-    with socketserver.TCPServer(("", PORT), XibalbaHandler) as httpd:
+    socketserver.ThreadingTCPServer.allow_reuse_address = True
+
+    # Plain TCPServer handles one connection at a time -- any client that opens a connection
+    # and doesn't send/finish promptly (a slow client, an idle keep-alive, a proxy health
+    # check) blocks every other request, including /contact, until it closes. That's a real
+    # problem once this is reachable from the public internet (Render's edge proxy, browsers
+    # doing HTTP keep-alive) rather than only from a single local dev client. Threading fixes
+    # it; SimpleHTTPRequestHandler's static-file serving and the /contact handler above don't
+    # share mutable state, so per-request threads are safe here.
+    socketserver.ThreadingTCPServer.daemon_threads = True
+    with socketserver.ThreadingTCPServer(("", PORT), XibalbaHandler) as httpd:
         print(f"--- Xibalba Solutions Local Server ---")
         print(f"Serving files from: {DIRECTORY}")
         print(f"Contact endpoint ready at: http://localhost:{PORT}/contact")
