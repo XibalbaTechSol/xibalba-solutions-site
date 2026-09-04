@@ -12,6 +12,9 @@
     <link rel="icon" href="./favicon.ico" sizes="any">
     <link rel="icon" href="./favicon.png" type="image/png">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
 </head>
 <body>
 
@@ -30,6 +33,7 @@
                 <a href="#shield">Shield</a>
                 <a href="#deep-dive">Architecture</a>
                 <a href="#core">Integrity Core</a>
+                <a href="#engage">Get Started</a>
                 <a href="#contact">Contact</a>
                 <div class="nav-social">
                     <a href="https://github.com/XibalbaTechSol" target="_blank" rel="noopener" aria-label="GitHub">
@@ -67,8 +71,38 @@
     </header>
 
     <main>
+        <!-- Problem statement -->
+        <section id="problem" class="problem-section">
+            <div class="container">
+                <div class="section-header text-center animate-in">
+                    <span class="meta-label">The Gap</span>
+                    <h2>What most agent deployments <span class="gradient-text">get wrong.</span></h2>
+                    <p class="mx-auto" style="max-width: 650px;">Three failure modes show up as soon as an agent leaves a demo and touches real systems.</p>
+                </div>
+                <div class="problem-grid animate-in">
+                    <div class="problem-card">
+                        <span class="problem-icon">&#129504;</span>
+                        <h4>Context resets every session</h4>
+                        <p>An agent's memory usually dies with its process. Nothing carries forward &mdash; no evidence of what it learned, no record of why it acted the way it did.</p>
+                    </div>
+                    <div class="problem-card">
+                        <span class="problem-icon">&#128737;&#65039;</span>
+                        <h4>Nothing stops a compromised agent</h4>
+                        <p>Most deployments trust the agent to behave. When one doesn't, there's often no local enforcement layer between it and the device it's running on.</p>
+                    </div>
+                    <div class="problem-card">
+                        <span class="problem-icon">&#9878;&#65039;</span>
+                        <h4>Claims aren't independently verifiable</h4>
+                        <p>An agent's own account of its behavior isn't evidence. Without an independent record, a counterparty has to take its word for it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
         <!-- Xibalba Cortex -->
-        <section id="cortex" class="projects-section" style="padding-top: 4rem;">
+        <section id="cortex" class="projects-section" style="padding-top: 0;">
             <div class="container">
                 <div class="projects-grid animate-in" style="grid-template-columns: 1fr;">
                     <div class="project-card featured">
@@ -88,7 +122,19 @@
                             </div>
                         </div>
                         <div class="project-visual">
-                            <div class="product-placeholder cortex-placeholder" aria-label="Cortex visual placeholder"><span class="placeholder-orbit orbit-one"></span><span class="placeholder-orbit orbit-two"></span><span class="placeholder-core">C</span><small>CORTEX / VISUAL PLACEHOLDER</small></div>
+                            <div class="product-visual-pro" aria-hidden="true">
+                                <svg viewBox="0 0 200 160" width="200" height="160">
+                                    <ellipse cx="100" cy="80" rx="90" ry="34" fill="none" stroke="#56c4bb" stroke-width="1" opacity="0.5" transform="rotate(-18 100 80)"/>
+                                    <ellipse cx="100" cy="80" rx="70" ry="26" fill="none" stroke="#8db7ff" stroke-width="1" opacity="0.5" transform="rotate(14 100 80)"/>
+                                    <circle cx="100" cy="80" r="26" fill="#8db7ff"/>
+                                    <text x="100" y="87" text-anchor="middle" font-family="monospace" font-size="20" font-weight="700" fill="#111817">C</text>
+                                    <circle cx="24" cy="48" r="3" fill="#56c4bb"/>
+                                    <circle cx="176" cy="112" r="3" fill="#56c4bb"/>
+                                    <circle cx="30" cy="120" r="2.5" fill="#8db7ff"/>
+                                    <circle cx="168" cy="34" r="2.5" fill="#8db7ff"/>
+                                </svg>
+                                <small>MEMORY GRAPH &middot; HASH-CHAINED</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -118,7 +164,17 @@
                             </div>
                         </div>
                         <div class="project-visual">
-                            <div class="product-visual shield-visual"><img src="./assets/xibalba-shield-final-details.jpg" alt="Xibalba Shield logo"><div class="visual-caption"><span class="status-dot"></span> LOCAL ENFORCEMENT / ACTIVE CONCEPT</div></div>
+                            <div class="product-visual-pro" aria-hidden="true">
+                                <svg viewBox="0 0 200 160" width="200" height="160">
+                                    <path d="M100 20 L165 45 L165 90 Q165 130 100 150 Q35 130 35 90 L35 45 Z" fill="none" stroke="#c56b42" stroke-width="1.5" opacity="0.9"/>
+                                    <path d="M100 34 L152 54 L152 90 Q152 122 100 138 Q48 122 48 90 L48 54 Z" fill="none" stroke="#56c4bb" stroke-width="1" opacity="0.5"/>
+                                    <circle cx="100" cy="90" r="5" fill="#56c4bb"/>
+                                    <line x1="100" y1="90" x2="100" y2="60" stroke="#56c4bb" stroke-width="1" opacity="0.6"/>
+                                    <line x1="100" y1="90" x2="128" y2="105" stroke="#56c4bb" stroke-width="1" opacity="0.6"/>
+                                    <line x1="100" y1="90" x2="72" y2="105" stroke="#56c4bb" stroke-width="1" opacity="0.6"/>
+                                </svg>
+                                <small>ENFORCEMENT LAYER &middot; FAIL-CLOSED</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -215,6 +271,82 @@
 
         <hr class="section-divider">
 
+        <!-- AIS metric deep-dive -->
+        <section id="ais" class="deep-dive-section" style="padding-top:3rem;">
+            <div class="container">
+                <div class="ais-intro animate-in">
+                    <span class="meta-label">Reputation, Precisely Defined</span>
+                    <h2>How the <span class="gradient-text">AIS score</span> is actually computed.</h2>
+                    <p>AIS (Agent Integrity Score) is not a single number pulled from a black box &mdash; it's a weighted geometric mean of four independently-measured signals, each computed from real telemetry. This is the exact formula, taken directly from the scoring engine's implementation.</p>
+                </div>
+
+                <div class="ais-formula-band animate-in">
+                    $$AIS = \left( S_{entropy}^{0.30} \cdot S_{grounding}^{0.30} \cdot S_{sacrifice}^{0.20} \cdot S_{compliance}^{0.20} \right) \times \mathrm{ZK_{boost}}$$
+                </div>
+
+                <div class="ais-grid animate-in">
+                    <div class="ais-card">
+                        <div class="ais-card-head"><h4>Entropy</h4><span class="ais-weight-tag">weight 0.30</span></div>
+                        <p>Rewards <em>stability</em>, not raw performance level. Computed from the variance of an agent's reported task performance over a trailing 30-day window &mdash; a Gaussian-style decay, so small variance barely moves the score, but unbounded variance saturates toward zero fast.</p>
+                        <div class="ais-chart-wrap">
+                            <svg viewBox="0 0 280 140" preserveAspectRatio="xMidYMid meet">
+                                <line x1="8" y1="132" x2="272" y2="132" stroke="#2a3532" stroke-width="1"/>
+                                <line x1="8" y1="8" x2="8" y2="132" stroke="#2a3532" stroke-width="1"/>
+                                <polyline points="8.0,8.0 14.6,8.3 21.2,9.0 27.8,10.3 34.4,12.1 41.0,14.4 47.6,17.1 54.2,20.2 60.8,23.7 67.4,27.5 74.0,31.6 80.6,35.9 87.2,40.5 93.8,45.2 100.4,50.0 107.0,54.9 113.6,59.7 120.2,64.6 126.8,69.4 133.4,74.1 140.0,78.7 146.6,83.1 153.2,87.3 159.8,91.4 166.4,95.2 173.0,98.8 179.6,102.2 186.2,105.4 192.8,108.3 199.4,111.0 206.0,113.4 212.6,115.7 219.2,117.7 225.8,119.5 232.4,121.2 239.0,122.6 245.6,123.9 252.2,125.1 258.8,126.1 265.4,127.0 272.0,127.8" fill="none" stroke="#56c4bb" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="ais-formula-line">$S_{entropy} = e^{-1.5 \, v^2} \times 1000$ &nbsp;&mdash;&nbsp; x-axis: performance variance (v), y-axis: score 0&ndash;1000</div>
+                    </div>
+
+                    <div class="ais-card">
+                        <div class="ais-card-head"><h4>Grounding</h4><span class="ais-weight-tag">weight 0.30</span></div>
+                        <p>Linear, by design &mdash; no curve to game. Measures the Human Grounding Index: the fraction of the agent's actions in the period that were checked against real human-in-the-loop feedback.</p>
+                        <div class="ais-chart-wrap">
+                            <svg viewBox="0 0 280 140" preserveAspectRatio="xMidYMid meet">
+                                <line x1="8" y1="132" x2="272" y2="132" stroke="#2a3532" stroke-width="1"/>
+                                <line x1="8" y1="8" x2="8" y2="132" stroke="#2a3532" stroke-width="1"/>
+                                <polyline points="8.0,132.0 272.0,8.0" fill="none" stroke="#8db7ff" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="ais-formula-line">$S_{grounding} = \mathrm{clamp}(hgi, 0, 1) \times 1000$ &nbsp;&mdash;&nbsp; x-axis: Human Grounding Index (0&ndash;1), y-axis: score 0&ndash;1000</div>
+                    </div>
+
+                    <div class="ais-card">
+                        <div class="ais-card-head"><h4>Sacrifice</h4><span class="ais-weight-tag">weight 0.20</span></div>
+                        <p>Logarithmic and deliberately saturating &mdash; an anti pay-to-win curve. Measures verified compute-hours committed by the agent; a whale doesn't score proportionally higher for spending more.</p>
+                        <div class="ais-chart-wrap">
+                            <svg viewBox="0 0 280 140" preserveAspectRatio="xMidYMid meet">
+                                <line x1="8" y1="132" x2="272" y2="132" stroke="#2a3532" stroke-width="1"/>
+                                <line x1="8" y1="8" x2="8" y2="132" stroke="#2a3532" stroke-width="1"/>
+                                <polyline points="8.0,132.0 12.4,68.5 16.8,56.3 21.2,49.2 25.6,44.0 30.0,40.1 34.4,36.8 38.8,34.0 43.2,31.7 47.6,29.6 52.0,27.7 56.4,26.0 60.8,24.4 65.2,23.0 69.6,21.6 74.0,20.4 78.4,19.3 82.8,18.2 87.2,17.1 91.6,16.2 96.0,15.3 100.4,14.4 104.8,13.5 109.2,12.7 113.6,12.0 118.0,11.3 122.4,10.5 126.8,9.9 131.2,9.2 135.6,8.6 140.0,8.0 272.0,8.0" fill="none" stroke="#c56b42" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="ais-formula-line">$S_{sacrifice} = \min\!\left(\dfrac{\log_{10}(\mathrm{hours}+1)}{3},\ 1\right) \times 1000$ &nbsp;&mdash;&nbsp; x-axis: verified compute hours, y-axis: score 0&ndash;1000</div>
+                    </div>
+
+                    <div class="ais-card">
+                        <div class="ais-card-head"><h4>Compliance</h4><span class="ais-weight-tag">weight 0.20</span></div>
+                        <p>Linear inverse. Measures the fraction of the agent's telemetry events flagged by the BCC/OPA policy pipeline during the period &mdash; more flags, lower score, directly.</p>
+                        <div class="ais-chart-wrap">
+                            <svg viewBox="0 0 280 140" preserveAspectRatio="xMidYMid meet">
+                                <line x1="8" y1="132" x2="272" y2="132" stroke="#2a3532" stroke-width="1"/>
+                                <line x1="8" y1="8" x2="8" y2="132" stroke="#2a3532" stroke-width="1"/>
+                                <polyline points="8.0,8.0 272.0,132.0" fill="none" stroke="#e0956b" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <div class="ais-formula-line">$S_{compliance} = (1 - \mathrm{clamp}(p, 0, 1)) \times 1000$ &nbsp;&mdash;&nbsp; x-axis: policy-flagged event ratio (p), y-axis: score 0&ndash;1000</div>
+                    </div>
+                </div>
+
+                <div class="ais-note animate-in">
+                    <h4>Why a geometric mean, not an average</h4>
+                    <p>Because AIS multiplies each component raised to its weight rather than averaging them, a single zero-scoring component drives the <em>entire</em> score to zero &mdash; $x^w = 0$ whenever $x = 0$. Perfect entropy, grounding, and compliance with zero verified compute still produces an AIS of exactly 0.0, not a partial-credit average around 800. This is intentional and covered by the scoring engine's own test suite. Reported AIS is additionally capped by verification tier &mdash; 300 / 600 / 850 / 1000 for tiers 0 through 3 &mdash; so a score can never imply more identity verification than an agent has actually completed. A verified zero-knowledge reputation-boost proof (real Noir/Barretenberg circuit) multiplies the final score by 1.15&times;.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
         <!-- How they fit together -->
         <section id="tech" class="tech-pillars">
             <div class="container">
@@ -243,6 +375,54 @@
                         <div class="feature-icon" style="color: #FF00FF;">&#128279;</div>
                         <h4>One-way dependencies only</h4>
                         <p>Each repo consumes another's SDK one-way, never a privileged back-channel &mdash; a bug in one can't compromise another's guarantees.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Get started / engagement model -->
+        <section id="engage">
+            <div class="container">
+                <div class="section-header text-center animate-in">
+                    <span class="meta-label">Get Started</span>
+                    <h2>Three ways to <span class="gradient-text">work with us.</span></h2>
+                    <p class="mx-auto" style="max-width: 650px;">We're pre-revenue and design-partner stage &mdash; there's no published price list yet, because we'd rather scope real engagements honestly than post numbers that don't mean anything until we know your requirements.</p>
+                </div>
+                <div class="engage-grid animate-in">
+                    <div class="engage-card">
+                        <span class="engage-tag">Self-Hosted</span>
+                        <h4>Open Source</h4>
+                        <div class="engage-terms">No cost. Run it yourself.</div>
+                        <ul>
+                            <li>All three repos are open source today</li>
+                            <li>Clone, run, and audit the code directly</li>
+                            <li>Community support via GitHub issues</li>
+                        </ul>
+                        <a href="#opensource" class="btn-outline">View the Repos</a>
+                    </div>
+                    <div class="engage-card featured">
+                        <span class="engage-tag">Recommended for early adopters</span>
+                        <h4>Design Partnership</h4>
+                        <div class="engage-terms">Custom terms, scoped together.</div>
+                        <ul>
+                            <li>Direct access to the team building this</li>
+                            <li>Input into the v1 roadmap and API surface</li>
+                            <li>Hands-on onboarding for your first deployment</li>
+                        </ul>
+                        <a href="#contact" class="btn">Start a Conversation</a>
+                    </div>
+                    <div class="engage-card">
+                        <span class="engage-tag">Regulated &amp; production environments</span>
+                        <h4>Enterprise</h4>
+                        <div class="engage-terms">Custom terms, custom SLAs.</div>
+                        <ul>
+                            <li>Dedicated support and priority triage</li>
+                            <li>HIPAA-aware deployment support via Integrity Health</li>
+                            <li>Joint security review before production rollout</li>
+                        </ul>
+                        <a href="#contact" class="btn-outline">Talk to Us</a>
                     </div>
                 </div>
             </div>
@@ -280,6 +460,40 @@
                         <h4>integrity-core</h4>
                         <p style="font-size: 0.85rem;">On-chain identity, AIS reputation oracle, and BCC policy middleware. Solidity / Rust / Python.</p>
                         <a href="https://github.com/XibalbaTechSol/integrity-core" class="card-link" target="_blank" rel="noopener">View Repo &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- FAQ -->
+        <section id="faq">
+            <div class="container">
+                <div class="section-header text-center animate-in">
+                    <span class="meta-label">Questions</span>
+                    <h2>Before you <span class="gradient-text">reach out.</span></h2>
+                </div>
+                <div class="faq-list animate-in">
+                    <div class="faq-item">
+                        <h4>Is any of this production-ready?</h4>
+                        <p>Not yet, and we say so directly on each product page. Cortex is design-partner/clone-and-run stage. Shield is pre-alpha on its own L0&ndash;L3 readiness scale. Integrity Core is a testnet prototype with real deployed contracts but single-operator key custody. If you need production guarantees today, talk to us about timeline and scope before committing.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Can we self-host instead of using anything we host for you?</h4>
+                        <p>Yes &mdash; all three products are open source and designed to run on infrastructure you control. Self-hosting is the default path, not an enterprise add-on.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Do we need Integrity Core to use Cortex or Shield?</h4>
+                        <p>No. Both run standalone with zero dependency on Integrity Core. It's only relevant if you need on-chain, third-party-verifiable identity and reputation on top of what Cortex and Shield already give you locally.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>What does a design partnership actually involve?</h4>
+                        <p>Direct access to the team building this, a say in what ships next, and hands-on help getting your first real deployment running &mdash; in exchange for being an early, honest reference case as the products mature.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How do we evaluate the security posture before deploying?</h4>
+                        <p>Start with the code &mdash; it's public. Then talk to us: we'll walk through the current threat model and known gaps for your specific product(s) of interest before you commit to anything.</p>
                     </div>
                 </div>
             </div>
@@ -388,6 +602,7 @@
                     <li><a href="#cortex">Xibalba Cortex</a></li>
                     <li><a href="#shield">Xibalba Shield</a></li>
                     <li><a href="#core">Integrity Core</a></li>
+                    <li><a href="#engage">Get Started</a></li>
                 </ul>
             </div>
             <div class="footer-column">
