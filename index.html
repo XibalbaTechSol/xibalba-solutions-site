@@ -28,6 +28,7 @@
                 <a href="#hero" class="active">Home</a>
                 <a href="#cortex">Cortex</a>
                 <a href="#shield">Shield</a>
+                <a href="#deep-dive">Architecture</a>
                 <a href="#core">Integrity Core</a>
                 <a href="#contact">Contact</a>
                 <div class="nav-social">
@@ -52,20 +53,12 @@
     <!-- Hero -->
     <header class="hero" id="hero">
         <div class="container animate-in">
-            <div class="hero-logo-container">
-                <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions" class="hero-logo-main">
-            </div>
-            <h1>Memory Your Agent Can <span class="gradient-text">Trust.</span> Security It Can't Talk Its Way Around.</h1>
-            <p><strong>Xibalba Cortex</strong> gives AI agents provenance-aware, hash-chained memory instead of a vector index with no evidence trail. <strong>Xibalba Shield</strong> watches what an agent actually does on a device and contains it deterministically, no cloud round-trip required. Both are built on <strong>Integrity Core</strong>, an on-chain protocol for agent identity and reputation &mdash; and both work standalone if you only need one.</p>
-            <div class="btn-group">
-                <a href="#cortex" class="btn">Explore Cortex</a>
-                <a href="#shield" class="btn">Explore Shield</a>
-            </div>
-            <div class="hero-badges">
-                <span class="hero-badge">Open Source</span>
-                <span class="hero-badge">Design-Partner Stage</span>
-                <span class="hero-badge">No Silent Mocks</span>
-            </div>
+            <div class="hero-kicker"><span class="kicker-line"></span> TRUST INFRASTRUCTURE FOR THE AGENTIC ECONOMY</div>
+            <div class="hero-lockup"><img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions" class="hero-logo-main"></div>
+            <h1>Make autonomous systems <em>accountable.</em></h1>
+            <p class="hero-lede">Xibalba builds the memory, security, and identity layers that let AI systems act with evidence behind them — and boundaries around them.</p>
+            <div class="btn-group"><a href="#contact" class="btn">Start a design partnership</a><a href="#cortex" class="btn-outline">Explore the products</a></div>
+            <div class="hero-proof"><span>01</span> Provenance-aware memory <span>02</span> Local-first enforcement <span>03</span> Verifiable identity</div>
             <div class="scroll-indicator">
                 <span>See how they work</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
@@ -82,38 +75,20 @@
                         <div class="project-content">
                             <div class="project-header">
                                 <span class="tag tag-success">Agent Memory</span>
-                                <span class="project-icon">&#129504;</span>
+                                <span class="project-index">01</span>
                             </div>
-                            <h3>Xibalba Cortex</h3>
+                            <h2>Xibalba Cortex</h2>
                             <p style="font-style: italic; color: var(--text-secondary); border-left: 3px solid var(--color-success); padding-left: 1rem; margin: 1rem 0;">&ldquo;Most agent memory systems store embeddings, not evidence.&rdquo;</p>
                             <p>A provenance-aware graph memory MCP server. Every fact is linked to its source, every extraction is a reviewable proposal &mdash; never auto-written &mdash; and every retrieval trace is independently verifiable, not just trusted.</p>
-                            <ul class="detail-list">
-                                <li><strong>Hybrid retrieval:</strong> lexical (FTS5/BM25) + vector + graph + temporal signals, fused via Reciprocal Rank Fusion &mdash; the fusion itself is persisted, not just the final ranked list.</li>
-                                <li><strong>Hash-chained &amp; Merkle-rooted:</strong> every write is append-only per domain; a caller can verify a subset of the graph, and every retrieval result carries an independently checkable inclusion proof.</li>
-                                <li><strong>Extraction never auto-writes:</strong> proposals require explicit accept/dismiss and re-check source-hash staleness before landing.</li>
-                                <li><strong>79 MCP tools</strong> over stdio or authenticated streamable-HTTP, for local or cloud-hosted agent harnesses.</li>
-                            </ul>
-                            <p style="font-size: 0.85rem; color: var(--text-muted);"><strong>Status:</strong> design-partner stage &mdash; the store schema and MCP contract are frozen for v1, but this is a clone-and-run project (no PyPI package yet).</p>
+                            <ul class="detail-list"><li><strong>Evidence-linked memory:</strong> every fact carries its source and hash.</li><li><strong>Hybrid retrieval:</strong> lexical, vector, graph, and temporal signals are fused and persisted.</li><li><strong>Human-controlled writes:</strong> extraction becomes a proposal, never an automatic write.</li></ul>
+                            <p class="product-status" style="font-size: 0.85rem; color: var(--text-muted);"><strong>Status:</strong> design-partner stage &mdash; the store schema and MCP contract are frozen for v1, but this is a clone-and-run project (no PyPI package yet).</p>
                             <div class="project-links">
                                 <a href="https://github.com/XibalbaTechSol/xibalba-cortex" class="btn btn-sm" target="_blank" rel="noopener">GitHub Repository</a>
                                 <a href="https://github.com/XibalbaTechSol/xibalba-cortex#readme" class="link-glow" target="_blank" rel="noopener">Read the Quickstart &rarr;</a>
                             </div>
                         </div>
                         <div class="project-visual">
-                            <div class="terminal-window">
-                                <div class="terminal-header">
-                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                    <span class="terminal-title">quickstart.sh</span>
-                                </div>
-                                <div class="terminal-content">
-                                    <span class="code-comment"># Clone, sync, run &mdash; stdio MCP server</span><br>
-                                    git clone https://github.com/XibalbaTechSol/xibalba-cortex<br>
-                                    cd xibalba-cortex<br>
-                                    uv sync<br>
-                                    uv run xibalba-cortex
-                                </div>
-                            </div>
-                        </div>
+                            <div class="product-placeholder cortex-placeholder" aria-label="Cortex visual placeholder"><span class="placeholder-orbit orbit-one"></span><span class="placeholder-orbit orbit-two"></span><span class="placeholder-core">C</span><small>CORTEX / VISUAL PLACEHOLDER</small></div>
                     </div>
                 </div>
             </div>
@@ -129,38 +104,80 @@
                         <div class="project-content">
                             <div class="project-header">
                                 <span class="tag tag-secondary">Endpoint Security</span>
-                                <span class="project-icon">&#128737;&#65039;</span>
+                                <span class="project-index">02</span>
                             </div>
-                            <h3>Xibalba Shield</h3>
+                            <h2>Xibalba Shield</h2>
                             <p style="font-style: italic; color: var(--text-secondary); border-left: 3px solid var(--color-warning); padding-left: 1rem; margin: 1rem 0;">&ldquo;Shield fights fire with fire: local agent-runtime guardrails, kernel-level telemetry, and deterministic policy to constrain the agents operating on the device.&rdquo;</p>
                             <p>Traditional endpoint tools understand processes, files, and network flows. AI agents operate a layer above that &mdash; they retrieve context, choose models, and invoke tools with semantic intent. Shield governs both layers.</p>
-                            <ul class="detail-list">
-                                <li><strong>Six guardrail hooks</strong> intercepting an agent's own tool calls (ingress, retrieval/context, model routing, output, tool execution, post-action verification) &mdash; not just OS-level events.</li>
-                                <li><strong>Real Linux eBPF sensors:</strong> process-exec and file-write (live-verified), TCP-connect (root-verified on Ubuntu 24.04 LTS, with archived evidence).</li>
-                                <li><strong>Deterministic OPA/Rego policy engine</strong> that fails closed &mdash; never a silent allow if the policy service is unreachable.</li>
-                                <li><strong>Real containment:</strong> resumable SIGSTOP/SIGCONT process freezing, cgroup v2 isolation for containerized agents.</li>
-                            </ul>
-                            <p style="font-size: 0.85rem; color: var(--text-muted);"><strong>Status:</strong> pre-alpha on our own L0&ndash;L3 readiness scale &mdash; Linux-first, design-partner/pilot stage, not yet production-hardened.</p>
+                            <ul class="detail-list"><li><strong>Agent-aware guardrails:</strong> six hooks from ingress to post-action verification.</li><li><strong>Local telemetry:</strong> Linux eBPF sensors watch process, file, and network activity.</li><li><strong>Fail-closed containment:</strong> OPA/Rego policy plus SIGSTOP/SIGCONT and cgroup isolation.</li></ul>
+                            <p class="product-status" style="font-size: 0.85rem; color: var(--text-muted);"><strong>Status:</strong> pre-alpha on our own L0&ndash;L3 readiness scale &mdash; Linux-first, design-partner/pilot stage, not yet production-hardened.</p>
                             <div class="project-links">
                                 <a href="https://github.com/XibalbaTechSol/xibalba-shield" class="btn btn-sm" target="_blank" rel="noopener">GitHub Repository</a>
                                 <a href="https://github.com/XibalbaTechSol/xibalba-shield#readme" class="link-glow" target="_blank" rel="noopener">Read the Quickstart &rarr;</a>
                             </div>
                         </div>
                         <div class="project-visual">
-                            <div class="terminal-window">
-                                <div class="terminal-header">
-                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                    <span class="terminal-title">quickstart.sh</span>
-                                </div>
-                                <div class="terminal-content">
-                                    <span class="code-comment"># Install, then a sidecar-free smoke run</span><br>
-                                    uv pip install -e ".[dev]"<br>
-                                    <br>
-                                    shield local-run --profile smb
-                                </div>
-                            </div>
-                        </div>
+                            <div class="product-visual shield-visual"><img src="./assets/xibalba-shield-final-details.jpg" alt="Xibalba Shield logo"><div class="visual-caption"><span class="status-dot"></span> LOCAL ENFORCEMENT / ACTIVE CONCEPT</div></div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Product deep dive -->
+        <section id="deep-dive" class="deep-dive-section">
+            <div class="container">
+                <div class="section-header animate-in">
+                    <span class="meta-label">Inside the stack</span>
+                    <h2>Infrastructure you can <span class="gradient-text">reason about.</span></h2>
+                    <p>Each layer has a defined job, a defined boundary, and a clear path to verification. Start with one product; compose the stack when your trust requirements grow.</p>
+                </div>
+                <div class="deep-dive-grid">
+                    <article class="deep-dive-card animate-in">
+                        <div class="deep-dive-heading"><span class="deep-dive-number">01</span><div><span class="tag tag-success">Xibalba Cortex</span><h3>Memory with a chain of custody.</h3></div></div>
+                        <p>Cortex is a provenance-aware graph memory MCP server for teams that need to know not only what an agent remembers, but where the memory came from and how it was retrieved.</p>
+                        <div class="buyer-grid"><div><strong>For teams that need</strong><p>Reviewable context, reproducible retrieval, and a memory layer that can be audited after the fact.</p></div><div><strong>Integration surface</strong><p>Run locally or host the authenticated MCP server over stdio or streamable HTTP.</p></div></div>
+                        <pre class="mermaid">flowchart LR
+  A[Agent] --> M[MCP server]
+  M --> R{Retrieve}
+  R --> L[Lexical]
+  R --> V[Vector]
+  R --> G[Graph]
+  R --> T[Temporal]
+  L & V & G & T --> F[RRF fusion]
+  F --> E[Evidence + proof]
+  M --> P[Proposal]
+  P --> H[Human accept]
+  H --> C[Hash chain / Merkle root]</pre>
+                        <p class="boundary-note"><strong>Boundary:</strong> extraction proposes; it never silently writes. Current stage: design-partner, clone-and-run.</p>
+                    </article>
+                    <article class="deep-dive-card animate-in">
+                        <div class="deep-dive-heading"><span class="deep-dive-number">02</span><div><span class="tag tag-secondary">Xibalba Shield</span><h3>Security at the point of action.</h3></div></div>
+                        <p>Shield gives AI agents local guardrails and endpoint visibility, so policy decisions do not depend on a cloud round-trip or an agent describing its own behavior accurately.</p>
+                        <div class="buyer-grid"><div><strong>For teams that need</strong><p>Deterministic policy, Linux endpoint telemetry, and containment when an agent crosses a boundary.</p></div><div><strong>Integration surface</strong><p>Six runtime hooks, OPA/Rego policy, eBPF sensors, and resumable process or cgroup controls.</p></div></div>
+                        <pre class="mermaid">flowchart LR
+  A[Agent action] --> H[Guardrail hooks]
+  H --> P[OPA / Rego]
+  P -->|allow| X[Execute]
+  P -->|deny| D[Block + receipt]
+  P -->|contain| K[Freeze / isolate]
+  S[eBPF sensors] --> O[Observable event]
+  O --> Q[Evidence export]
+  Q -. optional .-> I[Integrity Core]</pre>
+                        <p class="boundary-note"><strong>Boundary:</strong> local enforcement is standalone; evidence export is additive. Current stage: pre-alpha pilot.</p>
+                    </article>
+                </div>
+                <div class="stack-bridge animate-in">
+                    <div><span class="meta-label">Optional trust layer</span><h3>Integrity Core makes identity and reputation independently verifiable.</h3><p>Cortex and Shield remain useful on their own. Integrity Core is the protocol layer for cases where a third party needs to verify who an agent is, how it has behaved, and whether a risky action should be allowed.</p></div>
+                    <pre class="mermaid">flowchart LR
+  C[Cortex] --> E[Evidence]
+  S[Shield] --> E
+  E --> I[Integrity Core]
+  I --> ID[Agent identity]
+  I --> RP[AIS reputation]
+  I --> BCC[BCC policy gate]
+  ID & RP & BCC --> V[Verifiable decision]</pre>
                 </div>
             </div>
         </section>
@@ -181,10 +198,10 @@
                             <span class="tag tag-primary">Protocol Backbone</span>
                             <span class="project-icon">&#9878;&#65039;</span>
                         </div>
-                        <h3>Integrity Core</h3>
+                        <h2>Integrity Core</h2>
                         <p style="font-style: italic; color: var(--text-secondary); border-left: 3px solid var(--color-brand-primary); padding-left: 1rem; margin: 1rem 0;">&ldquo;Once the agent is gone, there's no neutral party to ask.&rdquo;</p>
-                        <p>A trust/compliance protocol on Base L2 where agents deploy and own their own identity and reputation contracts &mdash; no privileged factory registers on their behalf. An oracle computes a reputation score (AIS) from four signals as a weighted geometric mean, boostable via a real Noir/Barretenberg zero-knowledge proof. A policy middleware (BCC) gates risky actions pre-execution. &ldquo;Integrity Health&rdquo; is the HIPAA-aware vertical built on the same primitives.</p>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);"><strong>Status:</strong> a strong testnet prototype, by its own description &mdash; live on Base Sepolia with real deployed contracts, not yet production (single-operator key custody, on-chain ZK verifier not yet deployed).</p>
+                        <p>On-chain identity, reputation, and policy middleware for agents that need a neutral, verifiable trust layer. Built for Base L2, with Integrity Health as a HIPAA-aware vertical on the same primitives.</p>
+                        <p class="product-status" style="font-size: 0.85rem; color: var(--text-muted);"><strong>Status:</strong> a strong testnet prototype, by its own description &mdash; live on Base Sepolia with real deployed contracts, not yet production (single-operator key custody, on-chain ZK verifier not yet deployed).</p>
                         <div class="project-links">
                             <a href="https://github.com/XibalbaTechSol/integrity-core" class="btn btn-sm" target="_blank" rel="noopener">GitHub Repository</a>
                             <a href="https://github.com/XibalbaTechSol/integrity-core/blob/main/docs/WHITEPAPER.md" class="link-glow" target="_blank" rel="noopener">Read the Whitepaper &rarr;</a>
@@ -335,7 +352,7 @@
                                     style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface); border: 1px solid var(--border-main); border-radius: 8px; color: var(--text-primary); font-family: var(--font-primary); font-size: 0.95rem; outline: none; resize: vertical; transition: var(--t-fast);"
                                     onfocus="this.style.borderColor='var(--color-brand-primary)'" onblur="this.style.borderColor='var(--border-main)'"></textarea>
                             </div>
-                            <button type="submit" class="btn w-full" style="text-align: center;">Send Message</button>
+                            <div id="form-status" class="form-status" role="status" aria-live="polite"></div><button type="submit" class="btn w-full" style="text-align: center;">Send Message</button>
                         </form>
                     </div>
                 </div>
@@ -385,5 +402,6 @@
     </footer>
 
     <script src="./js/main.js"></script>
+<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs"; mermaid.initialize({startOnLoad:true,securityLevel:"strict",theme:"base",themeVariables:{background:"#111817",mainBkg:"#151d1b",primaryColor:"#151d1b",primaryTextColor:"#f3efe7",primaryBorderColor:"#56c4bb",lineColor:"#8db7ff",secondaryColor:"#17211f",tertiaryColor:"#111817",textColor:"#f3efe7",edgeLabelBackground:"#111817",fontFamily:"Inter"}});</script>
 </body>
 </html>

@@ -5,7 +5,6 @@ const CONTACT_ENDPOINT = 'https://xibalba-solutions-site.onrender.com/contact';
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Xibalba Solutions v2.0 — Sovereign Obsidian loaded.');
-
     // ── Hamburger Menu ──
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -128,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const btn = contactForm.querySelector('button[type="submit"]');
             const originalText = btn.textContent;
+            const formStatus = contactForm.querySelector("#form-status");
             
             // Show loading state
             btn.textContent = 'Synchronizing...';
@@ -141,7 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => {
                 if (response.ok) {
-                    btn.textContent = 'Message Sent ✓';
+                    btn.textContent = "Message Sent ✓";
+                    if (formStatus) formStatus.textContent = "Your message was sent successfully.";
                     btn.style.background = 'linear-gradient(135deg, #00FF88 0%, #00F2FF 100%)';
                     contactForm.reset();
                 } else {
@@ -150,7 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(err => {
                 console.error('Contact error:', err);
-                btn.textContent = 'Relay Failed';
+                btn.textContent = "Relay Failed";
+                if (formStatus) formStatus.textContent = "We could not send your message. Please try again or email us directly.";
                 btn.style.background = 'var(--color-error)';
             })
             .finally(() => {
