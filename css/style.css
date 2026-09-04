@@ -1755,8 +1755,8 @@ nav { background:rgba(244,241,234,.84); border-bottom:1px solid var(--border-mai
 .feature-icon { color:var(--color-brand-primary) !important; }
 footer { background:#17211f; border-top:0; }
 footer p,footer a,footer h4 { color:#d8d1c7; }
-  (max-width:899px) { .hero { min-height:700px; padding:7rem 0 3.5rem; } .hero::after { right:-100px; top:18%; opacity:.6; } .project-card.featured { grid-template-columns:1fr; } }
- (max-width:599px) { .hero { padding-top:calc(var(--nav-h) + 3rem); min-height:650px; } .hero-logo-main { max-height:115px; } .hero h1 { font-size:3.35rem; } .hero-proof { gap:.8rem; } .project-visual,.product-placeholder,.shield-visual { min-height:290px; } }
+@media (max-width:899px) { .hero { min-height:700px; padding:7rem 0 3.5rem; } .hero::after { right:-100px; top:18%; opacity:.6; } .project-card.featured { grid-template-columns:1fr; } }
+@media (max-width:599px) { .hero { padding-top:calc(var(--nav-h) + 3rem); min-height:650px; } .hero-logo-main { max-height:115px; } .hero h1 { font-size:3.35rem; } .hero-proof { gap:.8rem; } .project-visual,.product-placeholder,.shield-visual { min-height:290px; } }
 
 
 /* Landing audit safety overrides */
@@ -1764,12 +1764,12 @@ footer p,footer a,footer h4 { color:#d8d1c7; }
 .hero h1 { max-width:980px; font-size:clamp(3rem,5.2vw,5.2rem); }
 .scroll-indicator { position:static; transform:none; margin:2rem 0 0; }
 .animate-in { opacity:1; transform:none; }
- (max-width:899px) { .hero { min-height:700px; padding:7rem 0 3.5rem; } .project-card.featured { grid-template-columns:1fr; } }
- (max-width:599px) { .hero { min-height:650px; padding:7rem 0 3rem; } .hero h1 { font-size:3.35rem; } .hero-logo-main { max-height:80px; } }
+@media (max-width:899px) { .hero { min-height:700px; padding:7rem 0 3.5rem; } .project-card.featured { grid-template-columns:1fr; } }
+@media (max-width:599px) { .hero { min-height:650px; padding:7rem 0 3rem; } .hero h1 { font-size:3.35rem; } .hero-logo-main { max-height:80px; } }
 
 
 /* Hero brand lockup refinement */
-.hero-lockup { display:flex; align-items:center; justify-content:center; min-height:132px; margin-bottom:1.25rem; }
+.hero-lockup { display:flex; align-items:center; justify-content:flex-start; min-height:132px; margin-bottom:1.25rem; }
 .hero-logo-main { display:block; width:min(340px, 72vw); height:auto; max-height:none; opacity:.98; filter:brightness(1.18) contrast(1.08); }
 .hero-kicker { color:#f0c2a8; }
 .kicker-line { background:var(--color-brand-primary); }
@@ -1835,8 +1835,8 @@ nav .theme-toggle { transition:color .2s ease, background-color .2s ease, border
 .stack-bridge { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:2rem; align-items:center; margin-top:1.25rem; }
 .stack-bridge h3 { font-size:clamp(1.5rem,2.4vw,2.2rem); }
 .stack-bridge .mermaid { margin:0 !important; }
- (max-width:899px) { .deep-dive-grid,.stack-bridge { grid-template-columns:1fr; } }
- (max-width:599px) { .deep-dive-section { padding:4rem 0; } .buyer-grid { grid-template-columns:1fr; } .deep-dive-card,.stack-bridge { padding:1.25rem; } .mermaid { font-size:.68rem; } }
+@media (max-width:899px) { .deep-dive-grid,.stack-bridge { grid-template-columns:1fr; } }
+@media (max-width:599px) { .deep-dive-section { padding:4rem 0; } .buyer-grid { grid-template-columns:1fr; } .deep-dive-card,.stack-bridge { padding:1.25rem; } .mermaid { font-size:.68rem; } }
 
 
 /* Hero composition refinement */
@@ -1847,8 +1847,8 @@ nav .theme-toggle { transition:color .2s ease, background-color .2s ease, border
 .hero .btn-group { justify-content:flex-start; }
 .hero-proof { justify-content:flex-start; }
 .hero::after { right:max(1.5rem, calc((100vw - var(--container-max)) / 2)); top:52%; opacity:.72; }
- (max-width:899px) { .hero { min-height:760px; padding:7rem 0 2.5rem; } .hero::after { right:-110px; top:45%; opacity:.5; } }
- (max-width:599px) { .hero { min-height:720px; padding:6.5rem 0 2rem; } .hero h1 { max-width:100%; } .hero-lede { max-width:100% !important; } .hero::after { right:-155px; top:34%; } }
+@media (max-width:899px) { .hero { min-height:760px; padding:7rem 0 2.5rem; } .hero::after { right:-110px; top:45%; opacity:.5; } }
+@media (max-width:599px) { .hero { min-height:720px; padding:6.5rem 0 2rem; } .hero h1 { max-width:100%; } .hero-lede { max-width:100% !important; } .hero::after { right:-155px; top:34%; } }
 
 
 /* Keep the hero focused on the message and CTAs */

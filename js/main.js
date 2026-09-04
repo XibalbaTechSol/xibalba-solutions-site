@@ -170,61 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
         el.textContent = new Date().getFullYear();
     });
 
-    // ── Live Protocol Simulation ──
-    const metrics = {
-        entropy: { el: document.querySelector('#metric-entropy .metric-trend'), base: 0.4, prefix: '↑ ' },
-        grounding: { el: document.querySelector('#metric-grounding .metric-trend'), base: 0, prefix: '~ ', text: 'STABLE' },
-        sacrifice: { el: document.querySelector('#metric-sacrifice .metric-trend'), base: 1.2, prefix: '↑ ' }
-    };
-
-    function updateLiveMetrics() {
-        if (metrics.entropy.el) {
-            const val = (metrics.entropy.base + (Math.random() * 0.1 - 0.05)).toFixed(1);
-            metrics.entropy.el.textContent = `${metrics.entropy.prefix}${val}%`;
-        }
-        if (metrics.grounding.el) {
-            const chance = Math.random();
-            if (chance > 0.8) {
-                metrics.grounding.el.textContent = '↑ 0.1%';
-                metrics.grounding.el.className = 'metric-trend text-success';
-            } else if (chance < 0.2) {
-                metrics.grounding.el.textContent = '↓ 0.1%';
-                metrics.grounding.el.className = 'metric-trend text-error';
-            } else {
-                metrics.grounding.el.textContent = '~ STABLE';
-                metrics.grounding.el.className = 'metric-trend text-warning';
-            }
-        }
-        if (metrics.sacrifice.el) {
-            const val = (metrics.sacrifice.base + (Math.random() * 0.2 - 0.1)).toFixed(1);
-            metrics.sacrifice.el.textContent = `${metrics.sacrifice.prefix}${val}%`;
-        }
-    }
-
-    if (metrics.entropy.el || metrics.grounding.el || metrics.sacrifice.el) {
-        setInterval(updateLiveMetrics, 3000);
-    }
-
-    // ── Status Text Typing Effect ──
-    const statusTextEl = document.querySelector('.status-text');
-    if (statusTextEl) {
-        const texts = [
-            'Protocol Node v8.4.2 — ACTIVE',
-            'L2 Settlement — VERIFIED',
-            'Sovereign Identity — ENCRYPTED',
-            'Entropy Buffer — STABLE'
-        ];
-        let index = 0;
-        
-        function rotateStatusText() {
-            statusTextEl.style.opacity = '0';
-            setTimeout(() => {
-                index = (index + 1) % texts.length;
-                statusTextEl.textContent = texts[index];
-                statusTextEl.style.opacity = '1';
-            }, 500);
-        }
-        
-        setInterval(rotateStatusText, 5000);
-    }
+    // Note: this file previously simulated fabricated "live" protocol metrics and a rotating
+    // status-text ticker (e.g. "Protocol Node v8.4.2 — ACTIVE") for DOM elements that no longer
+    // exist in index.html -- that content was removed as unverifiable/misleading. Removed the
+    // dead JS along with it rather than leaving it as inert but confusing leftover code.
 });
