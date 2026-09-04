@@ -1853,3 +1853,21 @@ nav .theme-toggle { transition:color .2s ease, background-color .2s ease, border
 
 /* Keep the hero focused on the message and CTAs */
 .hero .scroll-indicator { display:none; }
+
+
+/* Center everything in the hero */
+.hero { text-align:center; }
+.hero .container { display:flex; flex-direction:column; align-items:center; }
+.hero-kicker { justify-content:center; }
+.hero-lockup { justify-content:center; }
+.hero h1 { margin-left:auto; margin-right:auto; }
+.hero-lede { margin-left:auto !important; margin-right:auto !important; }
+.hero .btn-group { justify-content:center; }
+.hero-proof { justify-content:center; }
+.hero .scroll-indicator { align-items:center; }
+/* Scoped to desktop only (matches the existing 899px breakpoint) so this doesn't fight the
+   mobile .hero::after rules inside @media (max-width:899px/599px) later in cascade order --
+   an earlier bug in this file was exactly an unscoped rule silently winning over those. */
+@media (min-width:900px) {
+    .hero::after { right:50%; top:50%; transform:translate(50%,-50%); }
+}
