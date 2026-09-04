@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xibalba Solutions | Integrity Core, Shield &amp; Cortex</title>
-    <meta name="description" content="Xibalba Solutions builds the trust and safety infrastructure for the agentic economy: Integrity Core (on-chain agent identity and reputation), Xibalba Shield (endpoint agent security), and Xibalba Cortex (persistent, verifiable agent memory).">
-    <meta name="keywords" content="AI agents, agent security, agent memory, on-chain reputation, agentic infrastructure, eBPF, MCP">
-    <meta property="og:title" content="Xibalba Solutions | Integrity Core, Shield & Cortex">
-    <meta property="og:description" content="The trust and safety infrastructure for the agentic economy: on-chain identity, endpoint security, and verifiable memory.">
+    <title>Xibalba Solutions | Cortex &amp; Shield</title>
+    <meta name="description" content="Xibalba Cortex (provenance-aware agent memory) and Xibalba Shield (endpoint agent security), built on Integrity Core's on-chain trust protocol. Open source, design-partner stage.">
+    <meta name="keywords" content="AI agents, agent security, agent memory, eBPF, MCP, on-chain reputation, agentic infrastructure">
+    <meta property="og:title" content="Xibalba Solutions | Cortex & Shield">
+    <meta property="og:description" content="Provenance-aware agent memory and endpoint agent security, built on an on-chain trust protocol.">
     <meta property="og:type" content="website">
     <link rel="icon" href="./favicon.ico" sizes="any">
     <link rel="icon" href="./favicon.png" type="image/png">
@@ -26,10 +26,10 @@
             </button>
             <div class="nav-links">
                 <a href="#hero" class="active">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Products</a>
+                <a href="#cortex">Cortex</a>
+                <a href="#shield">Shield</a>
+                <a href="#core">Integrity Core</a>
                 <a href="#contact">Contact</a>
-                <a href="./blog.html">Blog</a>
                 <div class="nav-social">
                     <a href="https://github.com/XibalbaTechSol" target="_blank" rel="noopener" aria-label="GitHub">
                         <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -55,64 +55,65 @@
             <div class="hero-logo-container">
                 <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions" class="hero-logo-main">
             </div>
-            <h1>Trust &amp; Safety Infrastructure for the <span class="gradient-text">Agentic Web</span></h1>
-            <p>Three pieces of one system: <strong>Integrity Core</strong> gives agents an on-chain identity and reputation, <strong>Xibalba Shield</strong> watches and contains what they actually do on a device, and <strong>Xibalba Cortex</strong> gives them a persistent, verifiable memory. Each works standalone; together they cover an agent from identity to action to memory.</p>
+            <h1>Memory Your Agent Can <span class="gradient-text">Trust.</span> Security It Can't Talk Its Way Around.</h1>
+            <p><strong>Xibalba Cortex</strong> gives AI agents provenance-aware, hash-chained memory instead of a vector index with no evidence trail. <strong>Xibalba Shield</strong> watches what an agent actually does on a device and contains it deterministically, no cloud round-trip required. Both are built on <strong>Integrity Core</strong>, an on-chain protocol for agent identity and reputation &mdash; and both work standalone if you only need one.</p>
             <div class="btn-group">
-                <a href="#projects" class="btn">See the Products</a>
-                <a href="#contact" class="btn-outline">Talk to Us</a>
+                <a href="#cortex" class="btn">Explore Cortex</a>
+                <a href="#shield" class="btn">Explore Shield</a>
             </div>
             <div class="hero-badges">
                 <span class="hero-badge">Open Source</span>
                 <span class="hero-badge">Design-Partner Stage</span>
-                <span class="hero-badge">Linux-First</span>
+                <span class="hero-badge">No Silent Mocks</span>
             </div>
             <div class="scroll-indicator">
-                <span>See the products</span>
+                <span>See how they work</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- About/Founder Section -->
-        <section id="about" class="about-section">
+        <!-- Xibalba Cortex -->
+        <section id="cortex" class="projects-section" style="padding-top: 4rem;">
             <div class="container">
-                <div class="split animate-in">
-                    <div class="split-content">
-                        <span class="meta-label">The Founder</span>
-                        <h2>Jacob <span class="gradient-text">Vickers</span></h2>
-                        <p>Driven by a lifelong fascination with how things work&mdash;a spark ignited at the age of three&mdash;I transitioned from a background in <strong>Applied Mathematics and Physics</strong> to engineering trust infrastructure for the agentic economy.</p>
-                        <p>With <strong>9+ years of design engineering experience</strong> since 2017, I've dedicated my career to mastering complex technical systems. As the founder of Xibalba Solutions, I build local, sovereign infrastructure for organizations that need both real AI capability and strict security/compliance posture (including <strong>HIPAA</strong>-aware deployments).</p>
-                    </div>
-                    <div class="split-content">
-                        <span class="meta-label">The Approach</span>
-                        <h3>No Silent <span class="gradient-text">Mocks.</span></h3>
-                        <p>Every one of these three projects follows the same rule: a feature is either real and tested, or it's honestly marked as not-yet-built &mdash; never a stub dressed up as working. That discipline is visible in the repos themselves, not just claimed here.</p>
-                        <p>This is early-stage, design-partner work. If that framing is a fit for how you evaluate infrastructure, we'd like to talk.</p>
-                        <a href="https://linkedin.com/in/jacobvickers" target="_blank" class="link-glow">Connect on LinkedIn &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="stats-grid full-width-stats animate-in">
-                    <div class="stat-card">
-                        <span class="stat-value">B.S.</span>
-                        <span class="stat-label">MATH &amp; PHYSICS</span>
-                        <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-muted);">UW-Parkside (3.6 GPA) / Control Theory</p>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-value">9+ Yrs</span>
-                        <span class="stat-label">DESIGN ENGINEERING</span>
-                        <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-muted);">Industrial Systems / Prototyping</p>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-value">3</span>
-                        <span class="stat-label">OPEN-SOURCE PROJECTS</span>
-                        <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-muted);">Integrity Core / Shield / Cortex</p>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-value">HIPAA</span>
-                        <span class="stat-label">COMPLIANCE-AWARE</span>
-                        <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-muted);">Institutional Trust Infrastructure</p>
+                <div class="projects-grid animate-in" style="grid-template-columns: 1fr;">
+                    <div class="project-card featured">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <span class="tag tag-success">Agent Memory</span>
+                                <span class="project-icon">&#129504;</span>
+                            </div>
+                            <h3>Xibalba Cortex</h3>
+                            <p style="font-style: italic; color: var(--text-secondary); border-left: 3px solid var(--color-success); padding-left: 1rem; margin: 1rem 0;">&ldquo;Most agent memory systems store embeddings, not evidence.&rdquo;</p>
+                            <p>A provenance-aware graph memory MCP server. Every fact is linked to its source, every extraction is a reviewable proposal &mdash; never auto-written &mdash; and every retrieval trace is independently verifiable, not just trusted.</p>
+                            <ul class="detail-list">
+                                <li><strong>Hybrid retrieval:</strong> lexical (FTS5/BM25) + vector + graph + temporal signals, fused via Reciprocal Rank Fusion &mdash; the fusion itself is persisted, not just the final ranked list.</li>
+                                <li><strong>Hash-chained &amp; Merkle-rooted:</strong> every write is append-only per domain; a caller can verify a subset of the graph, and every retrieval result carries an independently checkable inclusion proof.</li>
+                                <li><strong>Extraction never auto-writes:</strong> proposals require explicit accept/dismiss and re-check source-hash staleness before landing.</li>
+                                <li><strong>79 MCP tools</strong> over stdio or authenticated streamable-HTTP, for local or cloud-hosted agent harnesses.</li>
+                            </ul>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);"><strong>Status:</strong> design-partner stage &mdash; the store schema and MCP contract are frozen for v1, but this is a clone-and-run project (no PyPI package yet).</p>
+                            <div class="project-links">
+                                <a href="https://github.com/XibalbaTechSol/xibalba-cortex" class="btn btn-sm" target="_blank" rel="noopener">GitHub Repository</a>
+                                <a href="https://github.com/XibalbaTechSol/xibalba-cortex#readme" class="link-glow" target="_blank" rel="noopener">Read the Quickstart &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="terminal-window">
+                                <div class="terminal-header">
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="terminal-title">quickstart.sh</span>
+                                </div>
+                                <div class="terminal-content">
+                                    <span class="code-comment"># Clone, sync, run &mdash; stdio MCP server</span><br>
+                                    git clone https://github.com/XibalbaTechSol/xibalba-cortex<br>
+                                    cd xibalba-cortex<br>
+                                    uv sync<br>
+                                    uv run xibalba-cortex
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -120,70 +121,73 @@
 
         <hr class="section-divider">
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section">
+        <!-- Xibalba Shield -->
+        <section id="shield" class="projects-section" style="padding-top: 0;">
             <div class="container">
-                <div class="section-header text-center animate-in">
-                    <span class="meta-label">The Ecosystem</span>
-                    <h2>Three Products, <span class="gradient-text">One System.</span></h2>
-                    <p class="mx-auto" style="max-width: 650px;">Each product is independently useful and independently open source. Together, they cover an agent's identity, its actions, and its memory.</p>
-                </div>
-
-                <div class="projects-grid animate-in">
-                    <!-- Integrity Core -->
+                <div class="projects-grid animate-in" style="grid-template-columns: 1fr;">
                     <div class="project-card featured">
                         <div class="project-content">
                             <div class="project-header">
-                                <span class="tag tag-primary">Protocol Backbone</span>
-                                <span class="project-icon">&#9878;&#65039;</span>
+                                <span class="tag tag-secondary">Endpoint Security</span>
+                                <span class="project-icon">&#128737;&#65039;</span>
                             </div>
-                            <h3>Integrity Core</h3>
-                            <p>The trust/compliance layer for AI agents on Base L2. Agents deploy and own their own identity/reputation contracts &mdash; no privileged factory registers on their behalf. An oracle computes a reputation score (AIS) from off-chain telemetry, boostable via a real Noir/Barretenberg zero-knowledge proof, and a policy middleware (BCC) gates risky actions pre-execution. &quot;Integrity Health&quot; is the HIPAA/healthcare vertical built on the same primitives.</p>
+                            <h3>Xibalba Shield</h3>
+                            <p style="font-style: italic; color: var(--text-secondary); border-left: 3px solid var(--color-warning); padding-left: 1rem; margin: 1rem 0;">&ldquo;Shield fights fire with fire: local agent-runtime guardrails, kernel-level telemetry, and deterministic policy to constrain the agents operating on the device.&rdquo;</p>
+                            <p>Traditional endpoint tools understand processes, files, and network flows. AI agents operate a layer above that &mdash; they retrieve context, choose models, and invoke tools with semantic intent. Shield governs both layers.</p>
+                            <ul class="detail-list">
+                                <li><strong>Six guardrail hooks</strong> intercepting an agent's own tool calls (ingress, retrieval/context, model routing, output, tool execution, post-action verification) &mdash; not just OS-level events.</li>
+                                <li><strong>Real Linux eBPF sensors:</strong> process-exec and file-write (live-verified), TCP-connect (root-verified on Ubuntu 24.04 LTS, with archived evidence).</li>
+                                <li><strong>Deterministic OPA/Rego policy engine</strong> that fails closed &mdash; never a silent allow if the policy service is unreachable.</li>
+                                <li><strong>Real containment:</strong> resumable SIGSTOP/SIGCONT process freezing, cgroup v2 isolation for containerized agents.</li>
+                            </ul>
+                            <p style="font-size: 0.85rem; color: var(--text-muted);"><strong>Status:</strong> pre-alpha on our own L0&ndash;L3 readiness scale &mdash; Linux-first, design-partner/pilot stage, not yet production-hardened.</p>
                             <div class="project-links">
-                                <a href="https://github.com/XibalbaTechSol/integrity-core" class="btn btn-sm" target="_blank" rel="noopener">GitHub Repository</a>
-                                <a href="./integrity-protocol.html" class="link-glow">Protocol Overview &rarr;</a>
+                                <a href="https://github.com/XibalbaTechSol/xibalba-shield" class="btn btn-sm" target="_blank" rel="noopener">GitHub Repository</a>
+                                <a href="https://github.com/XibalbaTechSol/xibalba-shield#readme" class="link-glow" target="_blank" rel="noopener">Read the Quickstart &rarr;</a>
                             </div>
                         </div>
                         <div class="project-visual">
                             <div class="terminal-window">
                                 <div class="terminal-header">
                                     <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                    <span class="terminal-title">bcc_middleware.py</span>
+                                    <span class="terminal-title">quickstart.sh</span>
                                 </div>
                                 <div class="terminal-content">
-                                    <span class="code-comment">// Pre-execution policy gate</span><br>
-                                    decision = bcc.evaluate(agent_id, action)<br>
+                                    <span class="code-comment"># Install, then a sidecar-free smoke run</span><br>
+                                    uv pip install -e ".[dev]"<br>
                                     <br>
-                                    if decision.blocked:<br>
-                                    &nbsp;&nbsp;raise ActionDenied(decision.reason)
+                                    shield local-run --profile smb
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Xibalba Shield -->
+        <hr class="section-divider">
+
+        <!-- Integrity Core -->
+        <section id="core" class="projects-section" style="padding-top: 0;">
+            <div class="container">
+                <div class="section-header text-center animate-in">
+                    <span class="meta-label">The Backbone</span>
+                    <h2>Built on <span class="gradient-text">Integrity Core.</span></h2>
+                    <p class="mx-auto" style="max-width: 650px;">Cortex and Shield don't require Integrity Core to work &mdash; both run standalone. It's the protocol underneath, for when identity and reputation need to be provable on-chain rather than just asserted.</p>
+                </div>
+                <div class="projects-grid animate-in" style="grid-template-columns: 1fr;">
                     <div class="project-card">
                         <div class="project-header">
-                            <span class="tag tag-secondary">Endpoint Security</span>
-                            <span class="project-icon">&#128737;&#65039;</span>
+                            <span class="tag tag-primary">Protocol Backbone</span>
+                            <span class="project-icon">&#9878;&#65039;</span>
                         </div>
-                        <h3>Xibalba Shield</h3>
-                        <p>The local enforcement and detection layer that watches what agents actually do on a device and network. Real Linux eBPF sensors (process, file-write, and TCP-connect &mdash; all root-verified), a deterministic OPA/Rego policy engine that fails closed, and six guardrail hooks that intercept an agent's own tool calls, not just OS-level events.</p>
+                        <h3>Integrity Core</h3>
+                        <p style="font-style: italic; color: var(--text-secondary); border-left: 3px solid var(--color-brand-primary); padding-left: 1rem; margin: 1rem 0;">&ldquo;Once the agent is gone, there's no neutral party to ask.&rdquo;</p>
+                        <p>A trust/compliance protocol on Base L2 where agents deploy and own their own identity and reputation contracts &mdash; no privileged factory registers on their behalf. An oracle computes a reputation score (AIS) from four signals as a weighted geometric mean, boostable via a real Noir/Barretenberg zero-knowledge proof. A policy middleware (BCC) gates risky actions pre-execution. &ldquo;Integrity Health&rdquo; is the HIPAA-aware vertical built on the same primitives.</p>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);"><strong>Status:</strong> a strong testnet prototype, by its own description &mdash; live on Base Sepolia with real deployed contracts, not yet production (single-operator key custody, on-chain ZK verifier not yet deployed).</p>
                         <div class="project-links">
-                            <a href="https://github.com/XibalbaTechSol/xibalba-shield" class="btn btn-sm" target="_blank" rel="noopener">GitHub Repository</a>
-                        </div>
-                    </div>
-
-                    <!-- Xibalba Cortex -->
-                    <div class="project-card">
-                        <div class="project-header">
-                            <span class="tag tag-success">Agent Memory</span>
-                            <span class="project-icon">&#129504;</span>
-                        </div>
-                        <h3>Xibalba Cortex</h3>
-                        <p>Persistent, hash-chained memory for AI agents. Every write is append-only and Merkle-rooted per domain, so a caller can verify a subset of the graph without the whole chain. Hybrid retrieval combines lexical, vector, and graph signals via reciprocal rank fusion, exposed over 79 MCP tools.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/XibalbaTechSol/xibalba-cortex" class="btn btn-sm" target="_blank" rel="noopener">GitHub Repository</a>
+                            <a href="https://github.com/XibalbaTechSol/integrity-core" class="btn btn-sm" target="_blank" rel="noopener">GitHub Repository</a>
+                            <a href="https://github.com/XibalbaTechSol/integrity-core/blob/main/docs/WHITEPAPER.md" class="link-glow" target="_blank" rel="noopener">Read the Whitepaper &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -196,30 +200,30 @@
         <section id="tech" class="tech-pillars">
             <div class="container">
                 <div class="section-header text-center animate-in">
-                    <span class="meta-label">How They Fit Together</span>
-                    <h2>Identity, Action, <span class="gradient-text">Memory.</span></h2>
+                    <span class="meta-label">How They Relate</span>
+                    <h2>Independent by <span class="gradient-text">Design.</span></h2>
                 </div>
 
                 <div class="feature-grid animate-in">
                     <div class="feature-card">
-                        <div class="feature-icon" style="color: var(--color-brand-primary);">&#9878;&#65039;</div>
-                        <h4>Who is this agent?</h4>
-                        <p>Integrity Core gives an agent a self-owned on-chain identity and a reputation score computed from real telemetry &mdash; not a claim, a measured history.</p>
+                        <div class="feature-icon" style="color: var(--color-success);">&#129504;</div>
+                        <h4>Cortex, standalone</h4>
+                        <p>Run it as your agent's memory layer today &mdash; it doesn't require Shield or Integrity Core to be useful.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon" style="color: var(--color-warning);">&#128737;&#65039;</div>
-                        <h4>What is it doing right now?</h4>
-                        <p>Shield watches process, file, and network activity in real time and can contain a dangerous action deterministically, with no hot-path network dependency.</p>
+                        <h4>Shield, standalone</h4>
+                        <p>Runs with zero cloud round-trip. Evidence export to Integrity Core is additive, never required for local enforcement to work.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon" style="color: var(--color-success);">&#129504;</div>
-                        <h4>What does it remember?</h4>
-                        <p>Cortex gives an agent durable, tamper-evident memory across sessions, so context and provenance survive restarts instead of resetting every run.</p>
+                        <div class="feature-icon" style="color: var(--color-brand-primary);">&#9878;&#65039;</div>
+                        <h4>Integrity Core, underneath</h4>
+                        <p>Where identity and reputation need to be provable to a third party, not just asserted by the agent itself.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon" style="color: #FF00FF;">&#128279;</div>
-                        <h4>Independent by design</h4>
-                        <p>Each repo consumes the others' SDKs one-way, never a privileged back-channel &mdash; a bug in one can't compromise the others' guarantees.</p>
+                        <h4>One-way dependencies only</h4>
+                        <p>Each repo consumes another's SDK one-way, never a privileged back-channel &mdash; a bug in one can't compromise another's guarantees.</p>
                     </div>
                 </div>
             </div>
@@ -244,9 +248,9 @@
 
                 <div class="card-grid mt-6 animate-in" style="max-width: 900px; margin-left: auto; margin-right: auto;">
                     <div class="card" style="grid-column: span 1;">
-                        <h4>integrity-core</h4>
-                        <p style="font-size: 0.85rem;">On-chain identity, AIS reputation oracle, and BCC policy middleware. Solidity / Rust / Python.</p>
-                        <a href="https://github.com/XibalbaTechSol/integrity-core" class="card-link" target="_blank" rel="noopener">View Repo &rarr;</a>
+                        <h4>xibalba-cortex</h4>
+                        <p style="font-size: 0.85rem;">Hash-chained, hybrid-retrieval agent memory exposed as an MCP server. Python.</p>
+                        <a href="https://github.com/XibalbaTechSol/xibalba-cortex" class="card-link" target="_blank" rel="noopener">View Repo &rarr;</a>
                     </div>
                     <div class="card" style="grid-column: span 1;">
                         <h4>xibalba-shield</h4>
@@ -254,9 +258,9 @@
                         <a href="https://github.com/XibalbaTechSol/xibalba-shield" class="card-link" target="_blank" rel="noopener">View Repo &rarr;</a>
                     </div>
                     <div class="card" style="grid-column: span 1;">
-                        <h4>xibalba-cortex</h4>
-                        <p style="font-size: 0.85rem;">Hash-chained, hybrid-retrieval agent memory exposed as an MCP server. Python.</p>
-                        <a href="https://github.com/XibalbaTechSol/xibalba-cortex" class="card-link" target="_blank" rel="noopener">View Repo &rarr;</a>
+                        <h4>integrity-core</h4>
+                        <p style="font-size: 0.85rem;">On-chain identity, AIS reputation oracle, and BCC policy middleware. Solidity / Rust / Python.</p>
+                        <a href="https://github.com/XibalbaTechSol/integrity-core" class="card-link" target="_blank" rel="noopener">View Repo &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -271,7 +275,7 @@
                     <div class="split-content">
                         <span class="meta-label">Get In Touch</span>
                         <h2>Initiate <span class="gradient-text">Connection.</span></h2>
-                        <p>Whether you're interested in Integrity Core, deploying Shield on your fleet, or using Cortex as your agent's memory layer &mdash; we'd love to hear from you.</p>
+                        <p>Whether you're deploying Shield on your fleet, using Cortex as your agent's memory layer, or interested in Integrity Core &mdash; we'd love to hear from you.</p>
 
                         <div style="margin-top: 2rem;">
                             <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
@@ -313,9 +317,9 @@
                                 <label for="contact-interest" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Interested In</label>
                                 <select id="contact-interest" name="interest"
                                     style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface); border: 1px solid var(--border-main); border-radius: 8px; color: var(--text-primary); font-family: var(--font-primary); font-size: 0.95rem; outline: none;">
-                                    <option value="Integrity Core">Integrity Core</option>
-                                    <option value="Xibalba Shield">Xibalba Shield</option>
                                     <option value="Xibalba Cortex">Xibalba Cortex</option>
+                                    <option value="Xibalba Shield">Xibalba Shield</option>
+                                    <option value="Integrity Core">Integrity Core</option>
                                     <option value="General / Design Partnership">General / Design Partnership</option>
                                 </select>
                             </div>
@@ -362,10 +366,9 @@
             <div class="footer-column">
                 <h4>Products</h4>
                 <ul class="footer-links">
-                    <li><a href="./integrity-protocol.html">Integrity Core</a></li>
-                    <li><a href="https://github.com/XibalbaTechSol/xibalba-shield" target="_blank" rel="noopener">Xibalba Shield</a></li>
-                    <li><a href="https://github.com/XibalbaTechSol/xibalba-cortex" target="_blank" rel="noopener">Xibalba Cortex</a></li>
-                    <li><a href="./blog.html">Technical Blog</a></li>
+                    <li><a href="#cortex">Xibalba Cortex</a></li>
+                    <li><a href="#shield">Xibalba Shield</a></li>
+                    <li><a href="#core">Integrity Core</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -377,7 +380,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <span class="current-year">2026</span> Xibalba Solutions LLC.</p>
+            <p>&copy; <span class="current-year">2026</span> Xibalba Solutions LLC. &mdash; Built by <a href="https://linkedin.com/in/jacobvickers" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Jacob Vickers</a> (<a href="https://x.com/JacobSVickers" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">X</a>).</p>
         </div>
     </footer>
 
