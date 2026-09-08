@@ -535,13 +535,13 @@
                         <form id="contact-form" action="https://xibalba-solutions-site.onrender.com/contact" method="POST" class="card" style="padding: 2.5rem;">
                             <input type="hidden" name="source_page" value="Homepage">
                             <div style="margin-bottom: 1.5rem;">
-                                <label for="contact-name" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Name</label>
+                                <label for="contact-name" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Name <span class="text-error" aria-hidden="true">*</span></label>
                                 <input type="text" id="contact-name" name="name" required placeholder="Your name"
                                     style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface); border: 1px solid var(--border-main); border-radius: 8px; color: var(--text-primary); font-family: var(--font-primary); font-size: 0.95rem; outline: none; transition: var(--t-fast);"
                                     onfocus="this.style.borderColor='var(--color-brand-primary)'" onblur="this.style.borderColor='var(--border-main)'">
                             </div>
                             <div style="margin-bottom: 1.5rem;">
-                                <label for="contact-email" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Email</label>
+                                <label for="contact-email" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Email <span class="text-error" aria-hidden="true">*</span></label>
                                 <input type="email" id="contact-email" name="email" required placeholder="you@company.com"
                                     style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface); border: 1px solid var(--border-main); border-radius: 8px; color: var(--text-primary); font-family: var(--font-primary); font-size: 0.95rem; outline: none; transition: var(--t-fast);"
                                     onfocus="this.style.borderColor='var(--color-brand-primary)'" onblur="this.style.borderColor='var(--border-main)'">
@@ -563,7 +563,7 @@
                                     onfocus="this.style.borderColor='var(--color-brand-primary)'" onblur="this.style.borderColor='var(--border-main)'">
                             </div>
                             <div style="margin-bottom: 1.5rem;">
-                                <label for="contact-message" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Message</label>
+                                <label for="contact-message" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Message <span class="text-error" aria-hidden="true">*</span></label>
                                 <textarea id="contact-message" name="message" rows="4" required placeholder="Tell us about your project..."
                                     style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface); border: 1px solid var(--border-main); border-radius: 8px; color: var(--text-primary); font-family: var(--font-primary); font-size: 0.95rem; outline: none; resize: vertical; transition: var(--t-fast);"
                                     onfocus="this.style.borderColor='var(--color-brand-primary)'" onblur="this.style.borderColor='var(--border-main)'"></textarea>
