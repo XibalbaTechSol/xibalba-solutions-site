@@ -1717,7 +1717,7 @@ nav { background:rgba(244,241,234,.84); border-bottom:1px solid var(--border-mai
 .hero h1 em { color:var(--color-brand-primary); font-style:normal; }
 .hero-lede { max-width:640px !important; font-size:1.2rem !important; line-height:1.7; color:var(--text-secondary); }
 .btn { background:var(--text-primary); color:var(--bg-body); border-radius:3px; box-shadow:none; }
-.btn:hover { background:var(--color-brand-primary); color:#fff; transform:translateY(-2px); }
+.btn:not(:disabled):hover { background:var(--color-brand-primary); color:#fff; transform:translateY(-2px); }
 .btn-outline { border-color:var(--border-bright); color:var(--text-primary); border-radius:3px; }
 .hero-proof { display:flex; gap:1.5rem; flex-wrap:wrap; color:var(--text-muted); font:600 .72rem var(--font-mono); text-transform:uppercase; letter-spacing:.04em; margin-top:3rem; }
 .hero-proof span { color:var(--color-brand-secondary); }
