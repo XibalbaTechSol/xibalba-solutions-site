@@ -293,6 +293,23 @@ nav.scrolled {
     color: var(--color-brand-primary);
 }
 
+.skip-to-content {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--bg-surface);
+    color: var(--color-brand-primary);
+    padding: 1rem;
+    z-index: 9999;
+    transition: var(--t-fast);
+    border: 1px solid var(--border-main);
+    border-radius: 4px;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
 /* Hamburger */
 .hamburger {
     display: flex;
