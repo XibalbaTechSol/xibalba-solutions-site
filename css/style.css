@@ -1925,3 +1925,19 @@ nav .theme-toggle { transition:color .2s ease, background-color .2s ease, border
 .faq-item { border-bottom:1px solid var(--border-main); padding:1.5rem 0; }
 .faq-item h4 { font-size:1rem; margin-bottom:.5rem; }
 .faq-item p { font-size:.88rem; line-height:1.65; color:var(--text-secondary); margin:0; }
+
+/* Skip link accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-brand-primary);
+    color: #fff;
+    padding: 8px;
+    z-index: 1000;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
