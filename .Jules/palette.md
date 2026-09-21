@@ -4,3 +4,6 @@
 ## 2026-09-03 - [Disabled Button UX Pattern]
 **Learning:** Forms in this application programmatically set buttons to `disabled` during submission (e.g., contact form), but previously lacked visual disabled states, allowing active hover animations (transform/box-shadow) to persist. This creates a confusing UX where elements appear interactive while fundamentally disabled.
 **Action:** When implementing disabled states for interactive elements in this design system, explicitly use `:not(:disabled)` for hover states to prevent unwanted animations from overriding disabled styles like `opacity: 0.6` and `cursor: not-allowed`.
+## 2026-10-24 - Skip-to-Content Links
+**Learning:** The application lacked skip-to-content links, forcing keyboard users to navigate through all navigation items before reaching the main content. This is a critical accessibility issue.
+**Action:** Always include a visually hidden skip-to-content link (`<a href="#main-content" class="skip-link">Skip to main content</a>`) immediately after the `<body>` tag, which becomes visible on `:focus`. Ensure the main content area has the corresponding `id="main-content"`.
