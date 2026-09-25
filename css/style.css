@@ -82,6 +82,22 @@ html {
     font-size: 16px;
 }
 
+/* Accessibility Utilities */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-brand-primary);
+    color: var(--bg-body);
+    padding: 8px;
+    z-index: 1000;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
 body {
     background-color: var(--bg-body);
     color: var(--text-primary);
