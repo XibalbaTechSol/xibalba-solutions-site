@@ -1959,7 +1959,7 @@ nav .theme-toggle { transition:color .2s ease, background-color .2s ease, border
 .faq-item h4 { font-size:1rem; margin-bottom:.5rem; }
 .faq-item p { font-size:.88rem; line-height:1.65; color:var(--text-secondary); margin:0; }
 
-/* Skip link accessibility */
+/* Accessibility: Skip to Content */
 .skip-link {
     position: absolute;
     top: -40px;
@@ -1967,7 +1967,7 @@ nav .theme-toggle { transition:color .2s ease, background-color .2s ease, border
     background: var(--color-brand-primary);
     color: #fff;
     padding: 8px;
-    z-index: 1000;
+    z-index: 100;
     transition: top 0.2s;
 }
 
