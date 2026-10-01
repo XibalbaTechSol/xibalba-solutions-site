@@ -7,3 +7,6 @@
 ## 2026-10-24 - Skip-to-Content Links
 **Learning:** The application lacked skip-to-content links, forcing keyboard users to navigate through all navigation items before reaching the main content. This is a critical accessibility issue.
 **Action:** Always include a visually hidden skip-to-content link (`<a href="#main-content" class="skip-link">Skip to main content</a>`) immediately after the `<body>` tag, which becomes visible on `:focus`. Ensure the main content area has the corresponding `id="main-content"`.
+## 2026-10-25 - Standard Form Autocomplete Attributes
+**Learning:** Standard form fields (like Name and Email) in `contact.html` and `index.html` were missing the `autocomplete` attribute. This is an accessibility and UX issue as it fails to leverage browser autofill capabilities to reduce cognitive load and friction for users (WCAG 1.3.5 Identify Input Purpose).
+**Action:** Always include appropriate `autocomplete` attributes (e.g., `autocomplete="name"`, `autocomplete="email"`) on standard form input fields.
