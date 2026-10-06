@@ -10,3 +10,6 @@
 ## 2026-10-25 - Standard Form Autocomplete Attributes
 **Learning:** Standard form fields (like Name and Email) in `contact.html` and `index.html` were missing the `autocomplete` attribute. This is an accessibility and UX issue as it fails to leverage browser autofill capabilities to reduce cognitive load and friction for users (WCAG 1.3.5 Identify Input Purpose).
 **Action:** Always include appropriate `autocomplete` attributes (e.g., `autocomplete="name"`, `autocomplete="email"`) on standard form input fields.
+## 2026-10-26 - Keyboard Accessible Mobile Menu Dismissal
+**Learning:** The mobile navigation menu lacked support for keyboard dismissal via the Escape key. This forces keyboard and screen reader users to either navigate backwards through all menu items or find the toggle button again to close the menu.
+**Action:** Always implement an event listener for the Escape key when building modal or full-screen navigation overlays. When the menu is dismissed via the keyboard, ensure focus is explicitly returned to the trigger button (`hamburger?.focus()`) so users don't lose their place on the page.

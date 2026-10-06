@@ -40,6 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
         navOverlay.addEventListener('click', closeMenu);
     }
 
+    // Close menu on Escape key press
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks?.classList.contains('active')) {
+            closeMenu();
+            hamburger?.focus();
+        }
+    });
+
     // Close menu on nav link click (mobile)
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', closeMenu);
