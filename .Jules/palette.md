@@ -13,3 +13,6 @@
 ## 2026-10-26 - Keyboard Accessible Mobile Menu Dismissal
 **Learning:** The mobile navigation menu lacked support for keyboard dismissal via the Escape key. This forces keyboard and screen reader users to either navigate backwards through all menu items or find the toggle button again to close the menu.
 **Action:** Always implement an event listener for the Escape key when building modal or full-screen navigation overlays. When the menu is dismissed via the keyboard, ensure focus is explicitly returned to the trigger button (`hamburger?.focus()`) so users don't lose their place on the page.
+## 2026-10-27 - Dynamic Active Links aria-current Parity
+**Learning:** The navigation scroll spy visually updated active links using a `.active` class, but failed to toggle the `aria-current="true"` attribute. This prevents screen reader users from understanding their current position on the page as they navigate.
+**Action:** Always pair visual class changes (e.g., `.active`) with explicitly toggling the `aria-current="true"` attribute to ensure parity for screen reader users.
