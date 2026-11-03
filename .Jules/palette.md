@@ -16,3 +16,6 @@
 ## 2026-10-27 - Aria-current for visual active states
 **Learning:** When using JavaScript to visually toggle an active state on navigation links (e.g., in a scroll spy), always pair the visual class change (e.g., `.active`) with explicitly toggling the `aria-current="true"` attribute to ensure parity for screen reader users.
 **Action:** Always toggle the `aria-current="true"` attribute alongside the `.active` class when implementing dynamic active states.
+## 2026-10-27 - Dynamic Active Links aria-current Parity
+**Learning:** The navigation scroll spy visually updated active links using a `.active` class, but failed to toggle the `aria-current="true"` attribute. This prevents screen reader users from understanding their current position on the page as they navigate.
+**Action:** Always pair visual class changes (e.g., `.active`) with explicitly toggling the `aria-current="true"` attribute to ensure parity for screen reader users.
