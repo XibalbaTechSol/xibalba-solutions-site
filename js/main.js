@@ -81,7 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
                     navAnchors.forEach(a => {
-                        a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
+                        const isActive = a.getAttribute('href') === `#${id}`;
+                        a.classList.toggle('active', isActive);
+                        if (isActive) {
+                            a.setAttribute('aria-current', 'true');
+                        } else {
+                            a.removeAttribute('aria-current');
+                        }
                     });
                 }
             });
