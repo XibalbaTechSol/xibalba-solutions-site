@@ -184,6 +184,21 @@ strong {
     margin-bottom: 1.25rem;
 }
 
+.spinner {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: currentColor;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 0.5rem;
+    vertical-align: text-bottom;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
 /* ── Utility ── */
 .text-success { color: var(--color-success) !important; }
 .text-warning { color: var(--color-warning) !important; }
@@ -510,7 +525,9 @@ nav.scrolled {
 
 /* ── Buttons ── */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 1rem 2.5rem;
     background: linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-secondary) 100%);
     color: #fff;

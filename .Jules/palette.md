@@ -31,3 +31,6 @@
 ## 2026-10-27 - Dynamic Active Links aria-current Parity
 **Learning:** The navigation scroll spy visually updated active links using a `.active` class, but failed to toggle the `aria-current="true"` attribute. This prevents screen reader users from understanding their current position on the page as they navigate.
 **Action:** Always pair visual class changes (e.g., `.active`) with explicitly toggling the `aria-current="true"` attribute to ensure parity for screen reader users.
+## 2026-10-27 - Async Form Loading State
+**Learning:** Submitting forms without a visual loading indicator (e.g. spinner) can cause user uncertainty. Simply changing button text is often not enough visual feedback to indicate an active network request.
+**Action:** Always include a visual loading indicator (like a CSS spinner) alongside text changes for async form submissions to improve feedback and reduce user friction.

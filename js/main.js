@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const formStatus = contactForm.querySelector("#form-status");
             
             // Show loading state
-            btn.textContent = 'Synchronizing...';
+            btn.innerHTML = '<span class="spinner" aria-hidden="true"></span> Synchronizing...';
             btn.disabled = true;
 
             const formData = new FormData(contactForm);
