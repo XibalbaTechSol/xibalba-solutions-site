@@ -2,66 +2,252 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Integrity Protocol | The  Demand Flywheel | Xibalba Solutions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Integrity Protocol | Navigational AI Reward & Slashing Standard | Xibalba Solutions</title>
+    <meta name="description" content="Technical specification for the Integrity Protocol: closed-loop reinforcement learning reward function (AIS), multiplicative zero-tolerance scoring, and programmatic on-chain slashing.">
+    <link rel="icon" href="./favicon.ico" sizes="any">
+    <link rel="icon" href="./favicon.png" type="image/png">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
 </head>
 <body class="theme-obsidian">
-    <header class="page-header">
-        <div class="container">
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="./index.html" class="logo">
+                <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions">
+            </a>
+            <button class="hamburger" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="./index.html">Overview</a>
+                <a href="./index.html#paradigm">Navigational AI</a>
+                <a href="./about.html">Mission</a>
+                <a href="./integrity-protocol.html" class="active">AIS Reward Standard</a>
+                <a href="./blog.html">Blog</a>
+                <a href="./index.html#contact" class="btn-outline btn-sm">Connect</a>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-overlay"></div>
+
+    <header class="page-header" style="padding-top: calc(var(--nav-h) + 4rem);">
+        <div class="container animate-in">
+            <span class="meta-label">Protocol Specification v8.4.2</span>
             <h1>The <span class="gradient-text">Integrity</span> Protocol</h1>
-            <p>Institutional-grade reasoning infrastructure where autonomous AI performance drives programmatic economic demand.</p>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">
+                The closed-loop reinforcement learning reward engine and on-chain accountability layer for Navigational AI. Where ungrounded hallucination is mathematically impossible and policy breaches are economically lethal.
+            </p>
         </div>
     </header>
-    <main class="container">
+
+    <main class="container" style="padding-bottom: 6rem;">
+
+        <!-- Core Mathematical Foundation -->
         <section>
-            <h2>The  Demand Flywheel</h2>
-            <p>Our smart contract architecture is designed to create a self-reinforcing economic loop where AI reasoning utility and speculation drive scarcity and value.</p>
-            <div class="flywheel-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin: 3rem 0;">
-                <div class="card">
-                    <h3>1. Market Demand</h3>
-                    <p><strong>Inference Auctions & Binary Exchange:</strong> Agents bid for high-stakes tasks, and markets speculate on outcome verifiability, locking  liquidity.</p>
+            <div class="section-header text-center animate-in">
+                <span class="meta-label">Closed-Loop Reinforcement Learning</span>
+                <h2>The Navigational <span class="gradient-text">Reward Formulation.</span></h2>
+                <p class="mx-auto" style="max-width: 700px;">
+                    Unlike classic RLHF that relies on sparse human preferences after open-ended token generation, our protocol feeds real-time topological feedback directly into the agent's policy update.
+                </p>
+            </div>
+
+            <div class="math-display-box animate-in">
+                <div class="formula-main">
+                    $$R_{\text{total}}(s_t, a_t, s_{t+1}) = R_{\text{task}}(s_t, a_t) + \lambda \cdot \text{AIS}(s_t, a_t, s_{t+1})$$
                 </div>
-                <div class="card">
-                    <h3>2. Performance Verification</h3>
-                    <p><strong>VerifiableBridge:</strong> AI outputs are cryptographically anchored. Failed reasoning triggers automated <strong>slashing</strong> via StakingReputation.</p>
+                <div class="formula-caption">
+                    Total reward $R_{\text{total}}$ couples immediate task progress $R_{\text{task}}$ with the Agent Integrity Score ($\text{AIS} \in [0, 1000]$) scaled by governance parameter $\lambda$.
                 </div>
-                <div class="card">
-                    <h3>3. Programmatic Scarcity</h3>
-                    <p><strong>Treasury & Burn:</strong> Penalized stakes are partially burned, creating perpetual deflationary pressure matched by protocol growth.</p>
+            </div>
+
+            <div class="math-display-box animate-in" style="background: radial-gradient(ellipse at 50% 0%, rgba(112, 0, 255, 0.1) 0%, rgba(10, 10, 15, 0.95) 75%);">
+                <div class="formula-main" style="color: var(--color-brand-primary);">
+                    $$\text{AIS} = 1000 \cdot \left( S_{\text{grounding}}^{w_g} \cdot S_{\text{compliance}}^{w_c} \cdot S_{\text{sacrifice}}^{w_s} \cdot S_{\text{entropy}}^{w_e} \right)^{\frac{1}{w_g + w_c + w_s + w_e}}$$
+                </div>
+                <div class="formula-caption">
+                    <strong>Multiplicative Zero-Tolerance Theorem:</strong> Because the components are multiplied in geometric progression, if any foundational condition drops to zero, the entire score collapses to zero:
+                    $$\exists i \in \{g, c, s, e\} \text{ s.t. } S_i = 0 \implies \text{AIS} \equiv 0 \implies R_{\text{total}} \le 0$$
                 </div>
             </div>
         </section>
 
+        <hr class="section-divider">
+
+        <!-- The 4 AIS Metric Invariants -->
         <section>
-            <h2>The Institutional Contract Stack</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Foundational Layer</h3>
-                    <ul class="detail-list">
-                        <li><strong>IntegrityToken (ITK):</strong> ERC-20, EIP-2612. The protocol’s monetary base.</li>
-                        <li><strong>StakingReputation:</strong> The accountability engine. Programmatic slashing for hallucination.</li>
-                        <li><strong>VerifiableBridge:</strong> The immutable trust anchor for AI-reasoning proofs.</li>
-                    </ul>
+            <div class="section-header text-center animate-in">
+                <span class="meta-label">The 4 Metric Invariants</span>
+                <h2>Mathematical Definitions of <span class="gradient-text">Trust.</span></h2>
+            </div>
+
+            <div class="feature-grid animate-in" style="margin-top: 2rem;">
+                <!-- Grounding -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="color: var(--color-brand-primary);">🎯</div>
+                    <h4>1. Grounding Invariant ($S_{\text{grounding}}$)</h4>
+                    <p style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--color-brand-primary); margin-bottom: 1rem;">
+                        $$S_g = \frac{1}{|E_{\text{cited}}|} \sum_{e \in E} \mathbb{I}[e \in \mathcal{E}_{\text{verified}}] \cdot \exp\left(-\frac{\|h_e + r_e - t_e\|_2^2}{2\sigma^2}\right)$$
+                    </p>
+                    <p>
+                        Every relation traversed by an agent must exist as a verified Subject-Predicate-Object triple in Cortex or resolve to a geometrically sound TransE link prediction vector ($f_r(h, t) < \epsilon$). An unanchored citation immediately yields $\mathbb{I} = 0 \implies S_g = 0 \implies \text{AIS} \equiv 0$.
+                    </p>
                 </div>
-                <div class="project-card">
-                    <h3>Integrity Frontier (Primitives)</h3>
-                    <ul class="detail-list">
-                        <li><strong>InferenceAuction:</strong> The reasoning marketplace for high-stakes agent compute.</li>
-                        <li><strong>ReputationOracle:</strong> High-availability API for external protocols to verify agent integrity metrics on-chain.</li>
-                        <li><strong>CollectiveVault:</strong> Syndicated reasoning. Pooling reputation and collateral via owner-only authority.</li>
-                        <li><strong>BinaryExchange:</strong> High-leverage speculation market for verifiable AI outcomes.</li>
-                    </ul>
+
+                <!-- Compliance -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="color: var(--color-error);">🛡️</div>
+                    <h4>2. Compliance Invariant ($S_{\text{compliance}}$)</h4>
+                    <p style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--color-error); margin-bottom: 1rem;">
+                        $$S_c = \prod_{p \in \mathcal{P}} \mathbb{I}[\text{policy\_satisfied}(p, a_t)] \quad \in \{0, 1\}$$
+                    </p>
+                    <p>
+                        Monitored in real time by Xibalba Shield via eBPF kernel hooks and WASM Bounded Context Constraints (BCC). If an agent attempts an unauthorized syscall or queries an isolated clinical PHI enclave without cryptographic rights, $S_c \leftarrow 0$.
+                    </p>
                 </div>
-                <div class="project-card">
-                    <h3>Identity & Compliance</h3>
-                    <ul class="detail-list">
-                        <li><strong>ReputationSBT:</strong> Portable, on-chain agent credentials.</li>
-                        <li><strong>AccessController:</strong> Programmable KYC/AML whitelist for institutional entry points.</li>
-                        <li><strong>AuditShield:</strong> Automated regulatory logging.</li>
-                    </ul>
+
+                <!-- Sacrifice -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="color: var(--color-success);">⚡</div>
+                    <h4>3. Computational Sacrifice ($S_{\text{sacrifice}}$)</h4>
+                    <p style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--color-success); margin-bottom: 1rem;">
+                        $$S_s = \tanh\left(\frac{C_{\text{provable\_compute}}}{C_0}\right)$$
+                    </p>
+                    <p>
+                        Trust requires thermodynamic proof of energy. Agents must submit cryptographically verifiable WASM execution receipts and Ed25519 signing signatures, preventing low-cost Sybil flood attacks across graph manifolds.
+                    </p>
+                </div>
+
+                <!-- Entropy -->
+                <div class="feature-card">
+                    <div class="feature-icon" style="color: var(--color-warning);">🌀</div>
+                    <h4>4. Topological Entropy ($S_{\text{entropy}}$)</h4>
+                    <p style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--color-warning); margin-bottom: 1rem;">
+                        $$S_e = 1 - \min\left(1, \frac{\text{Var}(\Delta \lambda)}{\mu_{\text{spectral}}}\right)$$
+                    </p>
+                    <p>
+                        Computed from the graph Laplacian spectrum ($L = D - A$). High-frequency jitter or chaotic, erratic oscillation across disconnected components degrades $S_e$, guiding reinforcement learning toward smooth, geodesic trajectories.
+                    </p>
                 </div>
             </div>
         </section>
+
+        <hr class="section-divider">
+
+        <!-- Programmatic Staking & Slashing Architecture -->
+        <section>
+            <div class="section-header text-center animate-in">
+                <span class="meta-label">On-Chain Economic Enforcement</span>
+                <h2>Sovereign Bonds & <span class="gradient-text">Programmatic Slashing.</span></h2>
+                <p class="mx-auto" style="max-width: 700px;">
+                    Game-theoretic security requires that malicious or non-compliant agent actions carry immediate, irreversible financial consequences.
+                </p>
+            </div>
+
+            <div class="slashing-callout animate-in">
+                <h4>
+                    <span>🔥</span>
+                    <span>The 50% Slashing Waterfall on Ethereum L2 (Base)</span>
+                </h4>
+                <p>
+                    Prior to receiving authorization to navigate high-stakes knowledge manifolds (such as clinical EHR datasets or financial trade execution), an agent must deposit a verifiable bond in <strong>Integrity Token (ITK)</strong> within the `StakingReputation` contract.
+                </p>
+                <p>
+                    When a critical safety violation occurs:
+                </p>
+                <ul class="pillar-list" style="color: var(--text-secondary); margin-top: 1rem;">
+                    <li><span class="bullet">1.</span> <strong>Sub-Millisecond Kernel Isolation:</strong> Xibalba Shield halts the offending thread via eBPF and revokes session tokens.</li>
+                    <li><span class="bullet">2.</span> <strong>Proof Submission to XAO Oracle:</strong> A cryptographic proof bundle (WASM trace + dual-witness signed receipt) is dispatched to Integrity Core.</li>
+                    <li><span class="bullet">3.</span> <strong>Programmatic Slashing:</strong> The smart contract automatically slashes <strong>50% of the agent's bonded collateral</strong>:
+                        <ul style="list-style: none; padding-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>• <strong>70% of slashed stake:</strong> Escrowed as indemnification to the injured party or protocol treasury.</li>
+                            <li>• <strong>30% of slashed stake:</strong> Permanently burned, reducing total ITK token supply and creating continuous deflationary pressure.</li>
+                        </ul>
+                    </li>
+                    <li><span class="bullet">4.</span> <strong>Permanent Reputation Degradation:</strong> The agent's DID is downgraded on-chain, disqualifying it from high-leverage action spaces across the ecosystem.</li>
+                </ul>
+            </div>
+
+            <!-- Smart Contract Stack Grid -->
+            <div class="projects-grid animate-in" style="margin-top: 3rem;">
+                <div class="card">
+                    <span class="tag tag-primary">Foundational Contract</span>
+                    <h3 style="margin-top: 1rem;">IntegrityToken (ITK)</h3>
+                    <p>ERC-20 token standard with EIP-2612 permit capabilities deployed on Ethereum L2 (Base). Operates as the computational gas, bonding collateral, and economic security substrate of the protocol.</p>
+                </div>
+
+                <div class="card">
+                    <span class="tag tag-error">Enforcement Contract</span>
+                    <h3 style="margin-top: 1rem;">StakingReputation</h3>
+                    <p>The algorithmic court of the protocol. Manages agent collateral deposits, calculates dynamic insurance requirements based on historical AIS, and executes non-discretionary slashing.</p>
+                </div>
+
+                <div class="card">
+                    <span class="tag tag-success">Proof Anchor</span>
+                    <h3 style="margin-top: 1rem;">VerifiableBridge</h3>
+                    <p>Receives SHA-256 Merkle roots from Integrity Core every 24 hours. Commits immutable cryptographic state proofs to Base for public auditability and insurance underwriting.</p>
+                </div>
+
+                <div class="card">
+                    <span class="tag tag-warning">Intelligence Oracle</span>
+                    <h3 style="margin-top: 1rem;">XAO Oracle</h3>
+                    <p>High-throughput telemetry ingestion service. Aggregates multi-agent graph navigation receipts from Cortex, monitors BCC invariants from Shield, and computes live AIS scores.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="card animate-in" style="margin-top: 5rem; text-align: center; padding: 4rem 2rem;">
+            <span class="meta-label">Integrate With Integrity</span>
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Equip Your Agents With Provable Boundaries</h3>
+            <p style="max-width: 650px; margin: 0 auto 2rem;">
+                Integrate the Integrity SDK into LangGraph, AutoGPT, or custom agent frameworks in under five minutes. Start emitting verified telemetry and optimizing policies against the AIS reward function today.
+            </p>
+            <div class="btn-group">
+                <a href="./index.html#contact" class="btn">Deploy With Us</a>
+                <a href="https://github.com/XibalbaTechSol/integrity-core" target="_blank" rel="noopener" class="btn-outline">View Core Solidity & Rust Contracts</a>
+            </div>
+        </div>
+
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="./index.html" class="footer-logo">
+                    <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions">
+                </a>
+                <p class="footer-tagline">Building the mathematical rails for a resilient, autonomous digital future.</p>
+            </div>
+            <div class="footer-column">
+                <h4>The 4 Pillars</h4>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/XibalbaTechSol/xibalba-cortex">Xibalba Cortex</a></li>
+                    <li><a href="https://github.com/XibalbaTechSol/integrity-core">Integrity Core</a></li>
+                    <li><a href="https://github.com/XibalbaTechSol/xibalba-shield">Xibalba Shield</a></li>
+                    <li><a href="https://github.com/XibalbaTechSol/integrity-console">Integrity Console</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:jacob.v.universe@gmail.com">jacob.v.universe@gmail.com</a></li>
+                    <li><a href="tel:+12628641589">+1 (262) 864-1589</a></li>
+                    <li><span style="color: var(--text-muted); font-size: 0.85rem;">Wisconsin, United States</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Xibalba Solutions LLC. — Sovereign Intelligence Foundries. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
 </body>
 </html>

@@ -978,6 +978,263 @@ nav.scrolled {
     color: var(--text-muted);
 }
 
+/* ============================================
+   NAVIGATIONAL AI & GRAPH MANIFOLD ENHANCEMENTS
+   ============================================ */
+
+/* ── Live Telemetry Strip ── */
+.telemetry-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    margin: 2rem auto 0;
+    max-width: 1000px;
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-bright);
+    border-radius: 100px;
+}
+
+.telemetry-metric {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.telemetry-metric strong {
+    color: var(--color-brand-primary);
+    font-weight: 700;
+}
+
+.telemetry-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-success);
+    box-shadow: 0 0 8px var(--color-success);
+    display: inline-block;
+}
+
+/* ── Math Formula Box ── */
+.math-display-box {
+    background: radial-gradient(ellipse at 50% 0%, rgba(0, 242, 255, 0.08) 0%, rgba(10, 10, 15, 0.95) 75%);
+    border: 1px solid var(--border-accent);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    margin: 2.5rem 0;
+    text-align: center;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.math-display-box .formula-main {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    color: #fff;
+    overflow-x: auto;
+    padding: 0.5rem;
+}
+
+.math-display-box .formula-caption {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ── Four Pillars Grid ── */
+.four-pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3.5rem;
+}
+
+@media (min-width: 992px) {
+    .four-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.pillar-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    transition: var(--t-smooth);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--color-brand-primary), var(--color-brand-secondary));
+    opacity: 0.6;
+    transition: var(--t-fast);
+}
+
+.pillar-card:hover {
+    border-color: var(--border-accent);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg), 0 0 25px var(--color-brand-primary-dim);
+}
+
+.pillar-card:hover::before {
+    opacity: 1;
+    height: 4px;
+}
+
+.pillar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.pillar-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.4rem 0.9rem;
+    border-radius: 100px;
+    background: rgba(0, 242, 255, 0.08);
+    color: var(--color-brand-primary);
+    border: 1px solid rgba(0, 242, 255, 0.2);
+}
+
+.pillar-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.pillar-subtitle {
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    color: var(--color-brand-primary);
+    margin-bottom: 1.25rem;
+}
+
+.pillar-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+}
+
+.pillar-list li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.pillar-list li:last-child {
+    border-bottom: none;
+}
+
+.pillar-list li .bullet {
+    color: var(--color-brand-primary);
+    font-weight: 700;
+}
+
+/* ── Comparison Table ── */
+.nav-comparison-table-wrapper {
+    overflow-x: auto;
+    margin: 3rem 0;
+    border-radius: 20px;
+    border: 1px solid var(--border-main);
+    background: var(--bg-card);
+}
+
+.nav-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.nav-comparison-table th {
+    padding: 1.5rem 2rem;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--border-bright);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.nav-comparison-table td {
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    vertical-align: top;
+}
+
+.nav-comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+.nav-comparison-table tr:hover td {
+    background: rgba(0, 242, 255, 0.02);
+}
+
+.nav-comparison-table .feature-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.nav-comparison-table .bad-val {
+    color: var(--color-error);
+}
+
+.nav-comparison-table .good-val {
+    color: var(--color-success);
+    font-weight: 600;
+}
+
+/* ── Slashing & Invariance Callout ── */
+.slashing-callout {
+    background: linear-gradient(135deg, rgba(255, 0, 85, 0.06) 0%, rgba(10, 10, 15, 0.9) 100%);
+    border: 1px solid rgba(255, 0, 85, 0.3);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+    position: relative;
+}
+
+.slashing-callout h4 {
+    color: var(--color-error);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.slashing-callout p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+}
+
 /* ── Tier Cards ── */
 .tier-card {
     display: flex;
@@ -1684,4 +1941,261 @@ footer {
     font-size: 0.9rem;
     letter-spacing: 0.2em;
     color: var(--text-muted);
+}
+
+/* ============================================
+   NAVIGATIONAL AI & GRAPH MANIFOLD ENHANCEMENTS
+   ============================================ */
+
+/* ── Live Telemetry Strip ── */
+.telemetry-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    margin: 2rem auto 0;
+    max-width: 1000px;
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-bright);
+    border-radius: 100px;
+}
+
+.telemetry-metric {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.telemetry-metric strong {
+    color: var(--color-brand-primary);
+    font-weight: 700;
+}
+
+.telemetry-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-success);
+    box-shadow: 0 0 8px var(--color-success);
+    display: inline-block;
+}
+
+/* ── Math Formula Box ── */
+.math-display-box {
+    background: radial-gradient(ellipse at 50% 0%, rgba(0, 242, 255, 0.08) 0%, rgba(10, 10, 15, 0.95) 75%);
+    border: 1px solid var(--border-accent);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    margin: 2.5rem 0;
+    text-align: center;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.math-display-box .formula-main {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    color: #fff;
+    overflow-x: auto;
+    padding: 0.5rem;
+}
+
+.math-display-box .formula-caption {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ── Four Pillars Grid ── */
+.four-pillars-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3.5rem;
+}
+
+@media (min-width: 992px) {
+    .four-pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.pillar-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    transition: var(--t-smooth);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--color-brand-primary), var(--color-brand-secondary));
+    opacity: 0.6;
+    transition: var(--t-fast);
+}
+
+.pillar-card:hover {
+    border-color: var(--border-accent);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg), 0 0 25px var(--color-brand-primary-dim);
+}
+
+.pillar-card:hover::before {
+    opacity: 1;
+    height: 4px;
+}
+
+.pillar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.pillar-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.4rem 0.9rem;
+    border-radius: 100px;
+    background: rgba(0, 242, 255, 0.08);
+    color: var(--color-brand-primary);
+    border: 1px solid rgba(0, 242, 255, 0.2);
+}
+
+.pillar-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.pillar-subtitle {
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    color: var(--color-brand-primary);
+    margin-bottom: 1.25rem;
+}
+
+.pillar-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+}
+
+.pillar-list li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.pillar-list li:last-child {
+    border-bottom: none;
+}
+
+.pillar-list li .bullet {
+    color: var(--color-brand-primary);
+    font-weight: 700;
+}
+
+/* ── Comparison Table ── */
+.nav-comparison-table-wrapper {
+    overflow-x: auto;
+    margin: 3rem 0;
+    border-radius: 20px;
+    border: 1px solid var(--border-main);
+    background: var(--bg-card);
+}
+
+.nav-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.nav-comparison-table th {
+    padding: 1.5rem 2rem;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--border-bright);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.nav-comparison-table td {
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    vertical-align: top;
+}
+
+.nav-comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+.nav-comparison-table tr:hover td {
+    background: rgba(0, 242, 255, 0.02);
+}
+
+.nav-comparison-table .feature-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.nav-comparison-table .bad-val {
+    color: var(--color-error);
+}
+
+.nav-comparison-table .good-val {
+    color: var(--color-success);
+    font-weight: 600;
+}
+
+/* ── Slashing & Invariance Callout ── */
+.slashing-callout {
+    background: linear-gradient(135deg, rgba(255, 0, 85, 0.06) 0%, rgba(10, 10, 15, 0.9) 100%);
+    border: 1px solid rgba(255, 0, 85, 0.3);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+    position: relative;
+}
+
+.slashing-callout h4 {
+    color: var(--color-error);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.slashing-callout p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
 }

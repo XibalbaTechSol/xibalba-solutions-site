@@ -3,62 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mission | Xibalba Solutions</title>
-    <meta name="description" content="High-fidelity technical studio specializing in autonomous intelligence orchestration, data sovereignty, and trustless integrity metrics.">
+    <title>About & Mission | Xibalba Solutions</title>
+    <meta name="description" content="Xibalba Solutions is a sovereign technical foundry engineering Navigational AI, knowledge graph manifolds, and verifiable trust infrastructure.">
     <link rel="icon" href="./favicon.ico" sizes="any">
+    <link rel="icon" href="./favicon.png" type="image/png">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
 </head>
 <body class="theme-obsidian">
 
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="./index.html" class="logo">
                 <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions">
             </a>
             <button class="hamburger" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
             <div class="nav-links">
-                <a href="./index.html">Home</a>
-                <a href="./ai-agents.html">Agents</a>
+                <a href="./index.html">Overview</a>
+                <a href="./index.html#paradigm">Navigational AI</a>
+                <a href="./about.html" class="active">Mission</a>
+                <a href="./integrity-protocol.html">AIS Reward Standard</a>
                 <a href="./blog.html">Blog</a>
-                <a href="./local-ai.html" class="active">Privacy</a>
-                <a href="./pricing.html">Support</a>
-                <a href="./contact.html" class="btn-outline">Contact</a>
-                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme" style="background: none; border: 1px solid var(--border-main); color: var(--color-brand-primary); padding: 0.5rem; cursor: pointer; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-left: 1rem;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></button>
+                <a href="./index.html#contact" class="btn-outline btn-sm">Contact</a>
             </div>
         </div>
     </nav>
+    <div class="nav-overlay"></div>
 
-    <header class="page-header">
+    <header class="page-header" style="padding-top: calc(var(--nav-h) + 4rem);">
         <div class="container animate-in">
-            <h1>Engineering <span class="gradient-text">Sovereignty</span></h1>
-            <p style="max-width: 600px; margin: 0 auto;">Xibalba Solutions is a high-fidelity technical studio specializing in the orchestration of autonomous intelligence and sovereign infrastructure.</p>
+            <span class="meta-label">The Sovereign Thesis</span>
+            <h1>Trust is a <span class="gradient-text">Physical & Topological</span> Invariant.</h1>
+            <p style="max-width: 720px; margin: 0 auto; font-size: 1.15rem;">
+                Xibalba Solutions was founded on the fundamental principle that true autonomous intelligence cannot be achieved through ungrounded probabilistic token generation. We engineer discrete graph manifolds, deterministic action spaces, and cryptographic feedback loops.
+            </p>
         </div>
     </header>
 
-    <main class="container content-section">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;">
+    <main class="container content-section" style="padding-bottom: 6rem;">
+        
+        <!-- Founder Biography & Systems Background -->
+        <div style="display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: start; margin-bottom: 5rem;">
             <div class="animate-in">
-                <h2 style="font-size: 3rem; line-height: 1.1; margin-bottom: 2rem;">The Founder's Intent</h2>
-                <p style="margin-bottom: 2rem;">The current AI boom is built on borrowed brains and leaky pipes. Most "solutions" are just thin wrappers over centralized APIs. I founded Xibalba Solutions to build something different: <strong>Sovereign Intelligence</strong>.</p>
-                <p >With a background in mathematics, distributed systems, and local LLM orchestration, I specialize in the low-level infrastructure of agentic ecosystems. I don't just connect APIs; I engineer local runtimes, secure hardware bridges, and high-fidelity feedback loops that allowed models to learn from your specific data—with 100% data residency.</p>
-            </div>
-            <div class="feature-card animate-in" style="background: linear-gradient(135deg, var(--color-brand-secondary-glow) 0%, transparent 100%); padding: 4rem; border-radius: 32px;">
-                <h3 style="margin-bottom: 2rem; font-size: 1.8rem;">Core Pillars</h3>
-                <ul style="list-style: none; font-size: 1.1rem; line-height: 2.8; color: var(--gray-50);">
-                    <li><span class="gradient-text" style="font-weight: 700; margin-right: 1.5rem;">01</span> Absolute Data Sovereignty</li>
-                    <li><span class="gradient-text" style="font-weight: 700; margin-right: 1.5rem;">02</span> Technical Depth over Marketing</li>
-                    <li><span class="gradient-text" style="font-weight: 700; margin-right: 1.5rem;">03</span> High-Fidelity Design Language</li>
-                    <li><span class="gradient-text" style="font-weight: 700; margin-right: 1.5rem;">04</span> Trustless Integrity Metrics</li>
-                </ul>
+                <h2 style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 1.5rem;">Founder's Statement: Moving Beyond Borrowed Brains</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    The modern artificial intelligence boom is overwhelmingly built on borrowed brains and leaky pipes: thin software wrappers around centralized, black-box APIs emitting ungrounded text sequences. When these models hallucinate, companies add more prompt layers. When agents take rogue actions, developers add heuristic regex filters.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    Having studied <strong>Applied Mathematics and Physics</strong> (UW-Parkside, 3.6 GPA) with a focus on modern control theory and partial differential equations, and having spent <strong>9+ years in physical design engineering</strong> since 2017, I approach autonomous intelligence as a physical dynamical system. In control theory, an unconstrained controller with no bounded feedback loop produces catastrophic instability.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                    <strong>Navigational AI</strong> is our solution. We replace open-ended sequence prediction with navigation across high-dimensional knowledge graph manifolds ($G=(V, E)$). The agent's action space is discrete, verified, and bounded by kernel-level eBPF constraints. Hallucination is not suppressed—it is mathematically precluded because an agent cannot traverse an edge that does not exist in the verified topological manifold.
+                </p>
             </div>
         </div>
+
+        <!-- The 4 Core Pillars Integration -->
+        <div class="animate-in" style="margin-bottom: 5rem;">
+            <div class="section-header text-center">
+                <span class="meta-label">System Architecture</span>
+                <h2>The 4 Pillars of <span class="gradient-text">Xibalba Solutions</span></h2>
+                <p class="mx-auto" style="max-width: 650px;">A unified, production-grade technical stack designed for total sovereignty, verifiable autonomy, and mathematical safety.</p>
+            </div>
+
+            <div class="feature-grid" style="margin-top: 2.5rem;">
+                <div class="feature-card">
+                    <div class="feature-icon" style="color: var(--color-brand-primary);">🧠</div>
+                    <h4>1. Xibalba Cortex</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <strong>The High-Dimensional Knowledge Graph Engine.</strong> Automated literature and EHR ingestion (PubMed, FHIR, UniProt, ChEMBL), TransE link prediction embeddings, formal graph mathematics (Adjacency, Laplacian, Spectral eigenvalues), and 3D volumetric snapping coordinates with inside-node data city navigation.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="color: var(--color-success);">⚖️</div>
+                    <h4>2. Integrity Core</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <strong>The Cryptographic Proof Oracle & Merkle Anchor.</strong> Decentralized Identifiers (DIDs), sandboxed WASM policy verification, continuous SHA-256 hash chains, bilateral dual-witness handshakes, and periodic Merkle root commitments to Ethereum L2 (Base).
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="color: var(--color-error);">🛡️</div>
+                    <h4>3. Xibalba Shield</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <strong>EDR-Grade Kernel Response & Intent Gating.</strong> Real-time Bounded Context Constraint (BCC) middleware enforcing pre-tool call intent interception, eBPF-level syscall isolation, and HIPAA-compliant hardware-isolated cryptographic PHI enclaves.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="color: #FF00FF;">🧭</div>
+                    <h4>4. Integrity Console</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary);">
+                        <strong>3D Navigational Observability & Glass Cockpit.</strong> WebGL/Three.js immersion canvas with Zen Immersion Mode (100% viewport), real-time multi-agent trajectory radar, spectral graph analytics studio, and deep-dive node inspectors.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mathematical Principles Box -->
+        <div class="math-display-box animate-in">
+            <div class="formula-main" style="color: var(--color-brand-primary);">
+                $$\mathcal{M} = \left( G = (V, E, \Phi), \quad \mathcal{A}(s_t), \quad R_t = R_{\text{task}} + \lambda \cdot \text{AIS} \right)$$
+            </div>
+            <div class="formula-caption">
+                The Navigational AI Formalism. Every autonomous agent operates as a trajectory optimizer over topological manifold $\mathcal{M}$, selecting actions from authorized boundary $\mathcal{A}(s_t)$ while maximizing task objectives under the continuous supervision of the AIS reward function.
+            </div>
+        </div>
+
+        <!-- Full-Width Stats -->
+        <div class="stats-grid full-width-stats animate-in">
+            <div class="stat-card">
+                <span class="stat-value">B.S.</span>
+                <span class="stat-label">MATH & PHYSICS</span>
+                <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-muted);">UW-Parkside (3.6 GPA) / Applied Mathematics</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">9+ Yrs</span>
+                <span class="stat-label">DESIGN ENGINEERING</span>
+                <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-muted);">Complex Industrial Systems & Prototyping</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">100%</span>
+                <span class="stat-label">DATA SOVEREIGNTY</span>
+                <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-muted);">Local Runtimes & Cryptographic Enclaves</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">HIPAA</span>
+                <span class="stat-label">COMPLIANCE</span>
+                <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-muted);">Institutional Healthcare & Clinical Rails</p>
+            </div>
+        </div>
+
+        <!-- CTA Box -->
+        <div class="card animate-in" style="margin-top: 5rem; text-align: center; padding: 4rem 2rem;">
+            <span class="meta-label">Collaborate With Us</span>
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">Ready to Deploy Provable Autonomous Systems?</h3>
+            <p style="max-width: 600px; margin: 0 auto 2rem;">
+                Whether you need high-dimensional biomedical discovery graphs in Cortex, eBPF kernel governance with Shield, or verifiable WASM oracles via Integrity Core, we engineer sovereign infrastructure tailored to your mission.
+            </p>
+            <div class="btn-group">
+                <a href="./index.html#contact" class="btn">Initiate Connection</a>
+                <a href="https://github.com/XibalbaTechSol" target="_blank" rel="noopener" class="btn-outline">Browse Open Source Code</a>
+            </div>
+        </div>
+
     </main>
 
-        <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
                 <a href="./index.html" class="footer-logo">
@@ -67,22 +162,24 @@
                 <p class="footer-tagline">Building sovereign autonomous systems and private intelligence foundries for a resilient digital future.</p>
             </div>
             <div class="footer-column">
+                <h4>Ecosystem</h4>
+                <ul class="footer-links">
+                    <li><a href="./index.html#pillars">The 4 Pillars</a></li>
+                    <li><a href="./integrity-protocol.html">AIS Reward Specification</a></li>
+                    <li><a href="https://github.com/XibalbaTechSol">GitHub Repositories</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
                 <h4>Contact</h4>
-                <div class="footer-contact-info">
-                    <a href="mailto:jacob.v.universe@gmail.com" class="footer-contact-item">
-                        <span>📧</span> jacob.v.universe@gmail.com
-                    </a>
-                    <a href="tel:+1234567890" class="footer-contact-item">
-                        <span>📱</span> +1 (234) 567-890
-                    </a>
-                    <div class="footer-contact-item">
-                        <span>📍</span> San Francisco, CA
-                    </div>
-                </div>
+                <ul class="footer-links">
+                    <li><a href="mailto:jacob.v.universe@gmail.com">jacob.v.universe@gmail.com</a></li>
+                    <li><a href="tel:+12628641589">+1 (262) 864-1589</a></li>
+                    <li><span style="color: var(--text-muted); font-size: 0.85rem;">Wisconsin, United States</span></li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Xibalba Solutions LLC. All rights reserved.</p>
+            <p>&copy; 2026 Xibalba Solutions LLC. — Sovereign Intelligence Foundries. All rights reserved.</p>
         </div>
     </footer>
 

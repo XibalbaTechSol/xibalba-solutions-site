@@ -1,113 +1,72 @@
-# Xibalba Solutions | Sovereign AI Intelligence
+# Xibalba Solutions | Navigational AI & Sovereign Knowledge Graphs
 
-Official website for **Xibalba Solutions**, a specialized engineering firm dedicated to building custom Hermes-based AI agents and deploying HIPAA-compliant local AI infrastructure.
+Official web platform for **Xibalba Solutions LLC**, engineering sovereign intelligence foundries, knowledge graph manifolds, and mathematically grounded reinforcement learning infrastructure.
 
-## Overview
+---
 
-Xibalba Solutions focuses on **Sovereign Intelligence**—AI that lives on your hardware, not in the cloud. We specialize in:
-- **Custom Hermes Agents**: Autonomous intelligence layers powered by Hermes 3 with high-fidelity, predictive interfaces.
-- **Enterprise Local AI**: Secure, HIPAA-compliant, and audit-ready on-premise AI deployments for healthcare, legal, and sensitive sectors.
-- **OpenClaw Integration**: Leveraging the OpenClaw framework for local task execution and omnichannel interaction.
-- **Hermes Swarm**: Decentralized agent orchestration for complex multi-step automation.
-- **Integrity Protocol**: Secure, verifiable communication and state management for autonomous systems.
+## 🧭 The Core Paradigm: Navigational AI
 
-The site is built with a high-fidelity, privacy-first aesthetic, featuring immersive UI elements like 3D orbs and real-time observability simulations.
+Modern artificial intelligence relies on ungrounded autoregressive token prediction: $P(w_t \mid w_{<t})$. For autonomous agents with tool authority, financial custody, or clinical impact, this statistical sampling causes hallucinations, policy drift, and catastrophic safety failures.
 
-## Structure
+**Xibalba Solutions pioneers Navigational AI:**
+- **State Space ($s_t \in \mathcal{V}$):** Deterministic node state on a high-dimensional knowledge graph manifold $G = (V, E, \Phi)$.
+- **Action Space ($a_t \in \mathcal{A}(s_t)$):** Discrete, policy-bounded graph traversals, TransE link predictions, and verified tool invocations.
+- **Closed-Loop RL Reward Engine:**
+  $$R_{\text{total}}(s_t, a_t, s_{t+1}) = R_{\text{task}}(s_t, a_t) + \lambda \cdot \text{AIS}(s_t, a_t, s_{t+1})$$
+- **Multiplicative Zero-Tolerance AIS Standard:**
+  $$\text{AIS} = 1000 \cdot \left( S_{\text{grounding}}^{w_g} \cdot S_{\text{compliance}}^{w_c} \cdot S_{\text{sacrifice}}^{w_s} \cdot S_{\text{entropy}}^{w_e} \right)^{\frac{1}{\sum w}}$$
+  - **Hallucination is Mathematically Impossible:** An agent cannot cite an unanchored fact without $S_{\text{grounding}} = 0 \implies \text{AIS} \equiv 0 \implies R_{\text{total}} \le 0$.
+  - **Unwanted Behaviors are Economically Lethal:** Bounded Context Constraint (BCC) breaches or unauthorized PHI queries trigger an immediate **50% bonded stake slashing** on Ethereum L2 (Base) and instant thread quarantine.
 
-- `index.html`: Main landing page with OpenClaw and Hermes integration highlights.
-- `about.html`: Our mission for data sovereignty and sovereign intelligence.
-- `ai-agents.html`: Details on Hermes 3 foundation, Specialist model, and Learning Loops.
-- `hermes-swarm.html`: Information on decentralized agent orchestration and swarm intelligence.
-- `integrity-protocol.html`: Technical overview of the Integrity Protocol for secure agent communication.
-- `local-ai.html`: Focus on HIPAA/GDPR compliance and Sanctum Guard architecture.
-- `pricing.html`: Transparent service-based pricing for builds and ongoing support.
-- `contact.html`: Self-hosted contact inquiry system.
-- `server.py`: Custom Python server for static file serving and secure form handling.
-- `css/style.css`: Advanced UI styling with pulsing glows and immersive animations.
-- `charts/` & `reports/`: Visualization and data analysis for system performance.
-- `docs/`: Technical documentation and implementation guides.
-- `scripts/`: Utility scripts for site management and automation.
+---
 
-## Development
+## 🏛️ The 4 Sovereign Product Pillars
 
-### Prerequisites
+1. **Xibalba Cortex (`xibalba-cortex`)**: High-Dimensional Biomedical & Enterprise Knowledge Graph
+   - Automated multi-source ingestion: PubMed, FHIR EHR, UniProt, ChEMBL, and clinical PDFs.
+   - TransE / RotatE link prediction embeddings ($f_r(h, t) = \|h + r - t\|_{1/2}$).
+   - Formal graph mathematics: Adjacency ($A$), Cosine similarity ($S_{\cos}$), Combinatorial & Symmetric Laplacian ($L, L_{\text{sym}}$), Spectral gap ($\lambda_2$), and Centrality rankings (PageRank, Betweenness).
+   - 3D Volumetric Snapping Coordinate Lattice, procedural 3D Metropolis inside-node flight, and Zen Immersion Mode (100% canvas viewport).
 
-- Python 3.12+
-- SMTP server access (for contact form functionality)
+2. **Integrity Core (`integrity-core`)**: Cryptographic Proof Oracle & Merkle Anchor
+   - Decentralized Identifiers (DIDs: `did:integrity:<ed25519-key>`).
+   - WASM policy sandboxes for zero-trust pre-execution validation.
+   - Continuous SHA-256 state hash chains and bilateral dual-witness handshakes.
+   - Batch Merkle root settlement committed to Ethereum L2 (Base).
 
-### Local Setup
+3. **Xibalba Shield (`xibalba-shield`)**: EDR-Grade Kernel Response & Intent Gating
+   - Real-time pre-tool call intent interception via Bounded Context Constraints (BCC).
+   - eBPF-level kernel syscall monitoring and sub-second process quarantine.
+   - Cryptographic PHI gating and HIPAA compliance enclaves ensuring clinical endpoints remain isolated from public inference manifolds.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/XibalbaTechSol/xibalba-solutions-site.git
-    cd xibalba-solutions-site
-    ```
+4. **Integrity Console (`integrity-console`)**: 3D Navigational Observability
+   - Real-time glass cockpit rendering active agent trajectories across knowledge manifolds.
+   - Spectral graph analytics studio with matrix heatmaps and eigenvalue distributions.
+   - Slashing radar, Node Deep Dive inspector, and zero-latency telemetry streaming.
 
-2.  **Configure Environment:**
-    Rename `.env.example` to `.env` and fill in your SMTP credentials to enable the contact form.
-    ```bash
-    cp .env.example .env
-    ```
+---
 
-3.  **Run locally:**
-    Launch the integrated server to serve the site and handle form submissions:
-    ```bash
-    python3 server.py
-    ```
-    Visit `http://localhost:8000` in your browser.
+## 📂 Site Directory Structure
 
-### Blog Management
+- `index.html`: Main landing page detailing the Navigational AI paradigm, mathematical formulation, comparison table, live telemetry strip, the 4 product pillars, and founder systems background.
+- `about.html`: Founder biography (Jacob Vickers, Applied Mathematics & Physics, Control Theory), thesis on trust as a physical invariant, and sovereign architectural principles.
+- `integrity-protocol.html`: Technical specification of the AIS reward function, multiplicative zero-tolerance scoring, and programmatic 50% on-chain slashing waterfall.
+- `css/style.css`: Unified dark obsidian design system (Outfit, Inter, Space Mono) with KaTeX LaTeX math support, responsive navigation, and custom manifold cards.
+- `js/main.js`: Smooth scroll, hamburger navigation, scroll-spy, and intersection observers.
+- `server.py`: Static file server with contact form processing.
 
-The "Blog" section is managed via a custom technical studio script. 
+---
 
-1.  **Add a new post:**
-    Create a new `.md` file in `blog/src/` with the following frontmatter:
-    ```markdown
-    ---
-    title: "Your Post Title"
-    date: "YYYY-MM-DD"
-    category: "TECH/ARCHITECTURE/PRIVATE"
-    excerpt: "A short summary for the index page."
-    ---
-    Your content here...
-    ```
+## 🚀 Local Development
 
-2.  **Generate the blog:**
-    Run the management script to process Markdown into high-fidelity HTML and update the index:
-    ```bash
-    python3 manage_blog.py
-    ```
+```bash
+# Serve locally
+python3 server.py
+# Browse to http://localhost:8000
+```
 
-### Running Tests
+---
 
-End-to-end validation is handled via Playwright:
+## 📜 Intellectual Property & Governance
 
-1.  **Install dependencies:**
-    ```bash
-    pip install pytest playwright pytest-playwright
-    playwright install chromium
-    ```
-
-2.  **Run tests:**
-    ```bash
-    pytest
-    ```
-    Or use the provided utility script:
-    ```bash
-    ./run_all_ui_tests.sh
-    ```
-
-## Deployment
-
-While the site can be hosted on static platforms (GitHub Pages, Netlify), the **contact form requires a Python backend**. 
-
-### Render.com
-A `render.yaml` file is provided for quick deployment to the Render platform as a Web Service.
-
-### Sovereign VPS
-For full data sovereignty, deploy to a sovereign VPS or a containerized environment (Docker) capable of running `server.py`.
-
-## License
-
-All rights reserved. © 2025 Xibalba Solutions.
+© 2026 Xibalba Solutions LLC. All rights reserved. Sovereign Intelligence Foundries.
