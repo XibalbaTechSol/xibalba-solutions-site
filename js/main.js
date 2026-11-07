@@ -1,6 +1,10 @@
+// The static pages deploy to GitHub Pages; this backend (server.py's /contact) deploys
+// separately to Render, since Pages can't run a Python process. Keep this in sync with
+// contact.html's <form action> and server.py's ALLOWED_ORIGIN.
+const CONTACT_ENDPOINT = 'https://xibalba-solutions-site.onrender.com/contact';
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Xibalba Solutions v2.0 — Sovereign Obsidian loaded.');
-
     // ── Hamburger Menu ──
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -9,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeMenu() {
         navLinks?.classList.remove('active');
         hamburger?.classList.remove('active');
+        hamburger?.setAttribute('aria-expanded', 'false');
         navOverlay?.classList.remove('active');
         document.body.style.overflow = '';
     }
@@ -16,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function openMenu() {
         navLinks?.classList.add('active');
         hamburger?.classList.add('active');
+        hamburger?.setAttribute('aria-expanded', 'true');
         navOverlay?.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
@@ -33,6 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navOverlay) {
         navOverlay.addEventListener('click', closeMenu);
     }
+
+    // Close menu on Escape key press
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks?.classList.contains('active')) {
+            closeMenu();
+            hamburger?.focus();
+        }
+    });
 
     // Close menu on nav link click (mobile)
     document.querySelectorAll('.nav-links a').forEach(link => {
@@ -67,7 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
                     navAnchors.forEach(a => {
-                        a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
+                        const isActive = a.getAttribute('href') === `#${id}`;
+                        a.classList.toggle('active', isActive);
+                        if (isActive) {
+                            a.setAttribute('aria-current', 'true');
+                        } else {
+                            a.removeAttribute('aria-current');
+                        }
                     });
                 }
             });
@@ -121,20 +141,22 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const btn = contactForm.querySelector('button[type="submit"]');
             const originalText = btn.textContent;
+            const formStatus = contactForm.querySelector("#form-status");
             
             // Show loading state
-            btn.textContent = 'Synchronizing...';
+            btn.innerHTML = '<span class="spinner" aria-hidden="true"></span> Synchronizing...';
             btn.disabled = true;
 
             const formData = new FormData(contactForm);
             
-            fetch('/contact', {
+            fetch(CONTACT_ENDPOINT, {
                 method: 'POST',
                 body: new URLSearchParams(formData)
             })
             .then(response => {
                 if (response.ok) {
-                    btn.textContent = 'Message Sent ✓';
+                    btn.textContent = "Message Sent ✓";
+                    if (formStatus) formStatus.textContent = "Your message was sent successfully.";
                     btn.style.background = 'linear-gradient(135deg, #00FF88 0%, #00F2FF 100%)';
                     contactForm.reset();
                 } else {
@@ -143,7 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(err => {
                 console.error('Contact error:', err);
-                btn.textContent = 'Relay Failed';
+                btn.textContent = "Relay Failed";
+                if (formStatus) formStatus.textContent = "We could not send your message. Please try again or email us directly.";
                 btn.style.background = 'var(--color-error)';
             })
             .finally(() => {
@@ -161,61 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
         el.textContent = new Date().getFullYear();
     });
 
-    // ── Live Protocol Simulation ──
-    const metrics = {
-        entropy: { el: document.querySelector('#metric-entropy .metric-trend'), base: 0.4, prefix: '↑ ' },
-        grounding: { el: document.querySelector('#metric-grounding .metric-trend'), base: 0, prefix: '~ ', text: 'STABLE' },
-        sacrifice: { el: document.querySelector('#metric-sacrifice .metric-trend'), base: 1.2, prefix: '↑ ' }
-    };
-
-    function updateLiveMetrics() {
-        if (metrics.entropy.el) {
-            const val = (metrics.entropy.base + (Math.random() * 0.1 - 0.05)).toFixed(1);
-            metrics.entropy.el.textContent = `${metrics.entropy.prefix}${val}%`;
-        }
-        if (metrics.grounding.el) {
-            const chance = Math.random();
-            if (chance > 0.8) {
-                metrics.grounding.el.textContent = '↑ 0.1%';
-                metrics.grounding.el.className = 'metric-trend text-success';
-            } else if (chance < 0.2) {
-                metrics.grounding.el.textContent = '↓ 0.1%';
-                metrics.grounding.el.className = 'metric-trend text-error';
-            } else {
-                metrics.grounding.el.textContent = '~ STABLE';
-                metrics.grounding.el.className = 'metric-trend text-warning';
-            }
-        }
-        if (metrics.sacrifice.el) {
-            const val = (metrics.sacrifice.base + (Math.random() * 0.2 - 0.1)).toFixed(1);
-            metrics.sacrifice.el.textContent = `${metrics.sacrifice.prefix}${val}%`;
-        }
-    }
-
-    if (metrics.entropy.el || metrics.grounding.el || metrics.sacrifice.el) {
-        setInterval(updateLiveMetrics, 3000);
-    }
-
-    // ── Status Text Typing Effect ──
-    const statusTextEl = document.querySelector('.status-text');
-    if (statusTextEl) {
-        const texts = [
-            'Protocol Node v8.4.2 — ACTIVE',
-            'L2 Settlement — VERIFIED',
-            'Sovereign Identity — ENCRYPTED',
-            'Entropy Buffer — STABLE'
-        ];
-        let index = 0;
-        
-        function rotateStatusText() {
-            statusTextEl.style.opacity = '0';
-            setTimeout(() => {
-                index = (index + 1) % texts.length;
-                statusTextEl.textContent = texts[index];
-                statusTextEl.style.opacity = '1';
-            }, 500);
-        }
-        
-        setInterval(rotateStatusText, 5000);
-    }
+    // Note: this file previously simulated fabricated "live" protocol metrics and a rotating
+    // status-text ticker (e.g. "Protocol Node v8.4.2 — ACTIVE") for DOM elements that no longer
+    // exist in index.html -- that content was removed as unverifiable/misleading. Removed the
+    // dead JS along with it rather than leaving it as inert but confusing leftover code.
 });

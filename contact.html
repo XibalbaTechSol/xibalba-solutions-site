@@ -10,19 +10,20 @@
     <style>
         .form-group { margin-bottom: 2rem; text-align: left; }
         .form-label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-500); margin-bottom: 0.75rem; font-weight: 600; }
-        .form-control { width: 100%; border: 1px solid var(--border-main); background: var(--glass-bg); padding: 1.25rem; border-radius: 12px; color: #fff; font-family: var(--font-secondary), sans-serif; transition: var(--t-smooth); outline: none; }
+        .form-control { width: 100%; border: 1px solid var(--border-main); background: var(--glass-bg); padding: 1.25rem; border-radius: 12px; color: #fff; font-family: var(--font-secondary), sans-serif; transition: var(--t-smooth); }
         .form-control:focus { border-color: var(--color-brand-primary); box-shadow: 0 0 20px var(--color-brand-primary-glow); }
         .contact-form-container { max-width: 600px; margin: 0 auto; background: var(--glass-bg); padding: 4rem; border-radius: 32px; border: 1px solid var(--border-main); backdrop-filter: var(--glass-blur); }
     </style>
 </head>
 <body class="theme-obsidian">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <nav>
         <div class="nav-container">
             <a href="./index.html" class="logo">
                 <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions">
             </a>
-            <button class="hamburger" aria-label="Toggle Menu">
+            <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -46,21 +47,21 @@
         </div>
     </header>
 
-    <main class="container content-section" style="text-align: center;">
+    <main id="main-content" tabindex="-1" class="container content-section" style="text-align: center;">
         <div class="contact-form-container animate-in">
-            <form id="contact-form" action="/contact" method="POST">
+            <form id="contact-form" action="https://xibalba-solutions-site.onrender.com/contact" method="POST">
                 <input type="hidden" name="source_page" value="Initiation Page">
                 <div class="form-group">
-                    <label class="form-label">Identity / Organization</label>
-                    <input type="text" name="name" class="form-control" placeholder="e.g. Sovereign Labs" required>
+                    <label for="name" class="form-label">Identity / Organization <span class="text-error" aria-hidden="true">*</span></label>
+                    <input id="name" type="text" name="name" class="form-control" placeholder="e.g. Sovereign Labs" autocomplete="name" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Secure Transmission Channel (Email)</label>
-                    <input type="email" name="email" class="form-control" placeholder="technical@domain.ai" required>
+                    <label for="email" class="form-label">Secure Transmission Channel (Email) <span class="text-error" aria-hidden="true">*</span></label>
+                    <input id="email" type="email" name="email" class="form-control" placeholder="technical@domain.ai" autocomplete="email" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Project Scope</label>
-                    <select name="subject" class="form-control">
+                    <label for="subject" class="form-label">Project Scope</label>
+                    <select id="subject" name="subject" class="form-control">
                         <option>Strategic Architecture Build</option>
                         <option>Global Command Center Swarm</option>
                         <option>Sovereign Stack Maintenance</option>
@@ -68,9 +69,10 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Mission Briefing</label>
-                    <textarea name="message" class="form-control" rows="4" placeholder="Describe your technical requirements and sovereignty needs..."></textarea>
+                    <label for="message" class="form-label">Mission Briefing</label>
+                    <textarea id="message" name="message" class="form-control" rows="4" placeholder="Describe your technical requirements and sovereignty needs..."></textarea>
                 </div>
+                <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
                 <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Sync Project</button>
             </form>
         </div>

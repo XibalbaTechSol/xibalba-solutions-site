@@ -24,9 +24,23 @@ SMTP_PASS = os.environ.get("SMTP_PASS", "")
 FROM_EMAIL = os.environ.get("FROM_EMAIL", "relay@xibalbasolutions.com")
 RECIPIENTS = ["jacob.v.universe@gmail.com"]
 
+# The static pages are served from GitHub Pages (a different origin than this backend, which
+# only handles /contact); the form fetch()'s response needs this to be readable cross-origin.
+ALLOWED_ORIGIN = os.environ.get("ALLOWED_ORIGIN", "https://xibalbatechsol.github.io")
+
 class XibalbaHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=DIRECTORY, **kwargs)
+
+    def do_OPTIONS(self):
+        # CORS preflight -- browsers only send this for non-"simple" requests, but the fetch
+        # client's headers/method are simple enough to skip it today; handled anyway so this
+        # keeps working if that client ever adds a custom header.
+        self.send_response(204)
+        self.send_header('Access-Control-Allow-Origin', ALLOWED_ORIGIN)
+        self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.end_headers()
 
     def do_POST(self):
         if self.path == '/contact':
@@ -71,26 +85,35 @@ This message was relayed via the Xibalba local server.
                 msg['From'] = FROM_EMAIL
                 msg['To'] = ", ".join(RECIPIENTS)
 
-                # Send via SMTP
+                # Send via SMTP. An explicit timeout matters here: some hosts (observed on
+                # Render) silently drop outbound connections on SMTP ports instead of
+                # refusing them, so smtplib's default of no timeout means this would otherwise
+                # hang forever -- tying up a thread indefinitely and leaving the browser's
+                # fetch() pending with no response, rather than failing fast into the except
+                # block below with a clean error.
                 if SMTP_USER and SMTP_PASS:
                     # authenticated SMTP (e.g. Gmail, SendGrid, etc.)
-                    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+                    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=10) as server:
                         server.starttls()
                         server.login(SMTP_USER, SMTP_PASS)
                         server.send_message(msg)
                 else:
                     # local unauthenticated SMTP (e.g. local postfix)
-                    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+                    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=10) as server:
                         server.send_message(msg)
 
-                # On success, redirect to the thank-you page
+                # On success, redirect to the thank-you page. This targets the backend's own
+                # relative path, which only matters for a no-JS form submit (the fetch() path in
+                # main.js only checks response.ok and never navigates on it).
                 self.send_response(303)
                 self.send_header('Location', '/thank-you.html')
+                self.send_header('Access-Control-Allow-Origin', ALLOWED_ORIGIN)
                 self.end_headers()
 
             except Exception as e:
                 print(f"Error handling contact form: {e}", file=sys.stderr)
                 self.send_response(500)
+                self.send_header('Access-Control-Allow-Origin', ALLOWED_ORIGIN)
                 self.end_headers()
                 self.wfile.write(f"An internal error occurred: {str(e)}".encode())
         else:
@@ -101,9 +124,17 @@ if __name__ == "__main__":
     os.chdir(DIRECTORY)
     
     # Allow port reuse to avoid "Address already in use" errors during development
-    socketserver.TCPServer.allow_reuse_address = True
-    
-    with socketserver.TCPServer(("", PORT), XibalbaHandler) as httpd:
+    socketserver.ThreadingTCPServer.allow_reuse_address = True
+
+    # Plain TCPServer handles one connection at a time -- any client that opens a connection
+    # and doesn't send/finish promptly (a slow client, an idle keep-alive, a proxy health
+    # check) blocks every other request, including /contact, until it closes. That's a real
+    # problem once this is reachable from the public internet (Render's edge proxy, browsers
+    # doing HTTP keep-alive) rather than only from a single local dev client. Threading fixes
+    # it; SimpleHTTPRequestHandler's static-file serving and the /contact handler above don't
+    # share mutable state, so per-request threads are safe here.
+    socketserver.ThreadingTCPServer.daemon_threads = True
+    with socketserver.ThreadingTCPServer(("", PORT), XibalbaHandler) as httpd:
         print(f"--- Xibalba Solutions Local Server ---")
         print(f"Serving files from: {DIRECTORY}")
         print(f"Contact endpoint ready at: http://localhost:{PORT}/contact")

@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="theme-obsidian">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="./index.html" class="logo">
                 <img src="./XibalbaSolutionsLogo.png" alt="Xibalba Solutions">
             </a>
-            <button class="hamburger" aria-label="Toggle Menu">
+            <button class="hamburger" aria-label="Toggle Menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
             <div class="nav-links">
                 <a href="./index.html">Home</a>
-                <a href="./blog.html" class="active">Blog</a>
+                <a href="./blog.html" class="active" aria-current="true">Blog</a>
                 <a href="./index.html#projects">Projects</a>
                 <a href="./index.html#contact">Contact</a>
                 <div class="nav-social">
@@ -44,7 +45,7 @@
         </div>
     </header>
 
-    <main class="blog-hub">
+    <main id="main-content" tabindex="-1" class="blog-hub">
         <div class="container">
             <!-- Featured Post -->
             <div class="featured-post animate-in">
@@ -61,9 +62,10 @@
                         <p>Phase 4 is complete. We explore the birth of Private Integrity through ZK-Reputation Proofs and multi-chain trust bridging.</p>
                         <span class="link-glow">Read Full Dispatch →</span>
                     </div>
-                    <div class="visual-frame" style="padding: 0; overflow: hidden; border-radius: 20px;">
-                        <img src="./screenshots/blog_reimagined.png" alt="Sovereignty Upgrade" style="width:100%; height:100%; object-fit:cover;">
-                    </div>
+                    <!-- TODO: ./screenshots/blog_reimagined.png is referenced here but was never
+                         committed to this repo (confirmed via git log --all -- it has no history).
+                         Restore the real asset before re-adding this <img>. -->
+                    <div class="visual-frame" style="padding: 0; overflow: hidden; border-radius: 20px;"></div>
                 </a>
             </div>
 
