@@ -34,3 +34,6 @@
 ## 2026-10-27 - Async Form Loading State
 **Learning:** Submitting forms without a visual loading indicator (e.g. spinner) can cause user uncertainty. Simply changing button text is often not enough visual feedback to indicate an active network request.
 **Action:** Always include a visual loading indicator (like a CSS spinner) alongside text changes for async form submissions to improve feedback and reduce user friction.
+## 2026-11-08 - Async Form Loading State Spinner
+**Learning:** We documented adding a loading spinner, but we didn't document that standard hover effects and animations continue to apply to elements even when they are set to `:disabled` via JavaScript, leading to mixed signals for the user (e.g. they see a spinner, but hovering still highlights the button).
+**Action:** When implementing `:disabled` states for interactive elements (like buttons with spinners), explicitly prevent hover states by using `:not(:disabled)` in the CSS selectors for hover effects (e.g., `.btn:not(:disabled):hover`).
