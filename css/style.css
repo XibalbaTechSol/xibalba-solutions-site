@@ -498,13 +498,18 @@ nav.scrolled {
     transition: 0.5s;
 }
 
-.btn:hover::before {
+.btn:not(:disabled):hover::before {
     left: 100%;
 }
 
-.btn:hover {
+.btn:not(:disabled):hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 40px rgba(0, 242, 255, 0.3);
+}
+
+.btn:disabled, .btn-outline:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .btn-outline {
@@ -522,11 +527,27 @@ nav.scrolled {
     cursor: pointer;
 }
 
-.btn-outline:hover {
+.btn-outline:not(:disabled):hover {
     border-color: var(--color-brand-primary);
     background: rgba(0, 242, 255, 0.05);
     color: var(--color-brand-primary);
     box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+}
+
+.spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 .btn-group {
