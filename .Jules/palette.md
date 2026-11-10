@@ -34,3 +34,6 @@
 ## 2026-10-27 - Async Form Loading State
 **Learning:** Submitting forms without a visual loading indicator (e.g. spinner) can cause user uncertainty. Simply changing button text is often not enough visual feedback to indicate an active network request.
 **Action:** Always include a visual loading indicator (like a CSS spinner) alongside text changes for async form submissions to improve feedback and reduce user friction.
+## 2026-11-10 - Disabled State Visuals
+**Learning:** The forms programmatically set buttons to `disabled` during submission, but lacked visual disabled states (`opacity: 0.6`, `cursor: not-allowed`) and allowed hover animations to persist. This creates a confusing UX where elements appear interactive while being disabled.
+**Action:** When implementing disabled states for buttons, explicitly use `:not(:disabled)` for hover states to prevent unwanted animations from overriding disabled styles.
