@@ -502,7 +502,12 @@ nav.scrolled {
     left: 100%;
 }
 
-.btn:hover {
+.btn:disabled, .btn-outline:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn:not(:disabled):hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 40px rgba(0, 242, 255, 0.3);
 }
@@ -522,7 +527,7 @@ nav.scrolled {
     cursor: pointer;
 }
 
-.btn-outline:hover {
+.btn-outline:not(:disabled):hover {
     border-color: var(--color-brand-primary);
     background: rgba(0, 242, 255, 0.05);
     color: var(--color-brand-primary);
