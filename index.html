@@ -579,14 +579,14 @@ print(<span class="code-val">f"AIS Multiplicative: {reward_result.ais_score:.1f}
                             <input type="hidden" name="source_page" value="Homepage">
                             <h3 style="margin-bottom: 1.5rem;">Schedule an Architecture Review</h3>
                             <div style="margin-bottom: 1.25rem;">
-                                <label for="contact-name" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Name</label>
-                                <input type="text" id="contact-name" name="name" required placeholder="Dr. / Engineer name"
+                                <label for="contact-name" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Name <span class="text-error" aria-hidden="true">*</span></label>
+                                <input type="text" id="contact-name" name="name" required autocomplete="name" placeholder="Dr. / Engineer name"
                                     style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface); border: 1px solid var(--border-main); border-radius: 8px; color: var(--text-primary); font-family: var(--font-primary); font-size: 0.95rem; outline: none; transition: var(--t-fast);"
                                     onfocus="this.style.borderColor='var(--color-brand-primary)'" onblur="this.style.borderColor='var(--border-main)'">
                             </div>
                             <div style="margin-bottom: 1.25rem;">
-                                <label for="contact-email" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Work Email</label>
-                                <input type="email" id="contact-email" name="email" required placeholder="name@institution.com"
+                                <label for="contact-email" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Work Email <span class="text-error" aria-hidden="true">*</span></label>
+                                <input type="email" id="contact-email" name="email" required autocomplete="email" placeholder="name@institution.com"
                                     style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface); border: 1px solid var(--border-main); border-radius: 8px; color: var(--text-primary); font-family: var(--font-primary); font-size: 0.95rem; outline: none; transition: var(--t-fast);"
                                     onfocus="this.style.borderColor='var(--color-brand-primary)'" onblur="this.style.borderColor='var(--border-main)'">
                             </div>
@@ -603,7 +603,7 @@ print(<span class="code-val">f"AIS Multiplicative: {reward_result.ais_score:.1f}
                                 </select>
                             </div>
                             <div style="margin-bottom: 1.5rem;">
-                                <label for="contact-message" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">System Requirements</label>
+                                <label for="contact-message" style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">System Requirements <span class="text-error" aria-hidden="true">*</span></label>
                                 <textarea id="contact-message" name="message" rows="4" required placeholder="Describe your data topology, compliance tier, and agent deployment goals..."
                                     style="width: 100%; padding: 0.75rem 1rem; background: var(--bg-surface); border: 1px solid var(--border-main); border-radius: 8px; color: var(--text-primary); font-family: var(--font-primary); font-size: 0.95rem; outline: none; resize: vertical; transition: var(--t-fast);"
                                     onfocus="this.style.borderColor='var(--color-brand-primary)'" onblur="this.style.borderColor='var(--border-main)'"></textarea>
